@@ -4,6 +4,7 @@
 #' @return The DafaFrame x with the coordinates variables append (x adn y)
 #' @importFrom dplyr mutate filter
 #' @importFrom stringr str_sub str_locate str_trim
+#' @importFrom magrittr %>%
 #' @export
 #' @examples
 #' # x <- data.frame(cbind(dpto="Montevideo",loc="Montevideo",dir="Av. 18 de julio 1453"))
