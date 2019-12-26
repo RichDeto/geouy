@@ -1,12 +1,14 @@
+Package: ech
 Package: GeoUy
+Type: Package
 Title: What the Package Does (One Line, Title Case)
 Version: 0.0.0.9000
-Authors@R: 
+Authors@R: c(
     person(given = "Richard",
            family = "Detomasi",
            role = c("aut", "cre"),
            email = "richard.detomasi@gmail.com",
-           comment = structure("YOUR-ORCID-ID", .Names = "ORCID"),
+           comment = c(ORCID = "0000-0002-6725-0261")),
     person(family = "Infraestrutura de Datos Espaciales, Uruguay (IDEUy)",
         role = "dtc"),
     person(family = "Ministerio de Desarrollo Social, Uruguay (MIDES)",
@@ -29,3 +31,4 @@ Suggests:
     covr,
     testthat,
     broom
+
