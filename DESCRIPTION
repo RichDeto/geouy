@@ -2,12 +2,30 @@ Package: GeoUy
 Title: What the Package Does (One Line, Title Case)
 Version: 0.0.0.9000
 Authors@R: 
-    person(given = "First",
-           family = "Last",
+    person(given = "Richard",
+           family = "Detomasi",
            role = c("aut", "cre"),
-           email = "first.last@example.com",
-           comment = structure("YOUR-ORCID-ID", .Names = "ORCID"))
+           email = "richard.detomasi@gmail.com",
+           comment = structure("YOUR-ORCID-ID", .Names = "ORCID"),
+    person(family = "Infraestrutura de Datos Espaciales, Uruguay (IDEUy)",
+        role = "dtc"),
+    person(family = "Ministerio de Desarrollo Social, Uruguay (MIDES)",
+        role = c("dtc", "cph")
+)
 Description: What the package does (one paragraph).
-License: What license it uses
+BugReports: https://github.com/RichDeto/GeoUy/issues
+License: GPL-3
+Depends: R (>= 3.4.0)
 Encoding: UTF-8
 LazyData: true
+RoxygenNote: 6.1.1
+VignetteBuilder: knitr
+Imports:
+	dplyr,
+	stringr
+Suggests:
+    knitr,
+    rmarkdown,
+    covr,
+    testthat,
+    broom

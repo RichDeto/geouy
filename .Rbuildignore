@@ -1,2 +1,4 @@
 ^GeoUy\.Rproj$
 ^\.Rproj\.user$
+^packrat/
+^\.Rprofile$

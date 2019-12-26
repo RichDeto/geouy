@@ -1,16 +1,16 @@
 #' A function to geocoding directions using IDE_uy
-#'
-#' This function allows you to estimate the years of education.
 #' @param x Dataframe with unless 3 variables: dpto = correspondiente al departamento, loc = a localidad, dir = a la direcciónDefaults to ech.
 #' @keywords geocoding IDE_uy
+#' @return The DafaFrame x with the coordinates variables append (x adn y)
+#' @importFrom dplyr mutate filter
+#' @importFrom stringr str_sub str_locate str_trim
 #' @export
-#' @import tidyverse rvest stringr
 #' @examples
-#' x <- data.frame(cbind(dpto="Montevideo",loc="Montevideo",dir="Av. 18 de julio 1453"))
-#' geocode_ide_uy(x)
+#' # x <- data.frame(cbind(dpto="Montevideo",loc="Montevideo",dir="Av. 18 de julio 1453"))
+#' # geocode_ide_uy(x)
 
 geocode_ide_uy <- function(x) {
-        # x <- x %>% mutate(dir = str_trim(dir)) %>% filter(nchar(dir) > 0)
+        x <- x %>% mutate(dir = str_trim(dir)) %>% filter(nchar(dir) > 0)
         for (i in 1:nrow(x)) {
                 p <- suppressWarnings(readLines(paste0("http://servicios.ide.gub.uy/servicios/BusquedaDireccion?departamento=",
                                                   x[i,"dpto"] , "&localidad=", x[i,"loc"], "&calle=", x[i,"dir"])))
