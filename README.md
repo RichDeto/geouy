@@ -25,10 +25,10 @@ The syntax of all `geouy` functions operate one the same logic so it becomes int
 ## Available datasets:
 
 
-| Capa | Fuente | Years available | Fuente |
-|-----|-----|-----|-----|
-|`"Departamentos"`| `"IDE"` | 2014 | wfs |
-|`"Secciones"`| `"INECenso"` | 2011 | wfs |
+| Capa | Productor | Repositor | Anio | Formato |
+|-----|-----|-----|-----|-----|
+|`"Localidades_pg"`| `"INECenso"` | "MIDES" | 2011 | wfs |
+|`"Secciones"`| `"INECenso"` | "MIDES" | 2011 | wfs |
  
 
 
