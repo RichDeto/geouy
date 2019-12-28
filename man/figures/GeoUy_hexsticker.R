@@ -41,7 +41,7 @@ plot_a <-
         theme(panel.grid.major = element_line(colour = "transparent")) +
         #  theme(legend.position = "none") +
         annotate("text", x = -54.7, y = -30.8, label = "geouy", color = "#4dc0d1",
-                 size = 25, fontface = "bold", angle = -35) # (.png  size = 25)(.svg  size = 6)
+                 size = 25, family = "Roboto", fontface = "bold", angle = -35) # (.png  size = 25)(.svg  size = 6)
 
 
 
@@ -58,19 +58,19 @@ beepr::beep()
 ### .svg
 plot_y_svg <-
         ggplot() +
-        geom_sf(data = d_s, fill = NA, size = .08, color = "#272D67") +
-        geom_sf(data = s_s, fill = NA, size = .35, color = "#2E3946") +
+        geom_sf(data = s, fill = NA, size = .08, color = "#5796c905") +
+        geom_sf(data = s_s, fill = NA, size = .35, color = "#4dc0d1") +
         theme_void() +
         theme(panel.grid.major = element_line(colour = "transparent")) +
         #  theme(legend.position = "none") +
-        annotate("text", x = -67.7, y = -20, label = "GeoUy", color = "black",
-                 size = 6, family = "Roboto", fontface = "bold", angle = 0) # (.png  size = 25)(.svg  size = 6)
+        annotate("text", x = -54.7, y = -30.8, label = "geouy", color = "#4dc0d1",
+                 size = 6, family = "Roboto", fontface = "bold", angle = -35) # (.png  size = 25)(.svg  size = 6)
 
 
 
 sticker(plot_y_svg, package = "",
-        s_x = 1.12, s_y = .9, s_width = 1.8, s_height = 1.8, # ggplot image size and position
-        h_fill = "#FEB845", h_color = "#FE9F45", # hexagon
-        filename = "./man/figures/geobr_logo_y.svg")  # output name and resolution
+        s_x = 1.03, s_y = 1, s_width = 1.5, s_height = 1.5, # ggplot image size and position
+        h_fill = "black", h_color = "black", # hexagon
+        filename = "./man/figures/geouy_logo_a.svg")  # output name and resolution
 
 
