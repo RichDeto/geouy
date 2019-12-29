@@ -1,4 +1,4 @@
-Package: GeoUy
+Package: geouy
 Type: Package
 Title: Toolbox for geographic information for Uruguay
 Version: 0.0.0.9000
@@ -14,7 +14,7 @@ Authors@R:
                 role = c("dtc", "cph")))
 Description: The toolbox have functions to load and process geographic information for Uruguay. 
         And extra-function to geocode directions throug the IDEUy API.
-BugReports: https://github.com/RichDeto/GeoUy/issues
+BugReports: https://github.com/RichDeto/geouy/issues
 License: GPL-3 + file LICENSE
 Depends: R (>= 3.4.0)
 Encoding: UTF-8
@@ -25,7 +25,8 @@ Imports:
 	dplyr,
 	stringr,
 	magrittr,
-	sf
+	sf, 
+	ggplot2
 Suggests:
         knitr,
         rmarkdown,

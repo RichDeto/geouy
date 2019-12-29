@@ -1,7 +1,7 @@
 library(hexSticker) # https://github.com/GuangchuangYu/hexSticker
 library(ggplot2)
 library(sf)
-library(GeoUy)
+library(geouy)
 
 
 # add special text font
@@ -30,7 +30,7 @@ as.numeric(object.size(d_s)) / as.numeric(  object.size(d))
 as.numeric(object.size(s_s)) / as.numeric(  object.size(s))
 
 
-### WHITE and LIGTH BLUE logo ---------------
+### Black and light blue logo ---------------
 
 ### .png
 plot_a <-
@@ -49,10 +49,6 @@ sticker(plot_a, package = "",
         s_x = 1.03, s_y = 1, s_width = 1.5, s_height = 1.5, # ggplot image size and position
         h_fill = "black", h_color = "black", # hexagon
         filename = "./man/figures/geouy_logo_a.png", dpi = 400)  # output name and resolution
-
-
-beepr::beep()
-
 
 
 ### .svg
