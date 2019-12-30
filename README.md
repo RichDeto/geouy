@@ -1,4 +1,4 @@
-# GeoUy <img align="right" src="man/figures/geouy_logo_a.png" alt="logo" width="160">
+# GeoUy <img align="right" src="man/figures/geouy_logo_a.png" alt="logo" width="160"> <img align="right" src="man/figures/geouy_logo_b.png" alt="logo" width="160">
 _____________________________________________
 
 ## Introduction
@@ -9,7 +9,7 @@ _____________________________________________
 ```R
 # From CRAN
   install.packages("geouy")
-  library(geobr)
+  library(geouy)
 
 # or use the development version with latest features
   utils::remove.packages('geouy')

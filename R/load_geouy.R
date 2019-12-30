@@ -13,6 +13,7 @@
 
 load_geouy <- function(c, crs = 32721){
         x <- geouy::metadata 
-        st_read(x$url[x$capa == c], crs = x$crs[x$capa == c]) %>%
+        x <- x[x$capa == c,]
+        st_read(x$url, crs = x$crs) %>%
                 st_transform(crs)
 }
