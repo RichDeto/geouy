@@ -12,8 +12,7 @@
 #' secc <- load_geouy(c = "Secciones")
 
 load_geouy <- function(c, crs = 32721){
-        x <- geouy::metadata %>%
-                filter(capa == c)
-        st_read(x$url[1], crs = x$crs[1]) %>%
+        x <- geouy::metadata 
+        st_read(x$url[x$capa == c], crs = x$crs[x$capa == c]) %>%
                 st_transform(crs)
 }

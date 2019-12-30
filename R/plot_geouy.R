@@ -1,15 +1,20 @@
 #' A function to set ggplot2 theme in our suggested format
 #'
 #' This function allows you to set ggplot2 theme in our suggested format.
+#' @param x An sf object like load_geouy() results
+#' @param a Variable of "x" to plot
 #' @param ... All parameters aviables from ggplot2 themes.
-#' @keywords ggplot2 
+#' @keywords ggplot2 sf maps
 #' @export
-#' @import tidyverse ggthemes
+#' @import ggplot2 ggthemes 
+#' @importFrom  ggsn north scalebar
 #' @examples
 #' plot_geouy
 
-plot_geouy <- function(x, base_size = 16, base_family = ""){
-  theme_foundation() + theme(axis.line = element_blank(),
+plot_geouy <- function(x, a, ...){
+  ggplot(x) +
+    geom_sf(aes(fill = a)) + theme(base_size = 16, base_family = "",
+                             axis.line = element_blank(),
                              axis.text.x = element_blank(),
                              axis.text.y = element_blank(),
                              axis.ticks = element_blank(),
@@ -21,7 +26,6 @@ plot_geouy <- function(x, base_size = 16, base_family = ""){
                              panel.border = element_rect(colour = "gray", fill = NA, size = 0.5),
                              legend.justification = c(1,1), legend.position = c(1,1)) +
     ggsn::north(x, location = "bottomleft", symbol = 3) +
-    # geom_sf_text(aes(label = dpto), colour = "black") +
     ggsn::scalebar(x, dist = 50, dist_unit = "km", transform = T, model = "WGS84")
 }
 

@@ -17,6 +17,9 @@ names(metadata) <- c("capa","productor","repositor","crs","formato","anio","url"
 metadata %<>% mutate(crs = as.numeric(crs), anio = as.numeric(anio))
 saveRDS(metadata,"data-raw/metadata.Rds")
 usethis::use_data(metadata, overwrite = TRUE)
+
+
+
 # ine_vec2011 <- "http://www.ine.gub.uy/c/document_library/get_file?uuid=d67a62b1-912b-4c24-82f6-332fa4343a24&groupId=10181"
 # ine_vec2004 <- "http://www.ine.gub.uy/c/document_library/get_file?uuid=6f41de7b-95ca-4287-b697-8e4b66513464&groupId=10181"
 # tabla_dpto <- "http://www.ine.gub.uy/c/document_library/get_file?uuid=ea589aff-9d59-46d3-b2b8-4f8453304226&groupId=10181"

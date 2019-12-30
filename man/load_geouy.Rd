@@ -4,12 +4,10 @@
 \alias{load_geouy}
 \title{load_geouy}
 \usage{
-load_geouy(capa, fuente, crs = 32721)
+load_geouy(c, crs = 32721)
 }
 \arguments{
-\item{capa}{Define the geometries to download: may be: "Dpto", "Secc", "Zone", etc. View(metadta) for details.}
-
-\item{fuente}{Define the provider of the geometries}
+\item{c}{Define the geometries to download: may be: "Departamentos", "Secciones", "Zonas", etc. View(metadta) for details.}
 
 \item{crs}{Define the Coordinate Reference Systems you want the output, default 32721}
 }
@@ -17,7 +15,7 @@ load_geouy(capa, fuente, crs = 32721)
 This function allows you to take a object "sf" from MIDES server.
 }
 \examples{
-secc <- load_geouy(capa = "Secciones", fuente = "INECenso")
+secc <- load_geouy(c = "Secciones")
 }
 \keyword{IDE}
 \keyword{INE}

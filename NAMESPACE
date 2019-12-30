@@ -2,6 +2,10 @@
 
 export(geocode_ide_uy)
 export(load_geouy)
+export(plot_geouy)
+import(ggplot2)
+import(ggsn)
+import(ggthemes)
 importFrom(dplyr,filter)
 importFrom(dplyr,mutate)
 importFrom(magrittr,"%>%")
