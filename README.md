@@ -30,8 +30,11 @@ The syntax of all `geouy` functions operate one the same logic so it becomes int
 
 | Capa | Productor | Repositor | Anio | Formato |
 |-----|-----|-----|-----|-----|
-|`"Localidades_pg"`| `"INECenso"` | "MIDES" | 2011 | wfs |
-|`"Secciones"`| `"INECenso"` | "MIDES" | 2011 | wfs |
+|`"Localidades_pg"`| `"INECenso"` | MIDES | 2011 | wfs |
+|`"Secciones"`| `"INECenso"` | MIDES | 2011 | wfs |
+|`"Asentamientos irregulares"`| `"PMB"` | MIDES | 2014 | wfs
+|`"Balnearios"`| `"MTOP"` | MTOP |  2017 | wfs |
+|`"Departamentos"`| `"IDE"` | MIDES | 2011 | wfs |
  
 
 
