@@ -1,7 +1,5 @@
 # GeoUy <img align="right" src="man/figures/geouy_logo_a.png" alt="logo" width="160"> <img align="right" src="man/figures/geouy_logo_b.png" alt="logo" width="160">
-_____________________________________________
 
-## Introduction
 
 **geouy** is an R package that allows users to easily access official spatial data sets of Uruguay. The package includes a wide range of geospatial data as *simple features*, available at various geographic scales and for various years with harmonized attributes and projection (see detailed list below).
 
