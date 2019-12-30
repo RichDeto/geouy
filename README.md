@@ -35,7 +35,6 @@ The syntax of all `geouy` functions operate one the same logic so it becomes int
 |`"Departamentos"`| `"IDE"` | MIDES | 2011 | wfs |
  
 
-
 ### Other functions:
 
 
@@ -44,3 +43,11 @@ The syntax of all `geouy` functions operate one the same logic so it becomes int
 |`geocode_ide_uy`| Allows geocoding directions using IDE_uy  |
 |`plot_geouy`| Plot a varible of your sf object with north and scale with a simple theme | 
 | ... | ... | ... | 
+
+## History
+
+This package arises from the conjugation of own ideas with an eye on the region. It started as a part of the package where I work with @calcita at https://github.com/calcita/ech, and some geospatial service packages in the region mainly: 
+[geobr](https://github.com/ipeaGIT/geobr) and 
+[chilemapas](https://github.com/pachamaltese/chilemapas)
+
+This walk on the shoulders of giants, allows this package focused on this small country (my beautiful Uruguay), to have its own particularities although it tries to fit especially to `geobr` in its structure and with a view to complementing` ech`.
