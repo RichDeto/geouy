@@ -36,7 +36,7 @@ as.numeric(object.size(s_s)) / as.numeric(  object.size(s))
 plot_a <-
         ggplot() +
         # geom_sf(data = d_s, fill = NA, size = .3, color = "#5796c905") +
-        geom_sf(data = s_s, fill = NA, size = .2, color = "#4dc0d1") +
+        geom_sf(data = s_s, fill = NA, size = .4, color = "#4dc0d1") +
         theme_void() +
         theme(panel.grid.major = element_line(colour = "transparent")) +
         #  theme(legend.position = "none") +
