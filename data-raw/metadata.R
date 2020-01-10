@@ -1,16 +1,33 @@
 library(magrittr); library(dplyr)
 
 metadata <- data.frame(
-        rbind(c("Secciones", "INE", "MIDES", 32721, "wfs", 2011,
+        rbind(c("Departamentos", "IDE", "MIDES", 32721, "wfs", 2011,
+                "https://testmapas.mides.gub.uy/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=IDE:Departamentos%20UY"),
+              c("Secciones", "INE", "MIDES", 32721, "wfs", 2011,
                 "https://mapas.mides.gub.uy:443/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=INECenso:Secciones"),
+              c("Segmentos", "INE", "MIDES", 32721, "wfs", 2011,
+                "https://mapas.mides.gub.uy/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=INECenso:Segmentos"),
+              c("Zonas", "INE", "MIDES", 32721, "wfs", 2011,
+                "https://mapas.mides.gub.uy/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=INECenso:Zonas"),
               c("Localidades_pg", "INE", "MIDES", 32721, "wfs", 2011,
                 "https://mapas.mides.gub.uy:443/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=INECenso:Localidades_pg"),
               c("Asentamientos irregulares", "PMB", "MIDES", 32721, "wfs", 2014,
                 "https://mapas.mides.gub.uy:443/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=IDE:ai_pmb_2014"),
               c("Balnearios", "MTOP", "MTOP", 4326, "wfs", 2017,
                 "https://geoservicios.mtop.gub.uy/geoserver/mb_planos/v_balnearios/ows?service=WFS&request=GetFeature&typeName=v_balnearios"),
-              c("Departamentos", "IDE", "MIDES", 32721, "wfs", 2011,
-                "https://testmapas.mides.gub.uy/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=IDE:Departamentos%20UY")
+              c("Cursos de agua navegables y flotables", "MTOP", "MTOP", 32721, "wfs", 2019,
+                "https://geoservicios.mtop.gub.uy/geoserver/rec_hidrograficos/cursos_nav_flot/ows?service=WFS&request=GetFeature&typeName=cursos_nav_flot"),
+              c("Lagunas públicas", "MTOP", "MTOP", 32721, "wfs", 2019,
+                "https://geoservicios.mtop.gub.uy/geoserver/rec_hidrograficos/lagunas_publicas/ows?service=WFS&request=GetFeature&typeName=lagunas_publicas"),
+              c("Rutas", "IDE", "MIDES", 32721, "wfs", 2017,
+                "https://testmapas.mides.gub.uy/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=IDE:Carreteras%20Uruguay"),
+              c("Calles", "IDE - UTE - IM", "MIDES", 32721, "wfs", 2017,
+                "https://mapas.mides.gub.uy/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=IDE:EjesUruguayUTE,IDE:EjesMontevideoIM"),
+              c("Peajes", "MTOP", "MTOP", 4326, "wfs", 2019,
+                "https://geoservicios.mtop.gub.uy/geoserver/inf_tte_ttelog_terrestre/peajes/ows?service=WFS&request=GetFeature&typeName=peajes"),
+              c("Postes Kilometros", "MTOP", "MTOP", 32721, "wfs", 2019,
+                "https://geoservicios.mtop.gub.uy/geoserver/inf_tte_ttelog_terrestre/postes_km/ows?service=WFS&request=GetFeature&typeName=postes_km")
+              
         ), stringsAsFactors = FALSE)
 
 names(metadata) <- c("capa","productor","repositor","crs","formato","anio","url")

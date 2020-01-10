@@ -28,11 +28,19 @@ The syntax of all `geouy` functions operate one the same logic so it becomes int
 
 | Capa | Productor | Repositor | Anio | Formato |
 |-----|-----|-----|-----|-----|
-|`"Localidades_pg"`| `"INECenso"` | MIDES | 2011 | wfs |
-|`"Secciones"`| `"INECenso"` | MIDES | 2011 | wfs |
+|`"Departamentos"`| `"IDE"` | MIDES | 2011 | wfs |
+|`"Secciones"`| `"INE Censo"` | MIDES | 2011 | wfs |
+|`"Segmentos"`| `"INE Censo"` | MIDES | 2011 | wfs |
+|`"Zonas"`| `"INE Censo"` | MIDES | 2011 | wfs |
+|`"Localidades_pg"`| `"INE Censo"` | MIDES | 2011 | wfs |
 |`"Asentamientos irregulares"`| `"PMB"` | MIDES | 2014 | wfs |
 |`"Balnearios"`| `"MTOP"` | MTOP |  2017 | wfs |
-|`"Departamentos"`| `"IDE"` | MIDES | 2011 | wfs |
+|`"Cursos de agua navegables y flotables"` | `"MTOP"` | MTOP | 2019 | wfs |
+|`"Lagunas públicas"` | `"MTOP"` | MTOP | 2019 |  wfs |
+|`"Rutas"` | `"IDE"` | MIDES | 2017 | wfs |
+|`"Calles"` | `"IDE - UTE - IM"` | MIDES | 2017 | wfs |
+|`"Peajes"` | `"MTOP"` | MTOP | 2019 | wfs |
+|`"Postes Kilometros"` |`"MTOP"` | MTOP | 2019 | wfs |
  
 
 ### Other functions:
