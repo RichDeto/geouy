@@ -5,11 +5,6 @@
 
 ## Installation
 
-```R, include=FALSE
-# From CRAN
-  install.packages("geouy")
-  library(geouy)
-```
 ```R
 # or use the development version with latest features
   utils::remove.packages('geouy')
