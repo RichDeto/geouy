@@ -4,11 +4,13 @@
 **geouy** is an R package that allows users to easily access official spatial data sets of Uruguay. The package includes a wide range of geospatial datasets as *simple features* (`sf`), available at various geographic scales and for various years with harmonized attributes and projection (see detailed list below).
 
 ## Installation
-```R
+
+```R, ECHO=F
 # From CRAN
   install.packages("geouy")
   library(geouy)
-
+```
+```R
 # or use the development version with latest features
   utils::remove.packages('geouy')
   devtools::install_github("RichDeto/geouy")
