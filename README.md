@@ -6,7 +6,7 @@
 ## Installation
 
 ```R
-# or use the development version with latest features
+# Use the development version with latest features
   utils::remove.packages('geouy')
   devtools::install_github("RichDeto/geouy")
   library(geouy)
@@ -14,11 +14,13 @@
 obs. If you use **Linux**, you need to install a couple dependencies before installing the libraries `sf` and `geouy`. [More info here](https://github.com/r-spatial/sf#linux).
 
 
-
 ## Basic Usage
 
 The syntax of all `geouy` functions operate one the same logic so it becomes intuitive to download any data set using a single line of code. Like this:
 
+```R
+secc <- load_geouy("Secciones")
+```
 
 ## Available datasets:
 
@@ -55,4 +57,4 @@ This package arises from the conjugation of own ideas with an eye on the region.
 [geobr](https://github.com/ipeaGIT/geobr) and 
 [chilemapas](https://github.com/pachamaltese/chilemapas)
 
-This walk on the shoulders of giants, allows this package focused on this small country (my beautiful Uruguay), to have its own particularities although it tries to fit especially to `geobr` in its structure and with a view to complementing `ech`.
+This walk on the shoulders of giants, allows this package focused on this small country (my beautiful Uruguay), to have its own particularities although it tries to fit especially to [geobr](https://github.com/ipeaGIT/geobr) in its structure and with a view to complementing [ech](https://github.com/calcita/ech).
