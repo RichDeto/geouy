@@ -4,7 +4,7 @@
 #' @keywords IDE MIDES INE
 #' @importFrom magrittr %>%
 #' @importFrom sf st_read st_transform
-#' @importFrom dplyr filter
+#' @importFrom dplyr filter if_else
 #' @export
 #' @examples
 #' secc <- load_geouy(c = "Secciones")
