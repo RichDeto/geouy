@@ -52,7 +52,7 @@ secc <- load_geouy("Secciones")
 | Function | Action|
 |-----|-----|
 |`geocode_ide_uy`| Allows geocoding directions using IDE_uy  |
-|`plot_geouy`| Plot a varible of your sf object with north and scale with a simple theme | 
+|`plot_geouy`| Plot a varible of your sf object with a north and scale, set on a simple theme | 
 | ... | ... | ... | 
 
 ## History
