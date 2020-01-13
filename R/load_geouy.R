@@ -12,11 +12,8 @@
 load_geouy <- function(c, crs = 32721){
   x <- geouy::metadata 
   x <- x[x$capa == c,]
-  if (x$repositor == "SGM") {
-    st_read("WFS:http://geoservicios.sgm.gub.uy/wfsPCN1000.cgi?",x$url, crs = x$crs) %>%
-      st_transform(crs)
-  } else {
-    st_read(x$url, crs = x$crs) %>%
-      st_transform(crs)
-  }
+  if_else(x$repositor %in% "SGM",
+    st_read("WFS:http://geoservicios.sgm.gub.uy/wfsPCN1000.cgi?",x$url, crs = x$crs),
+    st_read(x$url, crs = x$crs)) %>% 
+    st_transform(crs)
 }
