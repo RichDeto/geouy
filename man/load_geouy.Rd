@@ -2,7 +2,7 @@
 % Please edit documentation in R/load_geouy.R
 \name{load_geouy}
 \alias{load_geouy}
-\title{load_geouy}
+\title{This function allows you to take a object "sf" from MIDES server.}
 \usage{
 load_geouy(c, crs = 32721)
 }
