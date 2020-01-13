@@ -5,7 +5,7 @@
 
 ## Installation
 
-```R, ECHO=F
+```R, include=FALSE
 # From CRAN
   install.packages("geouy")
   library(geouy)
