@@ -58,3 +58,28 @@ This package arises from the conjugation of own ideas with an eye on the region.
 [chilemapas](https://github.com/pachamaltese/chilemapas)
 
 This walk on the shoulders of giants, allows this package focused on this small country (my beautiful Uruguay), to have its own particularities although it tries to fit especially to [geobr](https://github.com/ipeaGIT/geobr) in its structure and with a view to complementing [ech](https://github.com/calcita/ech).
+
+## Community contributions [es](https://github.com/RichDeto/geouy/issues/1)
+
+This package intends to incorporate any function of general requirements that use the geographic data of Uruguay as a base. All contributions in this regard are welcome.
+
+If you work with geographic data of Uruguay and want to add your function or data, we recommend that you read the following tips on how to collaborate:
+
+### To add your function:
+
+    - Fork of this repository
+    - Add your function as an `.R` file in the `R/` folder with the same name as the function
+    - Document it with `roxygen2` clarifying its functionality, parameters and an example of use. To see how it is documented to review another function in the same directory
+    - Remember at the end of the documentation you must add a # '@export
+    - Check that the types and values of your function parameters are fine (for example, you can look at `data-raw/metadata.R`
+    - Add the dependencies in the `DESCRIPTION` file 
+    - Check the package with devtools::check()
+    - If everything works fine, then make a pull request
+
+### To add geographic data to the `load_geouy()` function:
+
+    - Fork of this repository
+    - Identify the corresponding WFS service URL
+    - Add a record to the `metadata` file in the `data-raw/` directory, with the corresponding data.
+    - Also include this record in the corresponding table of the `README.md` file, with the corresponding format.
+    - If everything works fine, then make a pull request
