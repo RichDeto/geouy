@@ -1,5 +1,3 @@
-#' load_geouy
-#'
 #' This function allows you to take a object "sf" from MIDES server.
 #' @param c Define the geometries to download: may be: "Departamentos", "Secciones", "Zonas", etc. View(metadta) for details.
 #' @param crs Define the Coordinate Reference Systems you want the output, default 32721
