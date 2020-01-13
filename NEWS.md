@@ -3,7 +3,7 @@
 -------------------------------------------------------
 ## geouy v0.1.0 (2019-12-30)
 
-Launch of **geouy** v0.0.0.9000 on [GitHUb](https://github.com/RichDeto/geouy) with the following data sets:    
+Launch of **geouy** v0.0.1.0 on [GitHUb](https://github.com/RichDeto/geouy) with the following data sets:    
   * Localidades    
   * Secciones    
   * Asentamientos irregulares    
