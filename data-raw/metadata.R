@@ -1,8 +1,11 @@
 library(magrittr); library(dplyr)
 
 metadata <- data.frame(
-        rbind(c("Departamentos", "IDE", "MIDES", 32721, "wfs", 2011,
-                "https://testmapas.mides.gub.uy/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=IDE:Departamentos%20UY"),
+        rbind(c("Areas administrativas", "SGM", "SGM", 4326, "wfs", 2011, "polnbda_ury"),
+              c("Departamentos", "IGM", "IGM", 4326, "wfs", 2011,
+                 "WFS:https://srvgis.igm.gub.uy/arcgis/services/LimiteDepartamental_wfs_250000/MapServer/WFSServer"),
+              # c("Departamentos", "IDE", "MIDES", 32721, "wfs", 2011,
+              #   "https://testmapas.mides.gub.uy/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=IDE:Departamentos%20UY"),
               c("Secciones", "INE", "MIDES", 32721, "wfs", 2011,
                 "https://mapas.mides.gub.uy:443/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=INECenso:Secciones"),
               c("Segmentos", "INE", "MIDES", 32721, "wfs", 2011,
@@ -11,6 +14,14 @@ metadata <- data.frame(
                 "https://mapas.mides.gub.uy/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=INECenso:Zonas"),
               c("Localidades_pg", "INE", "MIDES", 32721, "wfs", 2011,
                 "https://mapas.mides.gub.uy:443/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=INECenso:Localidades_pg"),
+              # c("Area urbanizada pg", "IGM", "IGM", 4326, "wfs", 2011,
+              #   "WFS:https://srvgis.igm.gub.uy/arcgis/services/AreaUrbanizada_wfs_20000/MapServer/WFSServer"),
+              # c("Area urbanizada pt", "IGM", "IGM", 4326, "wfs", 2011,
+              # "WFS:https://srvgis.igm.gub.uy/arcgis/services/AreaUrbanizadaP_wfs_10000/MapServer/WFSServer"),
+              c("Centros poblados pg", "SGM", "SGM", 4326, "wfs", 2011, "builtupa"),
+              c("Centros poblados pt", "SGM", "SGM", 4326, "wfs", 2011, "builtupp"),
+              c("Municipios", "IGM", "IGM", 4326, "wfs", 2011,
+                "WFS:https://srvgis.igm.gub.uy/arcgis/services/LimitesMunicipales_wfs_250000/MapServer/WFSServer"),
               c("Asentamientos irregulares", "PMB", "MIDES", 32721, "wfs", 2014,
                 "https://mapas.mides.gub.uy:443/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=IDE:ai_pmb_2014"),
               c("Balnearios", "MTOP", "MTOP", 4326, "wfs", 2017,

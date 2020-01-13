@@ -27,11 +27,15 @@ secc <- load_geouy("Secciones")
 
 | Capa | Productor | Repositor | Anio | Formato |
 |-----|-----|-----|-----|-----|
-|`"Departamentos"`| `"IDE"` | MIDES | 2011 | wfs |
+|`"Areas administrativas"`| `"SGM"` | SGM | 2011 | wfs |
+|`"Departamentos"`| `"IGM"` | IGM | 2011 | wfs |
 |`"Secciones"`| `"INE Censo"` | MIDES | 2011 | wfs |
 |`"Segmentos"`| `"INE Censo"` | MIDES | 2011 | wfs |
 |`"Zonas"`| `"INE Censo"` | MIDES | 2011 | wfs |
 |`"Localidades_pg"`| `"INE Censo"` | MIDES | 2011 | wfs |
+|`"Centros poblados pg"`| `"SGM"` | SGM | 2011 | wfs |
+|`"Centros poblados pt"`| `"SGM"` | SGM | 2011 | wfs |
+|`"Municipios"`| `"IGM"` | IGM | 2011 | wfs |
 |`"Asentamientos irregulares"`| `"PMB"` | MIDES | 2014 | wfs |
 |`"Balnearios"`| `"MTOP"` | MTOP |  2017 | wfs |
 |`"Cursos de agua navegables y flotables"` | `"MTOP"` | MTOP | 2019 | wfs |
