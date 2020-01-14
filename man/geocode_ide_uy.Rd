@@ -7,10 +7,10 @@
 geocode_ide_uy(x)
 }
 \arguments{
-\item{x}{Dataframe with unless 3 variables: dpto = correspondiente al departamento, loc = a localidad, dir = a la direcciónDefaults to ech.}
+\item{x}{Dataframe with unless 3 variables: dpto = corresponding to the department, loc = city / location, dir = to the address.}
 }
 \value{
-The DafaFrame x with the coordinates variables append (x adn y)
+The DafaFrame x with the coordinates variables append (x and y)
 }
 \description{
 A function to geocoding directions using IDE_uy

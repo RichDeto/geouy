@@ -1,7 +1,7 @@
 #' A function to geocoding directions using IDE_uy
-#' @param x Dataframe with unless 3 variables: dpto = correspondiente al departamento, loc = a localidad, dir = a la direcciónDefaults to ech.
+#' @param x Dataframe with unless 3 variables: dpto = corresponding to the department, loc = city / location, dir = to the address.
 #' @keywords geocoding IDE_uy
-#' @return The DafaFrame x with the coordinates variables append (x adn y)
+#' @return The DafaFrame x with the coordinates variables append (x and y)
 #' @importFrom dplyr mutate filter %>%
 #' @importFrom stringr str_sub str_locate str_trim
 #' @export

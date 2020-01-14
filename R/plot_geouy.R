@@ -3,7 +3,7 @@
 #' This function allows you to set ggplot2 theme in our suggested format.
 #' @param x An sf object like load_geouy() results
 #' @param a Variable of "x" to plot
-#' @param ... All parameters aviables from ggplot2 themes.
+#' @param ... All parameters allowed from ggplot2 themes.
 #' @keywords ggplot2 sf maps
 #' @export
 #' @import ggplot2 ggthemes 

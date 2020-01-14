@@ -7,7 +7,7 @@
 load_geouy(c, crs = 32721)
 }
 \arguments{
-\item{c}{Define the geometries to download: may be: "Departamentos", "Secciones", "Zonas", etc. View(metadta) for details.}
+\item{c}{Define the geometries to download: may be: "Departamentos", "Secciones", "Zonas", etc. View(metadata) for details.}
 
 \item{crs}{Define the Coordinate Reference Systems you want the output, default 32721}
 }

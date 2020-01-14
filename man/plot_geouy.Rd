@@ -11,7 +11,7 @@ plot_geouy(x, a, ...)
 
 \item{a}{Variable of "x" to plot}
 
-\item{...}{All parameters aviables from ggplot2 themes.}
+\item{...}{All parameters allowed from ggplot2 themes.}
 }
 \description{
 This function allows you to set ggplot2 theme in our suggested format.
