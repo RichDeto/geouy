@@ -12,6 +12,8 @@
 #' plot_geouy
 
 plot_geouy <- function(x, a, ...){
+  # stopifnot(is.sf(x))
+  # stopifnot(a %in% colnames(x))
   ggplot(x) +
     geom_sf(aes(fill = a)) + theme(base_size = 16, base_family = "",
                              axis.line = element_blank(),
