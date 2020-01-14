@@ -19,7 +19,7 @@ Authors@R:
         person(family = "Instituto Nacional de Estadística, Uruguay (INE)",
                 role = "dtc"),
         person(family = "Instituto Geográfico Militar, Uruguay (IGM)",
-                role = "dtc")),
+                role = "dtc"))
 Description: The toolbox have functions to load and process geographic information for Uruguay. 
         And extra-function to geocode directions through the IDEUy API.
 BugReports: https://github.com/RichDeto/geouy/issues
