@@ -4,3 +4,4 @@
 ^\.Rprofile$
 ^data-raw$
 ^CRAN-RELEASE$
+^cran-comments\.md$
