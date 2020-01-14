@@ -16,8 +16,10 @@ The DafaFrame x with the coordinates variables append (x and y)
 A function to geocoding directions using IDE_uy
 }
 \examples{
+\dontrun{
 # x <- data.frame(cbind(dpto="Montevideo",loc="Montevideo",dir="Av. 18 de julio 1453"))
 # geocode_ide_uy(x)
+}
 }
 \keyword{IDE_uy}
 \keyword{geocoding}

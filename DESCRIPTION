@@ -1,6 +1,6 @@
 Package: geouy
 Type: Package
-Title: Toolbox for geographic information for Uruguay
+Title: Toolbox for Geographic Information for Uruguay
 Version: 0.1.0
 Authors@R: 
         c(person(given = "Richard",
@@ -8,10 +8,18 @@ Authors@R:
            role = c("aut", "cre"),
            email = "richard.detomasi@gmail.com",
            comment = c(ORCID = "0000-0002-6725-0261")),
+        person(family = "Ministerio de Desarrollo Social, Uruguay (MIDES)",
+                role = "dtc"),
         person(family = "Infraestrutura de Datos Espaciales, Uruguay (IDEUy)",
                 role = "dtc"),
-        person(family = "Ministerio de Desarrollo Social, Uruguay (MIDES)",
-                role = c("dtc", "cph")))
+        person(family = "Servicio Geográfico Militar, Uruguay (SGM)",
+                role = "dtc"),
+        person(family = "Ministerio de Transporte y Obras Públicas, Uruguay (MTOP)",
+                role = "dtc"),
+        person(family = "Instituto Nacional de Estadística, Uruguay (INE)",
+                role = "dtc"),
+        person(family = "Instituto Geográfico Militar, Uruguay (IGM)",
+                role = "dtc")),
 Description: The toolbox have functions to load and process geographic information for Uruguay. 
         And extra-function to geocode directions through the IDEUy API.
 BugReports: https://github.com/RichDeto/geouy/issues

@@ -6,7 +6,9 @@
 #' @importFrom dplyr filter %>%
 #' @export
 #' @examples
+#'\dontrun{
 #' secc <- load_geouy(c = "Secciones")
+#'}
 
 load_geouy <- function(c, crs = 32721){
   x <- geouy::metadata 

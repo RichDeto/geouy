@@ -1,6 +1,5 @@
 ## Test enviroments
-
-* Ubuntu Linux 16.04 LTS, R-release, GCC
+* Ubuntu Linux 18.04, R-release
 * Windows 7 Professional (x64), R 3.4.3
 * Rhub
   * Ubuntu Linux 16.04 LTS, R-release, GCC

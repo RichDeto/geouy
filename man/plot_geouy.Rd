@@ -17,7 +17,9 @@ plot_geouy(x, a, ...)
 This function allows you to set ggplot2 theme in our suggested format.
 }
 \examples{
+\dontrun{
 plot_geouy
+}
 }
 \keyword{ggplot2}
 \keyword{maps}

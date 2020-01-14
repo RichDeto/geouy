@@ -9,7 +9,9 @@
 #' @import ggplot2 ggthemes 
 #' @importFrom  ggsn north scalebar
 #' @examples
+#'\dontrun{
 #' plot_geouy
+#'}
 
 plot_geouy <- function(x, a, ...){
   # stopifnot(is.sf(x))

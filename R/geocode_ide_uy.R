@@ -6,8 +6,10 @@
 #' @importFrom stringr str_sub str_locate str_trim
 #' @export
 #' @examples
+#'\dontrun{
 #' # x <- data.frame(cbind(dpto="Montevideo",loc="Montevideo",dir="Av. 18 de julio 1453"))
 #' # geocode_ide_uy(x)
+#'}
 
 geocode_ide_uy <- function(x) {
   stopifnot(is.data.frame(x))
