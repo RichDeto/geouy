@@ -9,7 +9,7 @@ plot_geouy(x, a, ...)
 \arguments{
 \item{x}{An sf object like load_geouy() results}
 
-\item{a}{Variable of "x" to plot}
+\item{a}{Variable of "x" to plot (character)}
 
 \item{...}{All parameters allowed from ggplot2 themes.}
 }
@@ -18,7 +18,7 @@ This function allows you to set ggplot2 theme in our suggested format.
 }
 \examples{
 \dontrun{
-plot_geouy
+plot_geouy(load_geouy("Secciones"),"AREA")
 }
 }
 \keyword{ggplot2}
