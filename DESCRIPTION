@@ -3,8 +3,11 @@ Type: Package
 Title: Toolbox for Geographic Information for Uruguay
 Version: 0.1.0
 Authors@R: c(
-	      person(given = "Richard", family = "Detomasi", email = "richard.detomasi@gmail.com",
-	      role = c("aut", "cre"), comment = c(ORCID = "0000-0002-6725-0261")),
+	      person(given = "Richard", 
+	            family = "Detomasi", 
+	            email = "richard.detomasi@gmail.com",
+	            role = c("aut", "cre"), 
+	            comment = c(ORCID = "0000-0002-6725-0261")),
         person(family = "Ministerio de Desarrollo Social, Uruguay (MIDES)", role = "dtc"),
         person(family = "Infraestrutura de Datos Espaciales, Uruguay (IDE)", role = "dtc"),
         person(family = "Servicio Geográfico Militar, Uruguay (SGM)", role = "dtc"),
@@ -12,6 +15,7 @@ Authors@R: c(
         person(family = "Instituto Nacional de Estadística, Uruguay (INE)", role = "dtc"),
         person(family = "Instituto Geográfico Militar, Uruguay (IGM)", role = "dtc")
 	      )
+Maintainer: Richard Detomasi <richard.detomasi@gmail.com>
 Description: The toolbox have functions to load and process geographic information for Uruguay. 
         And extra-function to get address coordinates through the uruguayan IDE API.
 BugReports: https://github.com/RichDeto/geouy/issues
