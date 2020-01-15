@@ -26,4 +26,3 @@ And the following functions:
   * `load_geouy()`    
   * `geocode_ide_uy()`    
   * `plot_geouy()`
-
