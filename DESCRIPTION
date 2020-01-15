@@ -23,7 +23,7 @@ Authors@R:
 Description: The toolbox have functions to load and process geographic information for Uruguay. 
         And extra-function to geocode directions through the IDEUy API.
 BugReports: https://github.com/RichDeto/geouy/issues
-License: GPL-3 + file LICENSE
+License: GPL-3
 Depends: R (>= 3.4.0)
 Encoding: UTF-8
 LazyData: true
