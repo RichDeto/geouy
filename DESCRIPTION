@@ -1,7 +1,7 @@
 Package: geouy
 Type: Package
 Title: Toolbox for Geographic Information for Uruguay
-Version: 0.1.0
+Version: 0.1.01
 Authors@R: c(
 	      person(given = "Richard", 
 	            family = "Detomasi", 

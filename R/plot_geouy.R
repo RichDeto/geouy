@@ -2,22 +2,22 @@
 #'
 #' This function allows you to set ggplot2 theme in our suggested format.
 #' @param x An sf object like load_geouy() results
-#' @param a Variable of "x" to plot
+#' @param a Variable of "x" to plot (character)
 #' @param ... All parameters allowed from ggplot2 themes.
 #' @keywords ggplot2 sf maps
 #' @export
-#' @import ggplot2 ggthemes 
+#' @import ggplot2 ggthemes
+#' @importFrom dplyr enquo 
 #' @importFrom  ggsn north scalebar
 #' @examples
 #'\dontrun{
-#' plot_geouy
+#' plot_geouy(load_geouy("Secciones"),"AREA")
 #'}
 
 plot_geouy <- function(x, a, ...){
-  # stopifnot(is.sf(x))
-  # stopifnot(a %in% colnames(x))
+  a <- enquo(a)
   ggplot(x) +
-    geom_sf(aes(fill = a)) + theme(base_size = 16, base_family = "",
+    geom_sf(aes(fill = !! a)) + theme(base_size = 16, base_family = "",
                              axis.line = element_blank(),
                              axis.text.x = element_blank(),
                              axis.text.y = element_blank(),
@@ -32,46 +32,3 @@ plot_geouy <- function(x, a, ...){
     ggsn::north(x, location = "bottomleft", symbol = 3) +
     ggsn::scalebar(x, dist = 50, dist_unit = "km", transform = T, model = "WGS84")
 }
-
-# Ver de mejorar con https://flovv.github.io/unicorn_ggplot_theme/
-# theme_ech <- function(base_size = 12, font = NA){
-#
-#   txt <- element_text(size = base_size + 2, colour = "black", face = "plain")
-#   bold_txt <- element_text(size = base_size + 2, colour = "black", face = "bold")
-#
-#   theme_classic(base_size = base_size, base_family = font) +
-#     theme(
-#       ###### clean up!
-#       legend.key = element_blank(),
-#       strip.background = element_blank(),
-#       ########### text basics
-#       text = txt,
-#       plot.title = txt,
-#
-#       axis.title = txt,
-#       axis.text = txt,
-#
-#       legend.title = bold_txt,
-#       legend.text = txt ) +
-#
-#     ############## AXIS lines
-#     theme(
-#
-#       axis.line.y = element_line(colour = "pink", size = 1, linetype = "dashed"),
-#       axis.line.x = element_line(colour = "pink", size = 1.2, linetype = "dashed"),
-#       #### remove Tick marks
-#       axis.ticks=element_blank(),
-#
-#       ### legend  top and no title!
-#       legend.position = "top",
-#       legend.title = element_blank(),
-#       legend.key = element_rect(fill = "lightskyblue1", color = "lightskyblue1"),
-#       legend.background = element_rect(fill = "lightskyblue1", color = "pink", size = 0.5, linetype = "longdash"),
-#
-#       ## background
-#       plot.background = element_rect(fill = "lightskyblue1",colour = "pink",size = 0.5, linetype = "longdash")
-#     )
-# }
-
-
-
