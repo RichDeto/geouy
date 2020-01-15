@@ -15,15 +15,18 @@ Authors@R: c(
         person(family = "Instituto Nacional de Estadística, Uruguay (INE)", role = "dtc"),
         person(family = "Instituto Geográfico Militar, Uruguay (IGM)", role = "dtc")
 	      )
+Author: Richard Detomasi [aut, cre]
 Maintainer: Richard Detomasi <richard.detomasi@gmail.com>
 Description: The toolbox have functions to load and process geographic information for Uruguay. 
         And extra-function to get address coordinates through the uruguayan IDE API.
 BugReports: https://github.com/RichDeto/geouy/issues
 License: GPL-3
 Depends: R (>= 3.4.0)
+Language: en, es
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.0.2
+SystemRequirements: GDAL (>= 2.0.0), GEOS (>= 3.3.0), PROJ.4 (>= 4.8.0)
 Imports:
 	dplyr,
 	stringr,
