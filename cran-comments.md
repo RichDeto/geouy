@@ -5,6 +5,7 @@ This is a resubmission. In this version I have:
 * More clearly identified the roles in the DESCRIPTION
 * Put the cran-comments.md in .Rbuildignore
 * And add \dontrun{} to the examples for the elapsed time notes
+* Verified that the errors in ubuntu and fedora correspond to external libraries of the sf package, documented in DESCRIPTION in the SystemRequirements section, in addition to what was already included in the README file
 
 ## Test enviroments
 * Ubuntu Linux 18.04, R-release
