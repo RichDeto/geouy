@@ -4,6 +4,7 @@
 [![Travis build status](https://travis-ci.org/RichDeto/geouy.svg?branch=master)](https://travis-ci.org/RichDeto/geouy)
 [![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/RichDeto/geouy?branch=master&svg=true)](https://ci.appveyor.com/project/RichDeto/geouy)
 [![Launch binder](http://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/RichDeto/geouy/master)
+[![Codecov test coverage](https://codecov.io/gh/RichDeto/geouy/branch/master/graph/badge.svg)](https://codecov.io/gh/RichDeto/geouy?branch=master)
 <!-- badges: end -->
 
 **geouy** is an R package that allows users to easily access official spatial data sets of Uruguay. The package includes a wide range of geospatial datasets as *simple features* (`sf`), available at various geographic scales and for various years with harmonized attributes and projection (see detailed list below).

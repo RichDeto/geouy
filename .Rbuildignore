@@ -8,3 +8,4 @@
 ^LICENSE\.md$
 ^\.travis\.yml$
 ^appveyor\.yml$
+^codecov\.yml$
