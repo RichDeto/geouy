@@ -1,7 +1,7 @@
 # geouy <img align="right" src="man/figures/geouy_logo_a.png" alt="logo" width="160"> <img align="right" src="man/figures/geouy_logo_b.png" alt="logo" width="160">
 
 <!-- badges: start -->
-  [![Travis build status](https://travis-ci.org/RichDeto/GeoUy.svg?branch=master)](https://travis-ci.org/RichDeto/GeoUy)
+[![Travis build status](https://travis-ci.org/RichDeto/GeoUy.svg?branch=master)](https://travis-ci.org/RichDeto/GeoUy)
 <!-- badges: end -->
 
 **geouy** is an R package that allows users to easily access official spatial data sets of Uruguay. The package includes a wide range of geospatial datasets as *simple features* (`sf`), available at various geographic scales and for various years with harmonized attributes and projection (see detailed list below).
@@ -35,14 +35,14 @@ secc <- load_geouy("Secciones")
 |`"Secciones"`| `"INE Censo"` | MIDES | 2011 | wfs |
 |`"Segmentos"`| `"INE Censo"` | MIDES | 2011 | wfs |
 |`"Zonas"`| `"INE Censo"` | MIDES | 2011 | wfs |
-|`"Localidades_pg"`| `"INE Censo"` | MIDES | 2011 | wfs |
+|`"Localidades pg"`| `"INE Censo"` | MIDES | 2011 | wfs |
 |`"Centros poblados pg"`| `"SGM"` | SGM | 2011 | wfs |
 |`"Centros poblados pt"`| `"SGM"` | SGM | 2011 | wfs |
 |`"Municipios"`| `"IGM"` | IGM | 2011 | wfs |
 |`"Asentamientos irregulares"`| `"PMB"` | MIDES | 2014 | wfs |
 |`"Balnearios"`| `"MTOP"` | MTOP |  2017 | wfs |
 |`"Cursos de agua navegables y flotables"` | `"MTOP"` | MTOP | 2019 | wfs |
-|`"Lagunas públicas"` | `"MTOP"` | MTOP | 2019 |  wfs |
+|`"Lagunas publicas"` | `"MTOP"` | MTOP | 2019 |  wfs |
 |`"Rutas"` | `"IDE"` | MIDES | 2017 | wfs |
 |`"Calles"` | `"IDE - UTE - IM"` | MIDES | 2017 | wfs |
 |`"Peajes"` | `"MTOP"` | MTOP | 2019 | wfs |

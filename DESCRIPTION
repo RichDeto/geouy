@@ -35,8 +35,8 @@ Imports:
 	ggthemes,
 	ggsn
 Suggests:
-        knitr,
-        rmarkdown,
-        covr,
-        testthat,
-        sp (>= 1.2-4)
+    knitr,
+    rmarkdown,
+    covr,
+    testthat (>= 2.1.0),
+    sp (>= 1.2-4)
