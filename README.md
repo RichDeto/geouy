@@ -1,6 +1,7 @@
 # geouy <img align="right" src="man/figures/geouy_logo_a.png" alt="logo" width="160"> <img align="right" src="man/figures/geouy_logo_b.png" alt="logo" width="160">
 
 <!-- badges: start -->
+[![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 [![Travis build status](https://travis-ci.org/RichDeto/geouy.svg?branch=master)](https://travis-ci.org/RichDeto/geouy)
 [![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/RichDeto/geouy?branch=master&svg=true)](https://ci.appveyor.com/project/RichDeto/geouy)
 [![Launch binder](http://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/RichDeto/geouy/master)
