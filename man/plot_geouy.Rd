@@ -4,12 +4,14 @@
 \alias{plot_geouy}
 \title{A function to set ggplot2 theme in our suggested format}
 \usage{
-plot_geouy(x, a, ...)
+plot_geouy(x, a, viri_opt = "plasma", ...)
 }
 \arguments{
 \item{x}{An sf object like load_geouy() results}
 
 \item{a}{Variable of "x" to plot (character)}
+
+\item{viri_opt}{A character string indicating the colormap option to use. Four options are available: "magma" (or "A"), "inferno" (or "B"), "plasma" (or "C"), "viridis" (or "D", the default option) and "cividis" (or "E")}
 
 \item{...}{All parameters allowed from ggplot2 themes.}
 }
@@ -18,7 +20,8 @@ This function allows you to set ggplot2 theme in our suggested format.
 }
 \examples{
 \dontrun{
-plot_geouy(load_geouy("Secciones"),"AREA")
+secc <- load_geouy("Secciones")
+plot_geouy(x = secc, a = "AREA")
 }
 }
 \keyword{ggplot2}
