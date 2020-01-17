@@ -1,10 +1,18 @@
-test_that("connections working", {
-  expect_is(load_geouy("Secciones"), "sf")
-  expect_is(load_geouy("Rutas"), "sf")
-  expect_is(load_geouy("Peajes"), "sf")
-  expect_false(is.na(sf::st_crs(load_geouy("Secciones", crs = 4326))))
-  # expect_equal(round(geocode_ide_uy(data.frame(cbind(dpto="Montevideo",
-  #                                                    loc="Montevideo",
-  #                                                    dir="Av. 18 de julio 1453"), 
-  #                                              stringsAsFactors = F))[4], 0), -56)
+context("Testing metadata")
+
+test_that("structure it´s OK", {
+  x <- geouy::metadata
+  expect_equal(ncol(x), 7)
+  expect_is(x$capa, "character")
+  expect_is(x$productor, "character")
+  expect_is(x$repositor, "character")
+  expect_is(x$crs, "numeric")
+  expect_is(x$formato, "character")
+  expect_is(x$anio, "numeric")
+  expect_is(x$url, "character")
+})
+
+test_that("crs are normal", {
+  x <- geouy::metadata
+  expect_equal(length(unique(x$crs)), 2)
 })
