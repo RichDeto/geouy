@@ -17,8 +17,9 @@ A function to geocoding directions using IDE_uy
 }
 \examples{
 \dontrun{
-# x <- data.frame(cbind(dpto="Montevideo",loc="Montevideo",dir="Av. 18 de julio 1453"))
-# geocode_ide_uy(x)
+# x1 <- cbind(dpto="Montevideo",loc="Montevideo",dir="Av. 18 de julio 1453")
+# x2 <- data.frame(x1, stringsAsFactors = F)
+# geocode_ide_uy(x2)
 }
 }
 \keyword{IDE_uy}

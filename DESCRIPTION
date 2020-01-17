@@ -28,6 +28,7 @@ RoxygenNote: 7.0.2
 SystemRequirements: GDAL (>= 2.0.0), GEOS (>= 3.3.0), PROJ.4 (>= 4.8.0)
 Imports:
 	rlang,
+	xml2,
 	dplyr,
 	stringr,
 	magrittr,
