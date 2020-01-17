@@ -12,9 +12,7 @@
 
 load_geouy <- function(c, crs = 32721){
   x <- geouy::metadata 
-  if (!c %in% x$capa) {
-    stop("The name of the geometry you will load is not correct. Verify in the metadata file")
-  }
+  try(if (!c %in% x$capa) stop("The name of the geometry you will load is not correct. Verify in the metadata file"))
   x <- x[x$capa == c,]
   if (x$repositor %in% "SGM") {
     a <- st_read("WFS:http://geoservicios.sgm.gub.uy/wfsPCN1000.cgi?",x$url, crs = x$crs)
