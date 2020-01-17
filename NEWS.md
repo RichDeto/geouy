@@ -1,6 +1,13 @@
 # log history of geouy package development
 
 -------------------------------------------------------
+## geouy v0.1.3 (2020-01-17)
+
+  * Change readLines for xml2::read_html in geocode_ide_uy()
+  * Incorporate Viridis colors to plot_geouy()
+  * Added testthat function to all functions   
+
+
 ## geouy v0.1.1 (2020-01-15)
 
   * After first release of it to CRAN R, details were corrected in the package documentation
