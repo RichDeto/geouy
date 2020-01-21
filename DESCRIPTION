@@ -35,7 +35,8 @@ Imports:
 	sf, 
 	ggplot2,
 	ggthemes,
-	ggsn
+	ggsn,
+	methods
 Suggests:
     knitr,
     rmarkdown,

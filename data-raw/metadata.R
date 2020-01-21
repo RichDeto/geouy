@@ -1,49 +1,67 @@
 library(magrittr); library(dplyr)
 
 metadata <- data.frame(
-        rbind(c("Areas administrativas", "SGM", "SGM", 4326, "wfs", 2011, "polnbda_ury"),
-              c("Departamentos", "IGM", "IGM", 4326, "wfs", 2011,
-                 "WFS:https://srvgis.igm.gub.uy/arcgis/services/LimiteDepartamental_wfs_250000/MapServer/WFSServer"),
-              # c("Departamentos", "IDE", "MIDES", 32721, "wfs", 2011,
-              #   "https://testmapas.mides.gub.uy/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=IDE:Departamentos%20UY"),
+        rbind(c("Areas administrativas", "SGM", "SGM", 4326, "wfs", 2011, "polnbda_ury", NA, NA),
+              c("Limites departamentales", "IGM", "IGM", 4326, "wfs", 2011,
+                 "WFS:https://srvgis.igm.gub.uy/arcgis/services/LimiteDepartamental_wfs_250000/MapServer/WFSServer",
+                "GLOBALID", "DEPTO"),
+              c("Departamentos", "IDE", "MIDES", 32721, "wfs", 2011,
+                "https://mapas.mides.gub.uy/geoserver/IDE/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=IDE:departamentos",
+                "uruguay_", "nombre"),
               c("Secciones", "INE", "MIDES", 32721, "wfs", 2011,
-                "https://mapas.mides.gub.uy:443/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=INECenso:Secciones"),
+                "https://mapas.mides.gub.uy:443/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=INECenso:Secciones",
+                "CODSEC","SEGMENTO"),
               c("Segmentos", "INE", "MIDES", 32721, "wfs", 2011,
-                "https://mapas.mides.gub.uy/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=INECenso:Segmentos"),
+                "https://mapas.mides.gub.uy/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=INECenso:Segmentos",
+                "CODSEG","SEGMENTO"),
               c("Zonas", "INE", "MIDES", 32721, "wfs", 2011,
-                "https://mapas.mides.gub.uy/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=INECenso:Zonas"),
+                "https://mapas.mides.gub.uy/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=INECenso:Zonas",
+                "CODCOMP","ZONA"),
               c("Localidades_pg", "INE", "MIDES", 32721, "wfs", 2011,
-                "https://mapas.mides.gub.uy:443/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=INECenso:Localidades_pg"),
+                "https://mapas.mides.gub.uy:443/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=INECenso:Localidades_pg",
+                "CODLOC","NOMBLOC"),
               # c("Area urbanizada pg", "IGM", "IGM", 4326, "wfs", 2011,
               #   "WFS:https://srvgis.igm.gub.uy/arcgis/services/AreaUrbanizada_wfs_20000/MapServer/WFSServer"),
               # c("Area urbanizada pt", "IGM", "IGM", 4326, "wfs", 2011,
               # "WFS:https://srvgis.igm.gub.uy/arcgis/services/AreaUrbanizadaP_wfs_10000/MapServer/WFSServer"),
-              c("Centros poblados pg", "SGM", "SGM", 4326, "wfs", 2011, "builtupa"),
-              c("Centros poblados pt", "SGM", "SGM", 4326, "wfs", 2011, "builtupp"),
+              c("Centros poblados pg", "SGM", "SGM", 4326, "wfs", 2011, "builtupa", "gml_id", "nam"),
+              c("Centros poblados pt", "SGM", "SGM", 4326, "wfs", 2011, "builtupp", "gml_id", "nam"),
               c("Municipios", "IGM", "IGM", 4326, "wfs", 2011,
-                "WFS:https://srvgis.igm.gub.uy/arcgis/services/LimitesMunicipales_wfs_250000/MapServer/WFSServer"),
+                "WFS:https://srvgis.igm.gub.uy/arcgis/services/LimitesMunicipales_wfs_250000/MapServer/WFSServer",
+                "OBJECTID_1", "NOMBRE"),
               c("Asentamientos irregulares", "PMB", "MIDES", 32721, "wfs", 2014,
-                "https://mapas.mides.gub.uy:443/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=IDE:ai_pmb_2014"),
+                "https://mapas.mides.gub.uy:443/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=IDE:ai_pmb_2014",
+                "cod_ast", "nom_ast"),
+              c("Barrios", "INE", "MIDES", 32721, "wfs", 2011,
+                "https://mapas.mides.gub.uy/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=IDE:barrios_ine_uy",
+                "nrobarrio", "nombbarr"),
               c("Balnearios", "MTOP", "MTOP", 4326, "wfs", 2017,
-                "https://geoservicios.mtop.gub.uy/geoserver/mb_planos/v_balnearios/ows?service=WFS&request=GetFeature&typeName=v_balnearios"),
+                "https://geoservicios.mtop.gub.uy/geoserver/mb_planos/v_balnearios/ows?service=WFS&request=GetFeature&typeName=v_balnearios",
+                "id", "balneario"),
               c("Cursos de agua navegables y flotables", "MTOP", "MTOP", 32721, "wfs", 2019,
-                "https://geoservicios.mtop.gub.uy/geoserver/rec_hidrograficos/cursos_nav_flot/ows?service=WFS&request=GetFeature&typeName=cursos_nav_flot"),
-              c("Lagunas públicas", "MTOP", "MTOP", 32721, "wfs", 2019,
-                "https://geoservicios.mtop.gub.uy/geoserver/rec_hidrograficos/lagunas_publicas/ows?service=WFS&request=GetFeature&typeName=lagunas_publicas"),
+                "https://geoservicios.mtop.gub.uy/geoserver/rec_hidrograficos/cursos_nav_flot/ows?service=WFS&request=GetFeature&typeName=cursos_nav_flot", 
+                "gml_id", "nombre"),
+              c("Lagunas publicas", "MTOP", "MTOP", 32721, "wfs", 2019,
+                "https://geoservicios.mtop.gub.uy/geoserver/rec_hidrograficos/lagunas_publicas/ows?service=WFS&request=GetFeature&typeName=lagunas_publicas",
+                "gml_id", "nam"),
               c("Rutas", "IDE", "MIDES", 32721, "wfs", 2017,
-                "https://testmapas.mides.gub.uy/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=IDE:Carreteras%20Uruguay"),
+                "https://testmapas.mides.gub.uy/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=IDE:Carreteras%20Uruguay",
+                "numero", "nombre"),
               c("Calles", "IDE - UTE - IM", "MIDES", 32721, "wfs", 2017,
-                "https://mapas.mides.gub.uy/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=IDE:EjesUruguayUTE,IDE:EjesMontevideoIM"),
+                "https://mapas.mides.gub.uy/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=IDE:EjesUruguayUTE,IDE:EjesMontevideoIM",
+                "id", "nombre"),
               c("Peajes", "MTOP", "MTOP", 4326, "wfs", 2019,
-                "https://geoservicios.mtop.gub.uy/geoserver/inf_tte_ttelog_terrestre/peajes/ows?service=WFS&request=GetFeature&typeName=peajes"),
+                "https://geoservicios.mtop.gub.uy/geoserver/inf_tte_ttelog_terrestre/peajes/ows?service=WFS&request=GetFeature&typeName=peajes",
+                "gml_id", "nombre"),
               c("Postes Kilometros", "MTOP", "MTOP", 32721, "wfs", 2019,
-                "https://geoservicios.mtop.gub.uy/geoserver/inf_tte_ttelog_terrestre/postes_km/ows?service=WFS&request=GetFeature&typeName=postes_km")
+                "https://geoservicios.mtop.gub.uy/geoserver/inf_tte_ttelog_terrestre/postes_km/ows?service=WFS&request=GetFeature&typeName=postes_km",
+                NA,NA)
               
         ), stringsAsFactors = FALSE)
 
-names(metadata) <- c("capa","productor","repositor","crs","formato","anio","url")
+names(metadata) <- c("capa","productor","repositor","crs","formato","anio","url","cod","name")
 metadata %<>% mutate(crs = as.numeric(crs), anio = as.numeric(anio))
-saveRDS(metadata,"data-raw/metadata.Rds")
+# saveRDS(metadata,"data-raw/metadata.Rds")
 usethis::use_data(metadata, overwrite = TRUE)
 
 
@@ -53,18 +71,4 @@ usethis::use_data(metadata, overwrite = TRUE)
 # tabla_dpto <- "http://www.ine.gub.uy/c/document_library/get_file?uuid=ea589aff-9d59-46d3-b2b8-4f8453304226&groupId=10181"
 # tabla_loc2004 <- "http://www.ine.gub.uy/c/document_library/get_file?uuid=e04efafe-5d01-4497-a2af-12c9441e6b63&groupId=10181"
 # tabla_loc2011 <- RODBC::odbcConnectDbase(download.file("http://www.ine.gub.uy/c/document_library/get_file?uuid=655d0e02-f451-4eaf-bef0-949fdc4898f3&groupId=10181", destfile = "temp.dbf"))
-# foreign::read.dbf(download.file("http://www.ine.gub.uy/c/document_library/get_file?uuid=655d0e02-f451-4eaf-bef0-949fdc4898f3&groupId=10181", destfile = "temp.dbf"))
-#
-# library(gdalUtils)
-# library(rgdal)
-# dsn_im <- "http://geoweb.montevideo.gub.uy/geoserver/ide/ows"
-# dsn_sgm <- "http://www.igm.gub.uy/arcgis/services/LimiteDepartamental_wfs_250000/MapServer/WFSServer?"
-# dsn_mvotma <- "WFS:http://sit.mvotma.gub.uy/ArcGIS/services/OGC/OGC_cobertura/MapServer/WFSServer?"
-# ogrinfo(dsn, so = TRUE)
-# ogr2ogr(dsn, # the input source,
-#         "OGC_OGC_cobertura:Cobertura_del_Suelo_2015.gpkg",
-#         "OGC_OGC_cobertura:Cobertura_del_Suelo_2015" # the layer from the input
-# )
-
-
 
