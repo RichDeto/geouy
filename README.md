@@ -35,7 +35,8 @@ secc <- load_geouy("Secciones")
 | Layer | Productor | Server | Year | Format |
 |-----|-----|-----|-----|-----|
 |`"Areas administrativas"`| `"SGM"` | SGM | 2011 | wfs |
-|`"Departamentos"`| `"IGM"` | IGM | 2011 | wfs |
+|`"Limites departamentales"`| `"IGM"` | IGM | 2011 | wfs |
+|`"Departamentos"`| `"IDE"` | MIDES | 2011 | wfs |
 |`"Secciones"`| `"INE Censo"` | MIDES | 2011 | wfs |
 |`"Segmentos"`| `"INE Censo"` | MIDES | 2011 | wfs |
 |`"Zonas"`| `"INE Censo"` | MIDES | 2011 | wfs |
@@ -44,6 +45,7 @@ secc <- load_geouy("Secciones")
 |`"Centros poblados pt"`| `"SGM"` | SGM | 2011 | wfs |
 |`"Municipios"`| `"IGM"` | IGM | 2011 | wfs |
 |`"Asentamientos irregulares"`| `"PMB"` | MIDES | 2014 | wfs |
+|`"Barrios"` | `"INE"` | MIDES | 2011 | wfs |
 |`"Balnearios"`| `"MTOP"` | MTOP |  2017 | wfs |
 |`"Cursos de agua navegables y flotables"` | `"MTOP"` | MTOP | 2019 | wfs |
 |`"Lagunas publicas"` | `"MTOP"` | MTOP | 2019 |  wfs |
@@ -60,7 +62,8 @@ secc <- load_geouy("Secciones")
 |-----|-----|
 |`geocode_ide_uy`| Allows geocoding directions using IDE_uy  |
 |`plot_geouy`| Plot a variable of your sf object with north and scale, set on a simple theme | 
-| ... | ... | ... | 
+|`which_uy` | Add to an "sf" object its spatial coincidence with one or more administrative units in Uruguay, generating the corresponding variables. | 
+| ... | ... | 
 
 ## History
 
