@@ -11,4 +11,5 @@ after_success:
   - Rscript -e 'covr::codecov()'
 os:
   - linux
+Comment:
   - osx
