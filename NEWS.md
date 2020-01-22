@@ -1,6 +1,12 @@
 # log history of geouy package development
 
 -------------------------------------------------------
+## geouy v0.1.4 (2020-01-22)
+
+ * New function `which_uy()` which allows to add to an "sf" object its spatial coincidence with one or more administrative units in Uruguay, generating the corresponding variables.
+ * Added in metadata the links to "Departamentos" and "Barrios" of the INE, renaming "Departamentos" from IGM to "Limites departamentales"
+ * testthat for the new function.
+
 ## geouy v0.1.3 (2020-01-17)
 
   * Change readLines for xml2::read_html in geocode_ide_uy()
