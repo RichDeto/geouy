@@ -1,0 +1,76 @@
+---
+title: "Ejemplo de uso del paquete `geouy`"
+author: Richard Detomasi
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Ejemplo de uso del paquete `geouy`}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+
+El paquete `geouy` tiene como objetivo facilitar el trabajo de les usuaries que trabajen con los datos geográficos de Uruguay, y este tutorial busca ejemplificar el uso de las funciones del paquete.
+
+## Instalación
+
+<!-- Para instalar la versión estable del paquete usar: -->
+
+<!-- ```{r eval=FALSE, message=FALSE, warning=FALSE, include=TRUE} -->
+<!-- install.packages('geouy') -->
+<!-- ``` -->
+
+Para instalar la versión en desarrollo:
+
+```{r, eval=FALSE, message=FALSE, warning=FALSE, include=TRUE}
+# install.packages('devtools') si no tiene instalado devtools
+devtools::install_github("RichDeto/geouy")
+```
+
+Para activarla 
+
+```{r setup, message=FALSE, warning=FALSE, include=TRUE }
+library(geouy)
+```
+
+
+## Ejemplos de usos
+
+
+### Cargar geometrías
+
+Obtengamos como primer paso las geometrías de los peajes de Uruguay 
+
+
+```{r, message=FALSE, warning=FALSE, include=FALSE}
+p <- geouy::load_geouy("Peajes")
+```
+
+Por defecto me traerá estas geometrías en EPSG 32721 que es el CRS correspondiente a Uruguay, por lo que no lo especifico en el parámetro correspondiente.
+
+### Asignar codigos y nombres de otras geometrías
+
+Continuando con el ejemplo, asignemosle a los peajes, los códigos y nombres de departamentos correspondientes, utilizando la función `which_uy()` como se muestra a continuación 
+
+```{r, message=FALSE, warning=FALSE, include=FALSE}
+p_dep <- geouy::which_uy(p, "Departamentos")
+```
+
+NOTA: El segundo parámetro tiene que corresponder con un valor de `geouy::metadata$capa` para funcionar.
+
+### Goecodificación
+
+Ahora bien, tenemos algunas direcciones sin coordenadas, por lo que usaremos `geocode_ide_uy()`  
+
+```{r, message=FALSE, warning=FALSE, include=FALSE}
+
+
+```
+

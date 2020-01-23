@@ -27,6 +27,7 @@ which_uy <- function(x, c = c("Localidades_pg", "Departamentos"), d = c("cod", "
     for (j in 1:length(d)) {
       names(y2)[j] <- paste0(d[j], "_", i)
     }
+    y2$geometry <- NULL
     x <- st_join(x, y2)
   }
   return(x)
