@@ -12,7 +12,7 @@
 #' x <- which_uy(x, c = "Localidades_pg")
 #'}
 
-which_uy <- function(x, c = c("Localidades_pg", "Departamentos"), d = c("cod", "name")){
+which_uy <- function(x, c = c("Localidades pg", "Departamentos"), d = c("cod", "name")){
   md <- geouy::metadata 
   try(if (!is(x, "sf")) stop("The object you want to process is not class sf"))
   try(if (sum(!c %in% md$capa) > 0) stop("The name of the geometry you will load is not correct. Verify in the metadata file"))

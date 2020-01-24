@@ -38,9 +38,15 @@ secc <- load_geouy("Secciones")
 |`"Limites departamentales"`| `"IGM"` | IGM | 2011 | wfs |
 |`"Departamentos"`| `"IDE"` | MIDES | 2011 | wfs |
 |`"Secciones"`| `"INE Censo"` | MIDES | 2011 | wfs |
+|`"Secc MVD 2004"`| `"INE"` | MIDES | 2004 | wfs |
 |`"Segmentos"`| `"INE Censo"` | MIDES | 2011 | wfs |
+|`"Segm MVD 2004"`| `"INE"` | MIDES | 2004 | wfs |
+|`"Segm URB INT 2004"`| `"INE"` | MIDES | 2004 | wfs |
 |`"Zonas"`| `"INE Censo"` | MIDES | 2011 | wfs |
+|`"Zonas MVD 2004"`| `"INE"` | MIDES | 2004 | wfs |
+|`"Zonas URB INT 2004"`| `"INE"` | MIDES | 2004 | wfs |
 |`"Localidades pg"`| `"INE Censo"` | MIDES | 2011 | wfs |
+|`"Localidades pt"`| `"INE Censo"` | MIDES | 2011 | wfs |
 |`"Centros poblados pg"`| `"SGM"` | SGM | 2011 | wfs |
 |`"Centros poblados pt"`| `"SGM"` | SGM | 2011 | wfs |
 |`"Municipios"`| `"IGM"` | IGM | 2011 | wfs |

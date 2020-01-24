@@ -50,27 +50,34 @@ Obtengamos como primer paso las geometrías de los peajes de Uruguay
 
 
 ```{r, message=FALSE, warning=FALSE, include=FALSE}
-p <- geouy::load_geouy("Peajes")
+depor <- geouy::load_geouy("Instituciones deportivas")
 ```
 
 Por defecto me traerá estas geometrías en EPSG 32721 que es el CRS correspondiente a Uruguay, por lo que no lo especifico en el parámetro correspondiente.
 
-### Asignar codigos y nombres de otras geometrías
+### Goecodificación
 
-Continuando con el ejemplo, asignemosle a los peajes, los códigos y nombres de departamentos correspondientes, utilizando la función `which_uy()` como se muestra a continuación 
+Ahora bien, tenemos algunas direcciones de nuevas Instituciones sin coordenadas, por lo que usaremos `geocode_ide_uy()` para  geocodificarlas:
 
 ```{r, message=FALSE, warning=FALSE, include=FALSE}
-p_dep <- geouy::which_uy(p, "Departamentos")
+nuevas <- data.frame(cbind(dpto = c("Montevideo", "Salto"),
+                           loc = c("Montevideo", "Salto"),
+                           dir = c("Cebollati esq. Magallanes",
+                                   "15 de noviembre 1310")),
+                     stringsAsFactors = F)
+nuevas_geo <- geocode_ide_uy(nuevas)
+
+```
+
+
+### Asignar codigos y nombres de otras geometrías
+
+Continuando con el ejemplo, asignémosle a las `Instituciones deportivas`, los códigos y nombres de departamentos correspondientes, utilizando la función `which_uy()` como se muestra a continuación: 
+
+```{r, message=FALSE, warning=FALSE, include=FALSE}
+depor_dep <- geouy::which_uy(depor, "Departamentos")
 ```
 
 NOTA: El segundo parámetro tiene que corresponder con un valor de `geouy::metadata$capa` para funcionar.
 
-### Goecodificación
-
-Ahora bien, tenemos algunas direcciones sin coordenadas, por lo que usaremos `geocode_ide_uy()`  
-
-```{r, message=FALSE, warning=FALSE, include=FALSE}
-
-
-```
 
