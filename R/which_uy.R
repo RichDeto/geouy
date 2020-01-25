@@ -6,6 +6,7 @@
 #' @importFrom sf st_read st_transform st_join st_crs
 #' @importFrom dplyr filter %>% select
 #' @importFrom methods is
+#' @importFrom rlang .data
 #' @export
 #' @examples
 #'\donttest{
@@ -21,7 +22,7 @@ which_uy <- function(x, c = c("Localidades pg", "Departamentos"), d = c("cod", "
   for (i in c) {
     y <- geouy::load_geouy(i, crs = crs)
     md2 <- md %>% 
-      filter(capa == i) %>% 
+      filter(.data$capa == i) %>% 
       select(d)
     y2 <- y %>% select(as.character(md2))
     for (j in 1:length(d)) {
