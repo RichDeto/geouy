@@ -58,6 +58,7 @@ secc <- load_geouy("Secciones")
 |`"Rutas"` | `"IDE"` | MIDES | 2017 | wfs |
 |`"Calles"` | `"IDE - UTE - IM"` | MIDES | 2017 | wfs |
 |`"Peajes"` | `"MTOP"` | MTOP | 2019 | wfs |
+|`"Instituciones deportivas"` | `"IDE"` | MIDES | 2015 | wfs |
 |`"Postes Kilometros"` |`"MTOP"` | MTOP | 2019 | wfs |
  
 

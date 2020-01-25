@@ -1,5 +1,5 @@
-#' This function allows to add to an "sf" object its spatial coincidence with one or more administrative units in Uruguay, generating the corresponding variables.
-#' @param x An sf object with the same crs as the homonym parameter
+#' This function allows to add to an 'sf' object its spatial coincidence with one or more administrative units in Uruguay, generating the corresponding variables.
+#' @param x An 'sf' object with the same crs as the homonym parameter
 #' @param c Define the geometries to download: may be: "Departamentos", "Secciones", "Zonas", etc. View(metadata) for details.
 #' @param d Determines the variables to be added, with three options: "cod", "name", or "both". Default "both".
 #' @keywords IDE MIDES INE
@@ -8,7 +8,7 @@
 #' @importFrom methods is
 #' @export
 #' @examples
-#'\dontrun{
+#'\donttest{
 #' x <- which_uy(x, c = "Localidades_pg")
 #'}
 

@@ -6,7 +6,7 @@
 #' @importFrom dplyr filter %>%
 #' @export
 #' @examples
-#'\dontrun{
+#'\donttest{
 #' secc <- load_geouy(c = "Secciones")
 #'}
 

@@ -15,7 +15,7 @@ load_geouy(c, crs = 32721)
 This function allows you to take a object "sf" from MIDES server.
 }
 \examples{
-\dontrun{
+\donttest{
 secc <- load_geouy(c = "Secciones")
 }
 }

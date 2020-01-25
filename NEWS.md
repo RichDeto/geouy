@@ -1,6 +1,14 @@
 # log history of geouy package development
 
 -------------------------------------------------------
+## geouy v0.1.5 (2020-01-24)
+
+* omit the redundant part "Toolbox for" in your title.
+* web reference for the data source/used API in Description 
+* write package names, software names and API names in single quotes.
+* replace \dontrun{} by \donttest{} in Rd-files 
+* Added in metadata the links to "Secc MVD 2004", "Segm MVD 2004", "Segm URB INT 2004", "Zonas MVD 2004", "Zonas URB INT 2004", "Localidades pt", "Instituciones deportivas"
+
 ## geouy v0.1.4 (2020-01-22)
 
  * New function `which_uy()` which allows to add to an "sf" object its spatial coincidence with one or more administrative units in Uruguay, generating the corresponding variables.

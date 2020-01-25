@@ -2,22 +2,22 @@
 % Please edit documentation in R/which_uy.R
 \name{which_uy}
 \alias{which_uy}
-\title{This function allows to add to an "sf" object its spatial coincidence with one or more administrative units in Uruguay, generating the corresponding variables.}
+\title{This function allows to add to an 'sf' object its spatial coincidence with one or more administrative units in Uruguay, generating the corresponding variables.}
 \usage{
-which_uy(x, c = c("Localidades_pg", "Departamentos"), d = c("cod", "name"))
+which_uy(x, c = c("Localidades pg", "Departamentos"), d = c("cod", "name"))
 }
 \arguments{
-\item{x}{An sf object with the same crs as the homonym parameter}
+\item{x}{An 'sf' object with the same crs as the homonym parameter}
 
 \item{c}{Define the geometries to download: may be: "Departamentos", "Secciones", "Zonas", etc. View(metadata) for details.}
 
 \item{d}{Determines the variables to be added, with three options: "cod", "name", or "both". Default "both".}
 }
 \description{
-This function allows to add to an "sf" object its spatial coincidence with one or more administrative units in Uruguay, generating the corresponding variables.
+This function allows to add to an 'sf' object its spatial coincidence with one or more administrative units in Uruguay, generating the corresponding variables.
 }
 \examples{
-\dontrun{
+\donttest{
 x <- which_uy(x, c = "Localidades_pg")
 }
 }
