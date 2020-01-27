@@ -34,6 +34,7 @@ secc <- load_geouy("Secciones")
 
 | Layer | Productor | Server | Year | Format |
 |-----|-----|-----|-----|-----|
+|`"Uruguay"`| `"INE"` | MIDES | 2011 | wfs |
 |`"Areas administrativas"`| `"SGM"` | SGM | 2011 | wfs |
 |`"Limites departamentales"`| `"IGM"` | IGM | 2011 | wfs |
 |`"Departamentos"`| `"IDE"` | MIDES | 2011 | wfs |
