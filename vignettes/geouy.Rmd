@@ -37,6 +37,12 @@ devtools::install_github("RichDeto/geouy")
 Para activarla 
 
 ```{r setup, message=FALSE, warning=FALSE, include=TRUE }
+knitr::opts_chunk$set(
+	eval = FALSE,
+	message = FALSE,
+	warning = FALSE,
+	include = FALSE
+)
 library(geouy)
 ```
 
@@ -49,7 +55,7 @@ library(geouy)
 Obtengamos como primer paso las geometrías de los peajes de Uruguay 
 
 
-```{r, message=FALSE, warning=FALSE, include=FALSE}
+```{r eval=FALSE, message=FALSE, warning=FALSE, include=FALSE}
 depor <- geouy::load_geouy("Instituciones deportivas")
 ```
 
@@ -59,7 +65,7 @@ Por defecto me traerá estas geometrías en EPSG 32721 que es el CRS correspondi
 
 Ahora bien, tenemos algunas direcciones de nuevas Instituciones sin coordenadas, por lo que usaremos `geocode_ide_uy()` para  geocodificarlas:
 
-```{r, message=FALSE, warning=FALSE, include=FALSE}
+```{r eval=FALSE, message=FALSE, warning=FALSE, include=FALSE}
 nuevas <- data.frame(cbind(dpto = c("Montevideo", "Salto"),
                            loc = c("Montevideo", "Salto"),
                            dir = c("Cebollati esq. Magallanes",
@@ -74,7 +80,7 @@ nuevas_geo <- geocode_ide_uy(nuevas)
 
 Continuando con el ejemplo, asignémosle a las `Instituciones deportivas`, los códigos y nombres de departamentos correspondientes, utilizando la función `which_uy()` como se muestra a continuación: 
 
-```{r, message=FALSE, warning=FALSE, include=FALSE}
+```{r eval=FALSE, message=FALSE, warning=FALSE, include=FALSE}
 depor_dep <- geouy::which_uy(depor, "Departamentos")
 ```
 

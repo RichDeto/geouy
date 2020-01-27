@@ -19,7 +19,7 @@ plot_geouy(x, a, viri_opt = "plasma", ...)
 This function allows you to set ggplot2 theme in our suggested format.
 }
 \examples{
-\dontrun{
+\donttest{
 secc <- load_geouy("Secciones")
 plot_geouy(x = secc, a = "AREA")
 }

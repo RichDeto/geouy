@@ -12,7 +12,7 @@
 #' @importFrom dplyr enquo 
 #' @importFrom  ggsn north scalebar
 #' @examples
-#' \dontrun{
+#' \donttest{
 #' secc <- load_geouy("Secciones")
 #' plot_geouy(x = secc, a = "AREA")
 #' }
