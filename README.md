@@ -71,6 +71,8 @@ secc <- load_geouy("Secciones")
 |`geocode_ide_uy`| Allows geocoding directions using IDE_uy  |
 |`plot_geouy`| Plot a variable of your sf object with north and scale, set on a simple theme | 
 |`which_uy` | Add to an "sf" object its spatial coincidence with one or more administrative units in Uruguay, generating the corresponding variables. | 
+|`is.uy4326`| Test if an 'sf' object match with Uruguay at crs = 4326 |
+|`is.uy32721`| Test if an 'sf' object match with Uruguay at crs = 32721  |
 | ... | ... | 
 
 ## History
