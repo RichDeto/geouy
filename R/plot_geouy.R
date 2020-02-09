@@ -6,6 +6,7 @@
 #' @param viri_opt A character string indicating the colormap option to use. Four options are available: "magma" (or "A"), "inferno" (or "B"), "plasma" (or "C"), "viridis" (or "D", the default option) and "cividis" (or "E")
 #' @param ... All parameters allowed from ggplot2 themes.
 #' @keywords ggplot2 sf maps
+#' @return ggplot object of a choropleth map with x geometries and a values.
 #' @export
 #' @import ggplot2 ggthemes
 #' @importFrom rlang sym quo_name

@@ -1,6 +1,12 @@
 # log history of geouy package development
 
 -------------------------------------------------------
+## geouy v0.1.6 (2020-02-09)
+
+* Add \value to .Rd files
+* Add all variables option to which_uy function
+* Complementary functions for the evaluation of typical Uruguayan CRS codes (4326 and 32721)
+
 ## geouy v0.1.5 (2020-01-24)
 
 * omit the redundant part "Toolbox for" in your title.

@@ -15,6 +15,9 @@ plot_geouy(x, a, viri_opt = "plasma", ...)
 
 \item{...}{All parameters allowed from ggplot2 themes.}
 }
+\value{
+ggplot object of a choropleth map with x geometries and a values.
+}
 \description{
 This function allows you to set ggplot2 theme in our suggested format.
 }

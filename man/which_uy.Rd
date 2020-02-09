@@ -11,14 +11,17 @@ which_uy(x, c = c("Localidades pg", "Departamentos"), d = c("cod", "name"))
 
 \item{c}{Define the geometries to download: may be: "Departamentos", "Secciones", "Zonas", etc. View(metadata) for details.}
 
-\item{d}{Determines the variables to be added, with three options: "cod", "name", or "both". Default "both".}
+\item{d}{A vector who determines the variables to be added, with three options: "cod", "name", or "full". Default c("cod", "name").}
+}
+\value{
+sf object with the x geometries, with d variables requested from c added
 }
 \description{
 This function allows to add to an 'sf' object its spatial coincidence with one or more administrative units in Uruguay, generating the corresponding variables.
 }
 \examples{
 \donttest{
-x <- which_uy(x, c = "Localidades_pg")
+x <- which_uy(x, c = "Localidades pg")
 }
 }
 \keyword{IDE}

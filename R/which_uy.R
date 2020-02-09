@@ -3,6 +3,7 @@
 #' @param c Define the geometries to download: may be: "Departamentos", "Secciones", "Zonas", etc. View(metadata) for details.
 #' @param d A vector who determines the variables to be added, with three options: "cod", "name", or "full". Default c("cod", "name").
 #' @keywords IDE MIDES INE
+#' @return sf object with the x geometries, with d variables requested from c added
 #' @importFrom sf st_read st_transform st_join st_crs
 #' @importFrom dplyr filter %>% select
 #' @importFrom methods is

@@ -1,6 +1,7 @@
 #' This function test if an 'sf' object match with Uruguay at crs = 4326.
 #' @param x An 'sf' object with the same crs as the homonym parameter
 #' @keywords CRS sf Uruguay
+#' @return logical value based in crs parameter of the sf object
 #' @importFrom sf st_join st_crs
 #' @export
 #' @examples
@@ -23,6 +24,7 @@ is.uy4326 <- function(x){
 #' This function test if an 'sf' object match with Uruguay at crs = 32721.
 #' @param x An 'sf' object with the same crs as the homonym parameter
 #' @keywords CRS sf Uruguay
+#' @return logical value based in crs parameter of the sf object
 #' @importFrom sf st_join st_crs
 #' @export
 #' @examples

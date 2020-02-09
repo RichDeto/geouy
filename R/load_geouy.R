@@ -1,7 +1,8 @@
-#' This function allows you to take a object "sf" from MIDES server.
+#' This function allows to take oficial uruguayan geometries, as object "sf", from various servers.
 #' @param c Define the geometries to download: may be: "Departamentos", "Secciones", "Zonas", etc. View(metadata) for details.
 #' @param crs Define the Coordinate Reference Systems you want the output, default 32721
 #' @keywords IDE MIDES INE
+#' @return sf object with the requested geometries 
 #' @importFrom sf st_read st_transform
 #' @importFrom dplyr filter %>%
 #' @export

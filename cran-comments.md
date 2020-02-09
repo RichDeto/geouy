@@ -1,4 +1,10 @@
 ## Resubmission
+This is a resubmission. In this version:
+  
+* Remove directed quotation marks in the DESCRIPTION file, except in the Description line for previus recomendations.
+* Add \value to .Rd files
+
+## Resubmission
 This is a resubmission. In this version I have:
 
 * omit the redundant part "Toolbox for" in your title.
