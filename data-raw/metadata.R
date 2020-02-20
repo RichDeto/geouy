@@ -79,8 +79,13 @@ metadata <- data.frame(
                 "gml_id", "nombre"),
               c("Postes Kilometros", "MTOP", "MTOP", 32721, "wfs", 2019,
                 "https://geoservicios.mtop.gub.uy/geoserver/inf_tte_ttelog_terrestre/postes_km/ows?service=WFS&request=GetFeature&typeName=postes_km",
-                NA,NA)
-              
+                NA,NA),
+              c("Grilla ortofotos urbana", "IDE", "IDE", 5381, "wfs", 2019,
+                "https://mapas.ide.uy/geoserver-raster/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=ortofotos:grilla_urbana",
+                "gml_id","nombre"),
+              c("Grilla ortofotos nacional", "IDE", "IDE", 5381, "wfs", 2019,
+                "https://mapas.ide.uy/geoserver-raster/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=ortofotos:grilla_nacional",
+                "gml_id","nombre")
         ), stringsAsFactors = FALSE)
 
 names(metadata) <- c("capa","productor","repositor","crs","formato","anio","url","cod","name")
