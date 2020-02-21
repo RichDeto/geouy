@@ -1,6 +1,9 @@
 context("Testing geocode")
 
 test_that("connection to IDE server working", {
+  skip_on_cran("IDEuy response time takes too long for testing times")
+  skip_on_appveyor("IDEuy response time takes too long for testing times")
+  skip_on_travis("IDEuy response time takes too long for testing times")
   x <- data.frame(cbind(dpto = "Montevideo",
                         loc = "Montevideo",
                         dir = "Av. 18 de julio 1453"),

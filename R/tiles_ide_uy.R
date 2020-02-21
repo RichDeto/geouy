@@ -1,7 +1,7 @@
 #' This function allows to Download .tif files from the IDEuy orthophotos repository, according to a 'sf' object bbox.
 #' @param x An 'sf' object with the same crs as the homonym parameter
 #' @keywords IDE orthophotos Uruguay
-#' @return sf object with the x geometries, with d variables requested from c added
+#' @return raster::stack object with th cropped tif corresponding to x bbox
 #' @importFrom sf st_join st_crs st_bbox
 #' @importFrom dplyr filter %>%
 #' @importFrom methods is
