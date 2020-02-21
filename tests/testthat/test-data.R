@@ -20,5 +20,5 @@ test_that("crs are normal", {
   skip_on_cran()
   
   x <- geouy::metadata
-  expect_equal(length(unique(x$crs)), 2)
+  expect_equal(length(unique(x$crs)), 3)
 })
