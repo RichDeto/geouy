@@ -1,7 +1,7 @@
 Package: geouy
 Type: Package
 Title: Geographic Information of Uruguay
-Version: 0.1.6
+Version: 0.1.7
 Authors@R: c(
 	      person(given = "Richard", 
 	      family = "Detomasi", 
@@ -17,7 +17,7 @@ Authors@R: c(
 	      )
 Maintainer: Richard Detomasi <richard.detomasi@gmail.com>
 Description: The toolbox have functions to load and process geographic information for Uruguay. 
-        And extra-function to get address coordinates through the uruguayan 'IDE' API <https://www.gub.uy/infraestructura-datos-espaciales/tramites-y-servicios/servicios/servicio-direcciones-geograficas>.
+        And extra-function to get address coordinates and orthophotos through the uruguayan 'IDE' API <https://www.gub.uy/infraestructura-datos-espaciales/tramites-y-servicios/servicios/servicio-direcciones-geograficas>.
 BugReports: https://github.com/RichDeto/geouy/issues
 License: GPL-3
 Depends: R (>= 3.4.0)
@@ -32,7 +32,8 @@ Imports:
 	dplyr,
 	stringr,
 	magrittr,
-	sf, 
+	sf,
+	raster,
 	ggplot2,
 	ggthemes,
 	ggsn,
