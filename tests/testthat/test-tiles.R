@@ -4,7 +4,6 @@ test_that("connection to IDE server working", {
   
   skip_on_cran() # "IDEuy response time takes too long for testing times"
   skip_on_appveyor()
-  skip_on_travis()
   
   x <- data.frame(cbind(dpto = "Montevideo",
                         loc = "Montevideo",
