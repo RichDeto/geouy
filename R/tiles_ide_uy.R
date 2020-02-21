@@ -15,16 +15,10 @@
 
 tiles_ide_uy <- function(x){
   try(if (!is(x, "sf")) stop("The object you want to process is not class sf"))
-  crs = sf::st_crs(x)
-  bb = sf::st_bbox(x) 
-  y <- geouy::load_geouy("Grilla ortofotos nacional", crs = crs)
-  y$geometry <- NULL
-  x2 <- sf::st_join(x, y) 
-  a <- raster::stack(paste0("https://visualizador.ide.uy/descargas/CN_Remesa_",
-                            stringr::str_pad(x2$remesa, 2, pad = "0"),
-                            "/02_Ortoimagenes/02_RGBI_8bits/", 
-                            as.character(x2$nombre) ,"_RGBI_8_Remesa_",
-                            stringr::str_pad(x2$remesa, 2, pad = "0"),".tif")) %>% 
-    raster::crop(bb)
+  crs = sf::st_crs(x); bb = sf::st_bbox(x) 
+  x2 <- geouy::load_geouy("Grilla ortofotos nacional", crs = crs) %>% sf::st_join(x, left = F) 
+  a <- raster::stack(paste0("https://visualizador.ide.uy/descargas/CN_Remesa_", stringr::str_pad(x2$remesa, 2, pad = "0"),
+                            "/02_Ortoimagenes/02_RGBI_8bits/", as.character(x2$nombre) ,"_RGBI_8_Remesa_",
+                            stringr::str_pad(x2$remesa, 2, pad = "0"),".tif")) %>% raster::crop(bb)
   return(a)
 }
