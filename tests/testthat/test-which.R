@@ -1,6 +1,9 @@
 context("Testing which_uy")
 library(dplyr);library(sf)
 test_that("crs parameter working", {
+  
+  skip_on_cran()
+  
   a <- load_geouy("Peajes")
   b <- which_uy(a,"Departamentos")
   c <- which_uy(b,"Secciones", d = c("full"))

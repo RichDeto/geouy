@@ -1,6 +1,9 @@
 context("Testing load_geouy")
 
 test_that("connections working", {
+  
+  skip_on_cran()
+  
   expect_is(load_geouy("Secciones"), "sf")
   expect_is(load_geouy("Rutas"), "sf")
   expect_is(load_geouy("Centros poblados pg"), "sf")

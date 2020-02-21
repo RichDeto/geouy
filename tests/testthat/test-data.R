@@ -1,6 +1,9 @@
 context("Testing metadata")
 
 test_that("structure it´s OK", {
+  
+  skip_on_cran()
+  
   x <- geouy::metadata
   expect_equal(ncol(x), 9)
   expect_is(x$capa, "character")
@@ -13,6 +16,9 @@ test_that("structure it´s OK", {
 })
 
 test_that("crs are normal", {
+  
+  skip_on_cran()
+  
   x <- geouy::metadata
   expect_equal(length(unique(x$crs)), 2)
 })
