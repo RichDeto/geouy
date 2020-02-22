@@ -3,6 +3,7 @@
 #' @keywords CRS sf Uruguay
 #' @return logical value based in crs parameter of the sf object
 #' @importFrom sf st_join st_crs
+#' @importFrom glue glue
 #' @export
 #' @examples
 #'\donttest{
@@ -18,7 +19,7 @@ is.uy4326 <- function(x){
   x1 <- sf::st_join(x, y, left = F)
   x2 <- (nrow(x1) / nrow(x)) * 100
   return(ifelse(x2 == 0, "Your object have not any geometry in Uruguay... Try 32721 or 5381",
-                paste0("Your object have ", x2, "% of matches with Ururguay CRS 4326")))
+                glue::glue("Your object have {x2}% of matches with Ururguay CRS 4326")))
 }
 
 #' This function test if an 'sf' object match with Uruguay at crs = 32721.
@@ -26,6 +27,7 @@ is.uy4326 <- function(x){
 #' @keywords CRS sf Uruguay
 #' @return logical value based in crs parameter of the sf object
 #' @importFrom sf st_join st_crs
+#' @importFrom glue glue
 #' @export
 #' @examples
 #'\donttest{
@@ -41,7 +43,7 @@ is.uy32721 <- function(x){
   x1 <- sf::st_join(x, y, left = F)
   x2 <- (nrow(x1) / nrow(x)) * 100
   return(ifelse(x2 == 0, "Your object have not any geometry in Uruguay... Try 4326 or 5381",
-                paste0("Your object have ", x2, "% of matches with Ururguay CRS 32721")))
+                glue::glue("Your object have {x2}% of matches with Ururguay CRS 32721")))
 }
 
 #' This function test if an 'sf' object match with Uruguay at crs = 5381.
@@ -49,6 +51,7 @@ is.uy32721 <- function(x){
 #' @keywords CRS sf Uruguay
 #' @return logical value based in crs parameter of the sf object
 #' @importFrom sf st_join st_crs
+#' @importFrom glue glue
 #' @export
 #' @examples
 #'\donttest{
@@ -64,5 +67,5 @@ is.uy5381 <- function(x){
   x1 <- sf::st_join(x, y, left = F)
   x2 <- (nrow(x1) / nrow(x)) * 100
   return(ifelse(x2 == 0, "Your object have not any geometry in Uruguay... Try 4326 or 32721",
-                paste0("Your object have ", x2, "% of matches with Ururguay CRS 5381")))
+                glue::glue("Your object have {x2}% of matches with Ururguay CRS 5381")))
 }

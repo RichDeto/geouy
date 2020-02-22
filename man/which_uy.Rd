@@ -4,8 +4,7 @@
 \alias{which_uy}
 \title{This function allows to add to an 'sf' object its spatial coincidence with one or more administrative units in Uruguay, generating the corresponding variables.}
 \usage{
-which_uy(x, c = c("Localidades pg", "Departamentos"), d = c("cod",
-  "name"))
+which_uy(x, c = c("Localidades pg", "Departamentos"), d = c("cod", "name"))
 }
 \arguments{
 \item{x}{An 'sf' object with the same crs as the homonym parameter}

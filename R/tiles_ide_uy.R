@@ -7,6 +7,7 @@
 #' @importFrom methods is
 #' @importFrom stringr str_sub str_pad
 #' @importFrom raster stack crop
+#' @importFrom glue glue
 #' @export
 #' @examples
 #'\donttest{
@@ -17,8 +18,7 @@ tiles_ide_uy <- function(x){
   try(if (!is(x, "sf")) stop("The object you want to process is not class sf"))
   crs = sf::st_crs(x); bb = sf::st_bbox(x) 
   x2 <- geouy::load_geouy("Grilla ortofotos nacional", crs = crs) %>% sf::st_join(x, left = F) 
-  a <- raster::stack(paste0("https://visualizador.ide.uy/descargas/CN_Remesa_", stringr::str_pad(x2$remesa, 2, pad = "0"),
-                            "/02_Ortoimagenes/02_RGBI_8bits/", as.character(x2$nombre) ,"_RGBI_8_Remesa_",
-                            stringr::str_pad(x2$remesa, 2, pad = "0"),".tif")) %>% raster::crop(bb)
+  a <- glue::glue("https://visualizador.ide.uy/descargas/CN_Remesa_{stringr::str_pad(x2$remesa, 2, pad = '0')}/02_Ortoimagenes/02_RGBI_8bits/{as.character(x2$nombre)}_RGBI_8_Remesa_{stringr::str_pad(x2$remesa, 2, pad = '0')}.tif") %>% 
+    raster::stack() %>% raster::crop(bb)
   return(a)
 }

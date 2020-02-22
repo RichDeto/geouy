@@ -30,6 +30,7 @@ Imports:
 	rlang,
 	xml2,
 	dplyr,
+	glue,
 	stringr,
 	magrittr,
 	sf,

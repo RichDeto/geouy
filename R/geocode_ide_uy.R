@@ -5,6 +5,7 @@
 #' @importFrom dplyr mutate filter %>%
 #' @importFrom stringr str_sub str_locate str_trim str_replace_all
 #' @importFrom xml2 read_html
+#' @importFrom glue glue
 #' @export
 #' @examples
 #'\donttest{
@@ -20,9 +21,10 @@ geocode_ide_uy <- function(x) {
   stopifnot(is.character(x$dir), "dir" %in% colnames(x))
   x <- x %>% mutate(dir = str_trim(dir)) %>% filter(nchar(dir) > 0)
   for (i in 1:nrow(x)) {
-    p <- suppressWarnings(xml2::read_html(str_replace_all(paste0("http://servicios.ide.gub.uy/servicios/BusquedaDireccion?departamento=",
-                                           x[i,"dpto"] , "&localidad=", x[i,"loc"], "&calle=", x[i,"dir"])," ","%20"),
-                          encoding = "UTF-8", options = c("NOBLANKS", "NOERROR"), n = 256))
+    p <- glue::glue("http://servicios.ide.gub.uy/servicios/BusquedaDireccion?departamento={x[i,'dpto']}&localidad={x[i,'loc']}&calle={x[i,'dir']}") %>% 
+      str_replace_all("%20") %>% 
+      xml2::read_html(encoding = "UTF-8", options = c("NOBLANKS", "NOERROR"), n = 256) %>% 
+      suppressWarnings()
     x[i,"x"] <- suppressWarnings(as.numeric(str_sub(p, str_locate(p, "puntoX\":")[2] + 1, str_locate(p, "puntoX\":")[2] + 10)))
     x[i,"y"] <- suppressWarnings(as.numeric(str_sub(p, str_locate(p, "puntoY\":")[2] + 1, str_locate(p, "puntoY\":")[2] + 10)))
     p <- NULL
