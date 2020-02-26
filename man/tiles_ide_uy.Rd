@@ -4,10 +4,12 @@
 \alias{tiles_ide_uy}
 \title{This function allows to Download .tif files from the IDEuy orthophotos repository, according to a 'sf' object bbox.}
 \usage{
-tiles_ide_uy(x)
+tiles_ide_uy(x, folder = tempdir())
 }
 \arguments{
 \item{x}{An 'sf' object with the same crs as the homonym parameter}
+
+\item{folder}{Folder where are the files or be download}
 }
 \value{
 raster::stack object with th cropped tif corresponding to x bbox

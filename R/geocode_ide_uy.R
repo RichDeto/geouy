@@ -19,14 +19,14 @@ geocode_ide_uy <- function(x) {
   stopifnot(is.character(x$dpto), "dpto" %in% colnames(x), length(x$dpto) >= 1)
   stopifnot(is.character(x$loc), "loc" %in% colnames(x))
   stopifnot(is.character(x$dir), "dir" %in% colnames(x))
-  x <- x %>% mutate(dir = str_trim(dir)) %>% filter(nchar(dir) > 0)
+  x <- x %>% mutate(dir = stringr::str_trim(dir)) %>% filter(nchar(dir) > 0)
   for (i in 1:nrow(x)) {
     p <- glue::glue("http://servicios.ide.gub.uy/servicios/BusquedaDireccion?departamento={x[i,'dpto']}&localidad={x[i,'loc']}&calle={x[i,'dir']}") %>% 
-      str_replace_all("%20") %>% 
+      str_replace_all(" ", "%20") %>% 
       xml2::read_html(encoding = "UTF-8", options = c("NOBLANKS", "NOERROR"), n = 256) %>% 
       suppressWarnings()
-    x[i,"x"] <- suppressWarnings(as.numeric(str_sub(p, str_locate(p, "puntoX\":")[2] + 1, str_locate(p, "puntoX\":")[2] + 10)))
-    x[i,"y"] <- suppressWarnings(as.numeric(str_sub(p, str_locate(p, "puntoY\":")[2] + 1, str_locate(p, "puntoY\":")[2] + 10)))
+    x[i,"x"] <- suppressWarnings(as.numeric(stringr::str_sub(p, stringr::str_locate(p, "puntoX\":")[2] + 1, stringr::str_locate(p, "puntoX\":")[2] + 10)))
+    x[i,"y"] <- suppressWarnings(as.numeric(stringr::str_sub(p, stringr::str_locate(p, "puntoY\":")[2] + 1, stringr::str_locate(p, "puntoY\":")[2] + 10)))
     p <- NULL
   }
   return(x)

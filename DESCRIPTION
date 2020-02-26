@@ -28,6 +28,7 @@ RoxygenNote: 7.0.2
 SystemRequirements: GDAL (>= 2.0.0), GEOS (>= 3.3.0), PROJ.4 (>= 4.8.0)
 Imports:
 	rlang,
+	utils,
 	xml2,
 	dplyr,
 	glue,
@@ -38,11 +39,12 @@ Imports:
 	ggplot2,
 	ggthemes,
 	ggsn,
-	methods
+	methods,
+	fs,
+	sp (>= 1.2-4)
 Suggests:
     knitr,
     rmarkdown,
     covr,
-    testthat (>= 2.1.0),
-    sp (>= 1.2-4)
+    testthat (>= 2.1.0)
 VignetteBuilder: knitr

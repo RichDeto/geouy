@@ -1,24 +1,51 @@
 #' This function allows to Download .tif files from the IDEuy orthophotos repository, according to a 'sf' object bbox.
 #' @param x An 'sf' object with the same crs as the homonym parameter
+#' @param folder Folder where are the files or be download
 #' @keywords IDE orthophotos Uruguay
 #' @return raster::stack object with th cropped tif corresponding to x bbox
-#' @importFrom sf st_join st_crs st_bbox
+#' @importFrom sf st_join st_crs st_bbox st_transform
 #' @importFrom dplyr filter %>%
-#' @importFrom methods is
+#' @importFrom methods is as
 #' @importFrom stringr str_sub str_pad
-#' @importFrom raster stack crop
+#' @importFrom raster brick crop extent crs plotRGB
 #' @importFrom glue glue
+#' @importFrom sp SpatialPolygons
+#' @importFrom utils download.file
+#' @importFrom rlang .data
+#' @importFrom fs dir_ls
 #' @export
 #' @examples
 #'\donttest{
 #' x_tiles <- tiles_ide_uy(x)
 #'}
 
-tiles_ide_uy <- function(x){
+tiles_ide_uy <- function(x, folder = tempdir()){
+  # checks ----
   try(if (!is(x, "sf")) stop("The object you want to process is not class sf"))
-  crs = sf::st_crs(x); bb = sf::st_bbox(x) 
-  x2 <- geouy::load_geouy("Grilla ortofotos nacional", crs = crs) %>% sf::st_join(x, left = F) 
-  a <- glue::glue("https://visualizador.ide.uy/descargas/CN_Remesa_{stringr::str_pad(x2$remesa, 2, pad = '0')}/02_Ortoimagenes/02_RGBI_8bits/{as.character(x2$nombre)}_RGBI_8_Remesa_{stringr::str_pad(x2$remesa, 2, pad = '0')}.tif") %>% 
-    raster::stack() %>% raster::crop(bb)
-  return(a)
+  if (!is.character(folder) | length(folder) != 1) {
+    message(glue::glue("You must enter a valid directory..."))
+  }
+  # warnings ----
+  if (length(fs::dir_ls(folder, regexp = "\\.tif$")) != 0) {
+    message(glue::glue("There are other .tif files in the folder that will be read..."))
+  }
+  # download ----
+  try(dir.create(folder))
+  crs = sf::st_crs(x) 
+  bb = x %>% sf::st_transform(32721) %>% sf::st_bbox() %>% as.vector() %>% raster::extent() %>% as('SpatialPolygons')
+  raster::crs(bb) <- "+proj=utm +zone=21 +south +datum=WGS84 +units=m +no_defs"
+  x2 <- geouy::load_geouy("Grilla ortofotos nacional", crs = crs) %>% sf::st_join(x, left = F) %>% filter(duplicated(.data$nombre))
+  a <- glue::glue("https://visualizador.ide.uy/descargas/CN_Remesa_{stringr::str_pad(x2$remesa, 2, pad = '0')}/02_Ortoimagenes/02_RGBI_8bits/{as.character(x2$nombre)}_RGBI_8_Remesa_{stringr::str_pad(x2$remesa, 2, pad = '0')}.tif")
+  if (!file.exists(a)) {
+    message(glue::glue("Trying to download..."))
+    try(utils::download.file(a, glue::glue("{folder}//{basename(a)}"), mode = "wb", method = "libcurl"))
+  } else {
+    message(glue::glue("Orthophoto already exists, the download is omitted"))
+  }
+  # read brick
+  ar <- fs::dir_ls(folder,  regexp = "\\.tif$")
+  a2 <- raster::brick(ar) 
+  a3 <- raster::crop(a2, bb)
+  raster::plotRGB(a3)
+  return(a3)
 }
