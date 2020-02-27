@@ -1,5 +1,10 @@
 ## Resubmission
 This is a resubmission. In this version:
+
+* Add to testthat files 'skip_on...()' functions for a faster evaluation.
+
+## Resubmission
+This is a resubmission. In this version:
   
 * Remove directed quotation marks in the DESCRIPTION file, except in the Description line for previus recomendations.
 * Add \value to .Rd files
