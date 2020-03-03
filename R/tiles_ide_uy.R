@@ -61,7 +61,7 @@ tiles_ide_uy <- function(x, format = "jpg", folder = tempdir()){
     stop("The format you want to download isn´t avaiable")
   }
   # Return ----
-  a3 <- ar %>% raster::brick(crs = 32721) %>% raster::crop(bb)
+  a3 <- ar %>% raster::brick(crs = 5381) %>% st_transform(4326) %>% raster::crop(bb)
   raster::plotRGB(a3)
   return(a3)
 }
