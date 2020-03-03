@@ -3,7 +3,6 @@ context("Testing tiles")
 test_that("Directory error", {
   
   x <- sf::st_as_sf(data.frame(x = c(-56.14449, -56.13936), y = c(-34.805237, -34.806787)), coords = c("x","y"), crs = 4326)
-  x_tiles <- tiles_ide_uy(x, folder = 1)
   testthat::expect_error(tiles_ide_uy(x, folder = 1))
   testthat::expect_error(tiles_ide_uy(x, folder = c("c://", "E://")))
 })

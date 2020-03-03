@@ -56,12 +56,12 @@ tiles_ide_uy <- function(x, format = "jpg", folder = tempdir()){
     message(glue::glue("Orthophoto already exists, the download is omitted"))
   }
   # read brick ----
-  ar <- fs::dir_ls(folder,  regexp = "\\.tif$")
+  ar <- fs::dir_ls(folder, regexp = "\\.tif$")
   } else {
     stop("The format you want to download isn´t avaiable")
   }
   # Return ----
-  a3 <- ar %>% raster::brick() %>% raster::crop(bb)
+  a3 <- ar %>% raster::brick(crs = 32721) %>% raster::crop(bb)
   raster::plotRGB(a3)
   return(a3)
 }
