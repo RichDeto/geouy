@@ -1,4 +1,4 @@
-#' This function allows to Download .jpg files from the IDEuy tiles repository, according to a 'sf' object bbox.
+#' This function allows to Download .jpg or .tif files from the IDEuy tiles repository, according to a 'sf' object bbox.
 #' @param x An 'sf' object with the same crs as the homonym parameter
 #' @param format Format of the archives to download (avaiable: "jpg" and "tif") Default "jpg"
 #' @param folder Folder where are the files or be download
@@ -36,18 +36,18 @@ tiles_ide_uy <- function(x, format = "jpg", folder = tempdir()){
   bb = x %>% sf::st_transform(32721) %>% sf::st_bbox() %>% as.vector() %>% raster::extent() %>% as('SpatialPolygons')
   raster::crs(bb) <- "+proj=utm +zone=21 +south +datum=WGS84 +units=m +no_defs"
   x2 <- geouy::load_geouy("Grilla ortofotos nacional", crs = crs) %>% sf::st_join(x, left = F) %>% filter(duplicated(.data$nombre))
-  
+  # Para formato jpg ----
   if (format == "jpg") {
   a <- glue::glue("https://visualizador.ide.uy/descargas/CN_Remesa_{stringr::str_pad(x2$remesa, 2, pad = '0')}/02_Ortoimagenes/03_RGB_8bits/{as.character(x2$nombre)}_RGB_8_Remesa_{stringr::str_pad(x2$remesa, 2, pad = '0')}")
   if (!file.exists(a)) {
     message(glue::glue("Trying to download..."))
-    try(utils::download.file(a, glue::glue("{folder}//{basename(a)}/{c('.jpg', '.jgw')}")  , mode = "wb", method = "libcurl"))
-  } else {
-    message(glue::glue("Tiles already exists, the download is omitted"))
-  }
+    try(utils::download.file(glue::glue("{a}{c('.jpg','.jgw')}"), glue::glue("{folder}//{basename(a)}{c('.jpg','.jgw')}")  , mode = "wb", method = "libcurl"))
+  } else {message(glue::glue("Tiles already exists, the download is omitted"))}
   # read brick
   ar <- fs::dir_ls(folder,  regexp = "\\.jpg$")
-  } if (format == "tif") {
+  } 
+  # Para formato tif ----
+  else if (format == "tif") {
      a <- glue::glue("https://visualizador.ide.uy/descargas/CN_Remesa_{stringr::str_pad(x2$remesa, 2, pad = '0')}/02_Ortoimagenes/02_RGBI_8bits/{as.character(x2$nombre)}_RGBI_8_Remesa_{stringr::str_pad(x2$remesa, 2, pad = '0')}.tif")
   if (!file.exists(a)) {
     message(glue::glue("Trying to download..."))
@@ -55,14 +55,13 @@ tiles_ide_uy <- function(x, format = "jpg", folder = tempdir()){
   } else {
     message(glue::glue("Orthophoto already exists, the download is omitted"))
   }
-  # read brick
+  # read brick ----
   ar <- fs::dir_ls(folder,  regexp = "\\.tif$")
   } else {
-    stop("The format you want ")
+    stop("The format you want to download isn´t avaiable")
   }
- 
-  a2 <- raster::raster(ar) 
-  a3 <- raster::crop(a2, bb)
+  # Return ----
+  a3 <- ar %>% raster::brick() %>% raster::crop(bb)
   raster::plotRGB(a3)
   return(a3)
 }
