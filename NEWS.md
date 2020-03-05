@@ -1,6 +1,11 @@
 # log history of geouy package development
 
 -------------------------------------------------------
+## geouy v0.1.8 (2020-03-04)
+
+* Add to 'tiles_ide_uy()' function options to download .jpg in addition to .tif
+* Add more testthat for 'tiles_ide_uy()' function
+
 ## geouy v0.1.7 (2020-02-26)
 
 * Add layers for IDEuy orthophotos grids at 'load_geouy()' 

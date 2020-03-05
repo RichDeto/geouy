@@ -1,7 +1,7 @@
 Package: geouy
 Type: Package
 Title: Geographic Information of Uruguay
-Version: 0.1.7
+Version: 0.1.8
 Authors@R: c(
 	      person(given = "Richard", 
 	      family = "Detomasi", 
@@ -23,7 +23,7 @@ License: GPL-3
 Depends: R (>= 3.4.0)
 Language: en, es
 Encoding: UTF-8
-LazyData: true
+LazyData: TRUE
 RoxygenNote: 7.0.2
 SystemRequirements: GDAL (>= 2.0.0), GEOS (>= 3.3.0), PROJ.4 (>= 4.8.0)
 Imports:
