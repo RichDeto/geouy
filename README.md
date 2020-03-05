@@ -3,7 +3,7 @@
 <!-- badges: start -->
 
 [![CRAN/METACRAN Version](https://www.r-pkg.org/badges/version/geouy)](https://CRAN.R-project.org/package=geouy)
-[![CRAN/METACRAN Total downloads](http://cranlogs.r-pkg.org/badges/grand-total/geouy?color=blue)](https://CRAN.R-project.org/package=geouy) 
+[![CRAN/METACRAN Total downloads](http://cranlogs.r-pkg.org/badges/geouy?color=blue)](https://CRAN.R-project.org/package=geouy) 
 [![CRAN/METACRAN downloads per month](http://cranlogs.r-pkg.org/badges/geouy?color=yellow)](https://CRAN.R-project.org/package=geouy)
 [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 [![Travis build status](https://travis-ci.org/RichDeto/geouy.svg?branch=master)](https://travis-ci.org/RichDeto/geouy)
