@@ -5,6 +5,8 @@
 
 * Add to 'tiles_ide_uy()' function options to download .jpg in addition to .tif
 * Add more testthat for 'tiles_ide_uy()' function
+* Add zip format to 'load_goeuy()'
+* Add MVOTMA datasets to metadata, i.e.:
 
 ## geouy v0.1.7 (2020-02-26)
 

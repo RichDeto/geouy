@@ -4,12 +4,14 @@
 \alias{load_geouy}
 \title{This function allows to take oficial uruguayan geometries, as object "sf", from various servers.}
 \usage{
-load_geouy(c, crs = 32721)
+load_geouy(c, crs = 32721, folder = tempdir())
 }
 \arguments{
 \item{c}{Define the geometries to download: may be: "Departamentos", "Secciones", "Zonas", etc. View(metadata) for details.}
 
 \item{crs}{Define the Coordinate Reference Systems you want the output, default 32721}
+
+\item{folder}{Folder where are the files download if formato == "zip" in metadata. Default tempdir()}
 }
 \value{
 sf object with the requested geometries
