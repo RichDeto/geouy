@@ -41,7 +41,8 @@ Imports:
 	ggsn,
 	methods,
 	fs,
-	sp (>= 1.2-4)
+	sp (>= 1.2-4),
+	rgdal
 Suggests:
     knitr,
     rmarkdown,

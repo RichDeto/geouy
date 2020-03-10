@@ -14,6 +14,7 @@
 #' @importFrom utils download.file
 #' @importFrom rlang .data
 #' @importFrom fs dir_ls
+#' @import rgdal
 #' @export
 #' @examples
 #'\donttest{
