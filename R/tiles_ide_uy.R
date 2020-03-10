@@ -34,15 +34,21 @@ tiles_ide_uy <- function(x, format = "jpg", folder = tempdir()){
   # download ----
   try(dir.create(folder))
   crs = sf::st_crs(x) 
-  bb = x %>% sf::st_transform(5382) %>% sf::st_bbox() %>% as.vector() %>% raster::extent() %>% as('SpatialPolygons')
+  bb = x %>% sf::st_transform(5382) %>% 
+      sf::st_bbox() %>% as.vector() %>% 
+      raster::extent() %>% as('SpatialPolygons')
   raster::crs(bb) <- "+proj=longlat +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +no_defs"
-  x2 <- geouy::load_geouy("Grilla ortofotos nacional", crs = 5381) %>% sf::st_join(x %>% sf::st_transform(5381), left = F) %>% filter(duplicated(.data$nombre))
+  x2 <- geouy::load_geouy("Grilla ortofotos nacional", crs = 5381) %>% 
+      sf::st_join(x %>% sf::st_transform(5381), left = F) %>% 
+      filter(duplicated(.data$nombre))
   # Para formato jpg ----
   if (format == "jpg") {
     a <- glue::glue("https://visualizador.ide.uy/descargas/CN_Remesa_{stringr::str_pad(x2$remesa, 2, pad = '0')}/02_Ortoimagenes/03_RGB_8bits/{as.character(x2$nombre)}_RGB_8_Remesa_{stringr::str_pad(x2$remesa, 2, pad = '0')}")
     if (!file.exists(a)) {
       message(glue::glue("Trying to download..."))
-      try(utils::download.file(glue::glue("{a}{c('.jpg','.jgw')}"), glue::glue("{folder}//{basename(a)}{c('.jpg','.jgw')}")  , mode = "wb", method = "libcurl"))
+      try(utils::download.file(glue::glue("{a}{c('.jpg','.jgw')}"), 
+                               glue::glue("{folder}//{basename(a)}{c('.jpg','.jgw')}"), 
+                               mode = "wb", method = "libcurl"))
     } else {message(glue::glue("Tiles already exists, the download is omitted"))}
     # read brick
     ar <- fs::dir_ls(folder,  regexp = "\\.jpg$")
@@ -64,7 +70,8 @@ tiles_ide_uy <- function(x, format = "jpg", folder = tempdir()){
   # Return ----
   a3 <- raster::brick(ar)
   raster::crs(a3) <- "+proj=utm +zone=21 +south +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs"
-  a3 <- a3 %>% raster::crop(bb) %>% raster::projectRaster(crs = crs[[2]])
+  a3 <- a3 %>% raster::crop(bb) %>% 
+      raster::projectRaster(crs = crs[[2]])
   # raster::plotRGB(a3)
   return(a3)
 }
