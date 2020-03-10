@@ -62,9 +62,8 @@ tiles_ide_uy <- function(x, format = "jpg", folder = tempdir()){
   }
   # Return ----
   a3 <- raster::brick(ar)
-  raster::crs(a3) <- "+proj=longlat +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +no_defs"
-  a3 <- a3 %>% raster::crop(bb) %>% 
-    raster::projectRaster(crs = crs[[2]], res = 0.1)
-  raster::plotRGB(a3)
+  raster::crs(a3) <- "+proj=utm +zone=21 +south +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs"
+  a3 <- a3 %>% raster::crop(bb) %>% raster::projectRaster(crs = crs[[2]])
+  # raster::plotRGB(a3)
   return(a3)
 }
