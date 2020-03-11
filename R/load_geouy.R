@@ -32,6 +32,7 @@ load_geouy <- function(c, crs = 32721, folder = tempdir()){
     try(dir.create(folder))
     f = glue::glue("{folder}\\{x$capa}.zip")
     d = glue::glue("{folder}\\{x$capa}\\")
+    try(dir.create(d))
     if (!file.exists(f)) {
       message(glue::glue("Intentando descargar {x$capa}..."))
       try(utils::download.file(x$url, f, mode = "wb", method = "libcurl"))
