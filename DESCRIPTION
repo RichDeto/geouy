@@ -13,7 +13,8 @@ Authors@R: c(
         person(family = "Servicio Geográfico Militar, Uruguay (SGM)", role = "dtc"),
         person(family = "Ministerio de Transporte y Obras Públicas, Uruguay (MTOP)", role = "dtc"),
         person(family = "Instituto Nacional de Estadística, Uruguay (INE)", role = "dtc"),
-        person(family = "Instituto Geográfico Militar, Uruguay (IGM)", role = "dtc")
+        person(family = "Instituto Geográfico Militar, Uruguay (IGM)", role = "dtc"),
+        person(family = "Ministerio de Vivienda, Ordenamiento Territorial y Medio Ambiente, Uruguay (MVOTMA)", role = "dtc")
 	      )
 Maintainer: Richard Detomasi <richard.detomasi@gmail.com>
 Description: The toolbox have functions to load and process geographic information for Uruguay. 
@@ -25,7 +26,7 @@ Language: en, es
 Encoding: UTF-8
 LazyData: TRUE
 RoxygenNote: 7.0.2
-SystemRequirements: GDAL (>= 2.0.0), GEOS (>= 3.3.0), PROJ.4 (>= 4.8.0)
+SystemRequirements: GDAL (>= 2.0.0), GEOS (>= 3.3.0), PROJ.4 (>= 4.8.0), 'unrar' (Linux/macOS) or '7-Zip' (Windows) to work with '.rar' files.
 Imports:
 	rlang,
 	utils,

@@ -111,7 +111,7 @@ secc <- load_geouy("Secciones")
 |`"Grilla ortofotos urbana"` | `"IDE"` | IDE | 2019 | wfs |
 |`"Grilla ortofotos nacional"` | `"IDE"` | IDE | 2019 | wfs |
   
-### CObertura de suelo
+### Cobertura de suelo
 
 | Layer | Productor | Server | Year | Format |
 |-----|-----|-----|-----|-----|
@@ -121,7 +121,7 @@ secc <- load_geouy("Secciones")
 |`"Cobertura suelo 2015"` | `"DINAGUA"` | MVOTMA | 2015 | zip |
 
 
-### Other functions:
+## Other functions:
 
 
 | Function | Action|
