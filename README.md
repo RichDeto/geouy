@@ -40,6 +40,8 @@ secc <- load_geouy("Secciones")
 ## Available datasets:
 
 
+### Límites administrativos
+
 | Layer | Productor | Server | Year | Format |
 |-----|-----|-----|-----|-----|
 |`"Uruguay"`| `"INE"` | MIDES | 2011 | wfs |
@@ -62,15 +64,61 @@ secc <- load_geouy("Secciones")
 |`"Asentamientos irregulares"`| `"PMB"` | MIDES | 2014 | wfs |
 |`"Barrios"` | `"INE"` | MIDES | 2011 | wfs |
 |`"Balnearios"`| `"MTOP"` | MTOP |  2017 | wfs |
+|`"Secciones catastrales"` | `"DNC"` | MVOTMA | 2013 | zip |
+|`"Padrones rurales"` | `"DNC"` | "MVOTMA" | 2014 | zip |  
+|`"Padrones urbanos"`| `"DNC"` | MVOTMA | 2014 | zip | 
+|`"Secciones policiales"` | `"MI"` | MVOTMA | 2017 | zip |
+
+
+
+### Hidrología
+
+| Layer | Productor | Server | Year | Format |
+|-----|-----|-----|-----|-----|
+|`"Cuencas hidro N1"`| `"DINAGUA"` | MVOTMA | 2020 | zip |
+|`"Cuencas hidro N2"`| `"DINAGUA"` | MVOTMA | 2020 | zip |
+|`"Cuencas hidro N3"`| `"DINAGUA"` | MVOTMA | 2020 | zip |
+|`"Cuencas hidro N4"`| `"DINAGUA"` | MVOTMA | 2020 | zip |
+|`"Cuencas hidro N5"`| `"DINAGUA"` | MVOTMA | 2020 | zip |
 |`"Cursos de agua navegables y flotables"` | `"MTOP"` | MTOP | 2019 | wfs |
 |`"Lagunas publicas"` | `"MTOP"` | MTOP | 2019 |  wfs |
+|`"Ambientes acuaticos"` | `"FREPLATA"` | MVOTMA | 2009 | zip |
+|`"Areas protegidas"` |`DINAMA"` | MVOTMA | 2015 | zip |
+|`"Baniados"` | `"DINAMA"` | MVOTMA | NA | zip |
+|`"Batimetria"` | `"DINAMA"` | MVOTMA | 2020 | zip | 
+
+
+### Movilidad
+
+| Layer | Productor | Server | Year | Format |
+|-----|-----|-----|-----|-----|
 |`"Rutas"` | `"IDE"` | MIDES | 2017 | wfs |
 |`"Calles"` | `"IDE - UTE - IM"` | MIDES | 2017 | wfs |
 |`"Peajes"` | `"MTOP"` | MTOP | 2019 | wfs |
-|`"Instituciones deportivas"` | `"IDE"` | MIDES | 2015 | wfs |
 |`"Postes Kilometros"` |`"MTOP"` | MTOP | 2019 | wfs |
+
+### Servicios
+
+| Layer | Productor | Server | Year | Format |
+|-----|-----|-----|-----|-----|
+|`"Instituciones deportivas"` | `"IDE"` | MIDES | 2015 | wfs |
+|`"Playas"`| `"DINAMA¨` | MVOTMA | 2007 | zip |
+
+### Ortofotos
+
+| Layer | Productor | Server | Year | Format |
+|-----|-----|-----|-----|-----|
 |`"Grilla ortofotos urbana"` | `"IDE"` | IDE | 2019 | wfs |
 |`"Grilla ortofotos nacional"` | `"IDE"` | IDE | 2019 | wfs |
+  
+### CObertura de suelo
+
+| Layer | Productor | Server | Year | Format |
+|-----|-----|-----|-----|-----|
+|`"Cobertura suelo 2000"` | `"DINAGUA"` | MVOTMA | 2000 | zip |
+|`"Cobertura suelo 2008"` | `"DINAGUA"` | MVOTMA | 2008 | zip |
+|`"Cobertura suelo 2011"` | `"DINAGUA"` | MVOTMA | 2011 | zip |
+|`"Cobertura suelo 2015"` | `"DINAGUA"` | MVOTMA | 2015 | zip |
 
 
 ### Other functions:

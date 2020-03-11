@@ -6,7 +6,7 @@
 * Add to 'tiles_ide_uy()' function options to download .jpg in addition to .tif
 * Add more testthat for 'tiles_ide_uy()' function
 * Add zip format to 'load_goeuy()'
-* Add MVOTMA datasets to metadata, i.e.:
+* Add MVOTMA datasets to metadata, i.e.: Ambientes acuaticos, Areas protegidas, Batimetria, Secciones catastrales, Padrones rurales y urbanos, Secciones policiales, Playas and Cuencas hidrograficas in its 5 nivels.  
 
 ## geouy v0.1.7 (2020-02-26)
 

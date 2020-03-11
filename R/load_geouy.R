@@ -28,20 +28,21 @@ load_geouy <- function(c, crs = 32721, folder = tempdir()){
     if (length(fs::dir_ls(folder, regexp = "\\.zip$")) != 0) {
       message(glue::glue("There are other .zip files in the folder that will be read..."))
     }
-     # download ----
+    # download ----
     try(dir.create(folder))
-    f = glue::glue("{x$capa}.zip")
+    f = glue::glue("{folder}\\{x$capa}.zip")
+    d = glue::glue("{folder}\\{x$capa}\\")
     if (!file.exists(f)) {
-      message(glue::glue("Intentando descargar {f}..."))
+      message(glue::glue("Intentando descargar {x$capa}..."))
       try(utils::download.file(x$url, f, mode = "wb", method = "libcurl"))
     } else {
       message(glue::glue("{f} ya existe, se omite la descarga"))
     }
-    try(archive_extract(archive.path = f, dest.path = folder))
-    a <- st_read(f, crs = x$crs) 
+    try(archive_extract(archive.path = f, dest.path = d))
+    a <- sf::st_read(fs::dir_ls(d, regexp = "\\.shp$"), crs = x$crs) 
   } else {
-    a <- st_read(x$url, crs = x$crs) 
+    a <- sf::st_read(x$url, crs = x$crs) 
   }
-  a <- a %>% st_transform(crs)
+  a <- a %>% sf::st_transform(crs)
   return(a)
 }
