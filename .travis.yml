@@ -8,6 +8,7 @@ apt_packages:
   - libgdal-dev 
   - libgeos-dev 
   - libproj-dev 
+  - unrar-free
 after_success:
   - Rscript -e 'covr::codecov()'
 os:
