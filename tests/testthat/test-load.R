@@ -5,7 +5,8 @@ test_that("connections working", {
   skip_on_cran()
   
   expect_is(load_geouy("Secciones"), "sf")
-  expect_is(load_geouy("Playas"), "sf")
+  p <- load_geouy("Playas")
+  expect_is(p, "sf")
   expect_is(load_geouy("Centros poblados pg"), "sf")
 })
 
