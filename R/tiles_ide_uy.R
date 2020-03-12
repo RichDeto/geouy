@@ -59,7 +59,7 @@ tiles_ide_uy <- function(x, format = "jpg", folder = tempdir(), urban = F){
       try(utils::download.file(glue::glue("{a}{c('.jpg','.jgw')}"), 
                                glue::glue("{folder}//{basename(a)}{c('.jpg','.jgw')}"), 
                                mode = "wb", method = "libcurl"))
-    } else {message(glue::glue("Tiles already exists, the download is omitted"))}
+    } 
     # read brick
     ar <- fs::dir_ls(folder,  regexp = "\\.jpg$")
   } 
@@ -68,14 +68,12 @@ tiles_ide_uy <- function(x, format = "jpg", folder = tempdir(), urban = F){
     if (urban == FALSE) {
       a <- glue::glue("https://visualizador.ide.uy/descargas/CN_Remesa_{stringr::str_pad(x2$remesa, 2, pad = '0')}/02_Ortoimagenes/02_RGBI_8bits/{as.character(x2$nombre)}_RGBI_8_Remesa_{stringr::str_pad(x2$remesa, 2, pad = '0')}.tif")
     } else {
-      a <- glue::glue("https://visualizador.ide.uy/descargas/CN_Remesa_{stringr::str_pad(x2$remesa, 2, pad = '0')}/02_Ortoimagenes/02_RGBI_8bits/{as.character(x2$nombre)}_RGBI_8_Remesa_{stringr::str_pad(x2$remesa, 2, pad = '0')}.tif")
+      a <- glue::glue("https://visualizador.ide.uy/descargas/CU_Remesa_{stringr::str_pad(x2$remesa, 2, pad = '0')}/02_Ortoimagenes/01_Ciudad_MVD/02_RGBI_8bits/{as.character(x2$nombre)}_RGBI_8_Remesa_{stringr::str_pad(x2$remesa, 2, pad = '0')}_MVD.tif")
     }
     if (!file.exists(a)) {
       message(glue::glue("Trying to download..."))
       try(utils::download.file(a, glue::glue("{folder}//{basename(a)}"), mode = "wb", method = "libcurl"))
-    } else {
-      message(glue::glue("Orthophoto already exists, the download is omitted"))
-    }
+    } 
     # read brick ----
     ar <- fs::dir_ls(folder, regexp = "\\.tif$")
   } else {

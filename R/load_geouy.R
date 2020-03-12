@@ -26,18 +26,12 @@ load_geouy <- function(c, crs = 32721, folder = tempdir()){
     if (!is.character(folder) | length(folder) != 1) {
       stop(glue::glue("You must enter a valid directory..."))
     }
-    # warnings ----
-    if (length(fs::dir_ls(folder, regexp = "\\.zip$")) != 0) {
-      warning(glue::glue("There are other .zip files in the folder that will be read..."))
-    }
     # download ----
     suppressWarnings(try(dir.create(folder)))
     f = glue::glue("{folder}/{x$capa}.zip")
     if (!file.exists(f)) {
       message(glue::glue("Intentando descargar {x$capa}..."))
       try(utils::download.file(x$url, f, mode = "wb", method = "libcurl"))
-    } else {
-      message(glue::glue("{f} ya existe, se omite la descarga"))
     }
     invisible(try(utils::unzip(f, exdir = folder)))
       #archive_extract(archive.path = f, dest.path = )))
