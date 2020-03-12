@@ -5,7 +5,7 @@ test_that("connections working", {
   skip_on_cran()
   
   testthat::expect_is(load_geouy("Secciones"), "sf")
-  # testthat::expect_warning(load_geouy("Playas"))
+  testthat::expect_is(load_geouy("Playas"), "sf")
   testthat::expect_is(load_geouy("Centros poblados pg"), "sf")
 })
 

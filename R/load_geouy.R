@@ -8,6 +8,7 @@
 #' @importFrom dplyr filter %>%
 #' @importFrom glue glue
 #' @importFrom fs dir_ls
+#' @importFrom utils download.file unzip
 #' @export
 #' @examples
 #'\donttest{
@@ -38,7 +39,8 @@ load_geouy <- function(c, crs = 32721, folder = tempdir()){
     } else {
       message(glue::glue("{f} ya existe, se omite la descarga"))
     }
-    invisible(try(archive_extract(archive.path = f, dest.path = folder)))
+    invisible(try(utils::unzip(f, exdir = folder)))
+      #archive_extract(archive.path = f, dest.path = )))
     archivo <- fs::dir_ls(folder, regexp = "\\.shp$")
     archivo <- archivo[which.max(file.info(archivo)$mtime)]
     a <- sf::st_read(archivo, crs = x$crs) 

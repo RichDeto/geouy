@@ -9,10 +9,10 @@ apt_packages:
   - libgdal-dev 
   - libgeos-dev 
   - libproj-dev 
-  - unrar-free
-  
+
 after_success:
   - travis_wait 120 Rscript -e 'covr::codecov()'
+  - travis_wait 120 Rscript -e 'pkgdown::build_site()'
   
 os:
   - linux

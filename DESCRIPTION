@@ -26,7 +26,7 @@ Language: en, es
 Encoding: UTF-8
 LazyData: TRUE
 RoxygenNote: 7.0.2
-SystemRequirements: GDAL (>= 2.0.0), GEOS (>= 3.3.0), PROJ.4 (>= 4.8.0), 'unrar' (Linux/macOS) or '7-Zip' (Windows) to work with '.rar' files.
+SystemRequirements: GDAL (>= 2.0.0), GEOS (>= 3.3.0), PROJ.4 (>= 4.8.0)
 Imports:
 	rlang,
 	utils,
@@ -34,7 +34,6 @@ Imports:
 	dplyr,
 	glue,
 	stringr,
-	magrittr,
 	sf,
 	raster,
 	ggplot2,
@@ -47,6 +46,7 @@ Imports:
 Suggests:
     knitr,
     rmarkdown,
+    magrittr,
     covr,
     testthat (>= 2.1.0)
 VignetteBuilder: knitr

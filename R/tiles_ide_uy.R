@@ -2,6 +2,7 @@
 #' @param x An 'sf' object with the same crs as the homonym parameter
 #' @param format Format of the archives to download (avaiable: "jpg" and "tif") Default "jpg"
 #' @param folder Folder where are the files or be download
+#' @param urban If format is "tif", and urban default FALSE take orthophotos of national flight with 32cm per pixel, if TRUE take urban flight with 10cm per pixel (avaible only Montevideo at the moment)
 #' @keywords IDE orthophotos Uruguay
 #' @return raster::stack object with th cropped tif corresponding to x bbox
 #' @importFrom sf st_join st_crs st_bbox st_transform
@@ -21,7 +22,7 @@
 #' x_tiles <- tiles_ide_uy(x)
 #'}
 
-tiles_ide_uy <- function(x, format = "jpg", folder = tempdir()){
+tiles_ide_uy <- function(x, format = "jpg", folder = tempdir(), urban = F){
   # checks ----
   try(if (!is(x, "sf")) stop("The object you want to process is not class sf"))
   if (!is.character(folder) | length(folder) != 1) {
@@ -41,6 +42,15 @@ tiles_ide_uy <- function(x, format = "jpg", folder = tempdir()){
   x2 <- geouy::load_geouy("Grilla ortofotos nacional", crs = 5381) %>% 
       sf::st_join(x %>% sf::st_transform(5381), left = F) %>% 
       filter(duplicated(.data$nombre))
+  try(if (nrow(x2) == 0) stop(glue::glue("The geometry you have in {x} is not in Uruguay. Verify in the metadata file")))
+  if (urban == TRUE) {
+    x2 <- geouy::load_geouy("Grilla ortofotos urbana", crs = 5381) %>% 
+      filter(localidad == "Montevideo") %>% 
+      sf::st_join(x %>% sf::st_transform(5381), left = F) %>% 
+      filter(duplicated(.data$nombre))
+    try(if (nrow(x2) == 0) stop(glue::glue("The geometry you have in {x} is not in Montevideo. Verify in the metadata file")))
+  }
+  
   # Para formato jpg ----
   if (format == "jpg") {
     a <- glue::glue("https://visualizador.ide.uy/descargas/CN_Remesa_{stringr::str_pad(x2$remesa, 2, pad = '0')}/02_Ortoimagenes/03_RGB_8bits/{as.character(x2$nombre)}_RGB_8_Remesa_{stringr::str_pad(x2$remesa, 2, pad = '0')}")
@@ -55,7 +65,11 @@ tiles_ide_uy <- function(x, format = "jpg", folder = tempdir()){
   } 
   # Para formato tif ----
   else if (format == "tif") {
-    a <- glue::glue("https://visualizador.ide.uy/descargas/CN_Remesa_{stringr::str_pad(x2$remesa, 2, pad = '0')}/02_Ortoimagenes/02_RGBI_8bits/{as.character(x2$nombre)}_RGBI_8_Remesa_{stringr::str_pad(x2$remesa, 2, pad = '0')}.tif")
+    if (urban == FALSE) {
+      a <- glue::glue("https://visualizador.ide.uy/descargas/CN_Remesa_{stringr::str_pad(x2$remesa, 2, pad = '0')}/02_Ortoimagenes/02_RGBI_8bits/{as.character(x2$nombre)}_RGBI_8_Remesa_{stringr::str_pad(x2$remesa, 2, pad = '0')}.tif")
+    } else {
+      a <- glue::glue("https://visualizador.ide.uy/descargas/CN_Remesa_{stringr::str_pad(x2$remesa, 2, pad = '0')}/02_Ortoimagenes/02_RGBI_8bits/{as.character(x2$nombre)}_RGBI_8_Remesa_{stringr::str_pad(x2$remesa, 2, pad = '0')}.tif")
+    }
     if (!file.exists(a)) {
       message(glue::glue("Trying to download..."))
       try(utils::download.file(a, glue::glue("{folder}//{basename(a)}"), mode = "wb", method = "libcurl"))
@@ -65,7 +79,7 @@ tiles_ide_uy <- function(x, format = "jpg", folder = tempdir()){
     # read brick ----
     ar <- fs::dir_ls(folder, regexp = "\\.tif$")
   } else {
-    stop("The format you want to download isn´t avaiable")
+    stop("The format you want to download is not avaiable")
   }
   # Return ----
   a3 <- raster::brick(ar)
