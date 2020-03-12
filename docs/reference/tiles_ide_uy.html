@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>A function to geocoding directions using IDE_uy — geocode_ide_uy • geouy</title>
+<title>This function allows to Download .jpg or .tif files from the IDEuy tiles repository, according to a 'sf' object bbox. — tiles_ide_uy • geouy</title>
 
 
 <!-- jquery -->
@@ -35,8 +35,8 @@
 
 
 
-<meta property="og:title" content="A function to geocoding directions using IDE_uy — geocode_ide_uy" />
-<meta property="og:description" content="A function to geocoding directions using IDE_uy" />
+<meta property="og:title" content="This function allows to Download .jpg or .tif files from the IDEuy tiles repository, according to a 'sf' object bbox. — tiles_ide_uy" />
+<meta property="og:description" content="This function allows to Download .jpg or .tif files from the IDEuy tiles repository, according to a 'sf' object bbox." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -106,36 +106,41 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>A function to geocoding directions using IDE_uy</h1>
+    <h1>This function allows to Download .jpg or .tif files from the IDEuy tiles repository, according to a 'sf' object bbox.</h1>
     
-    <div class="hidden name"><code>geocode_ide_uy.Rd</code></div>
+    <div class="hidden name"><code>tiles_ide_uy.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>A function to geocoding directions using IDE_uy</p>
+    <p>This function allows to Download .jpg or .tif files from the IDEuy tiles repository, according to a 'sf' object bbox.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>geocode_ide_uy</span>(<span class='no'>x</span>)</pre>
+    <pre class="usage"><span class='fu'>tiles_ide_uy</span>(<span class='no'>x</span>, <span class='kw'>format</span> <span class='kw'>=</span> <span class='st'>"jpg"</span>, <span class='kw'>folder</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/tempfile.html'>tempdir</a></span>())</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>x</th>
-      <td><p>Dataframe with unless 3 variables: dpto = corresponding to the department, loc = city / location, dir = to the address.</p></td>
+      <td><p>An 'sf' object with the same crs as the homonym parameter</p></td>
+    </tr>
+    <tr>
+      <th>format</th>
+      <td><p>Format of the archives to download (avaiable: "jpg" and "tif") Default "jpg"</p></td>
+    </tr>
+    <tr>
+      <th>folder</th>
+      <td><p>Folder where are the files or be download</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>The DafaFrame x with the coordinates variables append (x and y)</p>
+    <p>raster::stack object with th cropped tif corresponding to x bbox</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'># \donttest{
-# x1 <- cbind(dpto="Montevideo",loc="Montevideo",dir="Av. 18 de julio 1453")
-# x2 <- data.frame(x1, stringsAsFactors = F)
-# geocode_ide_uy(x2)
-# }
+    <pre class="examples"><div class='input'><span class='co'># \donttest{</span>
+<span class='no'>x_tiles</span> <span class='kw'>&lt;-</span> <span class='fu'>tiles_ide_uy</span>(<span class='no'>x</span>)</div><div class='output co'>#&gt; Error in is(x, "sf") : objeto 'x' no encontrado</div><div class='output co'>#&gt; <span class='warning'>Warning: 'C:\Users\RDETOM~1\AppData\Local\Temp\RtmpqcHKRn' already exists</span></div><div class='output co'>#&gt; <span class='warning'>Warning: reiniciar evaluación premisa interrumpida</span></div><div class='output co'>#&gt; <span class='error'>Error in sf::st_crs(x): objeto 'x' no encontrado</span></div><div class='input'># }
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">

@@ -69,7 +69,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">geouy</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.5</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.8</span>
       </span>
     </div>
 
@@ -130,20 +130,24 @@
     </tr>
     <tr>
       <th>d</th>
-      <td><p>Determines the variables to be added, with three options: "cod", "name", or "both". Default "both".</p></td>
+      <td><p>A vector who determines the variables to be added, with three options: "cod", "name", or "full". Default c("cod", "name").</p></td>
     </tr>
     </table>
 
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>sf object with the x geometries, with d variables requested from c added</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># \donttest{</span>
-<span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'>which_uy</span>(<span class='no'>x</span>, <span class='kw'>c</span> <span class='kw'>=</span> <span class='st'>"Localidades_pg"</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: reiniciar evaluación premisa interrumpida</span></div><div class='output co'>#&gt; <span class='error'>Error in st_crs(x): objeto 'x' no encontrado</span></div><div class='input'># }
+<span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'>which_uy</span>(<span class='no'>x</span>, <span class='kw'>c</span> <span class='kw'>=</span> <span class='st'>"Localidades pg"</span>)</div><div class='output co'>#&gt; Error in is(x, "sf") : objeto 'x' no encontrado</div><div class='output co'>#&gt; <span class='warning'>Warning: reiniciar evaluación premisa interrumpida</span></div><div class='output co'>#&gt; <span class='error'>Error in st_crs(x): objeto 'x' no encontrado</span></div><div class='input'># }
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
+      <li><a href="#value">Value</a></li>
       <li><a href="#examples">Examples</a></li>
     </ul>
 

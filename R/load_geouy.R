@@ -22,14 +22,14 @@ load_geouy <- function(c, crs = 32721, folder = tempdir()){
     a <- st_read("WFS:http://geoservicios.sgm.gub.uy/wfsPCN1000.cgi?",x$url, crs = x$crs)
   } else if (x$formato == "zip") {
     if (!is.character(folder) | length(folder) != 1) {
-      message(glue::glue("You must enter a valid directory..."))
+      stop(glue::glue("You must enter a valid directory..."))
     }
     # warnings ----
     if (length(fs::dir_ls(folder, regexp = "\\.zip$")) != 0) {
-      message(glue::glue("There are other .zip files in the folder that will be read..."))
+      warning(glue::glue("There are other .zip files in the folder that will be read..."))
     }
     # download ----
-    try(dir.create(folder))
+    try(dir.create(normalizePath(folder,"/")))
     f = glue::glue("{folder}/{x$capa}.zip")
     if (!file.exists(f)) {
       message(glue::glue("Intentando descargar {x$capa}..."))

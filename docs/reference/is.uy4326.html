@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>A function to geocoding directions using IDE_uy — geocode_ide_uy • geouy</title>
+<title>This function test if an 'sf' object match with Uruguay at crs = 4326. — is.uy4326 • geouy</title>
 
 
 <!-- jquery -->
@@ -35,8 +35,8 @@
 
 
 
-<meta property="og:title" content="A function to geocoding directions using IDE_uy — geocode_ide_uy" />
-<meta property="og:description" content="A function to geocoding directions using IDE_uy" />
+<meta property="og:title" content="This function test if an 'sf' object match with Uruguay at crs = 4326. — is.uy4326" />
+<meta property="og:description" content="This function test if an 'sf' object match with Uruguay at crs = 4326." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -106,36 +106,48 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>A function to geocoding directions using IDE_uy</h1>
+    <h1>This function test if an 'sf' object match with Uruguay at crs = 4326.</h1>
     
-    <div class="hidden name"><code>geocode_ide_uy.Rd</code></div>
+    <div class="hidden name"><code>is.uy4326.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>A function to geocoding directions using IDE_uy</p>
+    <p>This function test if an 'sf' object match with Uruguay at crs = 4326.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>geocode_ide_uy</span>(<span class='no'>x</span>)</pre>
+    <pre class="usage"><span class='fu'>is.uy4326</span>(<span class='no'>x</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>x</th>
-      <td><p>Dataframe with unless 3 variables: dpto = corresponding to the department, loc = city / location, dir = to the address.</p></td>
+      <td><p>An 'sf' object with the same crs as the homonym parameter</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>The DafaFrame x with the coordinates variables append (x and y)</p>
+    <p>logical value based in crs parameter of the sf object</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'># \donttest{
-# x1 <- cbind(dpto="Montevideo",loc="Montevideo",dir="Av. 18 de julio 1453")
-# x2 <- data.frame(x1, stringsAsFactors = F)
-# geocode_ide_uy(x2)
-# }
+    <pre class="examples"><div class='input'><span class='co'># \donttest{</span>
+<span class='fu'>is.uy4326</span>(<span class='fu'><a href='load_geouy.html'>load_geouy</a></span>(<span class='st'>"Peajes"</span>))</div><div class='output co'>#&gt; Reading layer `peajes' from data source `https://geoservicios.mtop.gub.uy/geoserver/inf_tte_ttelog_terrestre/peajes/ows?service=WFS&amp;request=GetFeature&amp;typeName=peajes' using driver `GML'
+#&gt; Simple feature collection with 18 features and 4 fields
+#&gt; geometry type:  MULTIPOINT
+#&gt; dimension:      XY
+#&gt; bbox:           xmin: -58.24649 ymin: -34.78446 xmax: -54.42373 ymax: -31.54664
+#&gt; epsg (SRID):    4326
+#&gt; proj4string:    +proj=longlat +datum=WGS84 +no_defs
+#&gt; Reading layer `ine_pais_corregido' from data source `https://mapas.mides.gub.uy:443/geoserver/INECenso2004/ows?service=WFS&amp;version=1.0.0&amp;request=GetFeature&amp;typeName=INECenso2004:ine_pais_corregido' using driver `GML'
+#&gt; Simple feature collection with 1 feature and 1 field
+#&gt; geometry type:  MULTIPOLYGON
+#&gt; dimension:      XY
+#&gt; bbox:           xmin: 366582.2 ymin: 6127919 xmax: 858252.1 ymax: 6671738
+#&gt; epsg (SRID):    32721
+#&gt; proj4string:    +proj=utm +zone=21 +south +datum=WGS84 +units=m +no_defs
+#&gt; Error in try(if (st_crs(x) != st_crs(y)) stop("The object you want to process is not at CRS 4326")) : 
+#&gt;   The object you want to process is not at CRS 4326</div><div class='output co'>#&gt; <span class='error'>Error in st_geos_binop("intersects", x, y, sparse = sparse, prepared = prepared): st_crs(x) == st_crs(y) is not TRUE</span></div><div class='input'># }
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
