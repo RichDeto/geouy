@@ -40,9 +40,9 @@ secc <- load_geouy("Secciones")
 ## Available datasets:
 
 
-### Límites administrativos
+### Administrative limits 
 
-| Layer | Productor | Server | Year | Format |
+| Layer | Productor | Source | Year | Format |
 |-----|-----|-----|-----|-----|
 |`"Uruguay"`| `"INE"` | MIDES | 2011 | wfs |
 |`"Areas administrativas"`| `"SGM"` | SGM | 2011 | wfs |
@@ -71,9 +71,9 @@ secc <- load_geouy("Secciones")
 
 
 
-### Hidrología
+### Hidrology
 
-| Layer | Productor | Server | Year | Format |
+| Layer | Productor | Source | Year | Format |
 |-----|-----|-----|-----|-----|
 |`"Cuencas hidro N1"`| `"DINAGUA"` | MVOTMA | 2020 | zip |
 |`"Cuencas hidro N2"`| `"DINAGUA"` | MVOTMA | 2020 | zip |
@@ -88,32 +88,32 @@ secc <- load_geouy("Secciones")
 |`"Batimetria"` | `"DINAMA"` | MVOTMA | 2020 | zip | 
 
 
-### Movilidad
+### Ways
 
-| Layer | Productor | Server | Year | Format |
+| Layer | Productor | Source | Year | Format |
 |-----|-----|-----|-----|-----|
 |`"Rutas"` | `"IDE"` | MIDES | 2017 | wfs |
 |`"Calles"` | `"IDE - UTE - IM"` | MIDES | 2017 | wfs |
 |`"Peajes"` | `"MTOP"` | MTOP | 2019 | wfs |
 |`"Postes Kilometros"` |`"MTOP"` | MTOP | 2019 | wfs |
 
-### Servicios
+### Services
 
-| Layer | Productor | Server | Year | Format |
+| Layer | Productor | Source | Year | Format |
 |-----|-----|-----|-----|-----|
 |`"Instituciones deportivas"` | `"IDE"` | MIDES | 2015 | wfs |
 |`"Playas"`| `"DINAMA¨` | MVOTMA | 2007 | zip |
 
-### Ortofotos
+### Orthophotos
 
-| Layer | Productor | Server | Year | Format |
+| Layer | Productor | Source | Year | Format |
 |-----|-----|-----|-----|-----|
 |`"Grilla ortofotos urbana"` | `"IDE"` | IDE | 2019 | wfs |
 |`"Grilla ortofotos nacional"` | `"IDE"` | IDE | 2019 | wfs |
   
-### Cobertura de suelo
+### Land Cover
 
-| Layer | Productor | Server | Year | Format |
+| Layer | Productor | Source | Year | Format |
 |-----|-----|-----|-----|-----|
 |`"Cobertura suelo 2000"` | `"DINAGUA"` | MVOTMA | 2000 | zip |
 |`"Cobertura suelo 2008"` | `"DINAGUA"` | MVOTMA | 2008 | zip |
