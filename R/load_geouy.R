@@ -16,6 +16,7 @@
 
 load_geouy <- function(c, crs = 32721, folder = tempdir()){
   x <- geouy::metadata 
+  folder <- normalizePath(folder,"/")
   try(if (!c %in% x$capa) stop("The name of the geometry you will load is not correct. Verify in the metadata file"))
   x <- x[x$capa == c,]
   if (x$repositor %in% "SGM") {
@@ -29,7 +30,7 @@ load_geouy <- function(c, crs = 32721, folder = tempdir()){
       warning(glue::glue("There are other .zip files in the folder that will be read..."))
     }
     # download ----
-    try(dir.create(normalizePath(folder,"/")))
+    try(dir.create(folder))
     f = glue::glue("{folder}/{x$capa}.zip")
     if (!file.exists(f)) {
       message(glue::glue("Intentando descargar {x$capa}..."))
