@@ -1,0 +1,13 @@
+citHeader("To cite geouy in publications use:")
+
+citEntry("geouy20",
+  entry    = "Misc",
+  title = "geouy: Geographic Information of Uruguay",
+  author = "Richard Detomasi",
+  note = "R package version 0.1.8",
+  year     = 2020,
+  url      = "https://github.com/RichDeto/geouy",
+  textVersion = paste(
+   
+  )
+)

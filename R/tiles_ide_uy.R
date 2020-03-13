@@ -9,7 +9,7 @@
 #' @importFrom dplyr filter %>%
 #' @importFrom methods is as
 #' @importFrom stringr str_sub str_pad
-#' @importFrom raster brick crop extent crs plotRGB
+#' @importFrom raster brick crop extent crs mosaic
 #' @importFrom glue glue
 #' @importFrom sp SpatialPolygons
 #' @importFrom utils download.file
@@ -24,13 +24,12 @@
 
 tiles_ide_uy <- function(x, format = "jpg", folder = tempdir(), urban = F){
   # checks ----
-  try(if (!is(x, "sf")) stop("The object you want to process is not class sf"))
-  if (!is.character(folder) | length(folder) != 1) {
-    message(glue::glue("You must enter a valid directory..."))
-  }
+  if (!is(x, "sf")) stop(glue::glue("The object {x} you want to process is not class sf"))
+  if (!is.character(folder) | length(folder) != 1) stop("You must enter a valid directory...")
+  if (!format %in% c("jpg", "tif")) stop("The format you want to download is not avaiable")
   # warnings ----
   if (length(fs::dir_ls(folder, regexp = "\\.jpg$")) != 0) {
-    message(glue::glue("There are other .jpg files in the folder that will be read..."))
+    message("There are other .jpg files in the folder that will be read...")
   }
   # download ----
   try(dir.create(folder))
@@ -40,15 +39,15 @@ tiles_ide_uy <- function(x, format = "jpg", folder = tempdir(), urban = F){
       raster::extent() %>% as('SpatialPolygons')
   raster::crs(bb) <- "+proj=longlat +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +no_defs"
   x2 <- geouy::load_geouy("Grilla ortofotos nacional", crs = 5381) %>% 
-      sf::st_join(x %>% sf::st_transform(5381), left = F) %>% 
-      filter(duplicated(.data$nombre))
+              sf::st_join(x %>% sf::st_transform(5381), left = F) %>% 
+              filter(duplicated(.data$nombre))
   try(if (nrow(x2) == 0) stop(glue::glue("The geometry you have in {x} is not in Uruguay. Verify in the metadata file")))
   if (urban == TRUE) {
     x2 <- geouy::load_geouy("Grilla ortofotos urbana", crs = 5381) %>% 
-      filter(localidad == "Montevideo") %>% 
-      sf::st_join(x %>% sf::st_transform(5381), left = F) %>% 
-      mutate(nombre = as.character(.data$nombre)) %>% 
-      filter(.data$nombre %in% unique(.data$nombre))
+                filter(.data$localidad == "Montevideo") %>% 
+                sf::st_join(x %>% sf::st_transform(5381), left = F) %>% 
+                mutate(nombre = as.character(.data$nombre)) %>% 
+                filter(.data$nombre %in% unique(.data$nombre))
     try(if (nrow(x2) == 0) stop(glue::glue("The geometry you have in {x} is not in Montevideo. Verify in the metadata file")))
   }
   
@@ -81,21 +80,19 @@ tiles_ide_uy <- function(x, format = "jpg", folder = tempdir(), urban = F){
     }
     # read brick ----
     ar <- fs::dir_ls(folder, regexp = "\\.tif$")
-  } else {
-    stop("The format you want to download is not avaiable")
-  }
+  } 
   # Return ----
-  if(length(ar) == 1) {
+  if (length(ar) == 1) {
     a3 <- raster::brick(ar)
     raster::crs(a3) <- "+proj=utm +zone=21 +south +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs"
     a3 <- a3 %>% raster::crop(bb) %>% 
       raster::projectRaster(crs = crs[[2]])
   } else {
     rast.list <- list()
-    for(i in 1:length(ar)) { rast.list[i] <- raster(ar[i]) }
+    for (i in 1:length(ar)) { rast.list[i] <- raster::brick(ar[i]) }
     # And then use do.call on the list of raster objects
     rast.list$fun <- mean
-    a3 <- do.call(mosaic,rast.list)
+    a3 <- do.call(raster::mosaic,rast.list)
   }
   
   # raster::plotRGB(a3)

@@ -14,7 +14,7 @@
 
 **geouy** is an R package that allows users to easily access official spatial data sets of Uruguay. The package includes a wide range of geospatial datasets as *simple features* (`sf`), available at various geographic scales and for various years with harmonized attributes and projection (see detailed list below).
 
-## Installation
+## <i class="fa fa-pencil" aria-hidden="true"></i> Installation
 
 ```R
 # From CRAN
@@ -37,7 +37,7 @@ The syntax of all `geouy` functions operate one the same logic so it becomes int
 secc <- load_geouy("Secciones")
 ```
 
-## Available datasets:
+## <i class="fa fa-pencil" aria-hidden="true"></i> Available datasets:
 
 
 ### Administrative limits 
@@ -121,13 +121,13 @@ secc <- load_geouy("Secciones")
 |`"Cobertura suelo 2015"` | `"DINAGUA"` | MVOTMA | 2015 | zip |
 
 
-## Other functions:
+## <i class="fa fa-pencil" aria-hidden="true"></i> Other functions:
 
 
 | Function | Action|
 |-----|-----|
 |`which_uy` | Add to an 'sf' object its spatial coincidence with one or more administrative units in Uruguay, generating the corresponding variables. | 
-|`tiles_ide_uy`| Download .jpg (with the jgw correponding files) or .tif files from the IDEuy orthophotos repository, according to a 'sf' object bbox. |
+|`tiles_ide_uy`| Download .jpg (with the jgw correponding files) or .tif files from the IDEuy orthophotos repository, according to a 'sf' object bbox. If .tif have the posibility for Montevideo tiles use orthophotos with 10cm per pixel |
 |`geocode_ide_uy`| Allows geocoding directions using IDE_uy. |
 |`plot_geouy`| Plot a variable of your sf object with north and scale, set on a simple theme. | 
 |`is.uy4326`| Test if an 'sf' object match with Uruguay at crs = 4326. |
@@ -135,7 +135,7 @@ secc <- load_geouy("Secciones")
 |`is.uy5381`| Test if an 'sf' object match with Uruguay at crs = 5381.  |
 | ... | ... | 
 
-## History
+## <i class="fa fa-pencil" aria-hidden="true"></i> History
 
 This package arises from the conjugation of own ideas with an eye on the region. It started as a part of the package where I work with @calcita at [ech](https://github.com/calcita/ech), and some geospatial service packages in the region mainly: 
 [geobr](https://github.com/ipeaGIT/geobr) and 
@@ -143,7 +143,7 @@ This package arises from the conjugation of own ideas with an eye on the region.
 
 This walk on the shoulders of giants, allows this package focused on this small country (my beautiful Uruguay), to have its own particularities although it tries to fit especially to [geobr](https://github.com/ipeaGIT/geobr) in its structure and with a view to complementing [ech](https://github.com/calcita/ech).
 
-## Community contributions [es](https://github.com/RichDeto/geouy/issues/1)
+## <i class="fa fa-pencil" aria-hidden="true"></i> Community contributions [es](https://github.com/RichDeto/geouy/issues/1)
 
 This package intends to incorporate any function of general requirements that use the geographic data of Uruguay as a base. All contributions in this regard are welcome.
 
@@ -167,3 +167,23 @@ If you work with geographic data of Uruguay and want to add your function or dat
     - Add a record to the `metadata` file in the `data-raw/` directory, with the corresponding data.
     - Also include this record in the corresponding table of the `README.md` file, with the corresponding format.
     - If everything works fine, then make a pull request
+
+## <i class="fa fa-pencil" aria-hidden="true"></i> Citation
+
+To cite `geouy` in publications, please use:
+
+Riffe T, Aburto JM, Alexander M,Fennell S, Kashnitsky I, Pascariu M and Gerland P. (2019) DemoTools: An R package of tools for aggregate demographic analysis
+   URL: https://github.com/timriffe/DemoTools/. 
+  
+A BibTeX entry for LaTeX users is:
+
+```
+@Misc{geouy20,
+  title = {geouy: Geographic Information of Uruguay},
+  author = {Richard Detomasi},
+  note = {R package version 0.1.8},
+  year = {2020},
+  url  = {https://github.com/RichDeto/geouy},
+}
+
+```
