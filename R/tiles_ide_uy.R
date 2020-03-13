@@ -47,19 +47,22 @@ tiles_ide_uy <- function(x, format = "jpg", folder = tempdir(), urban = F){
     x2 <- geouy::load_geouy("Grilla ortofotos urbana", crs = 5381) %>% 
       filter(localidad == "Montevideo") %>% 
       sf::st_join(x %>% sf::st_transform(5381), left = F) %>% 
-      filter(duplicated(.data$nombre))
+      mutate(nombre = as.character(.data$nombre)) %>% 
+      filter(.data$nombre %in% unique(.data$nombre))
     try(if (nrow(x2) == 0) stop(glue::glue("The geometry you have in {x} is not in Montevideo. Verify in the metadata file")))
   }
   
   # Para formato jpg ----
   if (format == "jpg") {
     a <- glue::glue("https://visualizador.ide.uy/descargas/CN_Remesa_{stringr::str_pad(x2$remesa, 2, pad = '0')}/02_Ortoimagenes/03_RGB_8bits/{as.character(x2$nombre)}_RGB_8_Remesa_{stringr::str_pad(x2$remesa, 2, pad = '0')}")
-    if (!file.exists(a)) {
-      message(glue::glue("Trying to download..."))
-      try(utils::download.file(glue::glue("{a}{c('.jpg','.jgw')}"), 
-                               glue::glue("{folder}//{basename(a)}{c('.jpg','.jgw')}"), 
-                               mode = "wb", method = "libcurl"))
-    } 
+    for (i in 1:length(a)) {
+      if (!file.exists(a[i])) {
+        message(glue::glue("Trying to download..."))
+        try(utils::download.file(glue::glue("{a[i]}{c('.jpg','.jgw')}"), 
+                                 glue::glue("{folder}//{basename(a[i])}{c('.jpg','.jgw')}"), 
+                                 mode = "wb", method = "libcurl"))
+      } 
+    }
     # read brick
     ar <- fs::dir_ls(folder,  regexp = "\\.jpg$")
   } 
@@ -70,20 +73,31 @@ tiles_ide_uy <- function(x, format = "jpg", folder = tempdir(), urban = F){
     } else {
       a <- glue::glue("https://visualizador.ide.uy/descargas/CU_Remesa_{stringr::str_pad(x2$remesa, 2, pad = '0')}/02_Ortoimagenes/01_Ciudad_MVD/02_RGBI_8bits/{as.character(x2$nombre)}_RGBI_8_Remesa_{stringr::str_pad(x2$remesa, 2, pad = '0')}_MVD.tif")
     }
-    if (!file.exists(a)) {
-      message(glue::glue("Trying to download..."))
-      try(utils::download.file(a, glue::glue("{folder}//{basename(a)}"), mode = "wb", method = "libcurl"))
-    } 
+    for (i in 1:length(a)) {
+      if (!file.exists(a[i])) {
+        message(glue::glue("Trying to download..."))
+        try(utils::download.file(a[i], glue::glue("{folder}//{basename(a[i])}"), mode = "wb", method = "libcurl"))
+      } 
+    }
     # read brick ----
     ar <- fs::dir_ls(folder, regexp = "\\.tif$")
   } else {
     stop("The format you want to download is not avaiable")
   }
   # Return ----
-  a3 <- raster::brick(ar)
-  raster::crs(a3) <- "+proj=utm +zone=21 +south +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs"
-  a3 <- a3 %>% raster::crop(bb) %>% 
+  if(length(ar) == 1) {
+    a3 <- raster::brick(ar)
+    raster::crs(a3) <- "+proj=utm +zone=21 +south +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs"
+    a3 <- a3 %>% raster::crop(bb) %>% 
       raster::projectRaster(crs = crs[[2]])
+  } else {
+    rast.list <- list()
+    for(i in 1:length(ar)) { rast.list[i] <- raster(ar[i]) }
+    # And then use do.call on the list of raster objects
+    rast.list$fun <- mean
+    a3 <- do.call(mosaic,rast.list)
+  }
+  
   # raster::plotRGB(a3)
   return(a3)
 }
