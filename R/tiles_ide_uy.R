@@ -22,14 +22,14 @@
 #' x_tiles <- tiles_ide_uy(x)
 #'}
 
-tiles_ide_uy <- function(x, format = "jpg", folder = tempdir(), urban = F){
+tiles_ide_uy <- function(x, format = "jpg", folder = tempdir(), urban = FALSE){
   # checks ----
   if (!is(x, "sf")) stop(glue::glue("The object {x} you want to process is not class sf"))
   if (!is.character(folder) | length(folder) != 1) stop("You must enter a valid directory...")
   if (!format %in% c("jpg", "tif")) stop("The format you want to download is not avaiable")
   # warnings ----
-  if (length(fs::dir_ls(folder, regexp = "\\.jpg$")) != 0) {
-    message("There are other .jpg files in the folder that will be read...")
+  if (length(fs::dir_ls(folder, regexp = glue::glue("\\.{format}$"))) != 0) {
+    message(glue::glue("There are other .{format} files in the folder that will be read..."))
   }
   # download ----
   try(dir.create(folder))
@@ -40,15 +40,15 @@ tiles_ide_uy <- function(x, format = "jpg", folder = tempdir(), urban = F){
   raster::crs(bb) <- "+proj=longlat +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +no_defs"
   x2 <- geouy::load_geouy("Grilla ortofotos nacional", crs = 5381) %>% 
     sf::st_join(x %>% sf::st_transform(5381), left = F) %>% 
-    distinct(.data$nombre, .keep_all = TRUE)
-  try(if (nrow(x2) == 0) stop(glue::glue("The geometry you have in {x} is not in Uruguay. Verify in the metadata file")))
+    dplyr::distinct(.data$nombre, .keep_all = TRUE)
+  if (nrow(x2) == 0) stop(glue::glue("The geometry you have in {x} is not in Uruguay. Verify in the metadata file"))
   if (urban == TRUE) {
     x2 <- geouy::load_geouy("Grilla ortofotos urbana", crs = 5381) %>% 
       filter(.data$localidad == "Montevideo") %>% 
       sf::st_join(x %>% sf::st_transform(5381), left = F) %>% 
       mutate(nombre = as.character(.data$nombre)) %>% 
-      distinct(.data$nombre, .keep_all = TRUE)
-    try(if (nrow(x2) == 0) stop(glue::glue("The geometry you have in {x} is not in Montevideo. Verify in the metadata file")))
+      dplyr::distinct(.data$nombre, .keep_all = TRUE)
+    if (nrow(x2) == 0) stop(glue::glue("The geometry you have in {x} is not in Montevideo. Verify in the metadata file"))
   }
   
   # Para formato jpg ----
@@ -70,7 +70,7 @@ tiles_ide_uy <- function(x, format = "jpg", folder = tempdir(), urban = F){
     ar <- fs::dir_ls(folder,  regexp = "\\.jpg$")
   } 
   # Para formato tif ----
-  else if (format == "tif") {
+  if (format == "tif") {
     if (urban == FALSE) {
       a <- glue::glue("https://visualizador.ide.uy/descargas/CN_Remesa_{stringr::str_pad(x2$remesa, 2, pad = '0')}/02_Ortoimagenes/02_RGBI_8bits/{as.character(x2$nombre)}_RGBI_8_Remesa_{stringr::str_pad(x2$remesa, 2, pad = '0')}.tif")
     } else {
@@ -98,7 +98,6 @@ tiles_ide_uy <- function(x, format = "jpg", folder = tempdir(), urban = F){
     rast.list$fun <- mean
     a3 <- do.call(raster::mosaic,rast.list)
   }
-  
   # raster::plotRGB(a3)
   return(a3)
 }
