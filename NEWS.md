@@ -7,7 +7,7 @@
 * Add more testthat for 'tiles_ide_uy()' function
 * Add zip format to 'load_goeuy()'
 * Add MVOTMA datasets to metadata, i.e.: Ambientes acuaticos, Areas protegidas, Batimetria, Secciones catastrales, Padrones rurales y urbanos, Secciones policiales, Playas and Cuencas hidrograficas in its 5 nivels.
-* Add to tiles_ide_uy if format == .tif give the posibility for Montevideo tiles use orthophotos with 10cm per pixel 
+* Add to tiles_ide_uy the posibility for Montevideo tiles with urban = TRUE give orthophotos with 10cm per pixel 
 * Solved bug with raster::mosaic for combination of multiple tiles to cover a bbox.  
 
 ## geouy v0.1.7 (2020-02-26)

@@ -53,7 +53,11 @@ tiles_ide_uy <- function(x, format = "jpg", folder = tempdir(), urban = F){
   
   # Para formato jpg ----
   if (format == "jpg") {
-    a <- glue::glue("https://visualizador.ide.uy/descargas/CN_Remesa_{stringr::str_pad(x2$remesa, 2, pad = '0')}/02_Ortoimagenes/03_RGB_8bits/{as.character(x2$nombre)}_RGB_8_Remesa_{stringr::str_pad(x2$remesa, 2, pad = '0')}")
+    if (urban == FALSE) {
+      a <- glue::glue("https://visualizador.ide.uy/descargas/CN_Remesa_{stringr::str_pad(x2$remesa, 2, pad = '0')}/02_Ortoimagenes/03_RGB_8bits/{as.character(x2$nombre)}_RGB_8_Remesa_{stringr::str_pad(x2$remesa, 2, pad = '0')}")
+    } else {
+      a <- glue::glue("https://visualizador.ide.uy/descargas/CU_Remesa_{stringr::str_pad(x2$remesa, 2, pad = '0')}/02_Ortoimagenes/01_Ciudad_MVD/03_RGB_8bits/{as.character(x2$nombre)}_RGB_8_Remesa_{stringr::str_pad(x2$remesa, 2, pad = '0')}_MVD")
+    }
     for (i in 1:length(a)) {
       if (!file.exists(a[i])) {
         message(glue::glue("Trying to download..."))
