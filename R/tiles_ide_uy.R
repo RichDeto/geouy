@@ -6,7 +6,7 @@
 #' @keywords IDE orthophotos Uruguay
 #' @return raster::stack object with th cropped tif corresponding to x bbox
 #' @importFrom sf st_join st_crs st_bbox st_transform
-#' @importFrom dplyr filter %>%
+#' @importFrom dplyr filter %>% distinct
 #' @importFrom methods is as
 #' @importFrom stringr str_sub str_pad
 #' @importFrom raster brick crop extent crs mosaic
@@ -39,15 +39,15 @@ tiles_ide_uy <- function(x, format = "jpg", folder = tempdir(), urban = F){
       raster::extent() %>% as('SpatialPolygons')
   raster::crs(bb) <- "+proj=longlat +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +no_defs"
   x2 <- geouy::load_geouy("Grilla ortofotos nacional", crs = 5381) %>% 
-              sf::st_join(x %>% sf::st_transform(5381), left = F) %>% 
-              filter(duplicated(.data$nombre))
+    sf::st_join(x %>% sf::st_transform(5381), left = F) %>% 
+    distinct(.data$nombre, .keep_all = TRUE)
   try(if (nrow(x2) == 0) stop(glue::glue("The geometry you have in {x} is not in Uruguay. Verify in the metadata file")))
   if (urban == TRUE) {
     x2 <- geouy::load_geouy("Grilla ortofotos urbana", crs = 5381) %>% 
-                filter(.data$localidad == "Montevideo") %>% 
-                sf::st_join(x %>% sf::st_transform(5381), left = F) %>% 
-                mutate(nombre = as.character(.data$nombre)) %>% 
-                filter(.data$nombre %in% unique(.data$nombre))
+      filter(.data$localidad == "Montevideo") %>% 
+      sf::st_join(x %>% sf::st_transform(5381), left = F) %>% 
+      mutate(nombre = as.character(.data$nombre)) %>% 
+      distinct(.data$nombre, .keep_all = TRUE)
     try(if (nrow(x2) == 0) stop(glue::glue("The geometry you have in {x} is not in Montevideo. Verify in the metadata file")))
   }
   
