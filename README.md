@@ -172,8 +172,8 @@ If you work with geographic data of Uruguay and want to add your function or dat
 
 To cite `geouy` in publications, please use:
 
-Riffe T, Aburto JM, Alexander M,Fennell S, Kashnitsky I, Pascariu M and Gerland P. (2019) DemoTools: An R package of tools for aggregate demographic analysis
-   URL: https://github.com/timriffe/DemoTools/. 
+Detomasi, Richard (2020) "geouy: Geographic Information of Uruguay". R package version 0.1.8
+   URL: https://github.com/RichDeto/geouy. 
   
 A BibTeX entry for LaTeX users is:
 
