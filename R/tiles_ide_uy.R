@@ -39,11 +39,12 @@ tiles_ide_uy <- function(x, format = "jpg", folder = tempdir(), urban = FALSE){
       sf::st_bbox() %>% as.vector() %>% 
       raster::extent() %>% as('SpatialPolygons')
   raster::crs(bb) <- "+proj=longlat +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +no_defs"
-  x2 <- geouy::load_geouy("Grilla ortofotos nacional", crs = 5381) %>% 
-    sf::st_join(x %>% sf::st_transform(5381), left = F) %>% 
-    dplyr::distinct(.data$nombre, .keep_all = TRUE)
-  if (nrow(x2) == 0) stop(glue::glue("The geometry you have in {x} is not in Uruguay. Verify in the metadata file"))
-  if (urban == TRUE) {
+  if (urban == FALSE) {
+    x2 <- geouy::load_geouy("Grilla ortofotos nacional", crs = 5381) %>% 
+      sf::st_join(x %>% sf::st_transform(5381), left = F) %>% 
+      dplyr::distinct(.data$nombre, .keep_all = TRUE)
+    if (nrow(x2) == 0) stop(glue::glue("The geometry you have in {x} is not in Uruguay. Verify in the metadata file"))
+  } else {
     x2 <- geouy::load_geouy("Grilla ortofotos urbana", crs = 5381) %>% 
       filter(.data$localidad == "Montevideo") %>% 
       sf::st_join(x %>% sf::st_transform(5381), left = F) %>% 

@@ -11,7 +11,8 @@
 #' @export
 #' @examples
 #'\donttest{
-#' x <- which_uy(x, c = "Localidades pg")
+#' x <- load_geouy("Peajes")
+#' x1 <- which_uy(x, c = "Localidades pg")
 #'}
 
 which_uy <- function(x, c = c("Localidades pg", "Departamentos"), d = c("cod", "name")){

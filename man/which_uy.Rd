@@ -21,7 +21,8 @@ This function allows to add to an 'sf' object its spatial coincidence with one o
 }
 \examples{
 \donttest{
-x <- which_uy(x, c = "Localidades pg")
+x <- load_geouy("Peajes")
+x1 <- which_uy(x, c = "Localidades pg")
 }
 }
 \keyword{IDE}
