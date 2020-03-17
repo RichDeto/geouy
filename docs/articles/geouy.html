@@ -70,7 +70,7 @@
 </h1>
                         <h4 class="author">Richard Detomasi</h4>
             
-            <h4 class="date">2020-03-13</h4>
+            <h4 class="date">2020-03-17</h4>
       
       
       <div class="hidden name"><code>geouy.Rmd</code></div>
@@ -80,16 +80,16 @@
     
     
 <p>El paquete <code>geouy</code> tiene como objetivo facilitar el trabajo de les usuaries que trabajen con los datos geográficos de Uruguay, y este tutorial busca ejemplificar el uso de las funciones del paquete.</p>
-<div id="instalación" class="section level2">
+<div id="instalacion" class="section level2">
 <h2 class="hasAnchor">
-<a href="#instalaci%C3%B3n" class="anchor"></a>Instalación</h2>
+<a href="#instalacion" class="anchor"></a>Instalación</h2>
 <!-- Para instalar la versión estable del paquete usar: -->
 <!-- ```{r eval=FALSE, message=FALSE, warning=FALSE, include=TRUE} -->
 <!-- install.packages('geouy') -->
 <!-- ``` -->
 <p>Para instalar la versión en desarrollo:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># install.packages('devtools') si no tiene instalado devtools</span>
-devtools<span class="op">::</span><span class="kw">install_github</span>(<span class="st">"RichDeto/geouy"</span>)</code></pre></div>
+devtools<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/devtools/man/remote-reexports.html">install_github</a></span>(<span class="st">"RichDeto/geouy"</span>)</code></pre></div>
 <p>Para activarla</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">knitr<span class="op">::</span>opts_chunk<span class="op">$</span><span class="kw">set</span>(
     <span class="dt">eval =</span> <span class="ot">FALSE</span>,
@@ -102,20 +102,20 @@ devtools<span class="op">::</span><span class="kw">install_github</span>(<span c
 <div id="ejemplos-de-usos" class="section level2">
 <h2 class="hasAnchor">
 <a href="#ejemplos-de-usos" class="anchor"></a>Ejemplos de usos</h2>
-<div id="cargar-geometrías" class="section level3">
+<div id="cargar-geometrias" class="section level3">
 <h3 class="hasAnchor">
-<a href="#cargar-geometr%C3%ADas" class="anchor"></a>Cargar geometrías</h3>
+<a href="#cargar-geometrias" class="anchor"></a>Cargar geometrías</h3>
 <p>Obtengamos como primer paso las geometrías de los peajes de Uruguay</p>
 <p>Por defecto me traerá estas geometrías en EPSG 32721 que es el CRS correspondiente a Uruguay, por lo que no lo especifico en el parámetro correspondiente.</p>
 </div>
-<div id="goecodificación" class="section level3">
+<div id="goecodificacion" class="section level3">
 <h3 class="hasAnchor">
-<a href="#goecodificaci%C3%B3n" class="anchor"></a>Goecodificación</h3>
+<a href="#goecodificacion" class="anchor"></a>Goecodificación</h3>
 <p>Ahora bien, tenemos algunas direcciones de nuevas Instituciones sin coordenadas, por lo que usaremos <code><a href="../reference/geocode_ide_uy.html">geocode_ide_uy()</a></code> para geocodificarlas:</p>
 </div>
-<div id="asignar-codigos-y-nombres-de-otras-geometrías" class="section level3">
+<div id="asignar-codigos-y-nombres-de-otras-geometrias" class="section level3">
 <h3 class="hasAnchor">
-<a href="#asignar-codigos-y-nombres-de-otras-geometr%C3%ADas" class="anchor"></a>Asignar codigos y nombres de otras geometrías</h3>
+<a href="#asignar-codigos-y-nombres-de-otras-geometrias" class="anchor"></a>Asignar codigos y nombres de otras geometrías</h3>
 <p>Continuando con el ejemplo, asignémosle a las <code>Instituciones deportivas</code>, los códigos y nombres de departamentos correspondientes, utilizando la función <code><a href="../reference/which_uy.html">which_uy()</a></code> como se muestra a continuación:</p>
 <p>NOTA: El segundo parámetro tiene que corresponder con un valor de <code>geouy::metadata$capa</code> para funcionar.</p>
 </div>
@@ -128,7 +128,7 @@ devtools<span class="op">::</span><span class="kw">install_github</span>(<span c
       <h2 class="hasAnchor">
 <a href="#tocnav" class="anchor"></a>Contents</h2>
       <ul class="nav nav-pills nav-stacked">
-<li><a href="#instalaci%C3%B3n">Instalación</a></li>
+<li><a href="#instalacion">Instalación</a></li>
       <li><a href="#ejemplos-de-usos">Ejemplos de usos</a></li>
       </ul>
 </div>

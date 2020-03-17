@@ -14,7 +14,7 @@
 
 **geouy** is an R package that allows users to easily access official spatial data sets of Uruguay. The package includes a wide range of geospatial datasets as *simple features* (`sf`), available at various geographic scales and for various years with harmonized attributes and projection (see detailed list below).
 
-## <i class="fa fa-pencil" aria-hidden="true"></i> Installation
+## Installation
 
 ```R
 # From CRAN
@@ -37,7 +37,7 @@ The syntax of all `geouy` functions operate one the same logic so it becomes int
 secc <- load_geouy("Secciones")
 ```
 
-## <i class="fa fa-pencil" aria-hidden="true"></i> Available datasets:
+## Available datasets:
 
 
 ### Administrative limits 
@@ -121,7 +121,7 @@ secc <- load_geouy("Secciones")
 |`"Cobertura suelo 2015"` | `"DINAGUA"` | MVOTMA | 2015 | zip |
 
 
-## <i class="fa fa-pencil" aria-hidden="true"></i> Other functions:
+## Other functions:
 
 
 | Function | Action|
@@ -135,7 +135,7 @@ secc <- load_geouy("Secciones")
 |`is.uy5381`| Test if an 'sf' object match with Uruguay at crs = 5381.  |
 | ... | ... | 
 
-## <i class="fa fa-pencil" aria-hidden="true"></i> History
+## History
 
 This package arises from the conjugation of own ideas with an eye on the region. It started as a part of the package where I work with @calcita at [ech](https://github.com/calcita/ech), and some geospatial service packages in the region mainly: 
 [geobr](https://github.com/ipeaGIT/geobr) and 
@@ -143,7 +143,7 @@ This package arises from the conjugation of own ideas with an eye on the region.
 
 This walk on the shoulders of giants, allows this package focused on this small country (my beautiful Uruguay), to have its own particularities although it tries to fit especially to [geobr](https://github.com/ipeaGIT/geobr) in its structure and with a view to complementing [ech](https://github.com/calcita/ech).
 
-## <i class="fa fa-pencil" aria-hidden="true"></i> Community contributions [es](https://github.com/RichDeto/geouy/issues/1)
+## Community contributions [es](https://github.com/RichDeto/geouy/issues/1)
 
 This package intends to incorporate any function of general requirements that use the geographic data of Uruguay as a base. All contributions in this regard are welcome.
 

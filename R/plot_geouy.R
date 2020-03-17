@@ -9,8 +9,7 @@
 #' @return ggplot object of a choropleth map with x geometries and a values.
 #' @export
 #' @import ggplot2 ggthemes
-#' @importFrom rlang sym quo_name
-#' @importFrom dplyr enquo 
+#' @importFrom rlang .data
 #' @importFrom  ggsn north scalebar
 #' @examples
 #' \donttest{
@@ -19,10 +18,8 @@
 #' }
 
 plot_geouy <- function(x, a, viri_opt = "plasma", ...){
-  a <- enquo(a)
-  a_name <- quo_name(a)
   ggplot(data = x) +
-    geom_sf(aes(fill = !!sym(a_name))) +
+    geom_sf(aes(fill = .data$a)) +
     scale_fill_viridis_c(option = viri_opt) +
     theme(axis.line = element_blank(),
           axis.text.x = element_blank(),
