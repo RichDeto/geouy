@@ -32,6 +32,7 @@ tiles_ide_uy <- function(x, format = "jpg", folder = tempdir(), urban = FALSE){
     message(glue::glue("There are other .{format} files in the folder that will be read..."))
   }
   # download ----
+  start_time <- Sys.time()
   try(dir.create(folder))
   crs = sf::st_crs(x) 
   bb = x %>% sf::st_transform(5382) %>% 
@@ -68,6 +69,7 @@ tiles_ide_uy <- function(x, format = "jpg", folder = tempdir(), urban = FALSE){
     }
     # read brick
     ar <- fs::dir_ls(folder,  regexp = "\\.jpg$")
+    ar <- ar[file.info(ar)$mtime > start_time]
   } 
   # Para formato tif ----
   if (format == "tif") {
@@ -84,6 +86,7 @@ tiles_ide_uy <- function(x, format = "jpg", folder = tempdir(), urban = FALSE){
     }
     # read brick ----
     ar <- fs::dir_ls(folder, regexp = "\\.tif$")
+    ar <- ar[file.info(ar)$mtime > start_time]
   } 
   # Return ----
   if (length(ar) == 1) {

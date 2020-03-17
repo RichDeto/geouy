@@ -3,7 +3,7 @@
 language: R
 cache: packages
 warnings_are_errors: false
-install: travis_wait mvn install
+
 apt_packages:
   - libudunits2-dev 
   - libgdal-dev 

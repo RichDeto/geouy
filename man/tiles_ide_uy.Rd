@@ -4,7 +4,7 @@
 \alias{tiles_ide_uy}
 \title{This function allows to Download .jpg or .tif files from the IDEuy tiles repository, according to a 'sf' object bbox.}
 \usage{
-tiles_ide_uy(x, format = "jpg", folder = tempdir(), urban = F)
+tiles_ide_uy(x, format = "jpg", folder = tempdir(), urban = FALSE)
 }
 \arguments{
 \item{x}{An 'sf' object with the same crs as the homonym parameter}
