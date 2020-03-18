@@ -1,6 +1,10 @@
 # log history of geouy package development
 
 -------------------------------------------------------
+## geouy v0.1.9 (in develop)
+
+* Remove geocode_geouy becuase IDEuy allow access only through the POI platform, belonging to Uruguayan state agencies and no longer for public use. 
+
 ## geouy v0.1.8 (2020-03-17)
 
 * Add to 'tiles_ide_uy()' function options to download .jpg in addition to .tif

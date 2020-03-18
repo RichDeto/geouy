@@ -6,7 +6,7 @@
 #' @keywords IDE orthophotos Uruguay
 #' @return raster::stack object with th cropped tif corresponding to x bbox
 #' @importFrom sf st_join st_crs st_bbox st_transform
-#' @importFrom dplyr filter %>% distinct
+#' @importFrom dplyr filter %>% distinct mutate
 #' @importFrom methods is as
 #' @importFrom stringr str_sub str_pad
 #' @importFrom raster brick crop extent crs mosaic
