@@ -13,9 +13,9 @@ testthat::test_that("crs parameter working", {
   c <- load_geouy("Peajes", 5381)
   testthat::expect_error(is.uy5382(c))
   testthat::expect_equal(is.uy5381(c), "Your object have 100% of matches with Ururguay CRS 5381")
-  c <- load_geouy("Peajes", 5382)
+  d <- load_geouy("Peajes", 5382)
   testthat::expect_error(is.uy5381(d))
-  testthat::expect_equal(is.uy5382(c), "Your object have 100% of matches with Ururguay CRS 5382")
+  testthat::expect_equal(is.uy5382(d), "Your object have 100% of matches with Ururguay CRS 5382")
 })
 
 testthat::test_that("crs parameter working", {
