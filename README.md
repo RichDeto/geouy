@@ -128,7 +128,6 @@ secc <- load_geouy("Secciones")
 |-----|-----|
 |`which_uy` | Add to an 'sf' object its spatial coincidence with one or more administrative units in Uruguay, generating the corresponding variables. | 
 |`tiles_ide_uy`| Download .jpg (with the jgw correponding files) or .tif files from the IDEuy orthophotos repository, according to a 'sf' object bbox. And have the posibility for Montevideo tiles use orthophotos with 10cm per pixel with the parameter urban = TRUE |
-|`geocode_ide_uy`| Allows geocoding directions using IDE_uy. |
 |`plot_geouy`| Plot a variable of your sf object with north and scale, set on a simple theme. | 
 |`is.uy4326`| Test if an 'sf' object match with Uruguay at crs = 4326. |
 |`is.uy32721`| Test if an 'sf' object match with Uruguay at crs = 32721.  |
