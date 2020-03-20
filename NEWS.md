@@ -1,6 +1,12 @@
 # log history of geouy package development
 
 -------------------------------------------------------
+## geouy v0.1.9 (2020-03-20)
+
+* Update test withCRS structure for the upcoming version of sf
+* Limits in geocode_geouy(), you must be part of uruguayan public organism and  fill this (forms)[https://www.gub.uy/agencia-gobierno-electronico-sociedad-informacion-conocimiento/comunicacion/publicaciones/formularios-de-alta-y-consumo-de-servicios-de-la-pdi] if your organism is not yet vinculated.
+
+
 ## geouy v0.1.8 (2020-03-17)
 
 * Add to 'tiles_ide_uy()' function options to download .jpg in addition to .tif

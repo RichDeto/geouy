@@ -75,6 +75,7 @@ nuevas_geo <- geocode_ide_uy(nuevas)
 
 ```
 
+NOTA: Limits in geocode_geouy(), you must be part of uruguayan public organism and  fill this (forms)[https://www.gub.uy/agencia-gobierno-electronico-sociedad-informacion-conocimiento/comunicacion/publicaciones/formularios-de-alta-y-consumo-de-servicios-de-la-pdi] if your organism is not yet vinculated.
 
 ### Asignar codigos y nombres de otras geometrías
 

@@ -15,9 +15,7 @@ test_that("crs parameter working", {
   testthat::expect_error(load_geouy("Playas", folder = c("c://", "E://")))
   
   a <- load_geouy("Secciones", crs = 4326)
-  a1 <- sf::st_crs(a)
-  testthat::expect_equal(a1[1], structure(list(epsg = 4326L), .Names = "epsg"))
+  testthat::expect_is(a, "sf")
   a <- load_geouy("Secciones", crs = 32721)
-  a1 <- sf::st_crs(a)
-  testthat::expect_equal(a1[1], structure(list(epsg = 32721L), .Names = "epsg"))
-})
+  testthat::expect_is(a, "sf")
+  })
