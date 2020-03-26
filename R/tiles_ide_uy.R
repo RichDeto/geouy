@@ -94,13 +94,13 @@ tiles_ide_uy <- function(x, format = "jpg", folder = tempdir(), urban = FALSE){
     a3 <- raster::brick(ar)
     raster::crs(a3) <- "+proj=utm +zone=21 +south +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs"
     a3 <- a3 %>% raster::crop(bb) %>% 
-      raster::projectRaster(crs = crs[[2]])
+      raster::projectRaster(crs = crs$proj4string)
   } else {
     rast.list <- list()
     for (i in 1:length(ar)) { rast.list[i] <- raster::brick(ar[i]) }
     # And then use do.call on the list of raster objects
     rast.list$fun <- mean
-    a3 <- do.call(raster::mosaic,rast.list)
+    a3 <- do.call(raster::mosaic, rast.list)
   }
   # raster::plotRGB(a3)
   return(a3)
