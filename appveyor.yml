@@ -11,7 +11,7 @@ install:
   ps: Bootstrap
 
 cache:
-  - C:\RLibrary
+  - packages -> appveyor.yml 
 
 environment:
   NOT_CRAN: true
