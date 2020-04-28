@@ -4,7 +4,7 @@
 #' @return The DafaFrame x with the coordinates variables append (x and y)
 #' @importFrom dplyr mutate filter %>%
 #' @importFrom stringr str_sub str_locate str_trim str_replace_all
-#' @importFrom xml2 read_html
+#' @importFrom RCurl getURL
 #' @importFrom glue glue
 #' @export
 #' @examples
@@ -21,13 +21,13 @@ geocode_ide_uy <- function(x) {
   stopifnot(is.character(x$dir), "dir" %in% colnames(x))
   x <- x %>% mutate(dir = stringr::str_trim(dir)) %>% filter(nchar(dir) > 0)
   for (i in 1:nrow(x)) {
-    p <- glue::glue("http://servicios.ide.gub.uy/servicios/BusquedaDireccion?departamento={x[i,'dpto']}&localidad={x[i,'loc']}&calle={x[i,'dir']}") %>% 
-      str_replace_all(" ", "%20") %>% 
-      xml2::read_html(encoding = "UTF-8", options = c("NOBLANKS", "NOERROR"), n = 256) %>% 
-      suppressWarnings()
-    x[i,"x"] <- suppressWarnings(as.numeric(stringr::str_sub(p, stringr::str_locate(p, "puntoX\":")[2] + 1, stringr::str_locate(p, "puntoX\":")[2] + 10)))
-    x[i,"y"] <- suppressWarnings(as.numeric(stringr::str_sub(p, stringr::str_locate(p, "puntoY\":")[2] + 1, stringr::str_locate(p, "puntoY\":")[2] + 10)))
-    p <- NULL
+    p <- glue::glue("http://servicios.ide.gub.uy/servicios/BusquedaDireccion?departamento={x[i,'dpto']}&localidad={x[i,'loc']}&calle={x[i,'dir']}.json") %>% 
+      stringr::str_replace_all(" ", "%20") 
+    p <-  RCurl::getURL(p[1])
+    x[i, "x"] <- suppressWarnings(as.numeric(stringr::str_sub(p, stringr::str_locate(p, "puntoX\":")[2] + 1, stringr::str_locate(p, "puntoX\":")[2] + 10)))
+    x[i, "y"] <- suppressWarnings(as.numeric(stringr::str_sub(p, stringr::str_locate(p, "puntoY\":")[2] + 1, stringr::str_locate(p, "puntoY\":")[2] + 10)))
+    p <- NULL 
+    Sys.sleep(10)
   }
   return(x)
 }
