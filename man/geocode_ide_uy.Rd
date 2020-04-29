@@ -4,10 +4,12 @@
 \alias{geocode_ide_uy}
 \title{A function to geocoding directions using IDE_uy}
 \usage{
-geocode_ide_uy(x)
+geocode_ide_uy(x, details = F)
 }
 \arguments{
 \item{x}{Dataframe with unless 3 variables: dpto = corresponding to the department, loc = city / location, dir = to the address.}
+
+\item{details}{Logical value, default FALSE for X and Y variables only, if TRUE keep all variables of the service.}
 }
 \value{
 The DafaFrame x with the coordinates variables append (x and y)

@@ -88,7 +88,7 @@ is.uy5381 <- function(x){
 #' @export
 #' @examples
 #'\donttest{
-#' is.uy5382(load_geouy("Peajes", 5382))
+#' is.uy5382(load_geouy("Peajes"))
 #'}
 
 is.uy5382 <- function(x){

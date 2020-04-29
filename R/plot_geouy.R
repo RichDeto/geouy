@@ -10,6 +10,7 @@
 #' @export
 #' @import ggplot2 ggthemes
 #' @importFrom rlang .data
+#' @importFrom glue glue
 #' @importFrom  ggsn north scalebar
 #' @examples
 #' \donttest{
@@ -18,6 +19,8 @@
 #' }
 
 plot_geouy <- function(x, a, viri_opt = "plasma", ...){
+  try(if (!is(x, "sf")) stop("The object you want to process is not class sf"))
+  try(if (!a %in% names(x)) stop(glue::glue("The name of the variable you will plot is not in the object {x}")))
   ggplot(data = x) +
     geom_sf(aes(fill = .data$a)) +
     scale_fill_viridis_c(option = viri_opt) +
