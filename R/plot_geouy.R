@@ -22,7 +22,6 @@ plot_geouy <- function(x, col, viri_opt = "plasma", ...){
   try(if (!col %in% names(x)) stop(glue::glue("The name of the variable you will plot is not in the object {x}")))
   ggplot(data = x) +
     geom_sf(aes(fill = {{ col }})) +
-    scale_fill_viridis_c(option = viri_opt) +
     theme(axis.line = element_blank(),
           axis.text.x = element_blank(),
           axis.text.y = element_blank(),
@@ -35,5 +34,6 @@ plot_geouy <- function(x, col, viri_opt = "plasma", ...){
           panel.border = element_rect(colour = "gray", fill = NA, size = 0.5),
           legend.justification = c(1,1), legend.position = c(1,1)) +
     ggsn::north(x, location = "bottomleft", symbol = 3) +
-    ggsn::scalebar(x, dist = 50, dist_unit = "km", transform = T, model = "WGS84")
+    ggsn::scalebar(x, dist = 50, dist_unit = "km", transform = T, model = "WGS84") + 
+  if (is.numeric(x[col])) scale_fill_viridis_c(option = viri_opt)
 }
