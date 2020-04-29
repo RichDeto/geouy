@@ -14,12 +14,15 @@ is.uy4326 <- function(x){
   md <- geouy::metadata 
   if (!is(x, "sf")) stop("The object you want to process is not class sf")
   y <- geouy::load_geouy("Uruguay", crs = 4326)
-  if (st_crs(x) != st_crs(y)) stop("The object you want to process is not at CRS 4326")
+  if (st_crs(x) != st_crs(y)) {
+    return("The object you want to process is not at CRS 4326")
+  } else {
   y$geometry <- NULL
   x1 <- sf::st_join(x, y, left = F)
   x2 <- (nrow(x1) / nrow(x)) * 100
   return(ifelse(x2 == 0, "Your object have not any geometry in Uruguay... Try 5381, 5382 or 32721",
                 glue::glue("Your object have {x2}% of matches with Ururguay CRS 4326")))
+  }
 }
 
 #' This function test if an 'sf' object match with Uruguay at crs = 32721.
@@ -38,12 +41,15 @@ is.uy32721 <- function(x){
   md <- geouy::metadata 
   if (!is(x, "sf")) stop("The object you want to process is not class sf")
   y <- geouy::load_geouy("Uruguay", crs = 32721)
-  if (st_crs(x) != st_crs(y)) stop("The object you want to process is not at CRS 32721")
-  y$geometry <- NULL
-  x1 <- sf::st_join(x, y, left = F)
-  x2 <- (nrow(x1) / nrow(x)) * 100
-  return(ifelse(x2 == 0, "Your object have not any geometry in Uruguay... Try 4326, 5381 or 5382",
-                glue::glue("Your object have {x2}% of matches with Ururguay CRS 32721")))
+  if (st_crs(x) != st_crs(y)){
+    return("The object you want to process is not at CRS 32721")
+  } else {
+    y$geometry <- NULL
+    x1 <- sf::st_join(x, y, left = F)
+    x2 <- (nrow(x1) / nrow(x)) * 100
+    return(ifelse(x2 == 0, "Your object have not any geometry in Uruguay... Try 4326, 5381 or 5382",
+                  glue::glue("Your object have {x2}% of matches with Ururguay CRS 32721")))
+  }
 }
 
 #' This function test if an 'sf' object match with Uruguay at crs = 5381.
@@ -62,12 +68,15 @@ is.uy5381 <- function(x){
   md <- geouy::metadata 
   if (!is(x, "sf")) stop("The object you want to process is not class sf")
   y <- geouy::load_geouy("Uruguay", crs = 5381)
-  if (st_crs(x) != st_crs(y)) stop("The object you want to process is not at CRS 5381")
+  if (st_crs(x) != st_crs(y)) {
+    return("The object you want to process is not at CRS 5381")
+  } else {
   y$geometry <- NULL
   x1 <- sf::st_join(x, y, left = F)
   x2 <- (nrow(x1) / nrow(x)) * 100
   return(ifelse(x2 == 0, "Your object have not any geometry in Uruguay... Try 4326, 5382 or 32721",
                 glue::glue("Your object have {x2}% of matches with Ururguay CRS 5381")))
+  }
 }
 
 #' This function test if an 'sf' object match with Uruguay at crs = 5382.
@@ -79,17 +88,20 @@ is.uy5381 <- function(x){
 #' @export
 #' @examples
 #'\donttest{
-#' is.uy5382(load_geouy("Peajes"))
+#' is.uy5382(load_geouy("Peajes", 5382))
 #'}
 
 is.uy5382 <- function(x){
   md <- geouy::metadata 
   if (!is(x, "sf")) stop("The object you want to process is not class sf")
   y <- geouy::load_geouy("Uruguay", crs = 5382)
-  if (st_crs(x) != st_crs(y)) stop("The object you want to process is not at CRS 5382")
+  if (st_crs(x) != st_crs(y)) {
+    return("The object you want to process is not at CRS 5382")
+  } else {
   y$geometry <- NULL
   x1 <- sf::st_join(x, y, left = F)
   x2 <- (nrow(x1) / nrow(x)) * 100
   return(ifelse(x2 == 0, "Your object have not any geometry in Uruguay... Try 4326, 5381 or 32721",
                 glue::glue("Your object have {x2}% of matches with Ururguay CRS 5382")))
+  }
 }
