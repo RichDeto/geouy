@@ -2,27 +2,26 @@
 #'
 #' This function allows you to set ggplot2 theme in our suggested format.
 #' @param x An sf object like load_geouy() results
-#' @param a Variable of "x" to plot (character)
+#' @param col Variable of "x" to plot (character)
 #' @param viri_opt A character string indicating the colormap option to use. Four options are available: "magma" (or "A"), "inferno" (or "B"), "plasma" (or "C"), "viridis" (or "D", the default option) and "cividis" (or "E")
 #' @param ... All parameters allowed from ggplot2 themes.
 #' @keywords ggplot2 sf maps
-#' @return ggplot object of a choropleth map with x geometries and a values.
+#' @return ggplot object of a choropleth map with x geometries and col values.
 #' @export
 #' @import ggplot2 ggthemes
-#' @importFrom rlang .data
 #' @importFrom glue glue
 #' @importFrom  ggsn north scalebar
 #' @examples
 #' \donttest{
 #' secc <- load_geouy("Secciones")
-#' plot_geouy(x = secc, a = "AREA")
+#' plot_geouy(x = secc, col = "AREA")
 #' }
 
-plot_geouy <- function(x, a, viri_opt = "plasma", ...){
+plot_geouy <- function(x, col, viri_opt = "plasma", ...){
   try(if (!is(x, "sf")) stop("The object you want to process is not class sf"))
-  try(if (!a %in% names(x)) stop(glue::glue("The name of the variable you will plot is not in the object {x}")))
+  try(if (!col %in% names(x)) stop(glue::glue("The name of the variable you will plot is not in the object {x}")))
   ggplot(data = x) +
-    geom_sf(aes(fill = .data$a)) +
+    geom_sf(aes(fill = {{ col }})) +
     scale_fill_viridis_c(option = viri_opt) +
     theme(axis.line = element_blank(),
           axis.text.x = element_blank(),
