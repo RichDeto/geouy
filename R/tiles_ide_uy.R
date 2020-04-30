@@ -19,10 +19,9 @@
 #' @export
 #' @examples
 #'\donttest{
-#' hom <- sf::st_as_sf(data.frame(x = c(-56.14449, -56.14267), 
-#'                                y = c(-34.805237, -34.80653)),  
-#'                                coords = c("x","y"), crs = 4326)
-#' x_tiles <- tiles_ide_uy(hom, format = "tif", urban = TRUE)
+#' hom <- data.frame(x = c(-56.14449, -56.14267), y = c(-34.805237, -34.80653))
+#' hom2 <- sf::st_as_sf(hom, coords = c("x","y"), crs = 4326)
+#' x_tiles <- tiles_ide_uy(x = hom2, format = "jpg", urban = TRUE)
 #'}
 
 tiles_ide_uy <- function(x, format = "jpg", folder = tempdir(), urban = FALSE){
@@ -30,28 +29,22 @@ tiles_ide_uy <- function(x, format = "jpg", folder = tempdir(), urban = FALSE){
   if (!is(x, "sf")) stop(glue::glue("The object {x} you want to process is not class sf"))
   if (!is.character(folder) | length(folder) != 1) stop("You must enter a valid directory...")
   if (!format %in% c("jpg", "tif")) stop("The format you want to download is not avaiable")
-  # warnings ----
-  if (length(fs::dir_ls(folder, regexp = glue::glue("\\.{format}$"))) != 0) {
-    message(glue::glue("There are other .{format} files in the folder that will be read..."))
-  }
+
   # download ----
   start_time <- Sys.time()
   try(dir.create(folder))
-  crs = sf::st_crs(x) 
-  bb = x %>% sf::st_transform(5382) %>% 
-      sf::st_bbox() %>% as.vector() %>% 
+  crs_x = sf::st_crs(x) 
+  bb = x %>% sf::st_transform(5382) %>% sf::st_bbox() %>% as.vector() %>% 
       raster::extent() %>% as('SpatialPolygons')
   raster::crs(bb) <- "+proj=longlat +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +no_defs"
   if (urban == FALSE) {
-    x2 <- geouy::load_geouy("Grilla ortofotos nacional", crs = 5381) %>% 
-      sf::st_join(x %>% sf::st_transform(5381), left = F) %>% 
-      dplyr::distinct(.data$nombre, .keep_all = TRUE)
+    x2 <- geouy::load_geouy("Grilla ortofotos nacional", crs = crs_x) %>% 
+      sf::st_join(x, left = F) %>% dplyr::distinct(.data$nombre, .keep_all = TRUE)
     if (nrow(x2) == 0) stop(glue::glue("The geometry you have in {x} is not in Uruguay. Verify in the metadata file"))
   } else {
-    x2 <- geouy::load_geouy("Grilla ortofotos urbana", crs = 5381) %>% 
+    x2 <- geouy::load_geouy("Grilla ortofotos urbana", crs = crs_x) %>% 
       filter(.data$localidad == "Montevideo") %>% 
-      sf::st_join(x %>% sf::st_transform(5381), left = F) %>% 
-      mutate(nombre = as.character(.data$nombre)) %>% 
+      sf::st_join(x, left = F) %>% mutate(nombre = as.character(.data$nombre)) %>% 
       dplyr::distinct(.data$nombre, .keep_all = TRUE)
     if (nrow(x2) == 0) stop(glue::glue("The geometry you have in {x} is not in Montevideo. Verify in the metadata file"))
   }
@@ -97,7 +90,7 @@ tiles_ide_uy <- function(x, format = "jpg", folder = tempdir(), urban = FALSE){
     a3 <- raster::brick(ar)
     raster::crs(a3) <- "+proj=utm +zone=21 +south +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs"
     a3 <- a3 %>% raster::crop(bb) %>% 
-      raster::projectRaster(crs = crs$proj4string)
+      raster::projectRaster(crs = crs_x$proj4string)
   } else {
     rast.list <- list()
     for (i in 1:length(ar)) { rast.list[i] <- raster::brick(ar[i]) }

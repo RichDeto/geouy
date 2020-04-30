@@ -23,10 +23,9 @@ This function allows to Download .jpg or .tif files from the IDEuy tiles reposit
 }
 \examples{
 \donttest{
-hom <- sf::st_as_sf(data.frame(x = c(-56.14449, -56.14267), 
-                               y = c(-34.805237, -34.80653)),  
-                               coords = c("x","y"), crs = 4326)
-x_tiles <- tiles_ide_uy(hom, format = "tif", urban = TRUE)
+hom <- data.frame(x = c(-56.14449, -56.14267), y = c(-34.805237, -34.80653))
+hom2 <- sf::st_as_sf(hom, coords = c("x","y"), crs = 4326)
+x_tiles <- tiles_ide_uy(x = hom2, format = "jpg", urban = TRUE)
 }
 }
 \keyword{IDE}
