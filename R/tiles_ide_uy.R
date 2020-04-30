@@ -19,7 +19,8 @@
 #' @export
 #' @examples
 #'\donttest{
-#' x_tiles <- tiles_ide_uy(x)
+#' x <- sf::st_as_sf(data.frame(x = c(-56.14449, -56.14267), y = c(-34.805237, -34.80653)), coords = c("x","y"), crs = 4326)
+#' x_tiles <- tiles_ide_uy(x, format = "tif", urban = TRUE)
 #'}
 
 tiles_ide_uy <- function(x, format = "jpg", folder = tempdir(), urban = FALSE){
