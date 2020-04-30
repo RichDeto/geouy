@@ -16,7 +16,7 @@ tiles_ide_uy(x, format = "jpg", folder = tempdir(), urban = FALSE)
 \item{urban}{If format is "tif", and urban default FALSE take orthophotos of national flight with 32cm per pixel, if TRUE take urban flight with 10cm per pixel (avaible only Montevideo at the moment)}
 }
 \value{
-raster::stack object with th cropped tif corresponding to x bbox
+terra::SpatRaster object with th cropped tif corresponding to x bbox
 }
 \description{
 This function allows to Download .jpg or .tif files from the IDEuy tiles repository, according to a 'sf' object bbox.

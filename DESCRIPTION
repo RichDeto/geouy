@@ -35,7 +35,7 @@ Imports:
 	glue,
 	stringr,
 	sf (>= 0.9),
-	raster,
+	terra,
 	ggplot2,
 	ggthemes,
 	ggsn,
