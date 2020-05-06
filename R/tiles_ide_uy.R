@@ -4,11 +4,12 @@
 #' @param folder Folder where are the files or be download
 #' @param urban If format is "tif", and urban default FALSE take orthophotos of national flight with 32cm per pixel, if TRUE take urban flight with 10cm per pixel (avaible only Montevideo at the moment)
 #' @keywords IDE orthophotos Uruguay
-#' @return terra::SpatRaster object with th cropped tif corresponding to x bbox
+#' @return terra::SpatRaster object of the cropped .tif corresponding to x bbox or a raster::RasterBrick of the cropped .jpg corresponding to x bbox
 #' @importFrom sf st_join st_crs st_bbox st_transform
 #' @importFrom dplyr filter %>% distinct
 #' @importFrom methods is as
 #' @importFrom stringr str_sub str_pad
+#' @importFrom raster brick extent crop crs
 #' @importFrom terra rast ext crop aggregate crs
 #' @importFrom glue glue
 #' @importFrom sp SpatialPolygons
@@ -34,8 +35,6 @@ tiles_ide_uy <- function(x, format = "jpg", folder = tempdir(), urban = FALSE){
   start_time <- Sys.time()
   try(dir.create(folder))
   crs_x = sf::st_crs(x) 
-  bb = x %>% sf::st_transform(5382) %>% sf::st_bbox() %>% as.vector() %>% 
-      terra::ext()
   if (urban == FALSE) {
     x2 <- geouy::load_geouy("Grilla ortofotos nacional", crs = crs_x) %>% 
       sf::st_join(x, left = F) %>% dplyr::distinct(.data$nombre, .keep_all = TRUE)
@@ -49,6 +48,9 @@ tiles_ide_uy <- function(x, format = "jpg", folder = tempdir(), urban = FALSE){
   }
   # Para formato jpg ----
   if (format == "jpg") {
+    bb = x %>% sf::st_transform(5382) %>% 
+      sf::st_bbox() %>% as.vector() %>% 
+      raster::extent() %>% as('SpatialPolygons')
     if (urban == FALSE) {
       a <- glue::glue("https://visualizador.ide.uy/descargas/CN_Remesa_{stringr::str_pad(x2$remesa, 2, pad = '0')}/02_Ortoimagenes/03_RGB_8bits/{as.character(x2$nombre)}_RGB_8_Remesa_{stringr::str_pad(x2$remesa, 2, pad = '0')}")
     } else {
@@ -65,9 +67,22 @@ tiles_ide_uy <- function(x, format = "jpg", folder = tempdir(), urban = FALSE){
     # read brick
     ar <- fs::dir_ls(folder,  regexp = "\\.jpg$")
     ar <- ar[file.info(ar)$mtime > start_time]
+    # Return ----
+    if (length(ar) == 1) {
+    a3 <- raster::brick(ar)
+    raster::crs(a3) <- "+proj=utm +zone=21 +south +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs"
+    a3 <- raster::crop(a3, bb)
+    } else {
+      rast.list <- list()
+      for (i in 1:length(ar)) { rast.list[i] <- raster::brick(ar[i]) }
+      rast.list$fun <- mean
+      a3 <- do.call(raster::mosaic, rast.list)
+    }
   } 
   # Para formato tif ----
   if (format == "tif") {
+    bb = x %>% sf::st_transform(5382) %>% sf::st_bbox() %>% as.vector() %>% 
+      terra::ext()
     if (urban == FALSE) {
       a <- glue::glue("https://visualizador.ide.uy/descargas/CN_Remesa_{stringr::str_pad(x2$remesa, 2, pad = '0')}/02_Ortoimagenes/02_RGBI_8bits/{as.character(x2$nombre)}_RGBI_8_Remesa_{stringr::str_pad(x2$remesa, 2, pad = '0')}.tif")
     } else {
@@ -82,19 +97,17 @@ tiles_ide_uy <- function(x, format = "jpg", folder = tempdir(), urban = FALSE){
     # read brick ----
     ar <- fs::dir_ls(folder, regexp = "\\.tif$")
     ar <- ar[file.info(ar)$mtime > start_time]
+    # Return ----
+    if (length(ar) == 1) {
+      a3 <- terra::rast(ar) 
+      a3 <- terra::crop(a3, bb)
+    } else {
+      rast.list <- list()
+      for (i in 1:length(ar)) { rast.list[i] <- terra::rast(ar[i]) }
+      rast.list$fun <- mean
+      a3 <- do.call(terra::aggregate(), rast.list)
+    }
   } 
-  # Return ----
-  if (length(ar) == 1) {
-    a3 <- terra::rast(ar)
-    a3 <- a3 %>% terra::crop(bb) #%>% 
-      # terra::project(crs = crs_x$proj4string)
-  } else {
-    rast.list <- list()
-    for (i in 1:length(ar)) { rast.list[i] <- terra::rast(ar[i]) }
-    # And then use do.call on the list of raster objects
-    rast.list$fun <- mean
-    a3 <- do.call(terra::aggregate(), rast.list)
-  }
   # terra::plotRGB(a3)
   return(a3)
 }
