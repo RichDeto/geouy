@@ -9,10 +9,14 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
-```{r, include = FALSE}
+```{r setup, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
-  comment = "#>"
+  comment = "#>",
+	eval = FALSE,
+	message = FALSE,
+	warning = FALSE,
+	include = FALSE
 )
 ```
 
@@ -21,11 +25,11 @@ El paquete `geouy` tiene como objetivo facilitar el trabajo de les usuaries que 
 
 ## Instalación
 
-<!-- Para instalar la versión estable del paquete usar: -->
+Para instalar la versión estable del paquete usar:
 
-<!-- ```{r eval=FALSE, message=FALSE, warning=FALSE, include=TRUE} -->
-<!-- install.packages('geouy') -->
-<!-- ``` -->
+```{r eval=FALSE, message=FALSE, warning=FALSE, include=TRUE}
+install.packages('geouy')
+```
 
 Para instalar la versión en desarrollo:
 
@@ -36,13 +40,8 @@ devtools::install_github("RichDeto/geouy")
 
 Para activarla 
 
-```{r setup, message=FALSE, warning=FALSE, include=TRUE }
-knitr::opts_chunk$set(
-	eval = FALSE,
-	message = FALSE,
-	warning = FALSE,
-	include = FALSE
-)
+```{r  message=FALSE, warning=FALSE, include=TRUE }
+
 library(geouy)
 ```
 
