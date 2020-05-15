@@ -69,7 +69,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">geouy</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.9</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.0</span>
       </span>
     </div>
 
@@ -140,11 +140,19 @@
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>raster::stack object with th cropped tif corresponding to x bbox</p>
+    <p>terra::SpatRaster object of the cropped .tif corresponding to x bbox or a raster::RasterBrick of the cropped .jpg corresponding to x bbox</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># \donttest{</span>
-<span class='no'>x_tiles</span> <span class='kw'>&lt;-</span> <span class='fu'>tiles_ide_uy</span>(<span class='no'>x</span>)</div><div class='output co'>#&gt; <span class='error'>Error in is(x, "sf"): objeto 'x' no encontrado</span></div><div class='input'># }
+<span class='no'>hom</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(-<span class='fl'>56.14449</span>, -<span class='fl'>56.14267</span>), <span class='kw'>y</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(-<span class='fl'>34.805237</span>, -<span class='fl'>34.80653</span>))
+<span class='no'>hom2</span> <span class='kw'>&lt;-</span> <span class='kw pkg'>sf</span><span class='kw ns'>::</span><span class='fu'><a href='https://rdrr.io/pkg/sf/man/st_as_sf.html'>st_as_sf</a></span>(<span class='no'>hom</span>, <span class='kw'>coords</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"x"</span>,<span class='st'>"y"</span>), <span class='kw'>crs</span> <span class='kw'>=</span> <span class='fl'>4326</span>)
+<span class='no'>x_tiles</span> <span class='kw'>&lt;-</span> <span class='fu'>tiles_ide_uy</span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='no'>hom2</span>, <span class='kw'>format</span> <span class='kw'>=</span> <span class='st'>"jpg"</span>, <span class='kw'>urban</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: 'C:\Users\Usuario\AppData\Local\Temp\Rtmpyio2yM' already exists</span></div><div class='output co'>#&gt; Reading layer `grilla_urbana' from data source `https://mapas.ide.uy/geoserver-raster/ows?service=WFS&amp;version=1.0.0&amp;request=GetFeature&amp;typeName=ortofotos:grilla_urbana' using driver `GML'
+#&gt; Simple feature collection with 2753 features and 5 fields
+#&gt; geometry type:  MULTIPOLYGON
+#&gt; dimension:      XY
+#&gt; bbox:           xmin: -58.43 ymin: -34.98 xmax: -53.36 ymax: -30.24
+#&gt; geographic CRS: SIRGAS-ROU98</div><div class='output co'>#&gt; <span class='message'>although coordinates are longitude/latitude, st_intersects assumes that they are planar</span></div><div class='output co'>#&gt; <span class='message'>Trying to download...</span></div><div class='output co'>#&gt; <span class='warning'>Warning: cannot open URL 'https://visualizador.ide.uy/descargas/CU_Remesa_01/02_Ortoimagenes/01_Ciudad_MVD/03_RGB_8bits/J29A4M8_RGB_8_Remesa_01_MVD.jpg': HTTP status was '403 Forbidden'</span></div><div class='output co'>#&gt; <span class='warning'>Warning: cannot open URL 'https://visualizador.ide.uy/descargas/CU_Remesa_01/02_Ortoimagenes/01_Ciudad_MVD/03_RGB_8bits/J29A4M8_RGB_8_Remesa_01_MVD.jgw': HTTP status was '403 Forbidden'</span></div><div class='output co'>#&gt; Error in utils::download.file(glue::glue("{a[i]}{c('.jpg','.jgw')}"),  : 
+#&gt;   cannot download any files</div><div class='output co'>#&gt; <span class='error'>Error in if (x == "" | x == ".") {    stop("provide a valid filename")}: valor ausente donde TRUE/FALSE es necesario</span></div><div class='input'># }
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">

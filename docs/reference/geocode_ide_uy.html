@@ -69,7 +69,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">geouy</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.9</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.0</span>
       </span>
     </div>
 
@@ -115,7 +115,7 @@
     <p>A function to geocoding directions using IDE_uy</p>
     </div>
 
-    <pre class="usage"><span class='fu'>geocode_ide_uy</span>(<span class='no'>x</span>)</pre>
+    <pre class="usage"><span class='fu'>geocode_ide_uy</span>(<span class='no'>x</span>, <span class='kw'>details</span> <span class='kw'>=</span> <span class='no'>F</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -123,6 +123,10 @@
     <tr>
       <th>x</th>
       <td><p>Dataframe with unless 3 variables: dpto = corresponding to the department, loc = city / location, dir = to the address.</p></td>
+    </tr>
+    <tr>
+      <th>details</th>
+      <td><p>Logical value, default FALSE for X and Y variables only, if TRUE keep all variables of the service.</p></td>
     </tr>
     </table>
 
