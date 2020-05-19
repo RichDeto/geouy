@@ -4,7 +4,7 @@
 #' @param folder Folder where are the files or be download
 #' @param urban If format is "tif", and urban default FALSE take orthophotos of national flight with 32cm per pixel, if TRUE take urban flight with 10cm per pixel (avaible only Montevideo at the moment)
 #' @keywords IDE orthophotos Uruguay
-#' @return terra::SpatRaster object of the cropped .tif corresponding to x bbox or a raster::RasterBrick of the cropped .jpg corresponding to x bbox
+#' @return A object of class raster::RasterBrick with the cropped .jpg or .tif corresponding to x bbox
 #' @importFrom sf st_join st_crs st_bbox st_transform
 #' @importFrom dplyr filter %>% distinct
 #' @importFrom methods is as
