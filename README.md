@@ -127,13 +127,13 @@ secc <- load_geouy("Secciones")
 | Function | Action|
 |-----|-----|
 |`which_uy` | Add to an 'sf' object its spatial coincidence with one or more administrative units in Uruguay, generating the corresponding variables. | 
-|`tiles_ide_uy`| Download .jpg (with the jgw correponding files) or .tif files from the IDEuy orthophotos repository, according to a 'sf' object bbox. And have the posibility for Montevideo tiles use orthophotos with 10cm per pixel with the parameter urban = TRUE |
 |`geocode_ide_uy`| Allows geocoding directions using IDE_uy. |
 |`plot_geouy`| Plot a variable of your sf object with north and scale, set on a simple theme. | 
 |`is.uy4326`| Test if an 'sf' object match with Uruguay at crs = 4326. |
 |`is.uy32721`| Test if an 'sf' object match with Uruguay at crs = 32721.  |
 |`is.uy5381`| Test if an 'sf' object match with Uruguay at crs = 5381.  |
 | ... | ... | 
+
 
 ## History
 
@@ -172,7 +172,7 @@ If you work with geographic data of Uruguay and want to add your function or dat
 
 To cite `geouy` in publications, please use:
 
-Detomasi, Richard (2020) "geouy: Geographic Information of Uruguay". R package version 0.1.8
+Detomasi, Richard (2020) "geouy: Geographic Information of Uruguay". R package version 0.2.0
    URL: https://github.com/RichDeto/geouy. 
   
 A BibTeX entry for LaTeX users is:
@@ -181,7 +181,7 @@ A BibTeX entry for LaTeX users is:
 @Misc{geouy20,
   title = {geouy: Geographic Information of Uruguay},
   author = {Richard Detomasi},
-  note = {R package version 0.1.8},
+  note = {R package version 0.2.0},
   year = {2020},
   url  = {https://github.com/RichDeto/geouy},
 }

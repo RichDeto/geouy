@@ -12,7 +12,7 @@
 
 is.uy4326 <- function(x){
   md <- geouy::metadata 
-  if (!is(x, "sf")) stop("The object you want to process is not class sf")
+  if (!methods::is(x, "sf")) stop("The object you want to process is not class sf")
   y <- geouy::load_geouy("Uruguay", crs = 4326)
   if (st_crs(x) != st_crs(y)) {
     return("The object you want to process is not at CRS 4326")
@@ -39,7 +39,7 @@ is.uy4326 <- function(x){
 
 is.uy32721 <- function(x){
   md <- geouy::metadata 
-  if (!is(x, "sf")) stop("The object you want to process is not class sf")
+  if (!methods::is(x, "sf")) stop("The object you want to process is not class sf")
   y <- geouy::load_geouy("Uruguay", crs = 32721)
   if (st_crs(x) != st_crs(y)){
     return("The object you want to process is not at CRS 32721")
@@ -66,7 +66,7 @@ is.uy32721 <- function(x){
 
 is.uy5381 <- function(x){
   md <- geouy::metadata 
-  if (!is(x, "sf")) stop("The object you want to process is not class sf")
+  if (!methods::is(x, "sf")) stop("The object you want to process is not class sf")
   y <- geouy::load_geouy("Uruguay", crs = 5381)
   if (st_crs(x) != st_crs(y)) {
     return("The object you want to process is not at CRS 5381")
@@ -93,7 +93,7 @@ is.uy5381 <- function(x){
 
 is.uy5382 <- function(x){
   md <- geouy::metadata 
-  if (!is(x, "sf")) stop("The object you want to process is not class sf")
+  if (!methods::is(x, "sf")) stop("The object you want to process is not class sf")
   y <- geouy::load_geouy("Uruguay", crs = 5382)
   if (st_crs(x) != st_crs(y)) {
     return("The object you want to process is not at CRS 5382")

@@ -6,7 +6,6 @@
 #' @return sf object with the x geometries, with d variables requested from c added
 #' @importFrom sf st_read st_transform st_join st_crs
 #' @importFrom dplyr filter %>% select
-#' @importFrom methods is
 #' @importFrom rlang .data
 #' @export
 #' @examples
@@ -17,7 +16,7 @@
 
 which_uy <- function(x, c = c("Localidades pg", "Departamentos"), d = c("cod", "name")){
   md <- geouy::metadata 
-  try(if (!is(x, "sf")) stop("The object you want to process is not class sf"))
+  try(if (!methods::is(x, "sf")) stop("The object you want to process is not class sf"))
   try(if (sum(!c %in% md$capa) > 0) stop("The name of the geometry you will load is not correct. Verify in the metadata file"))
   crs = st_crs(x)
   md <- md[md$capa %in% c,]

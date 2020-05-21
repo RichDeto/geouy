@@ -8,7 +8,6 @@
 #' @importFrom dplyr filter %>%
 #' @importFrom glue glue
 #' @importFrom fs dir_ls
-#' @importFrom utils download.file unzip
 #' @export
 #' @examples
 #'\donttest{

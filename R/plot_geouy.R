@@ -18,7 +18,7 @@
 #' }
 
 plot_geouy <- function(x, col, viri_opt = "plasma", ...){
-  try(if (!is(x, "sf")) stop("The object you want to process is not class sf"))
+  try(if (!methods::is(x, "sf")) stop("The object you want to process is not class sf"))
   try(if (!col %in% names(x)) stop(glue::glue("The name of the variable you will plot is not in the object {x}")))
   ggplot(data = x) +
     geom_sf(aes(fill = {{ col }})) +
