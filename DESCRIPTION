@@ -34,14 +34,11 @@ Imports:
 	glue,
 	stringr,
 	sf (>= 0.9),
-	raster,
 	ggplot2,
 	ggthemes,
 	ggsn,
 	methods,
-	fs,
-	sp (>= 1.4),
-	rgdal
+	fs
 Suggests:
     knitr,
     rmarkdown,
