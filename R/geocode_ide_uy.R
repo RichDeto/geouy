@@ -3,10 +3,6 @@
 #' @param details Logical value, default FALSE for X and Y variables only, if TRUE keep all variables of the service. 
 #' @keywords geocoding IDE_uy
 #' @return The DafaFrame x with the coordinates variables append (x and y)
-#' @importFrom dplyr mutate filter %>%
-#' @importFrom stringr str_sub str_locate str_trim str_replace_all
-#' @importFrom RCurl getURL
-#' @importFrom glue glue
 #' @export
 #' @examples
 #'\donttest{
@@ -20,7 +16,7 @@ geocode_ide_uy <- function(x, details = F) {
   stopifnot(is.character(x$dpto), "dpto" %in% colnames(x), length(x$dpto) >= 1)
   stopifnot(is.character(x$loc), "loc" %in% colnames(x))
   stopifnot(is.character(x$dir), "dir" %in% colnames(x))
-  x <- x %>% mutate(dir = stringr::str_trim(dir)) %>% filter(nchar(dir) > 0)
+  x <- x %>% dplyr::mutate(dir = stringr::str_trim(dir)) %>% dplyr::filter(nchar(dir) > 0)
   for (i in 1:nrow(x)) {
     p <- glue::glue("http://servicios.ide.gub.uy/servicios/BusquedaDireccion?departamento={x[i,'dpto']}&localidad={x[i,'loc']}&calle={x[i,'dir']}.json") %>% 
       stringr::str_replace_all(" ", "%20") 
@@ -38,3 +34,8 @@ geocode_ide_uy <- function(x, details = F) {
   }
   return(x)
 }
+
+# @importFrom dplyr mutate filter %>%
+# @importFrom stringr str_sub str_locate str_trim str_replace_all
+# @importFrom RCurl getURL
+# @importFrom glue glue

@@ -2,8 +2,6 @@
 #' @param x An 'sf' object with the same crs as the homonym parameter
 #' @keywords CRS sf Uruguay
 #' @return logical value based in crs parameter of the sf object
-#' @importFrom sf st_join st_crs
-#' @importFrom glue glue
 #' @export
 #' @examples
 #'\donttest{
@@ -14,7 +12,7 @@ is.uy4326 <- function(x){
   md <- geouy::metadata 
   if (!methods::is(x, "sf")) stop("The object you want to process is not class sf")
   y <- geouy::load_geouy("Uruguay", crs = 4326)
-  if (st_crs(x) != st_crs(y)) {
+  if (sf::st_crs(x) != sf::st_crs(y)) {
     return("The object you want to process is not at CRS 4326")
   } else {
   y$geometry <- NULL
@@ -29,8 +27,6 @@ is.uy4326 <- function(x){
 #' @param x An 'sf' object with the same crs as the homonym parameter
 #' @keywords CRS sf Uruguay
 #' @return logical value based in crs parameter of the sf object
-#' @importFrom sf st_join st_crs
-#' @importFrom glue glue
 #' @export
 #' @examples
 #'\donttest{
@@ -41,7 +37,7 @@ is.uy32721 <- function(x){
   md <- geouy::metadata 
   if (!methods::is(x, "sf")) stop("The object you want to process is not class sf")
   y <- geouy::load_geouy("Uruguay", crs = 32721)
-  if (st_crs(x) != st_crs(y)){
+  if (sf::st_crs(x) != sf::st_crs(y)){
     return("The object you want to process is not at CRS 32721")
   } else {
     y$geometry <- NULL
@@ -56,8 +52,6 @@ is.uy32721 <- function(x){
 #' @param x An 'sf' object with the same crs as the homonym parameter
 #' @keywords CRS sf Uruguay
 #' @return logical value based in crs parameter of the sf object
-#' @importFrom sf st_join st_crs
-#' @importFrom glue glue
 #' @export
 #' @examples
 #'\donttest{
@@ -68,7 +62,7 @@ is.uy5381 <- function(x){
   md <- geouy::metadata 
   if (!methods::is(x, "sf")) stop("The object you want to process is not class sf")
   y <- geouy::load_geouy("Uruguay", crs = 5381)
-  if (st_crs(x) != st_crs(y)) {
+  if (sf::st_crs(x) != sf::st_crs(y)) {
     return("The object you want to process is not at CRS 5381")
   } else {
   y$geometry <- NULL
@@ -83,8 +77,6 @@ is.uy5381 <- function(x){
 #' @param x An 'sf' object with the same crs as the homonym parameter
 #' @keywords CRS sf Uruguay
 #' @return logical value based in crs parameter of the sf object
-#' @importFrom sf st_join st_crs
-#' @importFrom glue glue
 #' @export
 #' @examples
 #'\donttest{
@@ -95,7 +87,7 @@ is.uy5382 <- function(x){
   md <- geouy::metadata 
   if (!methods::is(x, "sf")) stop("The object you want to process is not class sf")
   y <- geouy::load_geouy("Uruguay", crs = 5382)
-  if (st_crs(x) != st_crs(y)) {
+  if (sf::st_crs(x) != sf::st_crs(y)) {
     return("The object you want to process is not at CRS 5382")
   } else {
   y$geometry <- NULL
@@ -105,3 +97,15 @@ is.uy5382 <- function(x){
                 glue::glue("Your object have {x2}% of matches with Ururguay CRS 5382")))
   }
 }
+
+#' Pipe operator
+#'
+#' See \code{magrittr::\link[magrittr]{\%>\%}} for details.
+#'
+#' @name %>%
+#' @rdname pipe
+#' @keywords internal
+#' @export
+#' @importFrom magrittr %>%
+#' @usage lhs \%>\% rhs
+NULL

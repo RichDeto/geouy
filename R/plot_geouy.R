@@ -6,11 +6,9 @@
 #' @param viri_opt A character string indicating the colormap option to use. Four options are available: "magma" (or "A"), "inferno" (or "B"), "plasma" (or "C"), "viridis" (or "D", the default option) and "cividis" (or "E")
 #' @param ... All parameters allowed from ggplot2 themes.
 #' @keywords ggplot2 sf maps
+#' @import ggplot2 ggthemes
 #' @return ggplot object of a choropleth map with x geometries and col values.
 #' @export
-#' @import ggplot2 ggthemes
-#' @importFrom glue glue
-#' @importFrom  ggsn north scalebar
 #' @examples
 #' \donttest{
 #' secc <- load_geouy("Secciones")
@@ -20,8 +18,11 @@
 plot_geouy <- function(x, col, viri_opt = "plasma", ...){
   try(if (!methods::is(x, "sf")) stop("The object you want to process is not class sf"))
   try(if (!col %in% names(x)) stop(glue::glue("The name of the variable you will plot is not in the object {x}")))
-  ggplot(data = x) +
+  ggplot2::ggplot(data = x) +
     geom_sf(aes(fill = {{ col }})) +
+    viridis::scale_fill_viridis(name = col, option = "D", discrete = is.numeric(x[col])) +
+    xlab("Longitud") + ylab("Latitud") +
+    labs(title = glue::glue ("Mapa de {col} por {x}"), caption = "Elaborado con geouy de @RichDeto") +
     theme(axis.line = element_blank(),
           axis.text.x = element_blank(),
           axis.text.y = element_blank(),
@@ -34,6 +35,9 @@ plot_geouy <- function(x, col, viri_opt = "plasma", ...){
           panel.border = element_rect(colour = "gray", fill = NA, size = 0.5),
           legend.justification = c(1,1), legend.position = c(1,1)) +
     ggsn::north(x, location = "bottomleft", symbol = 3) +
-    ggsn::scalebar(x, dist = 50, dist_unit = "km", transform = T, model = "WGS84") + 
-  if (is.numeric(x[col])) scale_fill_viridis_c(option = viri_opt)
+    ggsn::scalebar(x, dist = 50, dist_unit = "km", transform = T, model = "WGS84")
 }
+
+
+# @importFrom glue glue
+# @importFrom ggsn north scalebar

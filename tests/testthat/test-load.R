@@ -1,7 +1,7 @@
 context("Testing load_geouy")
 
 test_that("connections working", {
-  
+  skip_if_offline()
   skip_on_cran()
   
   testthat::expect_is(load_geouy("Secciones"), "sf")
@@ -10,6 +10,8 @@ test_that("connections working", {
 })
 
 test_that("crs parameter working", {
+  skip_if_offline()
+  skip_on_cran()
   
   testthat::expect_error(load_geouy("Playas", folder = 1))
   testthat::expect_error(load_geouy("Playas", folder = c("c://", "E://")))
