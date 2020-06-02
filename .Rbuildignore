@@ -2,6 +2,7 @@
 ^\.Rproj\.user$
 ^packrat/
 ^\.Rprofile$
+^\.Rhistory$
 ^data-raw$
 ^CRAN-RELEASE$
 ^cran-comments\.md$
@@ -12,3 +13,4 @@
 ^_pkgdown\.yml$
 ^docs$
 ^pkgdown$
+
