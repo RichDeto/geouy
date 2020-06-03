@@ -41,7 +41,6 @@ devtools::install_github("RichDeto/geouy")
 Para activarla 
 
 ```{r  message=FALSE, warning=FALSE, include=TRUE }
-
 library(geouy)
 ```
 
@@ -51,7 +50,7 @@ library(geouy)
 
 ### Cargar geometrías
 
-Obtengamos como primer paso las geometrías de los peajes de Uruguay 
+Obtengamos como primer paso las geometrías de las instituciones deportivas de Uruguay 
 
 
 ```{r eval=FALSE, message=FALSE, warning=FALSE, include=FALSE}
@@ -62,7 +61,7 @@ Por defecto me traerá estas geometrías en EPSG 32721 que es el CRS correspondi
 
 ### Goecodificación
 
-Ahora bien, tenemos algunas direcciones de nuevas Instituciones sin coordenadas, por lo que usaremos `geocode_ide_uy()` para  geocodificarlas:
+Ahora bien, tenemos algunas direcciones de nuevas instituciones sin coordenadas, por lo que usaremos `geocode_ide_uy()` para  geocodificarlas:
 
 ```{r eval=FALSE, message=FALSE, warning=FALSE, include=FALSE}
 nuevas <- data.frame(cbind(dpto = c("Montevideo", "Salto"),
@@ -71,10 +70,9 @@ nuevas <- data.frame(cbind(dpto = c("Montevideo", "Salto"),
                                    "15 de noviembre 1310")),
                      stringsAsFactors = F)
 nuevas_geo <- geocode_ide_uy(nuevas)
-
-```
-
-NOTA: Limits in geocode_geouy(), you must be part of uruguayan public organism and  fill this (forms)[https://www.gub.uy/agencia-gobierno-electronico-sociedad-informacion-conocimiento/comunicacion/publicaciones/formularios-de-alta-y-consumo-de-servicios-de-la-pdi] if your organism is not yet vinculated.
+```	
+	
+NOTA: Limite en geocode_geouy(), tienes que ser parte de un organismo público uruguayo o deberas completar el siguiente (formulario)[https://www.gub.uy/agencia-gobierno-electronico-sociedad-informacion-conocimiento/comunicacion/publicaciones/formularios-de-alta-y-consumo-de-servicios-de-la-pdi] para habilitar el funcionamiento de su API.
 
 ### Asignar codigos y nombres de otras geometrías
 
@@ -86,4 +84,18 @@ depor_dep <- geouy::which_uy(depor, "Departamentos")
 
 NOTA: El segundo parámetro tiene que corresponder con un valor de `geouy::metadata$capa` para funcionar.
 
+### Plotear una variable 
 
+Veamos ahora, cuantas instituciones hay por departamento, y empezemos por traer la unidad espacial en la que nos interesa agregar las instituciones que venimos trabajando:
+
+```{r eval=FALSE, message=FALSE, warning=FALSE, include=FALSE}
+dep <- geouy::load_geouy("Departamentos")
+```
+
+Apoyándonos en la función `sf::st_intersects()` para calcular la cantidad de instituciones por departamento, damos lugar a la aplicación de la función `plot_geouy()`:
+
+```{r eval=FALSE, message=FALSE, warning=FALSE, include=FALSE}
+dep$"instituciones_deportivas" <- lengths(sf::st_intersects(dep, depor))
+
+plot_geouy(dep, "instituciones_deportivas")
+```
