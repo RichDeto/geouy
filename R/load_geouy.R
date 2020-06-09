@@ -17,7 +17,7 @@ load_geouy <- function(c, crs = 32721, folder = tempdir()){
   x <- x[x$capa == c,]
   if (x$repositor %in% "SGM") {
     a <- sf::st_read("WFS:http://geoservicios.sgm.gub.uy/wfsPCN1000.cgi?",x$url, crs = x$crs)
-  } else if (x$formato == "zip") {
+  } else if (x$formato %in% c("zip", "zip a")) {
     if (!is.character(folder) | length(folder) != 1) {
       stop(glue::glue("You must enter a valid directory..."))
     }
@@ -26,7 +26,11 @@ load_geouy <- function(c, crs = 32721, folder = tempdir()){
     f = glue::glue("{folder}/{x$capa}.zip")
     if (!file.exists(f)) {
       message(glue::glue("Intentando descargar {x$capa}..."))
-      try(utils::download.file(x$url, f, mode = "wb", method = "libcurl"))
+      tryCatch({
+        utils::download.file(x$url, f, mode = "wb", method = "libcurl")
+      }, error = function(e) {
+        utils::download.file(x$url, f, mode = "a", method = "libcurl")
+      })
     }
     invisible(try(utils::unzip(f, exdir = folder)))
       #archive_extract(archive.path = f, dest.path = )))

@@ -31,7 +31,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">geouy</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.1.1</span>
       </span>
     </div>
 
@@ -70,7 +70,7 @@
 </h1>
                         <h4 class="author">Richard Detomasi</h4>
             
-            <h4 class="date">2020-06-03</h4>
+            <h4 class="date">2020-06-09</h4>
       
       
       <div class="hidden name"><code>geouy.Rmd</code></div>
@@ -89,8 +89,7 @@
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># install.packages('devtools') si no tiene instalado devtools</span>
 devtools<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/devtools/man/remote-reexports.html">install_github</a></span>(<span class="st">"RichDeto/geouy"</span>)</code></pre></div>
 <p>Para activarla</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(geouy)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(geouy)</code></pre></div>
 </div>
 <div id="ejemplos-de-usos" class="section level2">
 <h2 class="hasAnchor">
@@ -98,20 +97,26 @@ devtools<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/
 <div id="cargar-geometrías" class="section level3">
 <h3 class="hasAnchor">
 <a href="#cargar-geometr%C3%ADas" class="anchor"></a>Cargar geometrías</h3>
-<p>Obtengamos como primer paso las geometrías de los peajes de Uruguay</p>
+<p>Obtengamos como primer paso las geometrías de las instituciones deportivas de Uruguay</p>
 <p>Por defecto me traerá estas geometrías en EPSG 32721 que es el CRS correspondiente a Uruguay, por lo que no lo especifico en el parámetro correspondiente.</p>
 </div>
 <div id="goecodificación" class="section level3">
 <h3 class="hasAnchor">
 <a href="#goecodificaci%C3%B3n" class="anchor"></a>Goecodificación</h3>
-<p>Ahora bien, tenemos algunas direcciones de nuevas Instituciones sin coordenadas, por lo que usaremos <code><a href="../reference/geocode_ide_uy.html">geocode_ide_uy()</a></code> para geocodificarlas:</p>
-<p>NOTA: Limits in geocode_geouy(), you must be part of uruguayan public organism and fill this (forms)[<a href="https://www.gub.uy/agencia-gobierno-electronico-sociedad-informacion-conocimiento/comunicacion/publicaciones/formularios-de-alta-y-consumo-de-servicios-de-la-pdi" class="uri">https://www.gub.uy/agencia-gobierno-electronico-sociedad-informacion-conocimiento/comunicacion/publicaciones/formularios-de-alta-y-consumo-de-servicios-de-la-pdi</a>] if your organism is not yet vinculated.</p>
+<p>Ahora bien, tenemos algunas direcciones de nuevas instituciones sin coordenadas, por lo que usaremos <code><a href="../reference/geocode_ide_uy.html">geocode_ide_uy()</a></code> para geocodificarlas:</p>
+<p>NOTA: Limite en geocode_geouy(), tienes que ser parte de un organismo público uruguayo o deberas completar el siguiente (formulario)[<a href="https://www.gub.uy/agencia-gobierno-electronico-sociedad-informacion-conocimiento/comunicacion/publicaciones/formularios-de-alta-y-consumo-de-servicios-de-la-pdi" class="uri">https://www.gub.uy/agencia-gobierno-electronico-sociedad-informacion-conocimiento/comunicacion/publicaciones/formularios-de-alta-y-consumo-de-servicios-de-la-pdi</a>] para habilitar el funcionamiento de su API.</p>
 </div>
 <div id="asignar-codigos-y-nombres-de-otras-geometrías" class="section level3">
 <h3 class="hasAnchor">
 <a href="#asignar-codigos-y-nombres-de-otras-geometr%C3%ADas" class="anchor"></a>Asignar codigos y nombres de otras geometrías</h3>
 <p>Continuando con el ejemplo, asignémosle a las <code>Instituciones deportivas</code>, los códigos y nombres de departamentos correspondientes, utilizando la función <code><a href="../reference/which_uy.html">which_uy()</a></code> como se muestra a continuación:</p>
 <p>NOTA: El segundo parámetro tiene que corresponder con un valor de <code>geouy::metadata$capa</code> para funcionar.</p>
+</div>
+<div id="plotear-una-variable" class="section level3">
+<h3 class="hasAnchor">
+<a href="#plotear-una-variable" class="anchor"></a>Plotear una variable</h3>
+<p>Veamos ahora, cuantas instituciones hay por departamento, y empezemos por traer la unidad espacial en la que nos interesa agregar las instituciones que venimos trabajando:</p>
+<p>Apoyándonos en la función <code><a href="https://rdrr.io/pkg/sf/man/geos_binary_pred.html">sf::st_intersects()</a></code> para calcular la cantidad de instituciones por departamento, damos lugar a la aplicación de la función <code><a href="../reference/plot_geouy.html">plot_geouy()</a></code>:</p>
 </div>
 </div>
   </div>

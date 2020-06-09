@@ -2,3 +2,5 @@
 packrat/lib*/
 .Rhistory
 inst/doc
+doc
+Meta
