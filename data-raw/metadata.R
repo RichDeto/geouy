@@ -62,7 +62,7 @@ metadata <- tibble::tribble(
   "Cobertura suelo 2015", "DINAGUA", "MVOTMA", 4326, "zip", 2015, "https://www.dinama.gub.uy/geoservicios/shapes_pesadas/cobertura_2015_4326.zip", NA, NA
 )
 
-# saveRDS(metadata,"data-raw/metadata.Rds")
+saveRDS(metadata,"data-raw/metadata.Rds")
 usethis::use_data(metadata, overwrite = TRUE)
 
 
