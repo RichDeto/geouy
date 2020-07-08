@@ -31,7 +31,3 @@ plot_geouy <- function(x, col, viri_opt = "plasma", ...){
     ggsn::north(x, location = "bottomleft", symbol = 3) +
     ggsn::scalebar(x, dist = 50, dist_unit = "km", transform = F, model = "WGS84")
 }
-
-
-# @importFrom glue glue
-# @importFrom ggsn north scalebar
