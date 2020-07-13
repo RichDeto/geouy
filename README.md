@@ -70,7 +70,6 @@ secc <- load_geouy("Secciones")
 |`"Secciones policiales"` | `"MI"` | MVOTMA | 2017 | zip |
 
 
-
 ### Hidrology
 
 | Layer | Productor | Source | Year | Format |
