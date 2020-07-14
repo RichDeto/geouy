@@ -16,3 +16,21 @@
 #'   \item{name}{name of the variable that contains the name of the geometries}
 #' }
 "metadata"
+
+#' INE "Localidades Agregadas"
+#'
+#' A dataset containing the cods, names and others attributes of urban locations 
+#' for Uruguay.
+#'
+#' @format A data frame with 615 rows and 8 variables:
+#' \describe{
+#'   \item{depto}{name of the "Departamento"}
+#'   \item{nomloc}{name of the "Localidad"}
+#'   \item{codloc}{code of the "Localidad"}
+#'   \item{pob2011}{Population by "Censo 2011"}
+#'   \item{dens2011km}{Population density by "Censo 2011" (population/km)}
+#'   \item{Nom_loc_agr_13}{name of the "Localidades agrupadas" (2013)}
+#'   \item{Loc_agr_13}{code of the "Localidades agrupadas" (2013)}
+#'   \item{cat_loc_agr}{Tipical categories of "Localidades"}
+#' }
+"loc_agr_ine"
