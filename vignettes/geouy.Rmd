@@ -53,7 +53,7 @@ library(geouy)
 Obtengamos como primer paso las geometrías de las instituciones deportivas de Uruguay 
 
 
-```{r eval=FALSE, message=FALSE, warning=FALSE, include=FALSE}
+```{r eval=FALSE, message=FALSE, warning=FALSE, include=TRUE}
 depor <- geouy::load_geouy("Instituciones deportivas")
 ```
 
@@ -63,7 +63,7 @@ Por defecto me traerá estas geometrías en EPSG 32721 que es el CRS correspondi
 
 Ahora bien, tenemos algunas direcciones de nuevas instituciones sin coordenadas, por lo que usaremos `geocode_ide_uy()` para  geocodificarlas:
 
-```{r eval=FALSE, message=FALSE, warning=FALSE, include=FALSE}
+```{r eval=FALSE, message=FALSE, warning=FALSE, include=TRUE}
 nuevas <- data.frame(cbind(dpto = c("Montevideo", "Salto"),
                            loc = c("Montevideo", "Salto"),
                            dir = c("Cebollati esq. Magallanes",
@@ -78,7 +78,7 @@ NOTA: Limite en geocode_geouy(), tienes que ser parte de un organismo público u
 
 Continuando con el ejemplo, asignémosle a las `Instituciones deportivas`, los códigos y nombres de departamentos correspondientes, utilizando la función `which_uy()` como se muestra a continuación: 
 
-```{r eval=FALSE, message=FALSE, warning=FALSE, include=FALSE}
+```{r eval=FALSE, message=FALSE, warning=FALSE, include=TRUE}
 depor_dep <- geouy::which_uy(depor, "Departamentos")
 ```
 
@@ -88,14 +88,44 @@ NOTA: El segundo parámetro tiene que corresponder con un valor de `geouy::metad
 
 Veamos ahora, cuantas instituciones hay por departamento, y empezemos por traer la unidad espacial en la que nos interesa agregar las instituciones que venimos trabajando:
 
-```{r eval=FALSE, message=FALSE, warning=FALSE, include=FALSE}
+```{r eval=FALSE, message=FALSE, warning=FALSE, include=TRUE}
 dep <- geouy::load_geouy("Departamentos")
 ```
 
 Apoyándonos en la función `sf::st_intersects()` para calcular la cantidad de instituciones por departamento, damos lugar a la aplicación de la función `plot_geouy()`:
 
-```{r eval=FALSE, message=FALSE, warning=FALSE, include=FALSE}
+```{r eval=FALSE, message=FALSE, warning=FALSE, include=TRUE}
 dep$"instituciones_deportivas" <- lengths(sf::st_intersects(dep, depor))
 
 plot_geouy(dep, "instituciones_deportivas")
 ```
+
+
+### Categorías de grandes regiones INE
+
+Un tema colateral, pero no despreciable es el de categorizar el territorio, y fuera de las geometrías como ya vimos, hay particularidades demográficas implicadas. Por ejemplo, las categorías que utiliza el INE para agrupar localidades, que a su vez son utilizadas como marco para los muestreos de la Encuesta Continua de Hogares.
+
+Por ejemplo, el corte normal entre los tamaños de localidades no consideran inicialmente las agrupaciones de las mismas, como es principalmente el Area Metropolitana de Montevideo o las chacras que rodean ciertas ciudades que por más que son "Localidades INE" per se, al momento de categorizarla se agrupan con la ciudad que las concentra.
+
+Por este motivo, es que agregamos el dataset `loc_agr_ine` que permite combinar la capa de `Localidades pg` con los datos del Censo 2011 y poder categorizar las agrupaciones de localidades como lo hace el INE. 
+
+```{r eval=FALSE, message=FALSE, warning=FALSE, include=TRUE}
+# devtools::install_github("RichDeto/geouy", ref = 'master'); 
+library(geouy)
+
+# Simulamos una población
+pop <- data.frame(x = sample(560000:585000,500),
+                  y = sample(6136000:6160000,500))
+
+# La categorizamos por la variable preconstruida (Pero obviamente se pueden hacer otras agregaciones)                  
+pop_loc <- which_uy(pop, "Localidades pg") %>% 
+  dplyr::left_join(loc_agr_ine, by = c("cod_Localidades pg" = "codloc"))
+
+# Confiando en que los datos están todos en territorio uruguayo, asignamos "Rural" a los NA
+loc[is.na(pop_loc$cat_loc_agr), "cat_loc_agr"] <- "Rural"
+
+# y finalmente podemos hacer una tabla por estas regiones, por ejemplo: 
+tabla_regiones <- loc %>% dplyr::group_by(cat_loc_agr) %>% 
+        summarise(Casos = n())
+```
+
