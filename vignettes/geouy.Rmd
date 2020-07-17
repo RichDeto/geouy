@@ -40,7 +40,7 @@ devtools::install_github("RichDeto/geouy")
 
 Para activarla 
 
-```{r  message=FALSE, warning=FALSE, include=TRUE }
+```{r message=FALSE, warning=FALSE, include=FALSE}
 library(geouy)
 ```
 
