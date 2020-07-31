@@ -1,4 +1,11 @@
 ## Resubmission
+* Add loc_agr_ine dataset of "Localidades agragadas" of INE.
+* Add a geouy.R to discribe the package and set globals variables
+* replace ggsn with ggspatial to improve north and scale aesthetics in plot_geouy 
+* remove lat and long axis in plot_goeuy
+* Add a param labels in plot_geouy for labels posiblity, if "%" porcentage with 1 decimal labels, if "n" the value is the label, if "c" put other variable in other_lab
+
+## Resubmission
 This is a resubmission. In this version:
 
 * Add to testthat files 'skip_on...()' functions for a faster evaluation.

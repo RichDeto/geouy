@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>A function to set ggplot2 theme in our suggested format — plot_geouy • geouy</title>
+<title>plot_geouy — plot_geouy • geouy</title>
 
 
 <!-- jquery -->
@@ -35,7 +35,7 @@
 
 
 
-<meta property="og:title" content="A function to set ggplot2 theme in our suggested format — plot_geouy" />
+<meta property="og:title" content="plot_geouy — plot_geouy" />
 <meta property="og:description" content="This function allows you to set ggplot2 theme in our suggested format." />
 <meta name="twitter:card" content="summary" />
 
@@ -106,7 +106,7 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>A function to set ggplot2 theme in our suggested format</h1>
+    <h1>plot_geouy</h1>
     
     <div class="hidden name"><code>plot_geouy.Rd</code></div>
     </div>
@@ -115,7 +115,7 @@
     <p>This function allows you to set ggplot2 theme in our suggested format.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>plot_geouy</span>(<span class='no'>x</span>, <span class='no'>col</span>, <span class='kw'>viri_opt</span> <span class='kw'>=</span> <span class='st'>"plasma"</span>, <span class='no'>...</span>)</pre>
+    <pre class="usage"><span class='fu'>plot_geouy</span>(<span class='no'>x</span>, <span class='no'>col</span>, <span class='kw'>viri_opt</span> <span class='kw'>=</span> <span class='st'>"plasma"</span>, <span class='kw'>labels</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>other_lab</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='no'>...</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -131,6 +131,14 @@
     <tr>
       <th>viri_opt</th>
       <td><p>A character string indicating the colormap option to use. Four options are available: "magma" (or "A"), "inferno" (or "B"), "plasma" (or "C"), "viridis" (or "D", the default option) and "cividis" (or "E")</p></td>
+    </tr>
+    <tr>
+      <th>labels</th>
+      <td><p>If NULL none label added, if "%" porcentage with 1 decimal labels, if "n" the value is the label, if "c" put other variable in other_lab. Default NULL</p></td>
+    </tr>
+    <tr>
+      <th>other_lab</th>
+      <td><p>If labels is "c" put here the variable name for the labels.</p></td>
     </tr>
     <tr>
       <th>...</th>
@@ -149,7 +157,8 @@
 #&gt; geometry type:  MULTIPOLYGON
 #&gt; dimension:      XY
 #&gt; bbox:           xmin: 366582.2 ymin: 6127919 xmax: 858252.1 ymax: 6671738
-#&gt; projected CRS:  WGS 84 / UTM zone 21S</div><div class='input'><span class='fu'>plot_geouy</span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='no'>secc</span>, <span class='kw'>col</span> <span class='kw'>=</span> <span class='st'>"AREA"</span>)</div><div class='output co'>#&gt; NULL</div><div class='input'># }
+#&gt; projected CRS:  WGS 84 / UTM zone 21S</div><div class='input'><span class='fu'>plot_geouy</span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='no'>secc</span>, <span class='kw'>col</span> <span class='kw'>=</span> <span class='st'>"AREA"</span>)</div><div class='output co'>#&gt; <span class='error'>Error in if (labels == "%") {    l &lt;- x %&gt;% dplyr::mutate(label = .data[[col]] %&gt;% as.numeric(.) %&gt;%         round(1) %&gt;% paste0("%"))    mapa + geom_sf_text(data = l, aes(label = label), colour = "white",         size = 3, hjust = 0.5)}: argumento tiene longitud cero</span></div><div class='input'># }
+
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">

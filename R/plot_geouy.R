@@ -23,8 +23,8 @@
 plot_geouy <- function(x, col, viri_opt = "plasma", labels = NULL, other_lab = NULL, ...){
   try(if (!methods::is(x, "sf")) stop("The object you want to process is not class sf"))
   assertthat::assert_that(col %in% names(x), msg = glue::glue("Sorry... :( \n The name of the variable you will plot is not in the object {x}"))
-  assertthat::assert_that(labels %in% c(NULL, "%", "n", "c"), msg = "Sorry... :( \n Labels parameter is not a valid value, please review!.")
-  if (labels == "c") assertthat::assert_that(other_lab %in% names(x), msg = glue::glue("Sorry... :( \n The name of the variable you will plot is not in the object {x}"))
+  if (!is.null(labels)) assertthat::assert_that(labels %in% c("%", "n", "c"), msg = "Sorry... :( \n Labels parameter is not a valid value, please review!.")
+  if (!is.null(other_lab) && labels == "c") assertthat::assert_that(other_lab %in% names(x), msg = glue::glue("Sorry... :( \n The name of the variable you will plot is not in the object {x}"))
   
   theme_set(theme_bw())
   mapa <- ggplot2::ggplot(data = x) +
