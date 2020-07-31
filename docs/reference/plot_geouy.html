@@ -69,7 +69,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">geouy</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.1.2</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.2</span>
       </span>
     </div>
 
@@ -144,7 +144,12 @@
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># \donttest{</span>
-<span class='no'>secc</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='load_geouy.html'>load_geouy</a></span>(<span class='st'>"Secciones"</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: GDAL Error 1: transfer closed with outstanding read data remaining</span></div><div class='output co'>#&gt; <span class='error'>Error: Cannot open "https://mapas.mides.gub.uy:443/geoserver/ows?service=WFS&amp;version=1.0.0&amp;request=GetFeature&amp;typeName=INECenso:Secciones"; Check connection parameters.</span></div><div class='input'><span class='fu'>plot_geouy</span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='no'>secc</span>, <span class='kw'>col</span> <span class='kw'>=</span> <span class='st'>"AREA"</span>)</div><div class='output co'>#&gt; Error in methods::is(x, "sf") : objeto 'secc' no encontrado</div><div class='output co'>#&gt; <span class='warning'>Warning: reiniciar evaluación premisa interrumpida</span></div><div class='output co'>#&gt; Error in col %in% names(x) : objeto 'secc' no encontrado</div><div class='output co'>#&gt; <span class='warning'>Warning: reiniciar evaluación premisa interrumpida</span></div><div class='output co'>#&gt; <span class='error'>Error in ggplot2::ggplot(data = x): objeto 'secc' no encontrado</span></div><div class='input'># }
+<span class='no'>secc</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='load_geouy.html'>load_geouy</a></span>(<span class='st'>"Secciones"</span>)</div><div class='output co'>#&gt; Reading layer `Secciones' from data source `https://mapas.mides.gub.uy:443/geoserver/ows?service=WFS&amp;version=1.0.0&amp;request=GetFeature&amp;typeName=INECenso:Secciones' using driver `GML'
+#&gt; Simple feature collection with 232 features and 8 fields
+#&gt; geometry type:  MULTIPOLYGON
+#&gt; dimension:      XY
+#&gt; bbox:           xmin: 366582.2 ymin: 6127919 xmax: 858252.1 ymax: 6671738
+#&gt; projected CRS:  WGS 84 / UTM zone 21S</div><div class='input'><span class='fu'>plot_geouy</span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='no'>secc</span>, <span class='kw'>col</span> <span class='kw'>=</span> <span class='st'>"AREA"</span>)</div><div class='output co'>#&gt; NULL</div><div class='input'># }
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">

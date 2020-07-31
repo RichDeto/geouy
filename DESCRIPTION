@@ -1,7 +1,7 @@
 Package: geouy
 Type: Package
 Title: Geographic Information of Uruguay
-Version: 0.2.1.2
+Version: 0.2.2
 Authors@R: c(
 	      person(given = "Richard", 
 	      family = "Detomasi", 
@@ -36,7 +36,7 @@ Imports:
 	sf (>= 0.9),
 	ggplot2,
 	ggthemes,
-	ggsn,
+	ggspatial,
 	methods,
 	magrittr,
 	fs,

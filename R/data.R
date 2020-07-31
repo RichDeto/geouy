@@ -2,7 +2,7 @@
 #'
 #' A dataset containing the urls and other attributes of geoservices 
 #' for Uruguay.
-#'
+#' 
 #' @format A data frame with 18 rows and 9 variables:
 #' \describe{
 #'   \item{capa}{name of the geoservice}
