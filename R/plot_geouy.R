@@ -4,8 +4,8 @@
 #' @param x An sf object like load_geouy() results
 #' @param col Variable of "x" to plot (character)
 #' @param viri_opt A character string indicating the colormap option to use. Four options are available: "magma" (or "A"), "inferno" (or "B"), "plasma" (or "C"), "viridis" (or "D", the default option) and "cividis" (or "E")
-#' @param labels If NULL none label added, if "\%" porcentage with 1 decimal labels, if "n" the value is the label, if "c" put other variable in other_lab. Default NULL
-#' @param other_lab If labels is "c" put here the variable name for the labels.
+#' @param l If NULL none label added, if "\%" porcentage with 1 decimal labels, if "n" the value is the label, if "c" put other variable in other_lab. Default NULL
+#' @param other_lab If l is "c" put here the variable name for the labels.
 #' @param ... All parameters allowed from ggplot2 themes.
 #' 
 #' @keywords ggplot2 sf maps
@@ -20,11 +20,11 @@
 #' }
 #' 
 
-plot_geouy <- function(x, col, viri_opt = "plasma", labels = NULL, other_lab = NULL, ...){
+plot_geouy <- function(x, col, viri_opt = "plasma", l = NULL, other_lab = NULL, ...){
   try(if (!methods::is(x, "sf")) stop("The object you want to process is not class sf"))
   assertthat::assert_that(col %in% names(x), msg = glue::glue("Sorry... :( \n The name of the variable you will plot is not in the object {x}"))
-  if (!is.null(labels)) assertthat::assert_that(labels %in% c("%", "n", "c"), msg = "Sorry... :( \n Labels parameter is not a valid value, please review!.")
-  if (!is.null(other_lab) && labels == "c") assertthat::assert_that(other_lab %in% names(x), msg = glue::glue("Sorry... :( \n The name of the variable you will plot is not in the object {x}"))
+  if (!is.null(l)) assertthat::assert_that(l %in% c("%", "n", "c"), msg = "Sorry... :( \n l parameter is not a valid value, please review!.")
+  if (!is.null(other_lab) && l %in% "c") assertthat::assert_that(other_lab %in% names(x), msg = glue::glue("Sorry... :( \n The name of the variable you will plot is not in the object {x}"))
   
   theme_set(theme_bw())
   mapa <- ggplot2::ggplot(data = x) +
@@ -48,16 +48,16 @@ plot_geouy <- function(x, col, viri_opt = "plasma", labels = NULL, other_lab = N
                                       pad_x = unit(0.095, "in"), pad_y = unit(0.25, "in"),
                                       style = ggspatial::north_arrow_fancy_orienteering)
   
-  if(labels == "%"){
-    l <- x %>% dplyr::mutate(label = .data[[col]] %>% as.numeric(.) %>% round(1) %>% paste0("%"))   
-    mapa + geom_sf_text(data = l, aes(label = label), 
+  if(!is.null(l) && l %in% "%"){
+    ll <- x %>% dplyr::mutate(label = .data[[col]] %>% as.numeric(.) %>% round(1) %>% paste0("%"))   
+    mapa + geom_sf_text(data = ll, aes(label = label), 
                         colour = "white", size = 3, hjust = 0.5) 
   }
-  if(labels == "n"){
+  if(!is.null(l) && l %in% "n"){
     mapa + geom_sf_text(aes(label = .data[[col]]), 
                      colour = "white", size = 3, hjust = 0.5) 
   }
-  if(labels == "c"){
+  if(!is.null(l) && l %in% "c"){
     mapa + geom_sf_text(aes(label = .data[[other_lab]]), 
                         colour = "white", size = 3, hjust = 0.5) 
   }

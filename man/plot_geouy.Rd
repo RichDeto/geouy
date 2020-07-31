@@ -4,7 +4,7 @@
 \alias{plot_geouy}
 \title{plot_geouy}
 \usage{
-plot_geouy(x, col, viri_opt = "plasma", labels = NULL, other_lab = NULL, ...)
+plot_geouy(x, col, viri_opt = "plasma", l = NULL, other_lab = NULL, ...)
 }
 \arguments{
 \item{x}{An sf object like load_geouy() results}
@@ -13,9 +13,9 @@ plot_geouy(x, col, viri_opt = "plasma", labels = NULL, other_lab = NULL, ...)
 
 \item{viri_opt}{A character string indicating the colormap option to use. Four options are available: "magma" (or "A"), "inferno" (or "B"), "plasma" (or "C"), "viridis" (or "D", the default option) and "cividis" (or "E")}
 
-\item{labels}{If NULL none label added, if "\%" porcentage with 1 decimal labels, if "n" the value is the label, if "c" put other variable in other_lab. Default NULL}
+\item{l}{If NULL none label added, if "\%" porcentage with 1 decimal labels, if "n" the value is the label, if "c" put other variable in other_lab. Default NULL}
 
-\item{other_lab}{If labels is "c" put here the variable name for the labels.}
+\item{other_lab}{If l is "c" put here the variable name for the labels.}
 
 \item{...}{All parameters allowed from ggplot2 themes.}
 }

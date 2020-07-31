@@ -14,7 +14,7 @@ test_that("crs parameter working", {
   skip_on_cran()
   
   testthat::expect_error(load_geouy("Playas", folder = 1))
-  testthat::expect_error(load_geouy("Playas", folder = c("c://", "E://")))
+  testthat::expect_error(load_geouy("Playas", folder = c("c://", "c://")))
   
   a <- load_geouy("Secciones", crs = 4326)
   a1 <- sf::st_crs(a)
