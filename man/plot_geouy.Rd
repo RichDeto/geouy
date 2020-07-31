@@ -2,9 +2,9 @@
 % Please edit documentation in R/plot_geouy.R
 \name{plot_geouy}
 \alias{plot_geouy}
-\title{A function to set ggplot2 theme in our suggested format}
+\title{plot_geouy}
 \usage{
-plot_geouy(x, col, viri_opt = "plasma", ...)
+plot_geouy(x, col, viri_opt = "plasma", labels = NULL, other_lab = NULL, ...)
 }
 \arguments{
 \item{x}{An sf object like load_geouy() results}
@@ -12,6 +12,10 @@ plot_geouy(x, col, viri_opt = "plasma", ...)
 \item{col}{Variable of "x" to plot (character)}
 
 \item{viri_opt}{A character string indicating the colormap option to use. Four options are available: "magma" (or "A"), "inferno" (or "B"), "plasma" (or "C"), "viridis" (or "D", the default option) and "cividis" (or "E")}
+
+\item{labels}{If NULL none label added, if "\%" porcentage with 1 decimal labels, if "n" the value is the label, if "c" put other variable in other_lab. Default NULL}
+
+\item{other_lab}{If labels is "c" put here the variable name for the labels.}
 
 \item{...}{All parameters allowed from ggplot2 themes.}
 }
@@ -26,6 +30,7 @@ This function allows you to set ggplot2 theme in our suggested format.
 secc <- load_geouy("Secciones")
 plot_geouy(x = secc, col = "AREA")
 }
+
 }
 \keyword{ggplot2}
 \keyword{maps}

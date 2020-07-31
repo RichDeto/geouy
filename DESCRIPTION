@@ -40,6 +40,7 @@ Imports:
 	methods,
 	magrittr,
 	fs,
+	assertthat,
   testthat (>= 2.1.0),
   viridis
 Suggests:

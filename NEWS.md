@@ -5,7 +5,8 @@
 
 * Add loc_agr_ine dataset of "Localidades agragadas" of INE. 
 * replace ggsn with ggspatial to improve north and scale aesthetics in plot_geouy 
-* remove lat and long axis in plot_goeuy 
+* remove lat and long axis in plot_goeuy
+* Add a param labels in plot_geouy for labels posiblity, if "%" porcentage with 1 decimal labels, if "n" the value is the label, if "c" put other variable in other_lab
 
 ## geouy v0.2.1 (2020-06-09)
  
