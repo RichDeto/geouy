@@ -5,6 +5,7 @@ metadata <- tibble::tribble(
   #--|--|----
   "Uruguay", "INE", "MIDES", 32721, "wfs", 2011, "https://mapas.mides.gub.uy:443/geoserver/INECenso2004/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=INECenso2004:ine_pais_corregido", "gml_id", NA,
   "Areas administrativas", "SGM", "SGM", 4326, "wfs", 2011, "polnbda_ury", NA, NA,
+  "Dptos", "DINAMA", "MVOTMA", 4326, "wfs", 2020, "https://www.dinama.gub.uy/geoserver/u19600217/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=u19600217:c004","gid", "nombre",
   "Limites departamentales", "IGM", "IGM", 4326, "wfs", 2011, "WFS:https://srvgis.igm.gub.uy/arcgis/services/LimiteDepartamental_wfs_250000/MapServer/WFSServer", "GLOBALID", "DEPTO",
   "Departamentos", "IDE", "MIDES", 32721, "wfs", 2011, "https://mapas.mides.gub.uy/geoserver/IDE/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=IDE:departamentos", "uruguay_", "nombre",
   "Secciones", "INE", "MIDES", 32721, "wfs", 2011, "https://mapas.mides.gub.uy:443/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=INECenso:Secciones", "CODSEC","SECCION",

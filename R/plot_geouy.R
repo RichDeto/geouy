@@ -1,6 +1,7 @@
 #' @name plot_geouy
 #' @title plot_geouy
 #' @description This function allows you to set ggplot2 theme in our suggested format.
+#' @family geo
 #' @param x An sf object like load_geouy() results
 #' @param col Variable of "x" to plot (character)
 #' @param viri_opt A character string indicating the colormap option to use. Four options are available: "magma" (or "A"), "inferno" (or "B"), "plasma" (or "C"), "viridis" (or "D", the default option) and "cividis" (or "E")
@@ -50,15 +51,15 @@ plot_geouy <- function(x, col, viri_opt = "plasma", l = NULL, other_lab = NULL, 
   
   if(!is.null(l) && l %in% "%"){
     ll <- x %>% dplyr::mutate(label = .data[[col]] %>% as.numeric(.) %>% round(1) %>% paste0("%"))   
-    mapa + geom_sf_text(data = ll, aes(label = label), 
+    mapa <- mapa + geom_sf_text(data = ll, aes(label = label), 
                         colour = "white", size = 3, hjust = 0.5) 
   }
   if(!is.null(l) && l %in% "n"){
-    mapa + geom_sf_text(aes(label = .data[[col]]), 
+    mapa <- mapa + geom_sf_text(aes(label = .data[[col]]), 
                      colour = "white", size = 3, hjust = 0.5) 
   }
   if(!is.null(l) && l %in% "c"){
-    mapa + geom_sf_text(aes(label = .data[[other_lab]]), 
+    mapa <- mapa + geom_sf_text(aes(label = .data[[other_lab]]), 
                         colour = "white", size = 3, hjust = 0.5) 
   }
   return(mapa)
