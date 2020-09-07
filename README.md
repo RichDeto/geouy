@@ -29,7 +29,9 @@
 obs. If you use **Linux**, you need to install a couple dependencies before installing the libraries `sf` and `geouy`. [More info here](https://github.com/r-spatial/sf#linux).
 
 
-## Basic Usage
+# Basic Usage
+
+## load_geouy
 
 The syntax of all `geouy` functions operate one the same logic so it becomes intuitive to download any data set using a single line of code. Like this:
 
@@ -37,10 +39,10 @@ The syntax of all `geouy` functions operate one the same logic so it becomes int
 secc <- load_geouy("Secciones")
 ```
 
-## Available datasets:
+### Available datasets:
 
 
-### Administrative limits 
+#### Administrative limits 
 
 | Layer | Productor | Source | Year | Format |
 |-----|-----|-----|-----|-----|
@@ -61,6 +63,7 @@ secc <- load_geouy("Secciones")
 |`"Centros poblados pg"`| `"SGM"` | SGM | 2011 | wfs |
 |`"Centros poblados pt"`| `"SGM"` | SGM | 2011 | wfs |
 |`"Municipios"`| `"IGM"` | IGM | 2011 | wfs |
+|`"CCZ"`| `"INE"` | MIDES | 2011 | wfs |
 |`"Asentamientos irregulares"`| `"PMB"` | MIDES | 2014 | wfs |
 |`"Barrios"` | `"INE"` | MIDES | 2011 | wfs |
 |`"Balnearios"`| `"MTOP"` | MTOP |  2017 | wfs |
@@ -70,7 +73,7 @@ secc <- load_geouy("Secciones")
 |`"Secciones policiales"` | `"MI"` | MVOTMA | 2017 | zip |
 
 
-### Hidrology
+#### Hidrology
 
 | Layer | Productor | Source | Year | Format |
 |-----|-----|-----|-----|-----|
@@ -87,7 +90,7 @@ secc <- load_geouy("Secciones")
 |`"Batimetria"` | `"DINAMA"` | MVOTMA | 2020 | zip | 
 
 
-### Ways
+#### Ways
 
 | Layer | Productor | Source | Year | Format |
 |-----|-----|-----|-----|-----|
@@ -96,7 +99,7 @@ secc <- load_geouy("Secciones")
 |`"Peajes"` | `"MTOP"` | MTOP | 2019 | wfs |
 |`"Postes Kilometros"` |`"MTOP"` | MTOP | 2019 | wfs |
 
-### Services
+#### Services
 
 | Layer | Productor | Source | Year | Format |
 |-----|-----|-----|-----|-----|
@@ -111,14 +114,14 @@ secc <- load_geouy("Secciones")
 | `"Instituciones deportivas"` | `"IDE"` | MIDES | 2015 | wfs |
 | `"Playas"`| `"DINAMA¨` | MVOTMA | 2007 | zip |
 
-### Orthophotos
+#### Orthophotos
 
 | Layer | Productor | Source | Year | Format |
 |-----|-----|-----|-----|-----|
 |`"Grilla ortofotos urbana"` | `"IDE"` | IDE | 2019 | wfs |
 |`"Grilla ortofotos nacional"` | `"IDE"` | IDE | 2019 | wfs |
   
-### Land Cover
+#### Land Cover
 
 | Layer | Productor | Source | Year | Format |
 |-----|-----|-----|-----|-----|
@@ -128,18 +131,25 @@ secc <- load_geouy("Secciones")
 |`"Cobertura suelo 2015"` | `"DINAGUA"` | MVOTMA | 2015 | zip |
 
 
+
+
+## `which_uy` 
+
+Add to an 'sf' object its spatial coincidence with one or more administrative units in Uruguay, generating the corresponding variables.
+
+## `geocode_ide_uy` 
+
+Allows geocoding directions using IDE_uy.
+
+## `plot_geouy`
+
+Plot a variable of your sf object with north and scale, set on a simple theme.
+
 ## Other functions:
 
-
-| Function | Action|
-|-----|-----|
-|`which_uy` | Add to an 'sf' object its spatial coincidence with one or more administrative units in Uruguay, generating the corresponding variables. | 
-|`geocode_ide_uy`| Allows geocoding directions using IDE_uy. |
-|`plot_geouy`| Plot a variable of your sf object with north and scale, set on a simple theme. | 
-|`is.uy4326`| Test if an 'sf' object match with Uruguay at crs = 4326. |
-|`is.uy32721`| Test if an 'sf' object match with Uruguay at crs = 32721.  |
-|`is.uy5381`| Test if an 'sf' object match with Uruguay at crs = 5381.  |
-| ... | ... | 
+`is.uy4326:` Test if an 'sf' object match with Uruguay at crs = 4326.
+`is.uy32721:` Test if an 'sf' object match with Uruguay at crs = 32721.
+`is.uy5381:` Test if an 'sf' object match with Uruguay at crs = 5381.
 
 
 ## History

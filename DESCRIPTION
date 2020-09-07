@@ -1,7 +1,7 @@
 Package: geouy
 Type: Package
 Title: Geographic Information of Uruguay
-Version: 0.2.2
+Version: 0.2.3
 Authors@R: c(
 	      person(given = "Richard", 
 	      family = "Detomasi", 
@@ -25,21 +25,20 @@ Depends: R (>= 3.4.0)
 Language: en, es
 Encoding: UTF-8
 LazyData: TRUE
-RoxygenNote: 7.1.0
-SystemRequirements: GDAL (>= 3.0.2), GEOS (>= 3.8.0), PROJ (>= 6.2.1)
+RoxygenNote: 7.1.1
+SystemRequirements: C++11, GDAL (>= 3.0.2), GEOS (>= 3.8.0), PROJ (>= 6.2.1)
 Imports:
 	rlang,
 	RCurl,
 	dplyr,
 	glue,
 	stringr,
-	sf (>= 0.9),
 	ggplot2,
 	ggthemes,
 	ggspatial,
 	methods,
 	magrittr,
-	fs,
+	fs, sf,
 	assertthat,
   testthat (>= 2.1.0),
   viridis

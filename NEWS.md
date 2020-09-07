@@ -1,6 +1,12 @@
 # log history of geouy package development
 
 -------------------------------------------------------
+## geouy v0.2.3 (2020-09-08)
+
+* Add C++11 system requirement fos sf
+* Add CCZ datasets to metadata
+
+
 ## geouy v0.2.2 (2020-07-31)
 
 * Add loc_agr_ine dataset of "Localidades agragadas" of INE.

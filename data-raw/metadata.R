@@ -23,6 +23,7 @@ metadata <- tibble::tribble(
   "Centros poblados pg", "SGM", "SGM", 4326, "wfs", 2011, "builtupa", "gml_id", "nam",
   "Centros poblados pt", "SGM", "SGM", 4326, "wfs", 2011, "builtupp", "gml_id", "nam",
   "Municipios", "IGM", "IGM", 4326, "wfs", 2011, "WFS:https://srvgis.igm.gub.uy/arcgis/services/LimitesMunicipales_wfs_250000/MapServer/WFSServer", "OBJECTID_1", "NOMBRE",
+  "CCZ", "IM", "MIDES", 32721, "wfs", 2011, "https://mapas.mides.gub.uy/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=IDE:ZonasComunales", "GID","ZONA_LEGAL",
   "Asentamientos irregulares", "PMB", "MIDES", 32721, "wfs", 2014, "https://mapas.mides.gub.uy:443/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=IDE:ai_pmb_2014", "cod_ast", "nom_ast",
   "Barrios", "INE", "MIDES", 32721, "wfs", 2011, "https://mapas.mides.gub.uy/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=IDE:barrios_ine_uy", "nrobarrio", "nombbarr",
   "Balnearios", "MTOP", "MTOP", 4326, "wfs", 2017, "https://geoservicios.mtop.gub.uy/geoserver/mb_planos/v_balnearios/ows?service=WFS&request=GetFeature&typeName=v_balnearios", "id", "balneario",

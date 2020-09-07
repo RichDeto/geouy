@@ -12,6 +12,7 @@ test_that("output is a ggplot", {
   testthat::expect_is(aaa, "ggplot")
   aaa <- plot_geouy(x = secc, col = "AREA", l = "c", other_lab = "CODSEC")  
   testthat::expect_is(aaa, "ggplot")
+  expect_error(plot_geouy(x = secc, col = "AREA", l = "c", other_lab = "zapallitos"))
 })
 
 test_that("Plot uses correct data", {
