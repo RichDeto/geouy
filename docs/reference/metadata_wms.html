@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>A function to geocoding directions using IDE_uy — geocode_ide_uy • geouy</title>
+<title>Metadata of WMS for Uruguay — metadata_wms • geouy</title>
 
 
 <!-- jquery -->
@@ -35,8 +35,9 @@
 
 
 
-<meta property="og:title" content="A function to geocoding directions using IDE_uy — geocode_ide_uy" />
-<meta property="og:description" content="A function to geocoding directions using IDE_uy" />
+<meta property="og:title" content="Metadata of WMS for Uruguay — metadata_wms" />
+<meta property="og:description" content="A dataset containing the urls and other attributes of geoservices 
+for Uruguay." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -106,54 +107,40 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>A function to geocoding directions using IDE_uy</h1>
+    <h1>Metadata of WMS for Uruguay</h1>
     
-    <div class="hidden name"><code>geocode_ide_uy.Rd</code></div>
+    <div class="hidden name"><code>metadata_wms.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>A function to geocoding directions using IDE_uy</p>
+    <p>A dataset containing the urls and other attributes of geoservices 
+for Uruguay.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>geocode_ide_uy</span>(<span class='no'>x</span>, <span class='kw'>details</span> <span class='kw'>=</span> <span class='no'>F</span>)</pre>
+    <pre class="usage"><span class='no'>metadata_wms</span></pre>
 
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
-    <table class="ref-arguments">
-    <colgroup><col class="name" /><col class="desc" /></colgroup>
-    <tr>
-      <th>x</th>
-      <td><p>Dataframe with unless 3 variables: dpto = corresponding to the department, loc = city / location, dir = to the address.</p></td>
-    </tr>
-    <tr>
-      <th>details</th>
-      <td><p>Logical value, default FALSE for X and Y variables only, if TRUE keep all variables of the service.</p></td>
-    </tr>
-    </table>
 
-    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+    <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>The DafaFrame x with the coordinates variables append (x and y)</p>
+    <p>A data frame with 7 rows and 3 variables:</p><dl class='dl-horizontal'>
+  <dt>capa</dt><dd><p>name of the geoservice</p></dd>
+  <dt>formato</dt><dd><p>name of the institution producing the data</p></dd>
+  <dt>url</dt><dd><p>url of the service</p></dd>
+
+</dl>
+
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p>Other service: 
-<code><a href='load_geouy.html'>load_geouy</a>()</code>,
-<code><a href='which_uy.html'>which_uy</a>()</code></p></div>
+    <div class='dont-index'><p>Other data: 
+<code><a href='loc_agr_ine.html'>loc_agr_ine</a></code>,
+<code><a href='metadata.html'>metadata</a></code></p></div>
 
-    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'># \donttest{
-# x1 <- cbind(dpto="Montevideo",loc="Montevideo",dir="Av. 18 de julio 1453")
-# x2 <- data.frame(x1, stringsAsFactors = F)
-# geocode_ide_uy(x2)
-# }
-</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
-      <li><a href="#arguments">Arguments</a></li>
-      <li><a href="#value">Value</a></li>
+      <li><a href="#format">Format</a></li>
       <li><a href="#see-also">See also</a></li>
-      <li><a href="#examples">Examples</a></li>
     </ul>
 
   </div>

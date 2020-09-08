@@ -1,1 +1,14 @@
 destination: docs
+reference:
+- title: Services
+  contents:
+  - has_concept("service")
+- title: Datasets
+  contents:
+  - has_concept("data")
+- title: Plots
+  contents:
+  - has_concept("plot")
+- title: CRS verification
+  contents:
+  - has_concept("crs")

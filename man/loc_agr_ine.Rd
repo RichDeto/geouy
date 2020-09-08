@@ -24,4 +24,10 @@ loc_agr_ine
 A dataset containing the cods, names and others attributes of urban locations 
 for Uruguay.
 }
+\seealso{
+Other data: 
+\code{\link{metadata_wms}},
+\code{\link{metadata}}
+}
+\concept{data}
 \keyword{datasets}

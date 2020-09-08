@@ -29,9 +29,9 @@
 obs. If you use **Linux**, you need to install a couple dependencies before installing the libraries `sf` and `geouy`. [More info here](https://github.com/r-spatial/sf#linux).
 
 
-# Basic Usage
+## Basic Usage
 
-## load_geouy
+### load_geouy
 
 The syntax of all `geouy` functions operate one the same logic so it becomes intuitive to download any data set using a single line of code. Like this:
 
@@ -39,10 +39,10 @@ The syntax of all `geouy` functions operate one the same logic so it becomes int
 secc <- load_geouy("Secciones")
 ```
 
-### Available datasets:
+#### Available datasets:
 
 
-#### Administrative limits 
+##### Administrative limits 
 
 | Layer | Productor | Source | Year | Format |
 |-----|-----|-----|-----|-----|
@@ -73,7 +73,7 @@ secc <- load_geouy("Secciones")
 |`"Secciones policiales"` | `"MI"` | MVOTMA | 2017 | zip |
 
 
-#### Hidrology
+##### Hidrology
 
 | Layer | Productor | Source | Year | Format |
 |-----|-----|-----|-----|-----|
@@ -90,7 +90,7 @@ secc <- load_geouy("Secciones")
 |`"Batimetria"` | `"DINAMA"` | MVOTMA | 2020 | zip | 
 
 
-#### Ways
+##### Ways
 
 | Layer | Productor | Source | Year | Format |
 |-----|-----|-----|-----|-----|
@@ -99,7 +99,7 @@ secc <- load_geouy("Secciones")
 |`"Peajes"` | `"MTOP"` | MTOP | 2019 | wfs |
 |`"Postes Kilometros"` |`"MTOP"` | MTOP | 2019 | wfs |
 
-#### Services
+##### Services
 
 | Layer | Productor | Source | Year | Format |
 |-----|-----|-----|-----|-----|
@@ -114,14 +114,14 @@ secc <- load_geouy("Secciones")
 | `"Instituciones deportivas"` | `"IDE"` | MIDES | 2015 | wfs |
 | `"Playas"`| `"DINAMA¨` | MVOTMA | 2007 | zip |
 
-#### Orthophotos
+##### Orthophotos
 
 | Layer | Productor | Source | Year | Format |
 |-----|-----|-----|-----|-----|
 |`"Grilla ortofotos urbana"` | `"IDE"` | IDE | 2019 | wfs |
 |`"Grilla ortofotos nacional"` | `"IDE"` | IDE | 2019 | wfs |
   
-#### Land Cover
+##### Land Cover
 
 | Layer | Productor | Source | Year | Format |
 |-----|-----|-----|-----|-----|
@@ -131,21 +131,29 @@ secc <- load_geouy("Secciones")
 |`"Cobertura suelo 2015"` | `"DINAGUA"` | MVOTMA | 2015 | zip |
 
 
-
-
-## `which_uy` 
+### which_uy 
 
 Add to an 'sf' object its spatial coincidence with one or more administrative units in Uruguay, generating the corresponding variables.
 
-## `geocode_ide_uy` 
+### geocode_ide_uy 
 
 Allows geocoding directions using IDE_uy.
 
-## `plot_geouy`
+### plot_geouy
 
 Plot a variable of your sf object with north and scale, set on a simple theme.
 
-## Other functions:
+### loc_agr_ine
+
+This dataset allows you to aggregate Localidades INE by the aglomerations used by INE. 
+AN use example may be: 
+
+``` r
+loc <- which_uy(base, "Localidades pg") %>% 
+    dplyr::left_join(loc_agr_ine, by = c("cod_Localidades pg" = "codloc"))
+```
+
+### Other functions:
 
 `is.uy4326:` Test if an 'sf' object match with Uruguay at crs = 4326.
 `is.uy32721:` Test if an 'sf' object match with Uruguay at crs = 32721.

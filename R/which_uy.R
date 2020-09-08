@@ -1,4 +1,5 @@
 #' This function allows to add to an 'sf' object its spatial coincidence with one or more administrative units in Uruguay, generating the corresponding variables.
+#' @family service
 #' @param x An 'sf' object with the same crs as the homonym parameter
 #' @param c Define the geometries to download: may be: "Departamentos", "Secciones", "Zonas", etc. View(metadata) for details.
 #' @param d A vector who determines the variables to be added, with three options: "cod", "name", or "full". Default c("cod", "name").
@@ -37,7 +38,3 @@ which_uy <- function(x, c = c("Localidades pg", "Departamentos"), d = c("cod", "
   }
   return(x)
 }
-
-# @importFrom sf st_read st_transform st_join st_crs
-# @importFrom dplyr filter %>% select
-# @importFrom rlang .data

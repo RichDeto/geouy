@@ -32,7 +32,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">geouy</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.2</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.3</span>
       </span>
     </div>
 
@@ -89,15 +89,17 @@
 <div id="basic-usage" class="section level2">
 <h2 class="hasAnchor">
 <a href="#basic-usage" class="anchor"></a>Basic Usage</h2>
+<div id="load_geouy" class="section level3">
+<h3 class="hasAnchor">
+<a href="#load_geouy" class="anchor"></a>load_geouy</h3>
 <p>The syntax of all <code>geouy</code> functions operate one the same logic so it becomes intuitive to download any data set using a single line of code. Like this:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">secc &lt;-<span class="st"> </span><span class="kw"><a href="reference/load_geouy.html">load_geouy</a></span>(<span class="st">"Secciones"</span>)</code></pre></div>
-</div>
-<div id="available-datasets" class="section level2">
-<h2 class="hasAnchor">
-<a href="#available-datasets" class="anchor"></a>Available datasets:</h2>
-<div id="administrative-limits" class="section level3">
-<h3 class="hasAnchor">
-<a href="#administrative-limits" class="anchor"></a>Administrative limits</h3>
+<div id="available-datasets" class="section level4">
+<h4 class="hasAnchor">
+<a href="#available-datasets" class="anchor"></a>Available datasets:</h4>
+<div id="administrative-limits" class="section level5">
+<h5 class="hasAnchor">
+<a href="#administrative-limits" class="anchor"></a>Administrative limits</h5>
 <table class="table">
 <thead><tr class="header">
 <th>Layer</th>
@@ -227,48 +229,55 @@
 <td>wfs</td>
 </tr>
 <tr class="even">
+<td><code>"CCZ"</code></td>
+<td><code>"INE"</code></td>
+<td>MIDES</td>
+<td>2011</td>
+<td>wfs</td>
+</tr>
+<tr class="odd">
 <td><code>"Asentamientos irregulares"</code></td>
 <td><code>"PMB"</code></td>
 <td>MIDES</td>
 <td>2014</td>
 <td>wfs</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><code>"Barrios"</code></td>
 <td><code>"INE"</code></td>
 <td>MIDES</td>
 <td>2011</td>
 <td>wfs</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><code>"Balnearios"</code></td>
 <td><code>"MTOP"</code></td>
 <td>MTOP</td>
 <td>2017</td>
 <td>wfs</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><code>"Secciones catastrales"</code></td>
 <td><code>"DNC"</code></td>
 <td>MVOTMA</td>
 <td>2013</td>
 <td>zip</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><code>"Padrones rurales"</code></td>
 <td><code>"DNC"</code></td>
 <td>“MVOTMA”</td>
 <td>2014</td>
 <td>zip</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><code>"Padrones urbanos"</code></td>
 <td><code>"DNC"</code></td>
 <td>MVOTMA</td>
 <td>2014</td>
 <td>zip</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><code>"Secciones policiales"</code></td>
 <td><code>"MI"</code></td>
 <td>MVOTMA</td>
@@ -278,9 +287,9 @@
 </tbody>
 </table>
 </div>
-<div id="hidrology" class="section level3">
-<h3 class="hasAnchor">
-<a href="#hidrology" class="anchor"></a>Hidrology</h3>
+<div id="hidrology" class="section level5">
+<h5 class="hasAnchor">
+<a href="#hidrology" class="anchor"></a>Hidrology</h5>
 <table class="table">
 <thead><tr class="header">
 <th>Layer</th>
@@ -370,9 +379,9 @@
 </tbody>
 </table>
 </div>
-<div id="ways" class="section level3">
-<h3 class="hasAnchor">
-<a href="#ways" class="anchor"></a>Ways</h3>
+<div id="ways" class="section level5">
+<h5 class="hasAnchor">
+<a href="#ways" class="anchor"></a>Ways</h5>
 <table class="table">
 <thead><tr class="header">
 <th>Layer</th>
@@ -413,9 +422,9 @@
 </tbody>
 </table>
 </div>
-<div id="services" class="section level3">
-<h3 class="hasAnchor">
-<a href="#services" class="anchor"></a>Services</h3>
+<div id="services" class="section level5">
+<h5 class="hasAnchor">
+<a href="#services" class="anchor"></a>Services</h5>
 <table class="table">
 <thead><tr class="header">
 <th>Layer</th>
@@ -498,9 +507,9 @@
 </tbody>
 </table>
 </div>
-<div id="orthophotos" class="section level3">
-<h3 class="hasAnchor">
-<a href="#orthophotos" class="anchor"></a>Orthophotos</h3>
+<div id="orthophotos" class="section level5">
+<h5 class="hasAnchor">
+<a href="#orthophotos" class="anchor"></a>Orthophotos</h5>
 <table class="table">
 <thead><tr class="header">
 <th>Layer</th>
@@ -527,9 +536,9 @@
 </tbody>
 </table>
 </div>
-<div id="land-cover" class="section level3">
-<h3 class="hasAnchor">
-<a href="#land-cover" class="anchor"></a>Land Cover</h3>
+<div id="land-cover" class="section level5">
+<h5 class="hasAnchor">
+<a href="#land-cover" class="anchor"></a>Land Cover</h5>
 <table class="table">
 <thead><tr class="header">
 <th>Layer</th>
@@ -571,49 +580,34 @@
 </table>
 </div>
 </div>
-<div id="other-functions" class="section level2">
-<h2 class="hasAnchor">
-<a href="#other-functions" class="anchor"></a>Other functions:</h2>
-<table class="table">
-<colgroup>
-<col width="8%">
-<col width="8%">
-</colgroup>
-<thead><tr class="header">
-<th>Function</th>
-<th>Action</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td><code>which_uy</code></td>
-<td>Add to an ‘sf’ object its spatial coincidence with one or more administrative units in Uruguay, generating the corresponding variables.</td>
-</tr>
-<tr class="even">
-<td><code>geocode_ide_uy</code></td>
-<td>Allows geocoding directions using IDE_uy.</td>
-</tr>
-<tr class="odd">
-<td><code>plot_geouy</code></td>
-<td>Plot a variable of your sf object with north and scale, set on a simple theme.</td>
-</tr>
-<tr class="even">
-<td><code>is.uy4326</code></td>
-<td>Test if an ‘sf’ object match with Uruguay at crs = 4326.</td>
-</tr>
-<tr class="odd">
-<td><code>is.uy32721</code></td>
-<td>Test if an ‘sf’ object match with Uruguay at crs = 32721.</td>
-</tr>
-<tr class="even">
-<td><code>is.uy5381</code></td>
-<td>Test if an ‘sf’ object match with Uruguay at crs = 5381.</td>
-</tr>
-<tr class="odd">
-<td>…</td>
-<td>…</td>
-</tr>
-</tbody>
-</table>
+</div>
+<div id="which_uy" class="section level3">
+<h3 class="hasAnchor">
+<a href="#which_uy" class="anchor"></a>which_uy</h3>
+<p>Add to an ‘sf’ object its spatial coincidence with one or more administrative units in Uruguay, generating the corresponding variables.</p>
+</div>
+<div id="geocode_ide_uy" class="section level3">
+<h3 class="hasAnchor">
+<a href="#geocode_ide_uy" class="anchor"></a>geocode_ide_uy</h3>
+<p>Allows geocoding directions using IDE_uy.</p>
+</div>
+<div id="plot_geouy" class="section level3">
+<h3 class="hasAnchor">
+<a href="#plot_geouy" class="anchor"></a>plot_geouy</h3>
+<p>Plot a variable of your sf object with north and scale, set on a simple theme.</p>
+</div>
+<div id="loc_agr_ine" class="section level3">
+<h3 class="hasAnchor">
+<a href="#loc_agr_ine" class="anchor"></a>loc_agr_ine</h3>
+<p>This dataset allows you to aggregate Localidades INE by the aglomerations used by INE. AN use example may be:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">loc &lt;-<span class="st"> </span><span class="kw"><a href="reference/which_uy.html">which_uy</a></span>(base, <span class="st">"Localidades pg"</span>) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">    </span>dplyr<span class="op">::</span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html">left_join</a></span>(loc_agr_ine, <span class="dt">by =</span> <span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"cod_Localidades pg"</span> =<span class="st"> "codloc"</span>))</code></pre></div>
+</div>
+<div id="other-functions" class="section level3">
+<h3 class="hasAnchor">
+<a href="#other-functions" class="anchor"></a>Other functions:</h3>
+<p><code>is.uy4326:</code> Test if an ‘sf’ object match with Uruguay at crs = 4326. <code>is.uy32721:</code> Test if an ‘sf’ object match with Uruguay at crs = 32721. <code>is.uy5381:</code> Test if an ‘sf’ object match with Uruguay at crs = 5381.</p>
+</div>
 </div>
 <div id="history" class="section level2">
 <h2 class="hasAnchor">

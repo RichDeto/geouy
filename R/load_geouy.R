@@ -1,4 +1,5 @@
 #' This function allows to take oficial uruguayan geometries, as object "sf", from various servers.
+#' @family service
 #' @param c Define the geometries to download: may be: "Departamentos", "Secciones", "Zonas", etc. View(metadata) for details.
 #' @param crs Define the Coordinate Reference Systems you want the output, default 32721
 #' @param folder Folder where are the files download if formato == "zip" in metadata. Default tempdir()
@@ -43,8 +44,3 @@ load_geouy <- function(c, crs = 32721, folder = tempdir()){
   a <- a %>% sf::st_transform(crs)
   return(a)
 }
-
-# @importFrom sf st_read st_transform
-# @importFrom dplyr filter %>%
-# @importFrom glue glue
-# @importFrom fs dir_ls

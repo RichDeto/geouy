@@ -1,4 +1,5 @@
 #' A function to geocoding directions using IDE_uy
+#' @family service
 #' @param x Dataframe with unless 3 variables: dpto = corresponding to the department, loc = city / location, dir = to the address.
 #' @param details Logical value, default FALSE for X and Y variables only, if TRUE keep all variables of the service. 
 #' @keywords geocoding IDE_uy

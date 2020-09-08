@@ -32,7 +32,7 @@ plot_geouy(x = secc, col = "AREA")
 }
 
 }
-\concept{geo}
+\concept{plot}
 \keyword{ggplot2}
 \keyword{maps}
 \keyword{sf}

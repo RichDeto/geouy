@@ -25,6 +25,12 @@ x <- load_geouy("Peajes")
 x1 <- which_uy(x, c = "Localidades pg")
 }
 }
+\seealso{
+Other service: 
+\code{\link{geocode_ide_uy}()},
+\code{\link{load_geouy}()}
+}
+\concept{service}
 \keyword{IDE}
 \keyword{INE}
 \keyword{MIDES}
