@@ -27,6 +27,7 @@ secc <- load_geouy(c = "Secciones")
 \seealso{
 Other service: 
 \code{\link{geocode_ide_uy}()},
+\code{\link{where_uy}()},
 \code{\link{which_uy}()}
 }
 \concept{service}

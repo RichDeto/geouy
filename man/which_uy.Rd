@@ -28,7 +28,8 @@ x1 <- which_uy(x, c = "Localidades pg")
 \seealso{
 Other service: 
 \code{\link{geocode_ide_uy}()},
-\code{\link{load_geouy}()}
+\code{\link{load_geouy}()},
+\code{\link{where_uy}()}
 }
 \concept{service}
 \keyword{IDE}
