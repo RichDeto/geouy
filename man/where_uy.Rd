@@ -4,12 +4,14 @@
 \alias{where_uy}
 \title{This function return an 'sf' object with the geometry of the consult id or group of ids, of an administrative units in Uruguay.}
 \usage{
-where_uy(c = "Localidades pg", d, crs = 32721)
+where_uy(c = "Localidades pg", d = "cod", e, crs = 32721)
 }
 \arguments{
 \item{c}{Define the geometries to consult: may be: "Departamentos", "Secciones", "Zonas", etc. View(metadata) for details.}
 
-\item{d}{A vector who determines the ids to identify.}
+\item{d}{A vector who determines the variables to be consult, with two options: "cod" or "name". Default "cod".}
+
+\item{e}{A vector who determines the ids or names to identify.}
 
 \item{crs}{Define the Coordinate Reference Systems you want the output, default 32721}
 }
@@ -21,7 +23,7 @@ This function return an 'sf' object with the geometry of the consult id or group
 }
 \examples{
 \donttest{
-x <- where_uy(c = "Localidades pg", d = c(1220, 2220))
+x <- where_uy(c = "Localidades pg", d = "cod", e = c(1120, 2220))
 }
 }
 \seealso{
