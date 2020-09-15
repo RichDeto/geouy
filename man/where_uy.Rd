@@ -28,6 +28,7 @@ x <- where_uy(c = "Localidades pg", d = "cod", e = c(1120, 2220))
 }
 \seealso{
 Other service: 
+\code{\link{add_geom}()},
 \code{\link{geocode_ide_uy}()},
 \code{\link{load_geouy}()},
 \code{\link{which_uy}()}

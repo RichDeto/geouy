@@ -1,12 +1,13 @@
 # log history of geouy package development
 
 -------------------------------------------------------
-## geouy v0.2.3 (2020-09-11)
+## geouy v0.2.3 (2020-09-15)
 
 * Add C++11 system requirement for sf update.
-* Add CCZ datasets to metadata
-* Add a where_uy() to get an sf object filtered
-* Improve plot_geouy() fixing bugs, and made compatible with ech:: library
+* Add CCZ datasets to metadata.
+* Add a where_uy() to get an sf object by a name or id consult. 
+* Add a add_geom() to add a geom variable to a data.frame by a link variable.
+* Improve plot_geouy() fixing bugs, and made compatible with ech:: library.
 
 
 ## geouy v0.2.2 (2020-07-31)

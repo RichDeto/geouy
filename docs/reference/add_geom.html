@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>This function test if an 'sf' object match with Uruguay at crs = 32721. — is.uy32721 • geouy</title>
+<title>This function allows you to add a geom variable with a code variable of "zona", "barrio", "localidad", "segmentos", "secciones" or "departamentos". — add_geom • geouy</title>
 
 
 <!-- jquery -->
@@ -35,8 +35,8 @@
 
 
 
-<meta property="og:title" content="This function test if an 'sf' object match with Uruguay at crs = 32721. — is.uy32721" />
-<meta property="og:description" content="This function test if an 'sf' object match with Uruguay at crs = 32721." />
+<meta property="og:title" content="This function allows you to add a geom variable with a code variable of "zona", "barrio", "localidad", "segmentos", "secciones" or "departamentos". — add_geom" />
+<meta property="og:description" content="This function allows you to add a geom variable with a code variable of &quot;zona&quot;, &quot;barrio&quot;, &quot;localidad&quot;, &quot;segmentos&quot;, &quot;secciones&quot; or &quot;departamentos&quot;." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -106,43 +106,58 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>This function test if an 'sf' object match with Uruguay at crs = 32721.</h1>
+    <h1>This function allows you to add a geom variable with a code variable of "zona", "barrio", "localidad", "segmentos", "secciones" or "departamentos".</h1>
     
-    <div class="hidden name"><code>is.uy32721.Rd</code></div>
+    <div class="hidden name"><code>add_geom.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>This function test if an 'sf' object match with Uruguay at crs = 32721.</p>
+    <p>This function allows you to add a geom variable with a code variable of "zona", "barrio", "localidad", "segmentos", "secciones" or "departamentos".</p>
     </div>
 
-    <pre class="usage"><span class='fu'>is.uy32721</span>(<span class='no'>x</span>)</pre>
+    <pre class="usage"><span class='fu'>add_geom</span>(<span class='no'>data</span>, <span class='no'>unit</span>, <span class='no'>variable</span>, <span class='kw'>crs</span> <span class='kw'>=</span> <span class='fl'>32721</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>x</th>
-      <td><p>An 'sf' object with the same crs as the homonym parameter</p></td>
+      <th>data</th>
+      <td><p>data.frame</p></td>
+    </tr>
+    <tr>
+      <th>unit</th>
+      <td><p>spatial unit of data, may be: "Departamentos", "Secciones", "Secc MVD 2004", "Segmentos", "Segm MVD 2004", "Segm URB INT 2004", "Zonas", "Zonas MVD 2004", "Zonas URB INT 2004", "Localidades pg", "Municipios" o "Barrios".</p></td>
+    </tr>
+    <tr>
+      <th>variable</th>
+      <td><p>Variable name of unit code (without duplicates)</p></td>
+    </tr>
+    <tr>
+      <th>crs</th>
+      <td><p>Coordinates Refence Sistem, usually in region 32721 or 4326 (default 32721)</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>logical value based in crs parameter of the sf object</p>
+    <p>data.frame</p>
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>Disclaimer: This script is not an official INE product.
+Aviso: El script no es un producto oficial de INE.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p>Other crs: 
-<code><a href='is.uy4326.html'>is.uy4326</a>()</code>,
-<code><a href='is.uy5381.html'>is.uy5381</a>()</code></p></div>
+    <div class='dont-index'><p>Other service: 
+<code><a href='geocode_ide_uy.html'>geocode_ide_uy</a>()</code>,
+<code><a href='load_geouy.html'>load_geouy</a>()</code>,
+<code><a href='where_uy.html'>where_uy</a>()</code>,
+<code><a href='which_uy.html'>which_uy</a>()</code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># \donttest{</span>
-<span class='fu'>is.uy32721</span>(<span class='fu'><a href='load_geouy.html'>load_geouy</a></span>(<span class='st'>"Peajes"</span>))</div><div class='output co'>#&gt; Reading layer `peajes' from data source `https://geoservicios.mtop.gub.uy/geoserver/inf_tte_ttelog_terrestre/peajes/ows?service=WFS&amp;request=GetFeature&amp;typeName=peajes' using driver `GML'
-#&gt; Simple feature collection with 18 features and 4 fields
-#&gt; geometry type:  MULTIPOINT
-#&gt; dimension:      XY
-#&gt; bbox:           xmin: -58.24649 ymin: -34.78446 xmax: -54.42373 ymax: -31.54664
-#&gt; geographic CRS: WGS 84</div><div class='output co'>#&gt; <span class='warning'>Warning: GDAL Error 1: HTTP error code : 503</span></div><div class='output co'>#&gt; <span class='error'>Error: Cannot open "https://mapas.mides.gub.uy:443/geoserver/INECenso2004/ows?service=WFS&amp;version=1.0.0&amp;request=GetFeature&amp;typeName=INECenso2004:ine_pais_corregido"; Check connection parameters.</span></div><div class='input'># }
+<span class='no'>pobre_x_dpto</span> <span class='kw'>&lt;-</span> <span class='kw pkg'>ech</span><span class='kw ns'>::</span><span class='fu'><a href='https://rdrr.io/pkg/ech/man/get_estimation_mean.html'>get_estimation_mean</a></span>(<span class='kw'>variable</span> <span class='kw'>=</span> <span class='st'>"pobre06"</span>, <span class='kw'>by.x</span> <span class='kw'>=</span> <span class='st'>"nomdpto"</span>, <span class='kw'>level</span> <span class='kw'>=</span> <span class='st'>"h"</span>) <span class='kw'>%&gt;%</span>
+   <span class='kw pkg'>dplyr</span><span class='kw ns'>::</span><span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span>(<span class='no'>pobre06</span> <span class='kw'>==</span> <span class='st'>"No pobre"</span>)</div><div class='output co'>#&gt; <span class='message'>These confidence intervals are only an approximation of the correct confidence intervals </span>
+#&gt; <span class='message'>  that arise from fully defining the sample design</span></div><div class='input'><span class='no'>pobre_x_dpto_geo</span> <span class='kw'>&lt;-</span> <span class='fu'>add_geom</span>(<span class='kw'>data</span> <span class='kw'>=</span> <span class='no'>pobre_x_dpto</span>, <span class='kw'>unit</span> <span class='kw'>=</span> <span class='st'>"Departamentos"</span>, <span class='kw'>variable</span> <span class='kw'>=</span> <span class='st'>"nomdpto"</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: GDAL Error 1: HTTP error code : 503</span></div><div class='output co'>#&gt; <span class='error'>Error: Cannot open "https://mapas.mides.gub.uy/geoserver/IDE/ows?service=WFS&amp;version=1.0.0&amp;request=GetFeature&amp;typeName=IDE:departamentos"; Check connection parameters.</span></div><div class='input'># }
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
@@ -150,6 +165,7 @@
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
       <li><a href="#value">Value</a></li>
+      <li><a href="#details">Details</a></li>
       <li><a href="#see-also">See also</a></li>
       <li><a href="#examples">Examples</a></li>
     </ul>

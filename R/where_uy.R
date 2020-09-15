@@ -26,6 +26,5 @@ where_uy <- function(c = "Localidades pg", d = "cod", e, crs = 32721) {
   y <- geouy::load_geouy(c, crs = crs) %>% dplyr::filter(dplyr::pull(., a) %in% e)
   if(nrow(y) == 0) stop("Sorry, your consult has not matches, verify ids")
   if(nrow(y) < length(e)) warning(glue::glue("Your consult has less matches than elements in {e}, verify filter"))
-  if(nrow(y) > length(e)) warning(glue::glue("Your consult has more matches than elements in {e}, may have multigeometries with this filter"))
   return(y)
 }

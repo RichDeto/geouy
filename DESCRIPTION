@@ -43,6 +43,7 @@ Imports:
   testthat (>= 2.1.0),
   viridis
 Suggests:
+    ech,
     knitr,
     rmarkdown,
     covr

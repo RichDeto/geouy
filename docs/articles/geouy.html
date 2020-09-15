@@ -70,7 +70,7 @@
 </h1>
                         <h4 class="author">Richard Detomasi</h4>
             
-            <h4 class="date">2020-09-07</h4>
+            <h4 class="date">2020-09-15</h4>
       
       
       <div class="hidden name"><code>geouy.Rmd</code></div>
@@ -87,7 +87,7 @@
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span>(<span class="st">'geouy'</span>)</code></pre></div>
 <p>Para instalar la versión en desarrollo:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># install.packages('devtools') si no tiene instalado devtools</span>
-devtools<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/devtools/man/remote-reexports.html">install_github</a></span>(<span class="st">"RichDeto/geouy"</span>)</code></pre></div>
+devtools<span class="op">::</span><span class="kw"><a href="https://devtools.r-lib.org//reference/remote-reexports.html">install_github</a></span>(<span class="st">"RichDeto/geouy"</span>)</code></pre></div>
 <p>Para activarla</p>
 </div>
 <div id="ejemplos-de-usos" class="section level2">
@@ -133,7 +133,7 @@ nuevas_geo &lt;-<span class="st"> </span><span class="kw"><a href="../reference/
 <h3 class="hasAnchor">
 <a href="#categor%C3%ADas-de-grandes-regiones-ine" class="anchor"></a>Categorías de grandes regiones INE</h3>
 <p>Un tema colateral, pero no despreciable es el de categorizar el territorio, y fuera de las geometrías como ya vimos, hay particularidades demográficas implicadas. Por ejemplo, las categorías que utiliza el INE para agrupar localidades, que a su vez son utilizadas como marco para los muestreos de la Encuesta Continua de Hogares.</p>
-<p>Por ejemplo, el corte normal entre los tamaños de localidades no consideran inicialmente las agrupaciones de las mismas, como es principalmente el Area Metropolitana de Montevideo o las chacras que rodean ciertas ciudades que por más que son “Localidades INE” per se, al momento de categorizarla se agrupan con la ciudad que las concentra.</p>
+<p>Por ejemplo, el corte normal entre los tamaños de localidades no consideran inicialmente las agrupaciones de las mismas, como es principalmente el Area Metropolitana de Montevideo o las chacras que rodean ciertas ciudades que por más que son "Localidades INE" per se, al momento de categorizarla se agrupan con la ciudad que las concentra.</p>
 <p>Por este motivo, es que agregamos el dataset <code>loc_agr_ine</code> que permite combinar la capa de <code>Localidades pg</code> con los datos del Censo 2011 y poder categorizar las agrupaciones de localidades como lo hace el INE.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># devtools::install_github("RichDeto/geouy", ref = 'master'); </span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(geouy)
