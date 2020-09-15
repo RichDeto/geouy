@@ -151,7 +151,12 @@
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># \donttest{</span>
-<span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'>where_uy</span>(<span class='kw'>c</span> <span class='kw'>=</span> <span class='st'>"Localidades pg"</span>, <span class='kw'>d</span> <span class='kw'>=</span> <span class='st'>"cod"</span>, <span class='kw'>e</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>1120</span>, <span class='fl'>2220</span>))</div><div class='output co'>#&gt; <span class='warning'>Warning: GDAL Error 1: HTTP error code : 503</span></div><div class='output co'>#&gt; <span class='error'>Error: Cannot open "https://mapas.mides.gub.uy:443/geoserver/ows?service=WFS&amp;version=1.0.0&amp;request=GetFeature&amp;typeName=INECenso:Localidades_pg"; Check connection parameters.</span></div><div class='input'># }
+<span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'>where_uy</span>(<span class='kw'>c</span> <span class='kw'>=</span> <span class='st'>"Localidades pg"</span>, <span class='kw'>d</span> <span class='kw'>=</span> <span class='st'>"cod"</span>, <span class='kw'>e</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>1120</span>, <span class='fl'>2220</span>))</div><div class='output co'>#&gt; Reading layer `Localidades_pg' from data source `https://mapas.mides.gub.uy:443/geoserver/ows?service=WFS&amp;version=1.0.0&amp;request=GetFeature&amp;typeName=INECenso:Localidades_pg' using driver `GML'
+#&gt; Simple feature collection with 615 features and 10 fields
+#&gt; geometry type:  MULTIPOLYGON
+#&gt; dimension:      XY
+#&gt; bbox:           xmin: 367295 ymin: 6127919 xmax: 850978.1 ymax: 6661441
+#&gt; projected CRS:  WGS 84 / UTM zone 21S</div><div class='output co'>#&gt; <span class='warning'>Warning: Your consult has less matches than elements in 1120, verify filterYour consult has less matches than elements in 2220, verify filter</span></div><div class='input'># }
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">

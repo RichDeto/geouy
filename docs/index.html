@@ -82,7 +82,7 @@
   
 <span class="co"># Use the development version with latest features</span>
   utils<span class="op">::</span><span class="kw"><a href="https://rdrr.io/r/utils/remove.packages.html">remove.packages</a></span>(<span class="st">'geouy'</span>)
-  devtools<span class="op">::</span><span class="kw"><a href="https://devtools.r-lib.org//reference/remote-reexports.html">install_github</a></span>(<span class="st">"RichDeto/geouy"</span>)
+  devtools<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/devtools/man/remote-reexports.html">install_github</a></span>(<span class="st">"RichDeto/geouy"</span>)
   <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(geouy)</code></pre></div>
 <p>obs. If you use <strong>Linux</strong>, you need to install a couple dependencies before installing the libraries <code>sf</code> and <code>geouy</code>. <a href="https://github.com/r-spatial/sf#linux">More info here</a>.</p>
 </div>
@@ -635,7 +635,7 @@
 <span class="op">-</span><span class="st"> </span>Remember at the end of the documentation you must add a <span class="co"># '@export</span>
 <span class="op">-</span><span class="st"> </span>Check that the types and values of your <span class="cf">function</span> parameters are <span class="kw">fine</span> (<span class="cf">for</span> example, you can look at <span class="st">`</span><span class="dt">data-raw/metadata.R</span><span class="st">`</span>
 <span class="op">-</span><span class="st"> </span>Add the dependencies <span class="cf">in</span> the <span class="st">`</span><span class="dt">DESCRIPTION</span><span class="st">`</span> file 
-<span class="op">-</span><span class="st"> </span>Check the package with devtools<span class="op">::</span><span class="kw"><a href="https://devtools.r-lib.org//reference/check.html">check</a></span>()
+<span class="op">-</span><span class="st"> </span>Check the package with devtools<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/devtools/man/check.html">check</a></span>()
 <span class="op">-</span><span class="st"> </span>If everything works fine, then make a pull request</code></pre></div>
 </div>
 <div id="to-add-geographic-data-to-the-load_geouy-function" class="section level3">

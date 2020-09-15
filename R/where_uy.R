@@ -15,9 +15,9 @@
 where_uy <- function(c = "Localidades pg", d = "cod", e, crs = 32721) {
   if (is.character(e) & d %in% "cod") {
     e <- as.numeric(e)
-    try(if(sum(is.na(e)) == length(e)) stop(glue::glue("The elements in {e} are all character, and for being {d} may be numeric")))
+    if (is.na(e)) stop(glue::glue("The elements in {e} are all character, and for being {d} may be numeric"))
   }
-  try(if (is.numeric(e) & d %in% "name") stop(glue::glue("The elements in {e} are numeric, and for being {d} may be character")))  
+  if (is.numeric(e) & d %in% "name") stop(glue::glue("The elements in {e} are numeric, and for being {d} may be character"))  
   md <- geouy::metadata 
   try(if (sum(!c %in% md$capa) > 0) stop("The name of the geometry you will load is not correct. Verify in the metadata file"))
   md <- md[md$capa %in% c,]
