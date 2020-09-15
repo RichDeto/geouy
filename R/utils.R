@@ -58,7 +58,7 @@ is.uy32721 <- function(x){
 #' @export
 #' @examples
 #'\donttest{
-#' is.uy5381(load_geouy("Peajes"))
+#' is.uy5381(load_geouy("CCZ"))
 #'}
 
 is.uy5381 <- function(x){
@@ -83,7 +83,7 @@ is.uy5381 <- function(x){
 #' @export
 #' @examples
 #'\donttest{
-#' is.uy5382(load_geouy("Peajes"))
+#' is.uy5382(load_geouy("Dptos"))
 #'}
 
 is.uy5382 <- function(x){
