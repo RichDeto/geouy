@@ -1,6 +1,6 @@
-library(ech)
 test_that("add_geom works", {
-  pobre_x_dpto <- ech::get_estimation_mean(variable = "pobre06", by.x = "dpto", level = "h") %>% dplyr::filter(pobre06 == "No pobre")
-  pobre_x_dpto_geo <- add_geom(data = pobre_x_dpto, unit = "Departamentos", variable = "dpto")
-  testthat::expect_equal(ncol(pobre_x_dpto_geo), 7)
+  pobre_x_dpto <- as.data.frame(cbind(nomdpto = c("ARTIGAS", "DURAZNO", "FLORIDA", "LAVALLEJA"),
+                        Pobreza = c(0.26, 0.27, 0.07, 0.10)))
+  pobre_x_dpto_geo <- add_geom(data = pobre_x_dpto, unit = "Departamentos", variable = "nomdpto")
+  testthat::expect_equal(ncol(pobre_x_dpto_geo), 4)
 })
