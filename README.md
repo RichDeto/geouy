@@ -133,11 +133,15 @@ secc <- load_geouy("Secciones")
 
 ### which_uy() 
 
-Add to an 'sf' object its spatial coincidence with one or more administrative units in Uruguay, generating the corresponding variables.
+Add to an `sf` object its spatial coincidence with one or more administrative units in Uruguay, generating the corresponding variables.
 
 ### where_uy() 
 
-You get an 'sf' object of one or more administrative units in Uruguay, according to a query by code or name in the layer.
+You get an `sf` object of one or more administrative units in Uruguay, according to a query by code or name in the layer.
+
+### add_geom()
+
+This function allows you to add a `geom` variable with a code variable of "zona", "barrio", "localidad", "segmentos", "secciones" or "departamentos".
 
 ### geocode_ide_uy() 
 
@@ -145,24 +149,33 @@ Allows geocoding directions using IDE_uy.
 
 ### plot_geouy()
 
-Plot a variable of your sf object with north and scale, set on a simple theme.
+Plot a variable of your `sf` object with north and scale, set on a simple theme.
+
+### Other functions:
+
+`is.uy4326():` Test if an `sf` object match with Uruguay at crs = 4326.
+`is.uy32721():` Test if an `sf` object match with Uruguay at crs = 32721.
+`is.uy5381():` Test if an `sf` object match with Uruguay at crs = 5381.
+`is.uy5382():` Test if an `sf` object match with Uruguay at crs = 5382.
+
+## Datasets
+
+### metadata
+
+This dataset has the metadata of all vector geometries provided by `geouy` and detailed at the top
+
+### metadata_wms
+
+This dataset has the metadata of all the raster services that will be provided by `geouy`, although the functions are still under development.
 
 ### loc_agr_ine()
 
-This dataset allows you to aggregate Localidades INE by the aglomerations used by INE. 
-AN use example may be: 
+This dataset allows you to aggregate Localidades INE by the aglomerations used by INE. An example of use can be: 
 
 ``` r
 loc <- which_uy(base, "Localidades pg") %>% 
     dplyr::left_join(loc_agr_ine, by = c("cod_Localidades pg" = "codloc"))
 ```
-
-### Other functions:
-
-`is.uy4326():` Test if an 'sf' object match with Uruguay at crs = 4326.
-`is.uy32721():` Test if an 'sf' object match with Uruguay at crs = 32721.
-`is.uy5381():` Test if an 'sf' object match with Uruguay at crs = 5381.
-
 
 ## History
 

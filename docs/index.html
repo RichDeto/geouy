@@ -584,12 +584,17 @@
 <div id="which_uy" class="section level3">
 <h3 class="hasAnchor">
 <a href="#which_uy" class="anchor"></a>which_uy()</h3>
-<p>Add to an ‘sf’ object its spatial coincidence with one or more administrative units in Uruguay, generating the corresponding variables.</p>
+<p>Add to an <code>sf</code> object its spatial coincidence with one or more administrative units in Uruguay, generating the corresponding variables.</p>
 </div>
 <div id="where_uy" class="section level3">
 <h3 class="hasAnchor">
 <a href="#where_uy" class="anchor"></a>where_uy()</h3>
-<p>You get an ‘sf’ object of one or more administrative units in Uruguay, according to a query by code or name in the layer.</p>
+<p>You get an <code>sf</code> object of one or more administrative units in Uruguay, according to a query by code or name in the layer.</p>
+</div>
+<div id="add_geom" class="section level3">
+<h3 class="hasAnchor">
+<a href="#add_geom" class="anchor"></a>add_geom()</h3>
+<p>This function allows you to add a <code>geom</code> variable with a code variable of “zona”, “barrio”, “localidad”, “segmentos”, “secciones” or “departamentos”.</p>
 </div>
 <div id="geocode_ide_uy" class="section level3">
 <h3 class="hasAnchor">
@@ -601,17 +606,31 @@
 <a href="#plot_geouy" class="anchor"></a>plot_geouy()</h3>
 <p>Plot a variable of your sf object with north and scale, set on a simple theme.</p>
 </div>
-<div id="loc_agr_ine" class="section level3">
-<h3 class="hasAnchor">
-<a href="#loc_agr_ine" class="anchor"></a>loc_agr_ine()</h3>
-<p>This dataset allows you to aggregate Localidades INE by the aglomerations used by INE. AN use example may be:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">loc &lt;-<span class="st"> </span><span class="kw"><a href="reference/which_uy.html">which_uy</a></span>(base, <span class="st">"Localidades pg"</span>) <span class="op">%&gt;%</span><span class="st"> </span>
-<span class="st">    </span>dplyr<span class="op">::</span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html">left_join</a></span>(loc_agr_ine, <span class="dt">by =</span> <span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"cod_Localidades pg"</span> =<span class="st"> "codloc"</span>))</code></pre></div>
-</div>
 <div id="other-functions" class="section level3">
 <h3 class="hasAnchor">
 <a href="#other-functions" class="anchor"></a>Other functions:</h3>
-<p><code>is.uy4326():</code> Test if an ‘sf’ object match with Uruguay at crs = 4326. <code>is.uy32721():</code> Test if an ‘sf’ object match with Uruguay at crs = 32721. <code>is.uy5381():</code> Test if an ‘sf’ object match with Uruguay at crs = 5381.</p>
+<p><code>is.uy4326():</code> Test if an <code>sf</code> object match with Uruguay at crs = 4326. <code>is.uy32721():</code> Test if an <code>sf</code> object match with Uruguay at crs = 32721. <code>is.uy5381():</code> Test if an <code>sf</code> object match with Uruguay at crs = 5381. <code>is.uy5382():</code> Test if an <code>sf</code> object match with Uruguay at crs = 5382.</p>
+</div>
+</div>
+<div id="datasets" class="section level2">
+<h2 class="hasAnchor">
+<a href="#datasets" class="anchor"></a>Datasets</h2>
+<div id="metadata" class="section level3">
+<h3 class="hasAnchor">
+<a href="#metadata" class="anchor"></a>metadata</h3>
+<p>This dataset has the metadata of all vector geometries provided by geouy and detailed at the top</p>
+</div>
+<div id="metadata_wms" class="section level3">
+<h3 class="hasAnchor">
+<a href="#metadata_wms" class="anchor"></a>metadata_wms</h3>
+<p>This dataset has the metadata of all the raster services that will be provided by this package, although the functions are still under development.</p>
+</div>
+<div id="loc_agr_ine" class="section level3">
+<h3 class="hasAnchor">
+<a href="#loc_agr_ine" class="anchor"></a>loc_agr_ine()</h3>
+<p>This dataset allows you to aggregate Localidades INE by the aglomerations used by INE. An example of use can be:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">loc &lt;-<span class="st"> </span><span class="kw"><a href="reference/which_uy.html">which_uy</a></span>(base, <span class="st">"Localidades pg"</span>) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">    </span>dplyr<span class="op">::</span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html">left_join</a></span>(loc_agr_ine, <span class="dt">by =</span> <span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"cod_Localidades pg"</span> =<span class="st"> "codloc"</span>))</code></pre></div>
 </div>
 </div>
 <div id="history" class="section level2">
