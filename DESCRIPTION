@@ -45,5 +45,6 @@ Imports:
 Suggests:
     knitr,
     rmarkdown,
-    covr
+    covr,
+    learnr
 VignetteBuilder: knitr

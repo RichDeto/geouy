@@ -1,0 +1,104 @@
+---
+title: "Introduction to geouy"
+output: learnr::tutorial
+runtime: shiny_prerendered
+---
+
+```{r setup, include=FALSE}
+library(learnr)
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+## Installation
+
+**geouy** is an R package that allows users to easily access official spatial data sets of Uruguay. The package includes a wide range of geospatial datasets as *simple features* (`sf`), available at various geographic scales and for various years with harmonized attributes and projection (see detailed list below).
+
+```r
+# From CRAN
+  install.packages("geouy")
+  library(geouy)
+  
+# Use the development version with latest features
+  utils::remove.packages('geouy')
+  devtools::install_github("RichDeto/geouy")
+  library(geouy)
+```
+
+obs. If you use **Linux**, you need to install a couple dependencies before installing the libraries `sf` and `geouy`. [More info here](https://github.com/r-spatial/sf#linux).
+
+
+## load_geouy()
+
+The syntax of all `geouy` functions operate one the same logic so it becomes intuitive to download any data set using a single line of code. Like this:
+
+```R
+secc <- load_geouy("Secciones")
+```
+
+### Exercise 
+
+Please write the code to obtain the geometries of "Peajes" in a object `peaje`
+
+```{r load, exercise=TRUE, exercise.lines = 5}
+
+```
+
+## where_uy() 
+
+You get an `sf` object of one or more administrative units in Uruguay, according to a query by code or name in the layer.
+
+Please write the code to obtain the geometries of "Peajes" in a object `peaje`
+
+```{r where, exercise=TRUE, exercise.lines = 5}
+
+```
+
+## add_geom()
+
+This function allows you to add a `geom` variable with a code variable of "zona", "barrio", "localidad", "segmentos", "secciones" or "departamentos".
+
+## geocode_ide_uy() 
+
+Allows geocoding directions using IDE_uy.
+
+## plot_geouy()
+
+Plot a variable of your `sf` object with north and scale, set on a simple theme.
+
+### Exercise with Hint
+
+*Here's an exercise where the chunk is pre-evaulated via the `exercise.eval` option (so the user can see the default output we'd like them to customize). We also add a "hint" to the correct solution via the chunk immediate below labeled `print-limit-hint`.*
+
+Modify the following code to limit the number of rows printed to 5:
+
+```{r print-limit, exercise=TRUE, exercise.eval=TRUE}
+mtcars
+```
+
+```{r print-limit-hint}
+head(mtcars)
+```
+
+## Quiz
+
+*You can include any number of single or multiple choice questions as a quiz. Use the `question` function to define a question and the `quiz` function for grouping multiple questions together.*
+
+Some questions to verify that you understand the purposes of various base and recommended R packages:
+
+```{r quiz}
+quiz(
+  question("Which package contains functions for installing other R packages?",
+    answer("base"),
+    answer("tools"),
+    answer("utils", correct = TRUE),
+    answer("codetools")
+  ),
+  question("Which of the R packages listed below are used to create plots?",
+    answer("lattice", correct = TRUE),
+    answer("tools"),
+    answer("stats"),
+    answer("grid", correct = TRUE)
+  )
+)
+```

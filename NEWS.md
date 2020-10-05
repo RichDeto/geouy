@@ -1,6 +1,11 @@
 # log history of geouy package development
 
 -------------------------------------------------------
+## geouy v0.2.4 (in progress)
+
+* plot_goeuy % bug fixed
+* tutorial
+
 ## geouy v0.2.3 (2020-09-15)
 
 * Add C++11 system requirement for sf update.

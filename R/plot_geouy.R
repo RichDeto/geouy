@@ -26,6 +26,9 @@ plot_geouy <- function(x, col, viri_opt = "plasma", l = NULL, other_lab = NULL, 
   assertthat::assert_that(col %in% names(x), msg = glue::glue("Sorry... :( \n The name of the variable you will plot is not in the object {x}"))
   if (!is.null(l)) assertthat::assert_that(l %in% c("%", "n", "c"), msg = "Sorry... :( \n l parameter is not a valid value, please review!.")
   if (!is.null(other_lab) && l %in% "c") assertthat::assert_that(other_lab %in% names(x), msg = glue::glue("Sorry... :( \n The name of the variable you will plot is not in the object {x}"))
+  if (!is.null(l) && l %in% "%" & is.numeric(x[[col]]) & sum(x[[col]] > 1, na.rm = T) == 0) {
+      x[[col]] <- x[[col]] * 100
+    }
   
   theme_set(theme_bw())
   mapa <- ggplot2::ggplot(data = x) +
@@ -50,9 +53,6 @@ plot_geouy <- function(x, col, viri_opt = "plasma", l = NULL, other_lab = NULL, 
                                       style = ggspatial::north_arrow_fancy_orienteering)
   
   if(!is.null(l) && l %in% "%"){
-    if(is.numeric(x[[col]]) & sum(x[[col]] > 1, na.rm = T) == 0) {
-      x[[col]] <- x[[col]] * 100
-    }
     ll <- x %>% dplyr::mutate(label = .data[[col]] %>% as.numeric(.) %>% round(1) %>% paste0("%")) %>%
       dplyr::filter(!is.na(.data[[col]]))
     mapa <- mapa + geom_sf_text(data = ll, aes(label = label),
