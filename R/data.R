@@ -3,7 +3,7 @@
 #' A dataset containing the urls and other attributes of geoservices 
 #' for Uruguay.
 #' @family data
-#' @format A data frame with 18 rows and 9 variables:
+#' @format A data frame with 59 rows and 9 variables:
 #' \describe{
 #'   \item{capa}{name of the geoservice}
 #'   \item{productor}{name of the institution produced the data}

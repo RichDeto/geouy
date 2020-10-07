@@ -48,7 +48,10 @@ secc <- load_geouy("Secciones")
 |-----|-----|-----|-----|-----|
 |`"Uruguay"`| `"INE"` | MIDES | 2011 | wfs |
 |`"Areas administrativas"`| `"SGM"` | SGM | 2011 | wfs |
-|`"Departamentos"`| `"INE"` | IDE | 2011 | wfs |
+|`"Deptos"`| `"INE"` | IDE | 2011 | wfs |
+|`"Dptos"`| `"DINAMA"` | "MVOTMA"| 2020  | wfs | 
+|`"Limites departamentales"`| `"IGM"` | "IGM" | 2011  | wfs | 
+|`"Departamentos"`| `"IDE"` | "MIDES" | 2011  | wfs |
 |`"Secciones"`| `"INE Censo"` | MIDES | 2011 | wfs |
 |`"Segmentos"`| `"INE Censo"` | MIDES | 2011 | wfs |
 |`"Zonas"`| `"INE Censo"` | MIDES | 2011 | wfs |

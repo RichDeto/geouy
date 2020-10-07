@@ -72,7 +72,7 @@ nuevas <- data.frame(cbind(dpto = c("Montevideo", "Salto"),
 nuevas_geo <- geocode_ide_uy(nuevas)
 ```	
 	
-NOTA: Limite en geocode_geouy(), tienes que ser parte de un organismo público uruguayo o deberas completar el siguiente (formulario)[https://www.gub.uy/agencia-gobierno-electronico-sociedad-informacion-conocimiento/comunicacion/publicaciones/formularios-de-alta-y-consumo-de-servicios-de-la-pdi] para habilitar el funcionamiento de su API.
+NOTA: Limite en geocode_geouy(), tienes que ser parte de un organismo público uruguayo o deberas completar el siguiente [formulario](https://www.gub.uy/agencia-gobierno-electronico-sociedad-informacion-conocimiento/comunicacion/publicaciones/formularios-de-alta-y-consumo-de-servicios-de-la-pdi) para habilitar el funcionamiento de su API.
 
 ### Asignar codigos y nombres de otras geometrías
 
