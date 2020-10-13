@@ -1,5 +1,6 @@
 #' This function allows to Download .jpg or .tif files from the IDEuy tiles repository, according to a 'sf' object bbox.
 #' @param x An 'sf' object with the same crs as the homonym parameter
+#' @param d numeric; buffer distance for all, or for each of the elements in x; in case dist is a units object, it should be convertible to arc_degree if x has geographic coordinates, and to st_crs(x)$units otherwise. Default NA, but if x is a only one point buffer default is 100.
 #' @param format Format of the archives to download (avaiable: "jpg" and "tif") Default "jpg"
 #' @param folder Folder where are the files or be download
 #' @param urban If format is "tif", and urban default FALSE take orthophotos of national flight with 32cm per pixel, if TRUE take urban flight with 10cm per pixel (avaible only Montevideo at the moment)
@@ -19,23 +20,22 @@
 #' @export
 #' @examples
 #'\donttest{
-#' x <- sf::st_as_sf(cbind(x = 577974, y = 6150025, id = 1), coords = c("x", "y"), crs = 32721)
-#' x_tiles <- tiles_ide_uy(x)
+#' x <- data.frame(x = 577974, y = 6150025, id = 1)
+#' x <- sf::st_as_sf(x, coords = c("x", "y"), crs = 32721)
+#' x_tiles <- tiles_geouy(x)
 #'}
-tiles_geouy <- function(x, format = "jpg", folder = tempdir(), urban = FALSE){
+tiles_geouy <- function(x, d = NA, format = "jpg", folder = tempdir(), urban = FALSE){
   # checks ----
   if (!is(x, "sf")) stop(glue::glue("The object {x} you want to process is not class sf"))
   if (!is.character(folder) | length(folder) != 1) stop("You must enter a valid directory...")
   if (!format %in% c("jpg", "tif")) stop("The format you want to download is not avaiable")
-  # warnings ----
-  if (length(fs::dir_ls(folder, regexp = glue::glue("\\.{format}$"))) != 0) {
-    message(glue::glue("There are other .{format} files in the folder that will be read..."))
-  }
-  # download ----
+   # download ----
   start_time <- Sys.time()
   try(dir.create(folder))
-  crs = sf::st_crs(x) 
-  bb = x %>% sf::st_transform(5382) %>% 
+  crs = sf::st_crs(x)
+  if (nrow(x) == 1 & is.na(d)) x <- sf::st_buffer(x, dist = 100)
+  if (!is.na(d)) x <- sf::st_buffer(x, dist = d)
+  bb = x %>% sf::st_transform(5381) %>% 
     sf::st_bbox() %>% as.vector() %>% 
     raster::extent() %>% as('SpatialPolygons')
   raster::crs(bb) <- "+proj=longlat +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +no_defs"
@@ -93,9 +93,8 @@ tiles_geouy <- function(x, format = "jpg", folder = tempdir(), urban = FALSE){
   if (length(ar) == 1) {
     a3 <- raster::brick(ar)
     raster::crs(a3) <- "+proj=utm +zone=21 +south +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs"
-    a3 <- a3 %>% raster::crop(bb) %>% 
-      raster::projectRaster(crs = crs[[2]])
-    raster::projectRaster(crs = crs$proj4string)
+    a3 <- raster::projectRaster(a3, crs = crs$proj4string)
+    a3 <- raster::crop(a3, bb)
   } else {
     rast.list <- list()
     for (i in 1:length(ar)) { rast.list[i] <- raster::brick(ar[i]) }

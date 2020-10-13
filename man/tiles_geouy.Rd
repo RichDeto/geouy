@@ -4,10 +4,12 @@
 \alias{tiles_geouy}
 \title{This function allows to Download .jpg or .tif files from the IDEuy tiles repository, according to a 'sf' object bbox.}
 \usage{
-tiles_geouy(x, format = "jpg", folder = tempdir(), urban = FALSE)
+tiles_geouy(x, d = NA, format = "jpg", folder = tempdir(), urban = FALSE)
 }
 \arguments{
 \item{x}{An 'sf' object with the same crs as the homonym parameter}
+
+\item{d}{numeric; buffer distance for all, or for each of the elements in x; in case dist is a units object, it should be convertible to arc_degree if x has geographic coordinates, and to st_crs(x)$units otherwise. Default NA, but if x is a only one point buffer default is 100.}
 
 \item{format}{Format of the archives to download (avaiable: "jpg" and "tif") Default "jpg"}
 
@@ -23,8 +25,9 @@ This function allows to Download .jpg or .tif files from the IDEuy tiles reposit
 }
 \examples{
 \donttest{
-x <- sf::st_as_sf(cbind(x = 577974, y = 6150025, id = 1), coords = c("x", "y"), crs = 32721)
-x_tiles <- tiles_ide_uy(x)
+x <- data.frame(x = 577974, y = 6150025, id = 1)
+x <- sf::st_as_sf(x, coords = c("x", "y"), crs = 32721)
+x_tiles <- tiles_geouy(x)
 }
 }
 \keyword{IDE}

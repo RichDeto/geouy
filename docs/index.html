@@ -66,9 +66,9 @@
 
       </header><div class="row">
   <div class="contents col-md-9">
-<div id="geouy" class="section level1">
+<div id="geouy--" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
-<a href="#geouy" class="anchor"></a>geouy <img align="right" src="reference/figures/geouy_logo_a.png" alt="logo" width="160"><img align="right" src="reference/figures/geouy_logo_b.png" alt="logo" width="160">
+<a href="#geouy--" class="anchor"></a>geouy <img align="right" src="reference/figures/geouy_logo_a.png" alt="logo" width="160"><img align="right" src="reference/figures/geouy_logo_b.png" alt="logo" width="160">
 </h1></div>
 <!-- badges: start -->
 
@@ -76,14 +76,14 @@
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># From CRAN</span>
-  <span class="kw"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span>(<span class="st">"geouy"</span>)
-  <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(geouy)
-  
-<span class="co"># Use the development version with latest features</span>
-  utils<span class="op">::</span><span class="kw"><a href="https://rdrr.io/r/utils/remove.packages.html">remove.packages</a></span>(<span class="st">'geouy'</span>)
-  devtools<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/devtools/man/remote-reexports.html">install_github</a></span>(<span class="st">"RichDeto/geouy"</span>)
-  <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(geouy)</code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># From CRAN</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a>  <span class="kw"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span>(<span class="st">"geouy"</span>)</span>
+<span id="cb1-3"><a href="#cb1-3"></a>  <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(geouy)</span>
+<span id="cb1-4"><a href="#cb1-4"></a>  </span>
+<span id="cb1-5"><a href="#cb1-5"></a><span class="co"># Use the development version with latest features</span></span>
+<span id="cb1-6"><a href="#cb1-6"></a>  utils<span class="op">::</span><span class="kw"><a href="https://rdrr.io/r/utils/remove.packages.html">remove.packages</a></span>(<span class="st">'geouy'</span>)</span>
+<span id="cb1-7"><a href="#cb1-7"></a>  devtools<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/devtools/man/remote-reexports.html">install_github</a></span>(<span class="st">"RichDeto/geouy"</span>)</span>
+<span id="cb1-8"><a href="#cb1-8"></a>  <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(geouy)</span></code></pre></div>
 <p>obs. If you use <strong>Linux</strong>, you need to install a couple dependencies before installing the libraries <code>sf</code> and <code>geouy</code>. <a href="https://github.com/r-spatial/sf#linux">More info here</a>.</p>
 </div>
 <div id="basic-usage" class="section level2">
@@ -93,7 +93,7 @@
 <h3 class="hasAnchor">
 <a href="#load_geouy" class="anchor"></a>load_geouy</h3>
 <p>The syntax of all <code>geouy</code> functions operate one the same logic so it becomes intuitive to download any data set using a single line of code. Like this:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">secc &lt;-<span class="st"> </span><span class="kw"><a href="reference/load_geouy.html">load_geouy</a></span>(<span class="st">"Secciones"</span>)</code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>secc &lt;-<span class="st"> </span><span class="kw"><a href="reference/load_geouy.html">load_geouy</a></span>(<span class="st">"Secciones"</span>)</span></code></pre></div>
 <div id="available-datasets" class="section level4">
 <h4 class="hasAnchor">
 <a href="#available-datasets" class="anchor"></a>Available datasets:</h4>
@@ -124,21 +124,49 @@
 <td>wfs</td>
 </tr>
 <tr class="odd">
+<td><code>"Deptos"</code></td>
+<td><code>"INE"</code></td>
+<td>IDE</td>
+<td>2011</td>
+<td>wfs</td>
+</tr>
+<tr class="even">
+<td><code>"Dptos"</code></td>
+<td><code>"DINAMA"</code></td>
+<td>“MVOTMA”</td>
+<td>2020</td>
+<td>wfs</td>
+</tr>
+<tr class="odd">
 <td><code>"Limites departamentales"</code></td>
 <td><code>"IGM"</code></td>
-<td>IGM</td>
+<td>“IGM”</td>
 <td>2011</td>
 <td>wfs</td>
 </tr>
 <tr class="even">
 <td><code>"Departamentos"</code></td>
 <td><code>"IDE"</code></td>
-<td>MIDES</td>
+<td>“MIDES”</td>
 <td>2011</td>
 <td>wfs</td>
 </tr>
 <tr class="odd">
 <td><code>"Secciones"</code></td>
+<td><code>"INE Censo"</code></td>
+<td>MIDES</td>
+<td>2011</td>
+<td>wfs</td>
+</tr>
+<tr class="even">
+<td><code>"Segmentos"</code></td>
+<td><code>"INE Censo"</code></td>
+<td>MIDES</td>
+<td>2011</td>
+<td>wfs</td>
+</tr>
+<tr class="odd">
+<td><code>"Zonas"</code></td>
 <td><code>"INE Censo"</code></td>
 <td>MIDES</td>
 <td>2011</td>
@@ -152,31 +180,17 @@
 <td>wfs</td>
 </tr>
 <tr class="odd">
-<td><code>"Segmentos"</code></td>
-<td><code>"INE Censo"</code></td>
-<td>MIDES</td>
-<td>2011</td>
-<td>wfs</td>
-</tr>
-<tr class="even">
 <td><code>"Segm MVD 2004"</code></td>
 <td><code>"INE"</code></td>
 <td>MIDES</td>
 <td>2004</td>
 <td>wfs</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><code>"Segm URB INT 2004"</code></td>
 <td><code>"INE"</code></td>
 <td>MIDES</td>
 <td>2004</td>
-<td>wfs</td>
-</tr>
-<tr class="even">
-<td><code>"Zonas"</code></td>
-<td><code>"INE Censo"</code></td>
-<td>MIDES</td>
-<td>2011</td>
 <td>wfs</td>
 </tr>
 <tr class="odd">
@@ -576,6 +590,13 @@
 <td>2015</td>
 <td>zip</td>
 </tr>
+<tr class="odd">
+<td><code>"CONEAT"</code></td>
+<td><code>"RENARE"</code></td>
+<td>“RENARE”</td>
+<td>NA</td>
+<td>wfs</td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -604,7 +625,7 @@
 <div id="plot_geouy" class="section level3">
 <h3 class="hasAnchor">
 <a href="#plot_geouy" class="anchor"></a>plot_geouy()</h3>
-<p>Plot a variable of your sf object with north and scale, set on a simple theme.</p>
+<p>Plot a variable of your <code>sf</code> object with north and scale, set on a simple theme.</p>
 </div>
 <div id="other-functions" class="section level3">
 <h3 class="hasAnchor">
@@ -618,19 +639,19 @@
 <div id="metadata" class="section level3">
 <h3 class="hasAnchor">
 <a href="#metadata" class="anchor"></a>metadata</h3>
-<p>This dataset has the metadata of all vector geometries provided by geouy and detailed at the top</p>
+<p>This dataset has the metadata of all vector geometries provided by <code>geouy</code> and detailed at the top</p>
 </div>
 <div id="metadata_wms" class="section level3">
 <h3 class="hasAnchor">
 <a href="#metadata_wms" class="anchor"></a>metadata_wms</h3>
-<p>This dataset has the metadata of all the raster services that will be provided by this package, although the functions are still under development.</p>
+<p>This dataset has the metadata of all the raster services that will be provided by <code>geouy</code>, although the functions are still under development.</p>
 </div>
 <div id="loc_agr_ine" class="section level3">
 <h3 class="hasAnchor">
 <a href="#loc_agr_ine" class="anchor"></a>loc_agr_ine()</h3>
 <p>This dataset allows you to aggregate Localidades INE by the aglomerations used by INE. An example of use can be:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">loc &lt;-<span class="st"> </span><span class="kw"><a href="reference/which_uy.html">which_uy</a></span>(base, <span class="st">"Localidades pg"</span>) <span class="op">%&gt;%</span><span class="st"> </span>
-<span class="st">    </span>dplyr<span class="op">::</span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html">left_join</a></span>(loc_agr_ine, <span class="dt">by =</span> <span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"cod_Localidades pg"</span> =<span class="st"> "codloc"</span>))</code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>loc &lt;-<span class="st"> </span><span class="kw"><a href="reference/which_uy.html">which_uy</a></span>(base, <span class="st">"Localidades pg"</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb3-2"><a href="#cb3-2"></a><span class="st">    </span>dplyr<span class="op">::</span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html">left_join</a></span>(loc_agr_ine, <span class="dt">by =</span> <span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"cod_Localidades pg"</span> =<span class="st"> "codloc"</span>))</span></code></pre></div>
 </div>
 </div>
 <div id="history" class="section level2">
@@ -648,28 +669,28 @@
 <div id="to-add-your-function" class="section level3">
 <h3 class="hasAnchor">
 <a href="#to-add-your-function" class="anchor"></a>To add your function:</h3>
-<div class="sourceCode"><pre class="sourceCode R"><code class="sourceCode r"><span class="op">-</span><span class="st"> </span>Fork of this repository
-<span class="op">-</span><span class="st"> </span>Add your <span class="cf">function</span> as an <span class="st">`</span><span class="dt">.R</span><span class="st">`</span> file <span class="cf">in</span> the <span class="st">`</span><span class="dt">R/</span><span class="st">`</span> folder with the same name as the <span class="cf">function</span>
-<span class="op">-</span><span class="st"> </span>Document it with <span class="st">`</span><span class="dt">roxygen2</span><span class="st">`</span> clarifying its functionality, parameters and an example of use. To see how it is documented to review another <span class="cf">function</span> <span class="cf">in</span> the same directory
-<span class="op">-</span><span class="st"> </span>Remember at the end of the documentation you must add a <span class="co"># '@export</span>
-<span class="op">-</span><span class="st"> </span>Check that the types and values of your <span class="cf">function</span> parameters are <span class="kw">fine</span> (<span class="cf">for</span> example, you can look at <span class="st">`</span><span class="dt">data-raw/metadata.R</span><span class="st">`</span>
-<span class="op">-</span><span class="st"> </span>Add the dependencies <span class="cf">in</span> the <span class="st">`</span><span class="dt">DESCRIPTION</span><span class="st">`</span> file 
-<span class="op">-</span><span class="st"> </span>Check the package with devtools<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/devtools/man/check.html">check</a></span>()
-<span class="op">-</span><span class="st"> </span>If everything works fine, then make a pull request</code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="op">-</span><span class="st"> </span>Fork of this repository</span>
+<span id="cb4-2"><a href="#cb4-2"></a><span class="op">-</span><span class="st"> </span>Add your <span class="cf">function</span> as an <span class="st">`</span><span class="dt">.R</span><span class="st">`</span> file <span class="cf">in</span> the <span class="st">`</span><span class="dt">R/</span><span class="st">`</span> folder with the same name as the <span class="cf">function</span></span>
+<span id="cb4-3"><a href="#cb4-3"></a><span class="op">-</span><span class="st"> </span>Document it with <span class="st">`</span><span class="dt">roxygen2</span><span class="st">`</span> clarifying its functionality, parameters and an example of use. To see how it is documented to review another <span class="cf">function</span> <span class="cf">in</span> the same directory</span>
+<span id="cb4-4"><a href="#cb4-4"></a><span class="op">-</span><span class="st"> </span>Remember at the end of the documentation you must add a <span class="co"># '@export</span></span>
+<span id="cb4-5"><a href="#cb4-5"></a><span class="op">-</span><span class="st"> </span>Check that the types and values of your <span class="cf">function</span> parameters are <span class="kw">fine</span> (<span class="cf">for</span> example, you can look at <span class="st">`</span><span class="dt">data-raw/metadata.R</span><span class="st">`</span></span>
+<span id="cb4-6"><a href="#cb4-6"></a><span class="op">-</span><span class="st"> </span>Add the dependencies <span class="cf">in</span> the <span class="st">`</span><span class="dt">DESCRIPTION</span><span class="st">`</span> file </span>
+<span id="cb4-7"><a href="#cb4-7"></a><span class="op">-</span><span class="st"> </span>Check the package with devtools<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/devtools/man/check.html">check</a></span>()</span>
+<span id="cb4-8"><a href="#cb4-8"></a><span class="op">-</span><span class="st"> </span>If everything works fine, then make a pull request</span></code></pre></div>
 </div>
 <div id="to-add-geographic-data-to-the-load_geouy-function" class="section level3">
 <h3 class="hasAnchor">
 <a href="#to-add-geographic-data-to-the-load_geouy-function" class="anchor"></a>To add geographic data to the <code>load_geouy()</code> function:</h3>
-<div class="sourceCode"><pre class="sourceCode R"><code class="sourceCode r"><span class="op">-</span><span class="st"> </span>Fork of this repository
-<span class="op">-</span><span class="st"> </span>Identify the corresponding WFS service URL
-<span class="op">-</span><span class="st"> </span>Add a record to the <span class="st">`</span><span class="dt">metadata</span><span class="st">`</span> file <span class="cf">in</span> the <span class="st">`</span><span class="dt">data-raw/</span><span class="st">`</span> directory, with the corresponding data.
-<span class="op">-</span><span class="st"> </span>Also include this record <span class="cf">in</span> the corresponding table of the <span class="st">`</span><span class="dt">README.md</span><span class="st">`</span> file, with the corresponding format.
-<span class="op">-</span><span class="st"> </span>If everything works fine, then make a pull request</code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="op">-</span><span class="st"> </span>Fork of this repository</span>
+<span id="cb5-2"><a href="#cb5-2"></a><span class="op">-</span><span class="st"> </span>Identify the corresponding WFS service URL</span>
+<span id="cb5-3"><a href="#cb5-3"></a><span class="op">-</span><span class="st"> </span>Add a record to the <span class="st">`</span><span class="dt">metadata</span><span class="st">`</span> file <span class="cf">in</span> the <span class="st">`</span><span class="dt">data-raw/</span><span class="st">`</span> directory, with the corresponding data.</span>
+<span id="cb5-4"><a href="#cb5-4"></a><span class="op">-</span><span class="st"> </span>Also include this record <span class="cf">in</span> the corresponding table of the <span class="st">`</span><span class="dt">README.md</span><span class="st">`</span> file, with the corresponding format.</span>
+<span id="cb5-5"><a href="#cb5-5"></a><span class="op">-</span><span class="st"> </span>If everything works fine, then make a pull request</span></code></pre></div>
 </div>
 </div>
-<div id="citation" class="section level2">
+<div id="-citation" class="section level2">
 <h2 class="hasAnchor">
-<a href="#citation" class="anchor"></a><i class="fa fa-pencil" aria-hidden="true"></i> Citation</h2>
+<a href="#-citation" class="anchor"></a><i class="fa fa-pencil" aria-hidden="true"></i> Citation</h2>
 <p>To cite <code>geouy</code> in publications, please use:</p>
 <p>Detomasi, Richard (2020) “geouy: Geographic Information of Uruguay”. R package version 0.2.1 URL: <a href="https://github.com/RichDeto/geouy" class="uri">https://github.com/RichDeto/geouy</a>.</p>
 <p>A BibTeX entry for LaTeX users is:</p>

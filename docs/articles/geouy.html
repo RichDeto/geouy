@@ -63,14 +63,14 @@
 
       
 
-      </header><div class="row">
+      </header><script src="geouy_files/header-attrs-2.1/header-attrs.js"></script><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1>Ejemplo de uso del paquete <code>geouy</code>
 </h1>
                         <h4 class="author">Richard Detomasi</h4>
             
-            <h4 class="date">2020-09-16</h4>
+            <h4 class="date">2020-10-13</h4>
       
       
       <div class="hidden name"><code>geouy.Rmd</code></div>
@@ -84,10 +84,10 @@
 <h2 class="hasAnchor">
 <a href="#instalaci%C3%B3n" class="anchor"></a>Instalación</h2>
 <p>Para instalar la versión estable del paquete usar:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span>(<span class="st">'geouy'</span>)</code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span>(<span class="st">'geouy'</span>)</span></code></pre></div>
 <p>Para instalar la versión en desarrollo:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># install.packages('devtools') si no tiene instalado devtools</span>
-devtools<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/devtools/man/remote-reexports.html">install_github</a></span>(<span class="st">"RichDeto/geouy"</span>)</code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="co"># install.packages('devtools') si no tiene instalado devtools</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a>devtools<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/devtools/man/remote-reexports.html">install_github</a></span>(<span class="st">"RichDeto/geouy"</span>)</span></code></pre></div>
 <p>Para activarla</p>
 </div>
 <div id="ejemplos-de-usos" class="section level2">
@@ -97,37 +97,37 @@ devtools<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/
 <h3 class="hasAnchor">
 <a href="#cargar-geometr%C3%ADas" class="anchor"></a>Cargar geometrías</h3>
 <p>Obtengamos como primer paso las geometrías de las instituciones deportivas de Uruguay</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">depor &lt;-<span class="st"> </span>geouy<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/geouy/man/load_geouy.html">load_geouy</a></span>(<span class="st">"Instituciones deportivas"</span>)</code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>depor &lt;-<span class="st"> </span>geouy<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/geouy/man/load_geouy.html">load_geouy</a></span>(<span class="st">"Instituciones deportivas"</span>)</span></code></pre></div>
 <p>Por defecto me traerá estas geometrías en EPSG 32721 que es el CRS correspondiente a Uruguay, por lo que no lo especifico en el parámetro correspondiente.</p>
 </div>
 <div id="goecodificación" class="section level3">
 <h3 class="hasAnchor">
 <a href="#goecodificaci%C3%B3n" class="anchor"></a>Goecodificación</h3>
 <p>Ahora bien, tenemos algunas direcciones de nuevas instituciones sin coordenadas, por lo que usaremos <code><a href="../reference/geocode_ide_uy.html">geocode_ide_uy()</a></code> para geocodificarlas:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">nuevas &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span>(<span class="kw"><a href="https://rdrr.io/r/base/cbind.html">cbind</a></span>(<span class="dt">dpto =</span> <span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"Montevideo"</span>, <span class="st">"Salto"</span>),
-                           <span class="dt">loc =</span> <span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"Montevideo"</span>, <span class="st">"Salto"</span>),
-                           <span class="dt">dir =</span> <span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"Cebollati esq. Magallanes"</span>,
-                                   <span class="st">"15 de noviembre 1310"</span>)),
-                     <span class="dt">stringsAsFactors =</span> F)
-nuevas_geo &lt;-<span class="st"> </span><span class="kw"><a href="../reference/geocode_ide_uy.html">geocode_ide_uy</a></span>(nuevas)</code></pre></div>
-<p>NOTA: Limite en geocode_geouy(), tienes que ser parte de un organismo público uruguayo o deberas completar el siguiente (formulario)[<a href="https://www.gub.uy/agencia-gobierno-electronico-sociedad-informacion-conocimiento/comunicacion/publicaciones/formularios-de-alta-y-consumo-de-servicios-de-la-pdi" class="uri">https://www.gub.uy/agencia-gobierno-electronico-sociedad-informacion-conocimiento/comunicacion/publicaciones/formularios-de-alta-y-consumo-de-servicios-de-la-pdi</a>] para habilitar el funcionamiento de su API.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>nuevas &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span>(<span class="kw"><a href="https://rdrr.io/r/base/cbind.html">cbind</a></span>(<span class="dt">dpto =</span> <span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"Montevideo"</span>, <span class="st">"Salto"</span>),</span>
+<span id="cb4-2"><a href="#cb4-2"></a>                           <span class="dt">loc =</span> <span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"Montevideo"</span>, <span class="st">"Salto"</span>),</span>
+<span id="cb4-3"><a href="#cb4-3"></a>                           <span class="dt">dir =</span> <span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"Cebollati esq. Magallanes"</span>,</span>
+<span id="cb4-4"><a href="#cb4-4"></a>                                   <span class="st">"15 de noviembre 1310"</span>)),</span>
+<span id="cb4-5"><a href="#cb4-5"></a>                     <span class="dt">stringsAsFactors =</span> F)</span>
+<span id="cb4-6"><a href="#cb4-6"></a>nuevas_geo &lt;-<span class="st"> </span><span class="kw"><a href="../reference/geocode_ide_uy.html">geocode_ide_uy</a></span>(nuevas)</span></code></pre></div>
+<p>NOTA: Limite en geocode_geouy(), tienes que ser parte de un organismo público uruguayo o deberas completar el siguiente <a href="https://www.gub.uy/agencia-gobierno-electronico-sociedad-informacion-conocimiento/comunicacion/publicaciones/formularios-de-alta-y-consumo-de-servicios-de-la-pdi">formulario</a> para habilitar el funcionamiento de su API.</p>
 </div>
 <div id="asignar-codigos-y-nombres-de-otras-geometrías" class="section level3">
 <h3 class="hasAnchor">
 <a href="#asignar-codigos-y-nombres-de-otras-geometr%C3%ADas" class="anchor"></a>Asignar codigos y nombres de otras geometrías</h3>
 <p>Continuando con el ejemplo, asignémosle a las <code>Instituciones deportivas</code>, los códigos y nombres de departamentos correspondientes, utilizando la función <code><a href="../reference/which_uy.html">which_uy()</a></code> como se muestra a continuación:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">depor_dep &lt;-<span class="st"> </span>geouy<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/geouy/man/which_uy.html">which_uy</a></span>(depor, <span class="st">"Departamentos"</span>)</code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>depor_dep &lt;-<span class="st"> </span>geouy<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/geouy/man/which_uy.html">which_uy</a></span>(depor, <span class="st">"Departamentos"</span>)</span></code></pre></div>
 <p>NOTA: El segundo parámetro tiene que corresponder con un valor de <code>geouy::metadata$capa</code> para funcionar.</p>
 </div>
 <div id="plotear-una-variable" class="section level3">
 <h3 class="hasAnchor">
 <a href="#plotear-una-variable" class="anchor"></a>Plotear una variable</h3>
 <p>Veamos ahora, cuantas instituciones hay por departamento, y empezemos por traer la unidad espacial en la que nos interesa agregar las instituciones que venimos trabajando:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dep &lt;-<span class="st"> </span>geouy<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/geouy/man/load_geouy.html">load_geouy</a></span>(<span class="st">"Departamentos"</span>)</code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>dep &lt;-<span class="st"> </span>geouy<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/geouy/man/load_geouy.html">load_geouy</a></span>(<span class="st">"Departamentos"</span>)</span></code></pre></div>
 <p>Apoyándonos en la función <code><a href="https://rdrr.io/pkg/sf/man/geos_binary_pred.html">sf::st_intersects()</a></code> para calcular la cantidad de instituciones por departamento, damos lugar a la aplicación de la función <code><a href="../reference/plot_geouy.html">plot_geouy()</a></code>:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dep<span class="op">$</span><span class="st">"instituciones_deportivas"</span> &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/lengths.html">lengths</a></span>(sf<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/sf/man/geos_binary_pred.html">st_intersects</a></span>(dep, depor))
-
-<span class="kw"><a href="../reference/plot_geouy.html">plot_geouy</a></span>(dep, <span class="st">"instituciones_deportivas"</span>)</code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>dep<span class="op">$</span><span class="st">"instituciones_deportivas"</span> &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/lengths.html">lengths</a></span>(sf<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/sf/man/geos_binary_pred.html">st_intersects</a></span>(dep, depor))</span>
+<span id="cb7-2"><a href="#cb7-2"></a></span>
+<span id="cb7-3"><a href="#cb7-3"></a><span class="kw"><a href="../reference/plot_geouy.html">plot_geouy</a></span>(dep, <span class="st">"instituciones_deportivas"</span>)</span></code></pre></div>
 </div>
 <div id="categorías-de-grandes-regiones-ine" class="section level3">
 <h3 class="hasAnchor">
@@ -135,23 +135,23 @@ nuevas_geo &lt;-<span class="st"> </span><span class="kw"><a href="../reference/
 <p>Un tema colateral, pero no despreciable es el de categorizar el territorio, y fuera de las geometrías como ya vimos, hay particularidades demográficas implicadas. Por ejemplo, las categorías que utiliza el INE para agrupar localidades, que a su vez son utilizadas como marco para los muestreos de la Encuesta Continua de Hogares.</p>
 <p>Por ejemplo, el corte normal entre los tamaños de localidades no consideran inicialmente las agrupaciones de las mismas, como es principalmente el Area Metropolitana de Montevideo o las chacras que rodean ciertas ciudades que por más que son “Localidades INE” per se, al momento de categorizarla se agrupan con la ciudad que las concentra.</p>
 <p>Por este motivo, es que agregamos el dataset <code>loc_agr_ine</code> que permite combinar la capa de <code>Localidades pg</code> con los datos del Censo 2011 y poder categorizar las agrupaciones de localidades como lo hace el INE.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># devtools::install_github("RichDeto/geouy", ref = 'master'); </span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(geouy)
-
-<span class="co"># Simulamos una población</span>
-pop &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span>(<span class="dt">x =</span> <span class="kw"><a href="https://rdrr.io/r/base/sample.html">sample</a></span>(<span class="dv">560000</span><span class="op">:</span><span class="dv">585000</span>,<span class="dv">500</span>),
-                  <span class="dt">y =</span> <span class="kw"><a href="https://rdrr.io/r/base/sample.html">sample</a></span>(<span class="dv">6136000</span><span class="op">:</span><span class="dv">6160000</span>,<span class="dv">500</span>))
-
-<span class="co"># La categorizamos por la variable preconstruida (Pero obviamente se pueden hacer otras agregaciones)                  </span>
-pop_loc &lt;-<span class="st"> </span><span class="kw"><a href="../reference/which_uy.html">which_uy</a></span>(pop, <span class="st">"Localidades pg"</span>) <span class="op">%&gt;%</span><span class="st"> </span>
-<span class="st">  </span>dplyr<span class="op">::</span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html">left_join</a></span>(loc_agr_ine, <span class="dt">by =</span> <span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"cod_Localidades pg"</span> =<span class="st"> "codloc"</span>))
-
-<span class="co"># Confiando en que los datos están todos en territorio uruguayo, asignamos "Rural" a los NA</span>
-loc[<span class="kw"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span>(pop_loc<span class="op">$</span>cat_loc_agr), <span class="st">"cat_loc_agr"</span>] &lt;-<span class="st"> "Rural"</span>
-
-<span class="co"># y finalmente podemos hacer una tabla por estas regiones, por ejemplo: </span>
-tabla_regiones &lt;-<span class="st"> </span>loc <span class="op">%&gt;%</span><span class="st"> </span>dplyr<span class="op">::</span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span>(cat_loc_agr) <span class="op">%&gt;%</span><span class="st"> </span>
-<span class="st">        </span><span class="kw">summarise</span>(<span class="dt">Casos =</span> <span class="kw">n</span>())</code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="co"># devtools::install_github("RichDeto/geouy", ref = 'master'); </span></span>
+<span id="cb8-2"><a href="#cb8-2"></a><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(geouy)</span>
+<span id="cb8-3"><a href="#cb8-3"></a></span>
+<span id="cb8-4"><a href="#cb8-4"></a><span class="co"># Simulamos una población</span></span>
+<span id="cb8-5"><a href="#cb8-5"></a>pop &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span>(<span class="dt">x =</span> <span class="kw"><a href="https://rdrr.io/r/base/sample.html">sample</a></span>(<span class="dv">560000</span><span class="op">:</span><span class="dv">585000</span>,<span class="dv">500</span>),</span>
+<span id="cb8-6"><a href="#cb8-6"></a>                  <span class="dt">y =</span> <span class="kw"><a href="https://rdrr.io/r/base/sample.html">sample</a></span>(<span class="dv">6136000</span><span class="op">:</span><span class="dv">6160000</span>,<span class="dv">500</span>))</span>
+<span id="cb8-7"><a href="#cb8-7"></a></span>
+<span id="cb8-8"><a href="#cb8-8"></a><span class="co"># La categorizamos por la variable preconstruida (Pero obviamente se pueden hacer otras agregaciones)                  </span></span>
+<span id="cb8-9"><a href="#cb8-9"></a>pop_loc &lt;-<span class="st"> </span><span class="kw"><a href="../reference/which_uy.html">which_uy</a></span>(pop, <span class="st">"Localidades pg"</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb8-10"><a href="#cb8-10"></a><span class="st">  </span>dplyr<span class="op">::</span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html">left_join</a></span>(loc_agr_ine, <span class="dt">by =</span> <span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"cod_Localidades pg"</span> =<span class="st"> "codloc"</span>))</span>
+<span id="cb8-11"><a href="#cb8-11"></a></span>
+<span id="cb8-12"><a href="#cb8-12"></a><span class="co"># Confiando en que los datos están todos en territorio uruguayo, asignamos "Rural" a los NA</span></span>
+<span id="cb8-13"><a href="#cb8-13"></a>loc[<span class="kw"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span>(pop_loc<span class="op">$</span>cat_loc_agr), <span class="st">"cat_loc_agr"</span>] &lt;-<span class="st"> "Rural"</span></span>
+<span id="cb8-14"><a href="#cb8-14"></a></span>
+<span id="cb8-15"><a href="#cb8-15"></a><span class="co"># y finalmente podemos hacer una tabla por estas regiones, por ejemplo: </span></span>
+<span id="cb8-16"><a href="#cb8-16"></a>tabla_regiones &lt;-<span class="st"> </span>loc <span class="op">%&gt;%</span><span class="st"> </span>dplyr<span class="op">::</span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span>(cat_loc_agr) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb8-17"><a href="#cb8-17"></a><span class="st">        </span><span class="kw">summarise</span>(<span class="dt">Casos =</span> <span class="kw">n</span>())</span></code></pre></div>
 </div>
 </div>
   </div>
