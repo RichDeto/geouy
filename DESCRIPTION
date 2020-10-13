@@ -41,7 +41,8 @@ Imports:
 	fs, sf,
 	assertthat,
   testthat (>= 2.1.0),
-  viridis
+  viridis, 
+  raster, rgdal, sp
 Suggests:
     knitr,
     rmarkdown,
