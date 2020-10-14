@@ -4,18 +4,18 @@
 \alias{tiles_geouy}
 \title{This function allows to Download .jpg or .tif files from the IDEuy tiles repository, according to a 'sf' object bbox.}
 \usage{
-tiles_geouy(x, d = NA, format = "jpg", folder = tempdir(), urban = FALSE)
+tiles_geouy(x, d = NA, format = "rgb", folder = tempdir(), urban = FALSE)
 }
 \arguments{
 \item{x}{An 'sf' object with the same crs as the homonym parameter}
 
 \item{d}{numeric; buffer distance for all, or for each of the elements in x; in case dist is a units object, it should be convertible to arc_degree if x has geographic coordinates, and to st_crs(x)$units otherwise. Default NA, but if x is a only one point buffer default is 100.}
 
-\item{format}{Format of the archives to download (avaiable: "jpg" and "tif") Default "jpg"}
+\item{format}{Format of the archives to download (avaiable: "rgb" and "rgbi") Default "rgb"}
 
 \item{folder}{Folder where are the files or be download}
 
-\item{urban}{If format is "tif", and urban default FALSE take orthophotos of national flight with 32cm per pixel, if TRUE take urban flight with 10cm per pixel (avaible only Montevideo at the moment)}
+\item{urban}{logical; If FALSE take orthophotos of national flight with 32cm per pixel, if TRUE take urban flight with 10cm per pixel (avaible only Montevideo at the moment)}
 }
 \value{
 raster::stack object with th cropped tif corresponding to x bbox
@@ -25,10 +25,10 @@ This function allows to Download .jpg or .tif files from the IDEuy tiles reposit
 }
 \examples{
 \donttest{
-x <- data.frame(x = 577974, y = 6150025, id = 1)
+x <- data.frame(x = 577968, y = 6147753, id = 1)
 x <- sf::st_as_sf(x, coords = c("x", "y"), crs = 32721)
-x_tiles <- tiles_geouy(x)
-}
+x_tiles <- tiles_geouy(x, urban = T)
+} 
 }
 \keyword{IDE}
 \keyword{Uruguay}
