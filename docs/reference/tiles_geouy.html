@@ -115,7 +115,7 @@
     <p>This function allows to Download .jpg or .tif files from the IDEuy tiles repository, according to a 'sf' object bbox.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>tiles_geouy</span>(<span class='no'>x</span>, <span class='kw'>d</span> <span class='kw'>=</span> <span class='fl'>NA</span>, <span class='kw'>format</span> <span class='kw'>=</span> <span class='st'>"jpg"</span>, <span class='kw'>folder</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/tempfile.html'>tempdir</a></span>(), <span class='kw'>urban</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
+    <pre class="usage"><span class='fu'>tiles_geouy</span>(<span class='no'>x</span>, <span class='kw'>d</span> <span class='kw'>=</span> <span class='fl'>NA</span>, <span class='kw'>format</span> <span class='kw'>=</span> <span class='st'>"rgb"</span>, <span class='kw'>folder</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/tempfile.html'>tempdir</a></span>(), <span class='kw'>urban</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -130,7 +130,7 @@
     </tr>
     <tr>
       <th>format</th>
-      <td><p>Format of the archives to download (avaiable: "jpg" and "tif") Default "jpg"</p></td>
+      <td><p>Format of the archives to download (avaiable: "rgb" and "rgbi") Default "rgb"</p></td>
     </tr>
     <tr>
       <th>folder</th>
@@ -138,7 +138,7 @@
     </tr>
     <tr>
       <th>urban</th>
-      <td><p>If format is "tif", and urban default FALSE take orthophotos of national flight with 32cm per pixel, if TRUE take urban flight with 10cm per pixel (avaible only Montevideo at the moment)</p></td>
+      <td><p>logical; If FALSE take orthophotos of national flight with 32cm per pixel, if TRUE take urban flight with 10cm per pixel (avaible only Montevideo at the moment)</p></td>
     </tr>
     </table>
 
@@ -148,14 +148,14 @@
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># \donttest{</span>
-<span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>577974</span>, <span class='kw'>y</span> <span class='kw'>=</span> <span class='fl'>6150025</span>, <span class='kw'>id</span> <span class='kw'>=</span> <span class='fl'>1</span>)
+<span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>577968</span>, <span class='kw'>y</span> <span class='kw'>=</span> <span class='fl'>6147753</span>, <span class='kw'>id</span> <span class='kw'>=</span> <span class='fl'>1</span>)
 <span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='kw pkg'>sf</span><span class='kw ns'>::</span><span class='fu'><a href='https://rdrr.io/pkg/sf/man/st_as_sf.html'>st_as_sf</a></span>(<span class='no'>x</span>, <span class='kw'>coords</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"x"</span>, <span class='st'>"y"</span>), <span class='kw'>crs</span> <span class='kw'>=</span> <span class='fl'>32721</span>)
-<span class='no'>x_tiles</span> <span class='kw'>&lt;-</span> <span class='fu'>tiles_geouy</span>(<span class='no'>x</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: 'C:\Users\Usuario\AppData\Local\Temp\RtmpaWJSgo' already exists</span></div><div class='output co'>#&gt; Reading layer `grilla_nacional' from data source `https://mapas.ide.uy/geoserver-raster/ows?service=WFS&amp;version=1.0.0&amp;request=GetFeature&amp;typeName=ortofotos:grilla_nacional' using driver `GML'
-#&gt; Simple feature collection with 6597 features and 3 fields
+<span class='no'>x_tiles</span> <span class='kw'>&lt;-</span> <span class='fu'>tiles_geouy</span>(<span class='no'>x</span>, <span class='kw'>urban</span> <span class='kw'>=</span> <span class='no'>T</span>)</div><div class='output co'>#&gt; Reading layer `grilla_urbana' from data source `https://mapas.ide.uy/geoserver-raster/ows?service=WFS&amp;version=1.0.0&amp;request=GetFeature&amp;typeName=ortofotos:grilla_urbana' using driver `GML'
+#&gt; Simple feature collection with 2753 features and 5 fields
 #&gt; geometry type:  MULTIPOLYGON
 #&gt; dimension:      XY
-#&gt; bbox:           xmin: -58.44 ymin: -35.055 xmax: -53.16 ymax: -30.06
-#&gt; geographic CRS: SIRGAS-ROU98</div><div class='output co'>#&gt; <span class='message'>although coordinates are longitude/latitude, st_intersects assumes that they are planar</span></div><div class='output co'>#&gt; <span class='message'>Trying to download...</span></div><div class='output co'>#&gt; <span class='error'>Error in .local(x, y, ...): extents do not overlap</span></div><div class='input'># }
+#&gt; bbox:           xmin: -58.43 ymin: -34.98 xmax: -53.36 ymax: -30.24
+#&gt; geographic CRS: SIRGAS-ROU98</div><div class='output co'>#&gt; <span class='message'>although coordinates are longitude/latitude, st_intersects assumes that they are planar</span></div><div class='output co'>#&gt; <span class='message'>Trying to download...</span></div><div class='input'># } 
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">

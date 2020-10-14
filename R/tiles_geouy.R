@@ -22,7 +22,7 @@
 #'\donttest{
 #' x <- data.frame(x = 577968, y = 6147753, id = 1)
 #' x <- sf::st_as_sf(x, coords = c("x", "y"), crs = 32721)
-#' x_tiles <- tiles_geouy(x, urban = T)
+#' x_tiles <- tiles_geouy(x, urban = TRUE)
 #'} 
 tiles_geouy <- function(x, d = NA, format = "rgb", folder = tempdir(), urban = FALSE){
   # checks ----
