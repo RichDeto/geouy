@@ -28,9 +28,9 @@ load_geouy <- function(c, crs = 32721, folder = tempdir()){
     if (!file.exists(f)) {
       message(glue::glue("Intentando descargar {x$capa}..."))
       tryCatch({
-        utils::download.file(x$url, f, mode = "wb", method = "libcurl")
+        utils::download.file(x$url, f, mode = "wb", method = "libcurl", extra = '--no-check-certificate')
       }, error = function(e) {
-        utils::download.file(x$url, f, mode = "a", method = "libcurl")
+        utils::download.file(x$url, f, mode = "a", method = "libcurl", extra = '--no-check-certificate')
       })
     }
     invisible(try(utils::unzip(f, exdir = folder)))
