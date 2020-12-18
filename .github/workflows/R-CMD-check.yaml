@@ -62,6 +62,11 @@ jobs:
       - name: Install system dependencies
         if: runner.os == 'Linux'
         run: |
+          apt-get install libudunits2-dev
+          apt-get install libgdal-dev
+          apt-get install libgeos-dev
+          apt-get install libproj-dev
+
           while read -r cmd
           do
             eval sudo $cmd
