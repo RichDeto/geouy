@@ -65,7 +65,8 @@ tiles_geouy <- function(x, d = NA, format = "rgb", folder = tempdir(), urban = F
         message(glue::glue("Trying to download..."))
         try(utils::download.file(glue::glue("{a[i]}{c('.jpg','.jgw')}"), 
                                  glue::glue("{folder}//{basename(a[i])}{c('.jpg','.jgw')}"), 
-                                 mode = "wb", method = "libcurl"))
+                                 mode = "wb", method = "libcurl",
+                                 extra = '--no-check-certificate'))
       } 
     }
     # read brick
@@ -82,7 +83,9 @@ tiles_geouy <- function(x, d = NA, format = "rgb", folder = tempdir(), urban = F
     for (i in 1:length(a)) {
       if (!file.exists(a[i])) {
         message(glue::glue("Trying to download..."))
-        try(utils::download.file(a[i], glue::glue("{folder}//{basename(a[i])}"), mode = "wb", method = "libcurl"))
+        try(utils::download.file(a[i], glue::glue("{folder}//{basename(a[i])}"), 
+                                 mode = "wb", method = "libcurl",
+                                 extra = '--no-check-certificate'))
       } 
     }
     # read brick ----
