@@ -28,6 +28,7 @@ for Uruguay.
 \seealso{
 Other data: 
 \code{\link{loc_agr_ine}},
+\code{\link{metadata_tables}},
 \code{\link{metadata_wms}}
 }
 \concept{data}

@@ -30,6 +30,18 @@
 #' }
 "metadata_wms"
 
+#' Metadata of tables for Uruguay
+#'
+#' A dataset containing the urls and other attributes of geoservices 
+#' for Uruguay.
+#' @family data
+#' @format A data frame with 3 rows and 3 variables:
+#' \describe{
+#'   \item{tabla}{name of the geoservice}
+#'   \item{formato}{name of the institution producing the data}
+#'   \item{url}{url of the service}
+#' }
+"metadata_tables"
 #' INE "Localidades Agregadas"
 #'
 #' A dataset containing the cods, names and others attributes of urban locations 

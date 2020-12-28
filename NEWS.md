@@ -6,7 +6,9 @@
 * plot_goeuy % bug fixed
 * tutorial
 * Add wfs for CONEAT of RENARE
-* Update links of INE wfs, connecting to "Geoportal del Instituto Nacional de Estadística" made by IDE-Uy  
+* Update links of INE wfs, connecting to "Geoportal del Instituto Nacional de Estadística" made by IDE-Uy
+* Add metadata_tables for tables with geocodings
+* Add to metadata cod variables for Padrones
 
 ## geouy v0.2.3 (2020-09-15)
 

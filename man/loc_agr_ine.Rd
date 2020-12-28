@@ -26,6 +26,7 @@ for Uruguay.
 }
 \seealso{
 Other data: 
+\code{\link{metadata_tables}},
 \code{\link{metadata_wms}},
 \code{\link{metadata}}
 }
