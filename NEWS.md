@@ -1,12 +1,13 @@
 # log history of geouy package development
 
 -------------------------------------------------------
-## geouy v0.2.4 (in progress)
+## geouy v0.2.4 (2021-04-20)
 
 * plot_goeuy % bug fixed
 * tutorial
 * Add wfs for CONEAT of RENARE
 * Update links of INE wfs, connecting to "Geoportal del Instituto Nacional de Estadística" made by IDE-Uy
+* Update links of DINAMA wfs, because institutional changes make a change in server name
 * Add metadata_tables for tables with geocodings
 * Add to metadata cod variables for Padrones
 
