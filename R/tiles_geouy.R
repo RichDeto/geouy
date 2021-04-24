@@ -38,7 +38,7 @@ tiles_geouy <- function(x, d = NA, format = "rgb", folder = tempdir(), urban = F
   bb = x %>% sf::st_transform(5381) %>% 
     sf::st_bbox() %>% as.vector() %>% 
     raster::extent() %>% as('SpatialPolygons')
-  raster::crs(bb) <- "+proj=longlat +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +no_defs"
+  suppressWarnings(raster::crs(bb) <- "+proj=longlat +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +no_defs")
   if (urban == FALSE) {
     x2 <- geouy::load_geouy("Grilla ortofotos nacional", crs = 5381) %>% 
       sf::st_join(x %>% sf::st_transform(5381), left = F) %>% 
@@ -95,9 +95,9 @@ tiles_geouy <- function(x, d = NA, format = "rgb", folder = tempdir(), urban = F
   # Return ----
   if (length(ar) == 1) {
     a3 <- raster::brick(ar)
-    raster::crs(a3) <- "+proj=utm +zone=21 +south +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs"
+    suppressWarnings(raster::crs(a3) <- "+proj=utm +zone=21 +south +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs")
     bb <- sf::st_transform(bb %>% sf::st_as_sf(), raster::crs(a3))
-    a3 <- raster::crop(a3, bb)
+    suppressWarnings(a3 <- raster::crop(a3, bb))
   } else {
     rast.list <- list()
     for (i in 1:length(ar)) { rast.list[i] <- raster::brick(ar[i]) }
