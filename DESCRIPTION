@@ -42,9 +42,8 @@ Imports:
 	assertthat,
   testthat (>= 2.1.0),
   viridis, 
-  raster, rgdal, sp
+  raster, rgdal, sp, knitr
 Suggests:
-    knitr,
     rmarkdown,
     covr,
     learnr
