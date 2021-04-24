@@ -83,7 +83,7 @@ is.uy5381 <- function(x){
 #' @export
 #' @examples
 #'\donttest{
-#' is.uy5382(load_geouy("Dptos"))
+#' is.uy5382(load_geouy("Uruguay"))
 #'}
 
 is.uy5382 <- function(x){
