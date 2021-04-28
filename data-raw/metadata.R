@@ -68,7 +68,13 @@ metadata <- tibble::tribble(
   "Cobertura suelo 2008", "DINAGUA", "MVOTMA", 4326, "zip", 2008, "https://www.ambiente.gub.uy/geoservicios/shapes_pesadas/c350.zip", NA, NA,
   "Cobertura suelo 2011", "DINAGUA", "MVOTMA", 4326, "zip", 2011, "https://www.ambiente.gub.uy/geoservicios/shapes_pesadas/c351.zip", NA, NA,
   "Cobertura suelo 2015", "DINAGUA", "MVOTMA", 4326, "zip", 2015, "https://www.ambiente.gub.uy/geoservicios/shapes_pesadas/cobertura_2015_4326.zip", NA, NA
-)
+) %>% as.data.frame()
+
+for (i in names(metadata)) {
+  if (is.character(metadata[,i])) {
+    metadata[,i] <- iconv(metadata[,i], "latin1", "UTF-8")
+  }
+}
 
 saveRDS(metadata,"data-raw/metadata.Rds")
 usethis::use_data(metadata, overwrite = TRUE)

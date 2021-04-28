@@ -38,11 +38,14 @@ Imports:
 	ggspatial,
 	methods,
 	magrittr,
-	fs, sf,
+	fs, 
+	sf,
 	assertthat,
-  testthat (>= 2.1.0),
   viridis, 
-  raster, rgdal, sp, knitr
+  raster, 
+  rgdal, 
+  sp, 
+  knitr
 Suggests:
     rmarkdown,
     covr,

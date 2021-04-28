@@ -1,7 +1,7 @@
 # log history of geouy package development
 
 -------------------------------------------------------
-## geouy v0.2.4 (2021-04-20)
+## geouy v0.2.4 (2021-04-28)
 
 * plot_goeuy % bug fixed
 * tutorial

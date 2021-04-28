@@ -24,6 +24,7 @@
 #' x <- sf::st_as_sf(x, coords = c("x", "y"), crs = 32721)
 #' x_tiles <- tiles_geouy(x, urban = TRUE)
 #'} 
+
 tiles_geouy <- function(x, d = NA, format = "rgb", folder = tempdir(), urban = FALSE){
   # checks ----
   if (!is(x, "sf")) stop(glue::glue("The object {x} you want to process is not class sf"))
@@ -40,12 +41,12 @@ tiles_geouy <- function(x, d = NA, format = "rgb", folder = tempdir(), urban = F
     raster::extent() %>% as('SpatialPolygons')
   suppressWarnings(raster::crs(bb) <- "+proj=longlat +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +no_defs")
   if (urban == FALSE) {
-    x2 <- geouy::load_geouy("Grilla ortofotos nacional", crs = 5381) %>% 
+    x2 <- try(geouy::load_geouy("Grilla ortofotos nacional", crs = 5381)) %>% 
       sf::st_join(x %>% sf::st_transform(5381), left = F) %>% 
       dplyr::distinct(.data$nombre, .keep_all = TRUE)
     if (nrow(x2) == 0) stop(glue::glue("The geometry you have in {x} is not in Uruguay. Verify in the metadata file"))
   } else {
-    x2 <- geouy::load_geouy("Grilla ortofotos urbana", crs = 5381) %>% 
+    x2 <- try(geouy::load_geouy("Grilla ortofotos urbana", crs = 5381)) %>% 
       dplyr::filter(localidad == "Montevideo") %>% 
       sf::st_join(x %>% sf::st_transform(5381), left = F) %>% 
       dplyr::mutate(nombre = as.character(.data$nombre)) %>% 
