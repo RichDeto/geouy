@@ -3,6 +3,11 @@
 #' @param c Define the geometries to download: may be: "Departamentos", "Secciones", "Zonas", etc. View(metadata) for details.
 #' @param crs Define the Coordinate Reference Systems you want the output, default 32721
 #' @param folder Folder where are the files download if formato == "zip" in metadata. Default tempdir()
+#' @importFrom curl has_internet
+#' @importFrom sf st_read st_transform
+#' @importFrom glue glue
+#' @importFrom utils download.file unzip
+#' @importFrom fs dir_ls
 #' @keywords IDE MIDES INE
 #' @return sf object with the requested geometries 
 #' @export
@@ -15,6 +20,7 @@ load_geouy <- function(c, crs = 32721, folder = tempdir()){
   x <- geouy::metadata 
   folder <- normalizePath(folder,"/")
   try(if (!c %in% x$capa) stop("The name of the geometry you will load is not correct. Verify in the metadata file"))
+  if (!curl::has_internet()) stop("No internet access detected. Please check your connection.")
   x <- x[x$capa == c,]
   if (x$repositor %in% "SGM") {
     a <- sf::st_read("WFS:http://geoservicios.sgm.gub.uy/wfsPCN1000.cgi?",x$url, crs = x$crs)

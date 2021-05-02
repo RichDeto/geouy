@@ -16,6 +16,8 @@
 #' @importFrom utils download.file
 #' @importFrom rlang .data
 #' @importFrom fs dir_ls
+#' @importFrom assertthat noNA
+#' @importFrom curl has_internet
 #' @import rgdal
 #' @export
 #' @examples
@@ -30,6 +32,7 @@ tiles_geouy <- function(x, d = NA, format = "rgb", folder = tempdir(), urban = F
   if (!is(x, "sf")) stop(glue::glue("The object {x} you want to process is not class sf"))
   if (!is.character(folder) | length(folder) != 1) stop("You must enter a valid directory...")
   if (!format %in% c("rgb", "rgbi")) stop("The format you want to download is not avaiable")
+  if (!curl::has_internet()) stop("No internet access detected. Please check your connection.")
    # download ----
   start_time <- Sys.time()
   suppressWarnings(try(dir.create(folder)))
@@ -43,7 +46,7 @@ tiles_geouy <- function(x, d = NA, format = "rgb", folder = tempdir(), urban = F
   if (urban == FALSE) {
     x2 <- NA
     x2 <- try(geouy::load_geouy("Grilla ortofotos nacional", crs = 5381)) 
-    assertthat::assert_that(assertthat::noNA(x2),msg = "IDEuy Server out of service, try in https://visualizador.ide.uy/ideuy/core/load_public_project/ideuy/")
+    if (!assertthat::noNA(x2)) stop("IDEuy Server out of service, try in https://visualizador.ide.uy/ideuy/core/load_public_project/ideuy/")
     x2 <- x2 %>% 
       sf::st_join(x %>% sf::st_transform(5381), left = F) %>% 
       dplyr::distinct(.data$nombre, .keep_all = TRUE)
@@ -51,7 +54,7 @@ tiles_geouy <- function(x, d = NA, format = "rgb", folder = tempdir(), urban = F
   } else {
     x2 <- NA
     x2 <- try(geouy::load_geouy("Grilla ortofotos urbana", crs = 5381)) 
-    assertthat::assert_that(assertthat::noNA(x2),msg = "IDEuy Server out of service, try in https://visualizador.ide.uy/ideuy/core/load_public_project/ideuy/")
+    if (!assertthat::noNA(x2)) stop("IDEuy Server out of service, try in https://visualizador.ide.uy/ideuy/core/load_public_project/ideuy/")
     x2 <- x2 %>% 
       dplyr::filter(localidad == "Montevideo") %>% 
       sf::st_join(x %>% sf::st_transform(5381), left = F) %>% 

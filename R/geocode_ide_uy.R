@@ -17,6 +17,7 @@ geocode_ide_uy <- function(x, details = F) {
   stopifnot(is.character(x$dpto), "dpto" %in% colnames(x), length(x$dpto) >= 1)
   stopifnot(is.character(x$loc), "loc" %in% colnames(x))
   stopifnot(is.character(x$dir), "dir" %in% colnames(x))
+  if (!curl::has_internet()) stop("No internet access detected. Please check your connection.")
   x <- x %>% dplyr::mutate(dir = stringr::str_trim(dir)) %>% dplyr::filter(nchar(dir) > 0)
   for (i in 1:nrow(x)) {
     p <- glue::glue("http://servicios.ide.gub.uy/servicios/BusquedaDireccion?departamento={x[i,'dpto']}&localidad={x[i,'loc']}&calle={x[i,'dir']}.json") %>% 

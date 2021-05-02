@@ -29,7 +29,7 @@ RoxygenNote: 7.1.1
 SystemRequirements: C++11, GDAL (>= 3.0.2), GEOS (>= 3.8.0), PROJ (>= 6.2.1)
 Imports:
 	rlang,
-	RCurl,
+	RCurl, curl,
 	dplyr,
 	glue,
 	stringr,

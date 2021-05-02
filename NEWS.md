@@ -1,7 +1,7 @@
 # log history of geouy package development
 
 -------------------------------------------------------
-## geouy v0.2.4 (2021-04-28)
+## geouy v0.2.4 (2021-05-02)
 
 * plot_goeuy % bug fixed
 * tutorial
@@ -10,6 +10,7 @@
 * Update links of DINAMA wfs, because institutional changes make a change in server name
 * Add metadata_tables for tables with geocodings
 * Add to metadata cod variables for Padrones
+* Add verification of internet access
 
 ## geouy v0.2.3 (2020-09-15)
 
