@@ -1,6 +1,11 @@
 # log history of geouy package development
 
 -------------------------------------------------------
+## geouy v0.2.5 (In progress)
+
+* Add demographic links from IDEuy
+
+
 ## geouy v0.2.4 (2021-05-02)
 
 * plot_goeuy % bug fixed
