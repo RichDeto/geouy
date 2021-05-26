@@ -75,6 +75,15 @@ secc <- load_geouy("Secciones")
 |`"Padrones urbanos"`| `"DNC"` | MVOTMA | 2014 | zip | 
 |`"Secciones policiales"` | `"MI"` | MVOTMA | 2017 | zip |
 
+##### Demography
+
+| Layer | Productor | Source | Year | Format |
+|-----|-----|-----|-----|-----|
+|`"LocHog11"`| `"INE"` | IDE | 2011 | zip |
+|`"LocPobHom11"`| `"INE"` | IDE | 2011 | zip |
+|`"LocPobMuj11"`| `"INE"` | IDE | 2011 | zip |
+|`"LocViv11"`| `"INE"` | IDE | 2011 | zip |
+
 
 ##### Hidrology
 
