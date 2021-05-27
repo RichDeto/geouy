@@ -22,6 +22,7 @@ load_geouy <- function(c, crs = 32721, folder = tempdir()){
   try(if (!c %in% x$capa) stop("The name of the geometry you will load is not correct. Verify in the metadata file"))
   if (!curl::has_internet()) stop("No internet access detected. Please check your connection.")
   x <- x[x$capa == c,]
+  enco <- x$enc
   if (x$repositor %in% "SGM") {
     a <- sf::st_read("WFS:http://geoservicios.sgm.gub.uy/wfsPCN1000.cgi?",x$url, crs = x$crs)
   } else if (x$formato %in% c("zip", "zip a")) {
@@ -43,9 +44,17 @@ load_geouy <- function(c, crs = 32721, folder = tempdir()){
       #archive_extract(archive.path = f, dest.path = )))
     archivo <- fs::dir_ls(folder, regexp = "\\.shp$")
     archivo <- archivo[which.max(file.info(archivo)$mtime)]
-    a <- sf::st_read(archivo, crs = x$crs) 
+    if(!enco == "UTF-8"){
+      a <- sf::st_read(archivo, crs = x$crs, options = glue::glue("ENCODING=", enco))
+    } else {
+      a <- sf::st_read(archivo, crs = x$crs)
+    }
   } else {
-    a <- sf::st_read(x$url, crs = x$crs) 
+    if(!enco == "UTF-8"){
+      a <- sf::st_read(x$url, crs = x$crs, options = glue::glue("ENCODING=", enco))
+    } else {
+      a <- sf::st_read(x$url, crs = x$crs) 
+    }
   }
   a <- a %>% sf::st_transform(crs)
   return(a)

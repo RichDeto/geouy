@@ -4,6 +4,8 @@
 ## geouy v0.2.5 (In progress)
 
 * Add demographic links from IDEuy
+* Add an encoding variable to metadata.
+* Implementation of encoding definition to load_geouy()
 
 
 ## geouy v0.2.4 (2021-05-02)
