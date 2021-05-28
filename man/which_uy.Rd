@@ -22,7 +22,7 @@ This function allows to add to an 'sf' object its spatial coincidence with one o
 \examples{
 \donttest{
 x <- load_geouy("Peajes")
-x1 <- which_uy(x, c = "Localidades pg")
+x1 <- which_uy(x, c = "Deptos")
 }
 }
 \seealso{

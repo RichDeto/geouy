@@ -9,7 +9,7 @@
 #' @examples
 #'\donttest{
 #' x <- load_geouy("Peajes")
-#' x1 <- which_uy(x, c = "Localidades pg")
+#' x1 <- which_uy(x, c = "Deptos")
 #'}
 
 which_uy <- function(x, c = c("Localidades pg", "Departamentos"), d = c("cod", "name")){
@@ -33,7 +33,7 @@ which_uy <- function(x, c = c("Localidades pg", "Departamentos"), d = c("cod", "
     for (j in 1:length(d)) {
       names(y2)[j] <- paste0(d[j], "_", i)
     }
-    y2$geometry <- NULL
+    # y2$geometry <- NULL
     x <- sf::st_join(x, y2)
   }
   return(x)
