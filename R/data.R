@@ -43,6 +43,7 @@
 #'   \item{url}{url of the service}
 #' }
 "metadata_tables"
+
 #' INE "Localidades Agregadas"
 #'
 #' A dataset containing the cods, names and others attributes of urban locations 
@@ -60,3 +61,16 @@
 #'   \item{cat_loc_agr}{Tipical categories of "Localidades"}
 #' }
 "loc_agr_ine"
+
+#' Uruguay Departments grid
+#'
+#' A dataset containing the cods, names and others attributes as a geofacet grid
+#' @family data
+#' @format A data frame with 19 rows and 4 variables:
+#' \describe{
+#'   \item{name}{name of the "Departamento"}
+#'   \item{code}{INE code of the "Departamento"}
+#'   \item{row}{row position in the grid}
+#'   \item{col}{col position in the grid}
+#' }
+"uy_deptos_grid"

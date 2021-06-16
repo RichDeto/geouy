@@ -6,6 +6,7 @@
 * Add demographic links from IDEuy
 * Add an encoding variable to metadata.
 * Implementation of encoding definition to load_geouy()
+* Add a uy_deptos_grid geofacet grid dataset 
 
 
 ## geouy v0.2.4 (2021-05-02)
