@@ -74,3 +74,16 @@
 #'   \item{col}{col position in the grid}
 #' }
 "uy_deptos_grid"
+
+#' Montevideo barrios grid
+#'
+#' A dataset containing the cods, names and others attributes as a geofacet grid
+#' @family data
+#' @format A data frame with 62 rows and 4 variables:
+#' \describe{
+#'   \item{name}{name of the "Barrio"}
+#'   \item{code}{INE code of the "Barrio"}
+#'   \item{row}{row position in the grid}
+#'   \item{col}{col position in the grid}
+#' }
+"mvd_barrios_grid"
