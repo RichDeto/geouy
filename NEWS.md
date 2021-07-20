@@ -7,6 +7,7 @@
 * Add an encoding variable to metadata.
 * Implementation of encoding definition to load_geouy()
 * Add a uy_deptos_grid and a mvd_barrios_grid as geofacet grid dataset 
+* Improve citacion year and version
 
 ## geouy v0.2.4 (2021-05-02)
 

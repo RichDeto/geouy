@@ -1,13 +1,16 @@
 citHeader("To cite geouy in publications use:")
 
-citEntry("geouy20",
-  entry    = "Misc",
-  title = "geouy: Geographic Information of Uruguay",
-  author = "Richard Detomasi",
-  note = "R package version 0.2.2",
-  year     = 2020,
-  url      = "https://github.com/RichDeto/geouy",
-  textVersion = paste(
-   
-  )
-)
+year <- sub("-.*", "", meta$Date)
+note <- sprintf("R package version %s", meta$Version)
+
+bibentry(bibtype = "Misc",
+         title = "{geouy}: Geographic Information of Uruguay",
+         author = c(person("Richard", "Detomasi")),
+         year = year,
+         note = note,
+	       url = "https://github.com/RichDeto/geouy")
+
+textVersion = paste0("Detomasi, Richard, (", year, ").",
+  "geouy: Geographic Information of Uruguay. ",
+  note, ".",
+  " https://github.com/RichDeto/geouy")
