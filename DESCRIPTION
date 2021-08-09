@@ -44,10 +44,10 @@ Imports:
   viridis, 
   raster, 
   rgdal, 
-  sp, 
-  knitr
+  sp
 Suggests:
     rmarkdown,
     covr,
-    learnr
+    learnr, 
+    knitr
 VignetteBuilder: knitr
