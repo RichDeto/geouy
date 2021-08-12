@@ -1,7 +1,7 @@
 # log history of geouy package development
 
 -------------------------------------------------------
-## geouy v0.2.5 (2021-08-09)
+## geouy v0.2.5 (2021-08-12)
 
 * Add demographic links from IDEuy
 * Add an encoding variable to metadata.
