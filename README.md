@@ -182,9 +182,13 @@ This dataset has the metadata of all vector geometries provided by `geouy` and d
 
 This dataset has the metadata of all the raster services that will be provided by `geouy`, although the functions are still under development.
 
-### loc_agr_ine()
+### loc_agr_ine
 
 This dataset allows you to aggregate Localidades INE by the aglomerations used by INE. An example of use can be: 
+
+### uy_deptos_grid and mvd_barrios_grid 
+
+Two datasets to use as `geofacet` grid dataset for departments of Uruguay and neighborhoods of Montevideo 
 
 ``` r
 loc <- which_uy(base, "Localidades pg") %>% 
@@ -228,17 +232,17 @@ If you work with geographic data of Uruguay and want to add your function or dat
 
 To cite `geouy` in publications, please use:
 
-Detomasi, Richard (2020) "geouy: Geographic Information of Uruguay". R package version 0.2.1
+Detomasi, Richard (2021) "geouy: Geographic Information of Uruguay". R package version 0.2.5
    URL: https://github.com/RichDeto/geouy. 
   
 A BibTeX entry for LaTeX users is:
 
 ```
-@Misc{geouy20,
+@Misc{geouy,
   title = {geouy: Geographic Information of Uruguay},
   author = {Richard Detomasi},
-  note = {R package version 0.2.1},
-  year = {2020},
+  note = {R package version 0.2.5},
+  year = {2021},
   url  = {https://github.com/RichDeto/geouy},
 }
 

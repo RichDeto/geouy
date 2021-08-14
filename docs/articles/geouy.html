@@ -6,19 +6,19 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ejemplo de uso del paquete `geouy` • geouy</title>
-<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous">
-<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
+<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="../bootstrap-toc.css">
+<script src="../bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
+<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
 <script src="../pkgdown.js"></script><meta property="og:title" content="Ejemplo de uso del paquete `geouy`">
-<meta property="og:description" content="">
-<meta name="twitter:card" content="summary">
+<meta property="og:description" content="geouy">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
 </head>
-<body>
+<body data-spy="scroll" data-target="#toc">
     <div class="container template-article">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -31,7 +31,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">geouy</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.3</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.5</span>
       </span>
     </div>
 
@@ -39,7 +39,7 @@
       <ul class="nav navbar-nav">
 <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -53,7 +53,14 @@
   <a href="../news/index.html">Changelog</a>
 </li>
       </ul>
-<ul class="nav navbar-nav navbar-right"></ul>
+<ul class="nav navbar-nav navbar-right">
+<li>
+  <a href="https://github.com/RichDeto/geouy/">
+    <span class="fab fa-github fa-lg"></span>
+     
+  </a>
+</li>
+      </ul>
 </div>
 <!--/.nav-collapse -->
   </div>
@@ -63,16 +70,16 @@
 
       
 
-      </header><script src="geouy_files/header-attrs-2.1/header-attrs.js"></script><div class="row">
+      </header><script src="geouy_files/header-attrs-2.7/header-attrs.js"></script><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
-      <h1>Ejemplo de uso del paquete <code>geouy</code>
+      <h1 data-toc-skip>Ejemplo de uso del paquete <code>geouy</code>
 </h1>
                         <h4 class="author">Richard Detomasi</h4>
             
-            <h4 class="date">2020-10-14</h4>
+            <h4 class="date">2021-08-14</h4>
       
-      
+      <small class="dont-index">Source: <a href="https://github.com/RichDeto/geouy/blob/master/vignettes/geouy.Rmd"><code>vignettes/geouy.Rmd</code></a></small>
       <div class="hidden name"><code>geouy.Rmd</code></div>
 
     </div>
@@ -84,10 +91,12 @@
 <h2 class="hasAnchor">
 <a href="#instalaci%C3%B3n" class="anchor"></a>Instalación</h2>
 <p>Para instalar la versión estable del paquete usar:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span>(<span class="st">'geouy'</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">'geouy'</span><span class="op">)</span></code></pre></div>
 <p>Para instalar la versión en desarrollo:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="co"># install.packages('devtools') si no tiene instalado devtools</span></span>
-<span id="cb2-2"><a href="#cb2-2"></a>devtools<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/devtools/man/remote-reexports.html">install_github</a></span>(<span class="st">"RichDeto/geouy"</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># install.packages('devtools') si no tiene instalado devtools</span>
+<span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org//reference/remote-reexports.html">install_github</a></span><span class="op">(</span><span class="st">"RichDeto/geouy"</span><span class="op">)</span></code></pre></div>
 <p>Para activarla</p>
 </div>
 <div id="ejemplos-de-usos" class="section level2">
@@ -97,37 +106,42 @@
 <h3 class="hasAnchor">
 <a href="#cargar-geometr%C3%ADas" class="anchor"></a>Cargar geometrías</h3>
 <p>Obtengamos como primer paso las geometrías de las instituciones deportivas de Uruguay</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>depor &lt;-<span class="st"> </span>geouy<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/geouy/man/load_geouy.html">load_geouy</a></span>(<span class="st">"Instituciones deportivas"</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">depor</span> <span class="op">&lt;-</span> <span class="fu">geouy</span><span class="fu">::</span><span class="fu"><a href="../reference/load_geouy.html">load_geouy</a></span><span class="op">(</span><span class="st">"Instituciones deportivas"</span><span class="op">)</span></code></pre></div>
 <p>Por defecto me traerá estas geometrías en EPSG 32721 que es el CRS correspondiente a Uruguay, por lo que no lo especifico en el parámetro correspondiente.</p>
 </div>
 <div id="goecodificación" class="section level3">
 <h3 class="hasAnchor">
 <a href="#goecodificaci%C3%B3n" class="anchor"></a>Goecodificación</h3>
 <p>Ahora bien, tenemos algunas direcciones de nuevas instituciones sin coordenadas, por lo que usaremos <code><a href="../reference/geocode_ide_uy.html">geocode_ide_uy()</a></code> para geocodificarlas:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>nuevas &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span>(<span class="kw"><a href="https://rdrr.io/r/base/cbind.html">cbind</a></span>(<span class="dt">dpto =</span> <span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"Montevideo"</span>, <span class="st">"Salto"</span>),</span>
-<span id="cb4-2"><a href="#cb4-2"></a>                           <span class="dt">loc =</span> <span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"Montevideo"</span>, <span class="st">"Salto"</span>),</span>
-<span id="cb4-3"><a href="#cb4-3"></a>                           <span class="dt">dir =</span> <span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"Cebollati esq. Magallanes"</span>,</span>
-<span id="cb4-4"><a href="#cb4-4"></a>                                   <span class="st">"15 de noviembre 1310"</span>)),</span>
-<span id="cb4-5"><a href="#cb4-5"></a>                     <span class="dt">stringsAsFactors =</span> F)</span>
-<span id="cb4-6"><a href="#cb4-6"></a>nuevas_geo &lt;-<span class="st"> </span><span class="kw"><a href="../reference/geocode_ide_uy.html">geocode_ide_uy</a></span>(nuevas)</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">nuevas</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/cbind.html">cbind</a></span><span class="op">(</span>dpto <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Montevideo"</span>, <span class="st">"Salto"</span><span class="op">)</span>,
+                           loc <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Montevideo"</span>, <span class="st">"Salto"</span><span class="op">)</span>,
+                           dir <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Cebollati esq. Magallanes"</span>,
+                                   <span class="st">"15 de noviembre 1310"</span><span class="op">)</span><span class="op">)</span>,
+                     stringsAsFactors <span class="op">=</span> <span class="cn">F</span><span class="op">)</span>
+<span class="va">nuevas_geo</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/geocode_ide_uy.html">geocode_ide_uy</a></span><span class="op">(</span><span class="va">nuevas</span><span class="op">)</span></code></pre></div>
 <p>NOTA: Limite en geocode_geouy(), tienes que ser parte de un organismo público uruguayo o deberas completar el siguiente <a href="https://www.gub.uy/agencia-gobierno-electronico-sociedad-informacion-conocimiento/comunicacion/publicaciones/formularios-de-alta-y-consumo-de-servicios-de-la-pdi">formulario</a> para habilitar el funcionamiento de su API.</p>
 </div>
 <div id="asignar-codigos-y-nombres-de-otras-geometrías" class="section level3">
 <h3 class="hasAnchor">
 <a href="#asignar-codigos-y-nombres-de-otras-geometr%C3%ADas" class="anchor"></a>Asignar codigos y nombres de otras geometrías</h3>
 <p>Continuando con el ejemplo, asignémosle a las <code>Instituciones deportivas</code>, los códigos y nombres de departamentos correspondientes, utilizando la función <code><a href="../reference/which_uy.html">which_uy()</a></code> como se muestra a continuación:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>depor_dep &lt;-<span class="st"> </span>geouy<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/geouy/man/which_uy.html">which_uy</a></span>(depor, <span class="st">"Departamentos"</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">depor_dep</span> <span class="op">&lt;-</span> <span class="fu">geouy</span><span class="fu">::</span><span class="fu"><a href="../reference/which_uy.html">which_uy</a></span><span class="op">(</span><span class="va">depor</span>, <span class="st">"Departamentos"</span><span class="op">)</span></code></pre></div>
 <p>NOTA: El segundo parámetro tiene que corresponder con un valor de <code>geouy::metadata$capa</code> para funcionar.</p>
 </div>
 <div id="plotear-una-variable" class="section level3">
 <h3 class="hasAnchor">
 <a href="#plotear-una-variable" class="anchor"></a>Plotear una variable</h3>
 <p>Veamos ahora, cuantas instituciones hay por departamento, y empezemos por traer la unidad espacial en la que nos interesa agregar las instituciones que venimos trabajando:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>dep &lt;-<span class="st"> </span>geouy<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/geouy/man/load_geouy.html">load_geouy</a></span>(<span class="st">"Departamentos"</span>)</span></code></pre></div>
-<p>Apoyándonos en la función <code><a href="https://rdrr.io/pkg/sf/man/geos_binary_pred.html">sf::st_intersects()</a></code> para calcular la cantidad de instituciones por departamento, damos lugar a la aplicación de la función <code><a href="../reference/plot_geouy.html">plot_geouy()</a></code>:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>dep<span class="op">$</span><span class="st">"instituciones_deportivas"</span> &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/lengths.html">lengths</a></span>(sf<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/sf/man/geos_binary_pred.html">st_intersects</a></span>(dep, depor))</span>
-<span id="cb7-2"><a href="#cb7-2"></a></span>
-<span id="cb7-3"><a href="#cb7-3"></a><span class="kw"><a href="../reference/plot_geouy.html">plot_geouy</a></span>(dep, <span class="st">"instituciones_deportivas"</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">dep</span> <span class="op">&lt;-</span> <span class="fu">geouy</span><span class="fu">::</span><span class="fu"><a href="../reference/load_geouy.html">load_geouy</a></span><span class="op">(</span><span class="st">"Departamentos"</span><span class="op">)</span></code></pre></div>
+<p>Apoyándonos en la función <code><a href="https://r-spatial.github.io/sf/reference/geos_binary_pred.html">sf::st_intersects()</a></code> para calcular la cantidad de instituciones por departamento, damos lugar a la aplicación de la función <code><a href="../reference/plot_geouy.html">plot_geouy()</a></code>:</p>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">dep</span><span class="op">$</span><span class="st">"instituciones_deportivas"</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/lengths.html">lengths</a></span><span class="op">(</span><span class="fu">sf</span><span class="fu">::</span><span class="fu"><a href="https://r-spatial.github.io/sf/reference/geos_binary_pred.html">st_intersects</a></span><span class="op">(</span><span class="va">dep</span>, <span class="va">depor</span><span class="op">)</span><span class="op">)</span>
+
+<span class="fu"><a href="../reference/plot_geouy.html">plot_geouy</a></span><span class="op">(</span><span class="va">dep</span>, <span class="st">"instituciones_deportivas"</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="categorías-de-grandes-regiones-ine" class="section level3">
 <h3 class="hasAnchor">
@@ -135,38 +149,33 @@
 <p>Un tema colateral, pero no despreciable es el de categorizar el territorio, y fuera de las geometrías como ya vimos, hay particularidades demográficas implicadas. Por ejemplo, las categorías que utiliza el INE para agrupar localidades, que a su vez son utilizadas como marco para los muestreos de la Encuesta Continua de Hogares.</p>
 <p>Por ejemplo, el corte normal entre los tamaños de localidades no consideran inicialmente las agrupaciones de las mismas, como es principalmente el Area Metropolitana de Montevideo o las chacras que rodean ciertas ciudades que por más que son “Localidades INE” per se, al momento de categorizarla se agrupan con la ciudad que las concentra.</p>
 <p>Por este motivo, es que agregamos el dataset <code>loc_agr_ine</code> que permite combinar la capa de <code>Localidades pg</code> con los datos del Censo 2011 y poder categorizar las agrupaciones de localidades como lo hace el INE.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="co"># devtools::install_github("RichDeto/geouy", ref = 'master'); </span></span>
-<span id="cb8-2"><a href="#cb8-2"></a><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(geouy)</span>
-<span id="cb8-3"><a href="#cb8-3"></a></span>
-<span id="cb8-4"><a href="#cb8-4"></a><span class="co"># Simulamos una población</span></span>
-<span id="cb8-5"><a href="#cb8-5"></a>pop &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span>(<span class="dt">x =</span> <span class="kw"><a href="https://rdrr.io/r/base/sample.html">sample</a></span>(<span class="dv">560000</span><span class="op">:</span><span class="dv">585000</span>,<span class="dv">500</span>),</span>
-<span id="cb8-6"><a href="#cb8-6"></a>                  <span class="dt">y =</span> <span class="kw"><a href="https://rdrr.io/r/base/sample.html">sample</a></span>(<span class="dv">6136000</span><span class="op">:</span><span class="dv">6160000</span>,<span class="dv">500</span>))</span>
-<span id="cb8-7"><a href="#cb8-7"></a></span>
-<span id="cb8-8"><a href="#cb8-8"></a><span class="co"># La categorizamos por la variable preconstruida (Pero obviamente se pueden hacer otras agregaciones)                  </span></span>
-<span id="cb8-9"><a href="#cb8-9"></a>pop_loc &lt;-<span class="st"> </span><span class="kw"><a href="../reference/which_uy.html">which_uy</a></span>(pop, <span class="st">"Localidades pg"</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb8-10"><a href="#cb8-10"></a><span class="st">  </span>dplyr<span class="op">::</span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html">left_join</a></span>(loc_agr_ine, <span class="dt">by =</span> <span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"cod_Localidades pg"</span> =<span class="st"> "codloc"</span>))</span>
-<span id="cb8-11"><a href="#cb8-11"></a></span>
-<span id="cb8-12"><a href="#cb8-12"></a><span class="co"># Confiando en que los datos están todos en territorio uruguayo, asignamos "Rural" a los NA</span></span>
-<span id="cb8-13"><a href="#cb8-13"></a>loc[<span class="kw"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span>(pop_loc<span class="op">$</span>cat_loc_agr), <span class="st">"cat_loc_agr"</span>] &lt;-<span class="st"> "Rural"</span></span>
-<span id="cb8-14"><a href="#cb8-14"></a></span>
-<span id="cb8-15"><a href="#cb8-15"></a><span class="co"># y finalmente podemos hacer una tabla por estas regiones, por ejemplo: </span></span>
-<span id="cb8-16"><a href="#cb8-16"></a>tabla_regiones &lt;-<span class="st"> </span>loc <span class="op">%&gt;%</span><span class="st"> </span>dplyr<span class="op">::</span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span>(cat_loc_agr) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb8-17"><a href="#cb8-17"></a><span class="st">        </span><span class="kw">summarise</span>(<span class="dt">Casos =</span> <span class="kw">n</span>())</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># devtools::install_github("RichDeto/geouy", ref = 'master'); </span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">geouy</span><span class="op">)</span>
+
+<span class="co"># Simulamos una población</span>
+<span class="va">pop</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span><span class="fl">560000</span><span class="op">:</span><span class="fl">585000</span>,<span class="fl">500</span><span class="op">)</span>,
+                  y <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span><span class="fl">6136000</span><span class="op">:</span><span class="fl">6160000</span>,<span class="fl">500</span><span class="op">)</span><span class="op">)</span>
+
+<span class="co"># La categorizamos por la variable preconstruida (Pero obviamente se pueden hacer otras agregaciones)                  </span>
+<span class="va">pop_loc</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/which_uy.html">which_uy</a></span><span class="op">(</span><span class="va">pop</span>, <span class="st">"Localidades pg"</span><span class="op">)</span> <span class="op">%&gt;%</span> 
+  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html">left_join</a></span><span class="op">(</span><span class="va">loc_agr_ine</span>, by <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"cod_Localidades pg"</span> <span class="op">=</span> <span class="st">"codloc"</span><span class="op">)</span><span class="op">)</span>
+
+<span class="co"># Confiando en que los datos están todos en territorio uruguayo, asignamos "Rural" a los NA</span>
+<span class="va">loc</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span><span class="op">(</span><span class="va">pop_loc</span><span class="op">$</span><span class="va">cat_loc_agr</span><span class="op">)</span>, <span class="st">"cat_loc_agr"</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="st">"Rural"</span>
+
+<span class="co"># y finalmente podemos hacer una tabla por estas regiones, por ejemplo: </span>
+<span class="va">tabla_regiones</span> <span class="op">&lt;-</span> <span class="va">loc</span> <span class="op">%&gt;%</span> <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">cat_loc_agr</span><span class="op">)</span> <span class="op">%&gt;%</span> 
+        <span class="fu">summarise</span><span class="op">(</span>Casos <span class="op">=</span> <span class="fu">n</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 </div>
 </div>
   </div>
 
-  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
+  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
 
-        <div id="tocnav">
-      <h2 class="hasAnchor">
-<a href="#tocnav" class="anchor"></a>Contents</h2>
-      <ul class="nav nav-pills nav-stacked">
-<li><a href="#instalaci%C3%B3n">Instalación</a></li>
-      <li><a href="#ejemplos-de-usos">Ejemplos de usos</a></li>
-      </ul>
+        <nav id="toc" data-toggle="toc"><h2 data-toc-skip>Contents</h2>
+    </nav>
 </div>
-      </div>
 
 </div>
 
@@ -177,7 +186,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>
