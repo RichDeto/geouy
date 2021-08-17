@@ -78,6 +78,7 @@ is.uy5381 <- function(x){
 
 #' This function test if an 'sf' object match with Uruguay at crs = 5382.
 #' @param x An 'sf' object with the same crs as the homonym parameter
+#' @family crs
 #' @keywords CRS sf Uruguay
 #' @return logical value based in crs parameter of the sf object
 #' @export

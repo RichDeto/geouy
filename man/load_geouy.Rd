@@ -28,6 +28,7 @@ secc <- load_geouy(c = "Secciones")
 Other service: 
 \code{\link{add_geom}()},
 \code{\link{geocode_ide_uy}()},
+\code{\link{tiles_geouy}()},
 \code{\link{where_uy}()},
 \code{\link{which_uy}()}
 }

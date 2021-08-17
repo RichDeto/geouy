@@ -3,8 +3,8 @@
 <!-- badges: start -->
 
 [![CRAN/METACRAN Version](https://www.r-pkg.org/badges/version/geouy)](https://CRAN.R-project.org/package=geouy)
-[![CRAN/METACRAN Total downloads](http://cranlogs.r-pkg.org/badges/grand-total/geouy?color=blue)](https://CRAN.R-project.org/package=geouy) 
-[![CRAN/METACRAN downloads per month](http://cranlogs.r-pkg.org/badges/geouy?color=orange)](https://CRAN.R-project.org/package=geouy)
+[![CRAN/METACRAN Total downloads](https://cranlogs.r-pkg.org/badges/grand-total/geouy?color=blue)](https://CRAN.R-project.org/package=geouy) 
+[![CRAN/METACRAN downloads per month](https://cranlogs.r-pkg.org/badges/geouy?color=orange)](https://CRAN.R-project.org/package=geouy)
 [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 [![R build status](https://github.com/RichDeto/geouy/workflows/R-CMD-check/badge.svg)](https://github.com/RichDeto/geouy/actions)
 [![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/RichDeto/geouy?branch=master&svg=true)](https://ci.appveyor.com/project/RichDeto/geouy)
@@ -27,7 +27,7 @@
   devtools::install_github("RichDeto/geouy")
   library(geouy)
 ```
-obs. If you use **Linux**, you need to install a couple dependencies before installing the libraries `sf` and `geouy`. [More info here](https://github.com/r-spatial/sf#linux).
+obs. If you use **Linux**, you need to install a couple dependencies before installing the libraries `sf` and `geouy`. [More info here](https://github.com/r-spatial/sf#linux). 
 
 
 ## Basic Usage
@@ -186,20 +186,21 @@ This dataset has the metadata of all the raster services that will be provided b
 
 This dataset allows you to aggregate Localidades INE by the aglomerations used by INE. An example of use can be: 
 
-### uy_deptos_grid and mvd_barrios_grid 
-
-Two datasets to use as `geofacet` grid dataset for departments of Uruguay and neighborhoods of Montevideo 
-
 ``` r
 loc <- which_uy(base, "Localidades pg") %>% 
     dplyr::left_join(loc_agr_ine, by = c("cod_Localidades pg" = "codloc"))
 ```
 
+### uy_deptos_grid and mvd_barrios_grid 
+
+Two datasets to use as `geofacet` grid dataset for departments of Uruguay and neighborhoods of Montevideo.
+
+
 ## History
 
 This package arises from the conjugation of own ideas with an eye on the region. It started as a part of the package where I work with @calcita at [ech](https://github.com/calcita/ech), and some geospatial service packages in the region mainly: 
 [geobr](https://github.com/ipeaGIT/geobr) and 
-[chilemapas](https://github.com/pachamaltese/chilemapas)
+[chilemapas](https://github.com/pachadotdev/chilemapas)
 
 This walk on the shoulders of giants, allows this package focused on this small country (my beautiful Uruguay), to have its own particularities although it tries to fit especially to [geobr](https://github.com/ipeaGIT/geobr) in its structure and with a view to complementing [ech](https://github.com/calcita/ech).
 

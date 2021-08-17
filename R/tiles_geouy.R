@@ -1,4 +1,5 @@
 #' This function allows to Download .jpg or .tif files from the IDEuy tiles repository, according to a 'sf' object bbox.
+#' @family service
 #' @param x An 'sf' object with the same crs as the homonym parameter
 #' @param d numeric; buffer distance for all, or for each of the elements in x; in case dist is a units object, it should be convertible to arc_degree if x has geographic coordinates, and to st_crs(x)$units otherwise. Default NA, but if x is a only one point buffer default is 100.
 #' @param format Format of the archives to download (avaiable: "rgb" and "rgbi") Default "rgb"

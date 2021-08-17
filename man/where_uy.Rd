@@ -31,6 +31,7 @@ Other service:
 \code{\link{add_geom}()},
 \code{\link{geocode_ide_uy}()},
 \code{\link{load_geouy}()},
+\code{\link{tiles_geouy}()},
 \code{\link{which_uy}()}
 }
 \concept{service}

@@ -30,6 +30,15 @@ x <- sf::st_as_sf(x, coords = c("x", "y"), crs = 32721)
 x_tiles <- tiles_geouy(x, urban = TRUE)
 } 
 }
+\seealso{
+Other service: 
+\code{\link{add_geom}()},
+\code{\link{geocode_ide_uy}()},
+\code{\link{load_geouy}()},
+\code{\link{where_uy}()},
+\code{\link{which_uy}()}
+}
+\concept{service}
 \keyword{IDE}
 \keyword{Uruguay}
 \keyword{orthophotos}

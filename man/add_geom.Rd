@@ -36,6 +36,7 @@ pobre_x_dpto_geo <- add_geom(data = pobre_x_dpto, unit = "Departamentos", variab
 Other service: 
 \code{\link{geocode_ide_uy}()},
 \code{\link{load_geouy}()},
+\code{\link{tiles_geouy}()},
 \code{\link{where_uy}()},
 \code{\link{which_uy}()}
 }
