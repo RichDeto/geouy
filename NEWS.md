@@ -1,6 +1,11 @@
 # log history of geouy package development
 
 -------------------------------------------------------
+## geouy v0.2.6 (in progress)
+
+* Update geocode_ide_uy() because server of IDEuy change
+* Add a reverse_ide_uy() function for reverse geocoding 
+
 ## geouy v0.2.5 (2021-08-12)
 
 * Add demographic links from IDEuy
