@@ -53,6 +53,8 @@ metadata <- tibble::tribble(
   "Centros poblados pg", "SGM", "SGM", 4326, "wfs", 2011, "builtupa", "gml_id", "nam", "UTF-8",
   "Centros poblados pt", "SGM", "SGM", 4326, "wfs", 2011, "builtupp", "gml_id", "nam", "UTF-8",
   "Municipios", "IGM", "IGM", 4326, "wfs", 2011, "WFS:https://srvgis.igm.gub.uy/arcgis/services/LimitesMunicipales_wfs_250000/MapServer/WFSServer", "OBJECTID_1", "NOMBRE", "UTF-8",
+  "Municipios10", "DINOT-IM-IC", "MVOTMA", 32721, "zip", 2010, "https://sit.mvotma.gub.uy/shp/Municipios2010.zip", "OBJECTID", "MUNICIPIO", "UTF-8",
+  "Municipios15", "DINOT-IM-IC", "MVOTMA", 32721, "zip", 2015, "https://sit.mvotma.gub.uy/shp/Municipios2015.zip", "OBJECTID", "MUNICIPIO", "UTF-8",
   "CCZ", "IM", "MIDES", 32721, "wfs", 2011, "https://mapas.mides.gub.uy/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=IDE:ZonasComunales", "GID","ZONA_LEGAL", "UTF-8",
   "Asentamientos irregulares", "PMB", "MIDES", 32721, "wfs", 2014, "https://mapas.mides.gub.uy:443/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=IDE:ai_pmb_2014", "cod_ast", "nom_ast", "UTF-8",
   # "Barrio", "INE", "IDE", 32721, "zip", 1985, "https://mapas.ide.uy/geoserver-vectorial/INE_NO_SEGURO/wfs?service=WFS&request=GetFeature&version=1.0.0&outputFormat=shape-zip&typeName=ine_barrios_mvd_nbi85", "nrobarrio", "nombbarr", "UTF-8",

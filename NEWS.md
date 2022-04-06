@@ -1,6 +1,11 @@
 # log history of geouy package development
 
 -------------------------------------------------------
+
+## geouy v0.2.6 (in progress)
+
+* Add Municipios 2010 and 2015 to metadata 
+
 ## geouy v0.2.5 (2021-08-12)
 
 * Add demographic links from IDEuy

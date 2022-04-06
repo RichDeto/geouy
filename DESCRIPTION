@@ -25,7 +25,7 @@ Depends: R (>= 3.4.0)
 Language: en, es
 Encoding: UTF-8
 LazyData: TRUE
-RoxygenNote: 7.1.1
+RoxygenNote: 7.1.2
 SystemRequirements: C++11, GDAL (>= 3.0.2), GEOS (>= 3.8.0), PROJ (>= 6.2.1)
 Imports:
 	rlang,
