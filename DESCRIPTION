@@ -44,10 +44,9 @@ Imports:
   viridis, 
   raster, 
   rgdal, 
-  sp
+  sp, 
+  rjson
 Suggests:
     rmarkdown,
-    covr,
-    learnr, 
     knitr
 VignetteBuilder: knitr

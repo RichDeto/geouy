@@ -17,6 +17,9 @@ The DafaFrame x with the coordinates variables append (x and y)
 \description{
 A function to geocoding directions using IDE_uy
 }
+\details{
+https://direcciones.ide.uy/swagger-ui.html#/geocode,_reverse,_inversa
+}
 \examples{
 \donttest{
 # x1 <- cbind(dpto="Montevideo",loc="Montevideo",dir="Av. 18 de julio 1453")
@@ -28,6 +31,7 @@ A function to geocoding directions using IDE_uy
 Other service: 
 \code{\link{add_geom}()},
 \code{\link{load_geouy}()},
+\code{\link{reverse_ide_uy}()},
 \code{\link{tiles_geouy}()},
 \code{\link{where_uy}()},
 \code{\link{which_uy}()}

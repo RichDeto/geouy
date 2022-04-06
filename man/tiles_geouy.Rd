@@ -35,6 +35,7 @@ Other service:
 \code{\link{add_geom}()},
 \code{\link{geocode_ide_uy}()},
 \code{\link{load_geouy}()},
+\code{\link{reverse_ide_uy}()},
 \code{\link{where_uy}()},
 \code{\link{which_uy}()}
 }
