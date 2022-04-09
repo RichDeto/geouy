@@ -65,7 +65,8 @@ secc <- load_geouy("Secciones")
 |`"Localidades pt"`| `"INE Censo"` | MIDES | 2011 | wfs |
 |`"Centros poblados pg"`| `"SGM"` | SGM | 2011 | wfs |
 |`"Centros poblados pt"`| `"SGM"` | SGM | 2011 | wfs |
-|`"Municipios"`| `"IGM"` | IGM | 2011 | wfs |
+|`"Municipios10"`| `"DINOT-IM-IC"` | MVOTMA | 2010 | zip |
+|`"Municipios15"`| `"DINOT-IM-IC"` | MVOTMA | 2015 | zip |
 |`"CCZ"`| `"INE"` | MIDES | 2011 | wfs |
 |`"Asentamientos irregulares"`| `"PMB"` | MIDES | 2014 | wfs |
 |`"Barrios"` | `"INE"` | MIDES | 2011 | wfs |

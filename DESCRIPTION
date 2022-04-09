@@ -1,12 +1,12 @@
 Package: geouy
 Type: Package
 Title: Geographic Information of Uruguay
-Version: 0.2.5
+Version: 0.2.6
 Authors@R: c(
 	      person(given = "Richard", 
 	      family = "Detomasi", 
 	      email = "richard.detomasi@gmail.com",
-	      role = c("aut", "cre"), 
+	      role = c("aut", "cre", "cph"), 
 	      comment = c(ORCID = "0000-0002-6725-0261")),
         person(family = "Ministerio de Desarrollo Social, Uruguay (MIDES)", role = "dtc"),
         person(family = "Infraestrutura de Datos Espaciales, Uruguay (IDE)", role = "dtc"),
