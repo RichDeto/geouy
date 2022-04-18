@@ -73,6 +73,13 @@ jobs:
             eval sudo $cmd
           done < <(Rscript -e 'writeLines(remotes::system_requirements("ubuntu", "20.04"))')
 
+      - name: Mac OS dependencies for leidenAlg
+        if: matrix.config.os == 'macOS-latest'
+        run: |
+          # conflicts with gfortran from r-lib/actions when linking gcc
+          rm '/usr/local/bin/gfortran'
+          brew install pkg-config gdal proj geos sqlite3
+
       - name: Install dependencies
         run: |
           remotes::install_deps(dependencies = TRUE)
