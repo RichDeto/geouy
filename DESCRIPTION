@@ -23,10 +23,13 @@ BugReports: https://github.com/RichDeto/geouy/issues
 License: GPL-3
 Depends: R (>= 3.4.0)
 Language: en, es
+ByteCompile: true
 Encoding: UTF-8
 LazyData: TRUE
 RoxygenNote: 7.1.2
-SystemRequirements: C++11, GDAL (>= 3.0.2), GEOS (>= 3.8.0), PROJ (>= 6.2.1)
+SystemRequirements: 'unrar' (Linux/macOS) or '7-Zip' (Windows)
+    to work with '.rar' files, C++11, GDAL (>= 3.0.2), GEOS (>= 3.8.0), PROJ (>=
+    6.2.1)
 Imports:
 	rlang,
 	RCurl, curl,
