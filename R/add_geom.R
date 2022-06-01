@@ -23,7 +23,7 @@ add_geom <- function(data, unit, variable, crs = 32721){
   
   # checks ---
   assertthat::assert_that(is.data.frame(data))
-  assertthat::assert_that(unit  %in% c("Departamentos", "Secciones", "Secc MVD 2004", "Segmentos", "Segm MVD 2004", "Segm URB INT 2004", "Zonas",
+  assertthat::assert_that(unit  %in% c("Departamentos", "Deptos", "Secciones", "Secc MVD 2004", "Segmentos", "Segm MVD 2004", "Segm URB INT 2004", "Zonas",
                                        "Zonas MVD 2004", "Zonas URB INT 2004", "Localidades pg", "Municipios", "Barrios"),
                           msg =  glue::glue("Sorry... :( \n {unit} is not a valid value"))
   assertthat::assert_that(variable  %in% names(data), msg =  glue::glue("Sorry... :( \n {variable} is not in data"))
