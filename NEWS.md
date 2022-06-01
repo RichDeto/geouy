@@ -7,6 +7,7 @@
 * Add Municipios 2010 and 2015 to metadata 
 * Update geocode_ide_uy() because server of IDEuy change
 * Add a reverse_ide_uy() function for reverse geocoding 
+* Change geoservice of "Departamentos"
 
 ## geouy v0.2.5 (2021-08-12)
 

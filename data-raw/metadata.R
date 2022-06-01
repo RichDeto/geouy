@@ -7,7 +7,7 @@ metadata <- tibble::tribble(
   "Areas administrativas", "SGM", "SGM", 4326, "wfs", 2011, "polnbda_ury", NA, NA, "UTF-8",
   "Dptos", "DINAMA", "MVOTMA", 4326, "wfs", 2020, "https://www.ambiente.gub.uy/geoserver/u19600217/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=u19600217:c004","gid", "nombre", "UTF-8",
   "Limites departamentales", "IGM", "IGM", 4326, "wfs", 2011, "WFS:https://srvgis.igm.gub.uy/arcgis/services/LimiteDepartamental_wfs_250000/MapServer/WFSServer", "GLOBALID", "DEPTO", "UTF-8",
-  "Departamentos", "IDE", "MIDES", 32721, "wfs", 2011, "https://mapas.mides.gub.uy/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=IDE:Departamentos%20UY", "uruguay_", "nombre", "UTF-8",
+  "Departamentos", "IDE", "MIDES", 32721, "wfs", 2011, "https://mapas.mides.gub.uy/geoserver/IDE/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=IDE:departamentos&outputFormat=GML2", "uruguay_", "nombre", "UTF-8",
   "Deptos", "INE", "IDE", 32721, "zip", 2011, "https://mapas.ide.uy/geoserver-vectorial/INE_NO_SEGURO/wfs?service=WFS&request=GetFeature&version=1.0.0&outputFormat=shape-zip&typeName=ine_depto", "depto", "nombre", "UTF-8",
   # "Secc", "INE", "MIDES", 32721, "zip", 2011, "https://mapas.ide.uy/geoserver-vectorial/INE_NO_SEGURO/wfs?service=WFS&request=GetFeature&version=1.0.0&outputFormat=shape-zip&typeName=ine_seccen", "codsec","seccion", "UTF-8",
   "Secciones", "INE", "MIDES", 32721, "wfs", 2011, "https://mapas.mides.gub.uy:443/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=INECenso:Secciones", "CODSEC","SECCION", "UTF-8",
