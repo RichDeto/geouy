@@ -8,6 +8,7 @@
 * Update geocode_ide_uy() because server of IDEuy change
 * Add a reverse_ide_uy() function for reverse geocoding 
 * Change geoservice of "Departamentos"
+* Change code variable name of "Municipios"
 
 ## geouy v0.2.5 (2021-08-12)
 

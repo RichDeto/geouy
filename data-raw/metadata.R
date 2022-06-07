@@ -52,7 +52,7 @@ metadata <- tibble::tribble(
   # c("Area urbanizada pt", "IGM", "IGM", 4326, "wfs", 2011, # "WFS:https://srvgis.igm.gub.uy/arcgis/services/AreaUrbanizadaP_wfs_10000/MapServer/WFSServer"),
   "Centros poblados pg", "SGM", "SGM", 4326, "wfs", 2011, "builtupa", "gml_id", "nam", "UTF-8",
   "Centros poblados pt", "SGM", "SGM", 4326, "wfs", 2011, "builtupp", "gml_id", "nam", "UTF-8",
-  "Municipios", "IGM", "IGM", 4326, "wfs", 2011, "WFS:https://srvgis.igm.gub.uy/arcgis/services/LimitesMunicipales_wfs_250000/MapServer/WFSServer", "OBJECTID_1", "NOMBRE", "UTF-8",
+  "Municipios", "IGM", "IGM", 4326, "wfs", 2011, "WFS:https://srvgis.igm.gub.uy/arcgis/services/LimitesMunicipales_wfs_250000/MapServer/WFSServer", "OBJECTID", "NOMBRE", "UTF-8",
   "Municipios10", "DINOT-IM-IC", "MVOTMA", 32721, "zip", 2010, "https://sit.mvotma.gub.uy/shp/Municipios2010.zip", "OBJECTID", "MUNICIPIO", "UTF-8",
   "Municipios15", "DINOT-IM-IC", "MVOTMA", 32721, "zip", 2015, "https://sit.mvotma.gub.uy/shp/Municipios2015.zip", "OBJECTID", "MUNICIPIO", "UTF-8",
   "CCZ", "IM", "MIDES", 32721, "wfs", 2011, "https://mapas.mides.gub.uy/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=IDE:ZonasComunales", "GID","ZONA_LEGAL", "UTF-8",
