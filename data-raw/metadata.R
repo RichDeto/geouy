@@ -66,6 +66,7 @@ metadata <- tibble::tribble(
   "Calles", "IDE - UTE - IM", "MIDES", 32721, "wfs", 2017, "https://mapas.mides.gub.uy/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=IDE:EjesUruguayUTE,IDE:EjesMontevideoIM", "id", "nombre", "UTF-8",
   "Peajes", "MTOP", "MTOP", 4326, "wfs", 2019, "https://geoservicios.mtop.gub.uy/geoserver/inf_tte_ttelog_terrestre/peajes/ows?service=WFS&request=GetFeature&typeName=peajes", "gml_id", "nombre", "UTF-8",
   "Instituciones deportivas", "IDE", "MIDES", 32721, "wfs", 2015, "https://mapas.mides.gub.uy/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=IDE:inst_deportivas_2015", "gml_id", "nombre", "UTF-8",
+  "OTs", "MIDES", "MIDES", 32721, "zip", 2022, "https://mapas.mides.gub.uy/2shp/out/otes.zip", NA, NA, "UTF-8",
   "Colegios privados N0a3", "CEIP", "MIDES", 32721, "zip", 2020,"https://mapas.mides.gub.uy/2shp/out/colegiosprivadosconniveles0a3.zip", NA, NA, "UTF-8",
   "Educación en Primera Infancia e Inicial", "CEIP", "MIDES", 32721, "zip", 2020, "https://mapas.mides.gub.uy/2shp/out/educacionenprimerainfanciaeinicial.zip", NA, NA, "UTF-8",
   "Jardines de infantes", "CEIP", "MIDES", 32721, "zip a", 2020, "https://mapas.mides.gub.uy/2shp/out/jardinesdeinfantes.zip",  NA, NA, "UTF-8",

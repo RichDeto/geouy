@@ -116,6 +116,7 @@ secc <- load_geouy("Secciones")
 
 | Layer | Productor | Source | Year | Format |
 |-----|-----|-----|-----|-----|
+| `"OTs"` | `"MIDES"` | MIDES | 2022 | zip |
 | `"Educación en Primera Infancia e Inicial"` | `"CEIP"` | MIDES | 2020 | zip | 
 | `"Jardines de infantes"` | `"CEIP"` | MIDES | 2020 | zip |
 | `"Colegios privados N0a3"` | `"CEIP"` | MIDES | 2020 | zip |
