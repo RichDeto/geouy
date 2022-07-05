@@ -23,17 +23,13 @@ geocode_ide_uy <- function(x, details = F) {
   x <- x %>% dplyr::mutate(dir = stringr::str_trim(dir)) %>% dplyr::filter(nchar(dir) > 0)
   for (i in 1:nrow(x)) {
     p <- glue::glue("https://direcciones.ide.uy/api/v0/geocode/BusquedaDireccion?calle={x[i,'dir']}&departamento={x[i,'dpto']}&localidad={x[i,'loc']}.json") %>% 
-                    # "http://servicios.ide.gub.uy/servicios/BusquedaDireccion?departamento={x[i,'dpto']}&localidad={x[i,'loc']}&calle={x[i,'dir']}.json") %>% 
       stringr::str_replace_all(" ", "%20") 
-    p <- suppressWarnings(rjson::fromJSON(paste(readLines(p), collapse=""))[[1]]) #RCurl::getURL(p[1])
-    x[i, "x"] <- p$puntoX#suppressWarnings(as.numeric(stringr::str_sub(p, stringr::str_locate(p, "puntoX\":")[2] + 1, stringr::str_locate(p, "puntoX\":")[2] + 10)))
-    x[i, "y"] <- p$puntoY#suppressWarnings(as.numeric(stringr::str_sub(p, stringr::str_locate(p, "puntoY\":")[2] + 1, stringr::str_locate(p, "puntoY\":")[2] + 10)))
+    p <- suppressWarnings(rjson::fromJSON(paste(readLines(p), collapse=""))[[1]])
+    x[i, "x"] <- p$puntoX
+    x[i, "y"] <- p$puntoY
     if (details == T) {
       x[i, "idTipoClasificacion"] <- p$idTipoClasificacion
-        # suppressWarnings(as.numeric(stringr::str_sub(p, stringr::str_locate(p, "idTipoClasificacion\":")[2] + 1, 
-        #                                                                           stringr::str_locate(p, "idTipoClasificacion\":")[2] + 1)))
       x[i, "error"] <- p$error
-        # suppressWarnings(stringr::str_sub(p, stringr::str_locate(p, "error\":")[2] + 1, stringr::str_locate(p, "error\":")[2] + 50))
     }
     
     p <- NULL 
@@ -41,8 +37,3 @@ geocode_ide_uy <- function(x, details = F) {
   }
   return(x)
 }
-
-# @importFrom dplyr mutate filter %>%
-# @importFrom stringr str_sub str_locate str_trim str_replace_all
-# @importFrom RCurl getURL
-# @importFrom glue glue
