@@ -32,7 +32,7 @@ SystemRequirements: 'unrar' (Linux/macOS) or '7-Zip' (Windows)
     6.2.1)
 Imports:
 	rlang,
-	RCurl, curl,
+	curl,
 	dplyr,
 	glue,
 	stringr,
