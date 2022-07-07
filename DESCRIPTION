@@ -45,8 +45,7 @@ Imports:
 	sf,
 	assertthat,
   viridis, 
-  raster, 
-  rgdal, 
+  raster,
   sp, 
   rjson
 Suggests:

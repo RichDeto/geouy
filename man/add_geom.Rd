@@ -29,7 +29,7 @@ Aviso: El script no es un producto oficial de INE.
 \donttest{
 pobre_x_dpto <- as.data.frame(cbind(nomdpto = c("ARTIGAS", "DURAZNO", "FLORIDA", "LAVALLEJA"),
                Pobreza = c(0.26, 0.27, 0.07, 0.10)))
-pobre_x_dpto_geo <- add_geom(data = pobre_x_dpto, unit = "Departamentos", variable = "nomdpto")
+pobre_x_dpto_geo <- add_geom(data = pobre_x_dpto, unit = "Deptos", variable = "nomdpto")
 }
 }
 \seealso{

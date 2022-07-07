@@ -19,7 +19,6 @@
 #' @importFrom fs dir_ls
 #' @importFrom assertthat noNA
 #' @importFrom curl has_internet
-#' @import rgdal
 #' @export
 #' @examples
 #'\donttest{
