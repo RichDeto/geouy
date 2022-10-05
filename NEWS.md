@@ -9,6 +9,7 @@
 * Add a reverse_ide_uy() function for reverse geocoding 
 * Change geoservice of "Departamentos"
 * Change code variable name of "Municipios"
+* Update URLs 
 
 ## geouy v0.2.5 (2021-08-12)
 
@@ -63,7 +64,7 @@
 ## geouy v0.1.9 (2020-03-20)
 
 * Update test with CRS structure for sf 0.9 version
-* Limits in geocode_geouy(), you must be part of uruguayan public organism and  fill this (forms)[https://www.gub.uy/agencia-gobierno-electronico-sociedad-informacion-conocimiento/comunicacion/publicaciones/formularios-de-alta-y-consumo-de-servicios-de-la-pdi] if your organism is not yet vinculated.
+* Limits in geocode_geouy(), you must be part of uruguayan public organism and  fill this (forms)[https://www.gub.uy/agencia-gobierno-electronico-sociedad-informacion-conocimiento/comunicacion/publicaciones/formularios-alta-consumo-servicios-pdi] if your organism is not yet vinculated.
 
 
 ## geouy v0.1.8 (2020-03-17)

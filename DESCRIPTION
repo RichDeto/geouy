@@ -18,7 +18,7 @@ Authors@R: c(
 	      )
 Maintainer: Richard Detomasi <richard.detomasi@gmail.com>
 Description: The toolbox have functions to load and process geographic information for Uruguay. 
-        And extra-function to get address coordinates and orthophotos through the uruguayan 'IDE' API <https://www.gub.uy/infraestructura-datos-espaciales/tramites-y-servicios/servicios/servicio-direcciones-geograficas>.
+        And extra-function to get address coordinates and orthophotos through the uruguayan 'IDE' API <https://www.gub.uy/infraestructura-datos-espaciales/tramites-y-servicios/servicios/sistema-unico-direcciones-geograficas>.
 BugReports: https://github.com/RichDeto/geouy/issues
 License: GPL-3
 Depends: R (>= 3.4.0)
@@ -26,7 +26,7 @@ Language: en, es
 ByteCompile: true
 Encoding: UTF-8
 LazyData: TRUE
-RoxygenNote: 7.1.2
+RoxygenNote: 7.2.1
 SystemRequirements: 'unrar' (Linux/macOS) or '7-Zip' (Windows)
     to work with '.rar' files, C++11, GDAL (>= 2.0.1), GEOS (>= 3.8.0), PROJ (>=
     6.2.1)
