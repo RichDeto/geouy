@@ -2,7 +2,7 @@
 
 -------------------------------------------------------
 
-## geouy v0.2.6 (in progress)
+## geouy v0.2.6 (2022-10-04)
 
 * Add Municipios 2010 and 2015, and Territorial Offices of MIDES to metadata 
 * Update geocode_ide_uy() because server of IDEuy change
