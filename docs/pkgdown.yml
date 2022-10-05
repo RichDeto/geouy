@@ -1,7 +1,7 @@
-pandoc: '2.13'
+pandoc: '2.18'
 pkgdown: 2.0.2
 pkgdown_sha: ~
 articles:
   geouy: geouy.html
-last_built: 2022-04-09T14:51Z
+last_built: 2022-10-05T00:08Z
 

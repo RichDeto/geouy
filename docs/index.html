@@ -70,12 +70,18 @@
       </header><div class="row">
   <div class="contents col-md-9">
 <div class="section level1">
-<div class="page-header"><h1 id="geouy--">geouy <img align="right" src="reference/figures/geouy_logo_a.png" alt="logo" width="160"><img align="right" src="reference/figures/geouy_logo_b.png" alt="logo" width="160"><a class="anchor" aria-label="anchor" href="#geouy--"></a>
+<div class="page-header"><h1 id="geouy--">geouy
+<img align="right" src="reference/figures/geouy_logo_a.png" alt="logo" width="160"><img align="right" src="reference/figures/geouy_logo_b.png" alt="logo" width="160"><a class="anchor" aria-label="anchor" href="#geouy--"></a>
 </h1></div>
 <!-- badges: start -->
 
 <!-- badges: end -->
-<p><strong>geouy</strong> is an R package that allows users to easily access official spatial data sets of Uruguay. The package includes a wide range of geospatial datasets as <em>simple features</em> (<code>sf</code>), available at various geographic scales and for various years with harmonized attributes and projection (see detailed list below).</p>
+<p><strong>geouy</strong> is an R package that allows users to easily
+access official spatial data sets of Uruguay. The package includes a
+wide range of geospatial datasets as <em>simple features</em>
+(<code>sf</code>), available at various geographic scales and for
+various years with harmonized attributes and projection (see detailed
+list below).</p>
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
@@ -88,7 +94,10 @@
   <span class="fu">utils</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/r/utils/remove.packages.html" class="external-link">remove.packages</a></span><span class="op">(</span><span class="st">'geouy'</span><span class="op">)</span>
   <span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org/reference/remote-reexports.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"RichDeto/geouy"</span><span class="op">)</span>
   <span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">geouy</span><span class="op">)</span></code></pre></div>
-<p>obs. If you use <strong>Linux</strong>, you need to install a couple dependencies before installing the libraries <code>sf</code> and <code>geouy</code>. <a href="https://github.com/r-spatial/sf#linux" class="external-link">More info here</a>.</p>
+<p>obs. If you use <strong>Linux</strong>, you need to install a couple
+dependencies before installing the libraries <code>sf</code> and
+<code>geouy</code>. <a href="https://github.com/r-spatial/sf#linux" class="external-link">More
+info here</a>.</p>
 </div>
 <div class="section level2">
 <h2 id="basic-usage">Basic Usage<a class="anchor" aria-label="anchor" href="#basic-usage"></a>
@@ -96,7 +105,9 @@
 <div class="section level3">
 <h3 id="load_geouy">load_geouy<a class="anchor" aria-label="anchor" href="#load_geouy"></a>
 </h3>
-<p>The syntax of all <code>geouy</code> functions operate one the same logic so it becomes intuitive to download any data set using a single line of code. Like this:</p>
+<p>The syntax of all <code>geouy</code> functions operate one the same
+logic so it becomes intuitive to download any data set using a single
+line of code. Like this:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">secc</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/load_geouy.html">load_geouy</a></span><span class="op">(</span><span class="st">"Secciones"</span><span class="op">)</span></code></pre></div>
 <div class="section level4">
@@ -360,6 +371,13 @@
 <h5 id="hidrology">Hidrology<a class="anchor" aria-label="anchor" href="#hidrology"></a>
 </h5>
 <table class="table">
+<colgroup>
+<col width="20%">
+<col width="20%">
+<col width="20%">
+<col width="20%">
+<col width="20%">
+</colgroup>
 <thead><tr class="header">
 <th>Layer</th>
 <th>Productor</th>
@@ -495,6 +513,13 @@
 <h5 id="services">Services<a class="anchor" aria-label="anchor" href="#services"></a>
 </h5>
 <table class="table">
+<colgroup>
+<col width="20%">
+<col width="20%">
+<col width="20%">
+<col width="20%">
+<col width="20%">
+</colgroup>
 <thead><tr class="header">
 <th>Layer</th>
 <th>Productor</th>
@@ -504,69 +529,76 @@
 </tr></thead>
 <tbody>
 <tr class="odd">
+<td><code>"OTs"</code></td>
+<td><code>"MIDES"</code></td>
+<td>MIDES</td>
+<td>2022</td>
+<td>zip</td>
+</tr>
+<tr class="even">
 <td><code>"Educación en Primera Infancia e Inicial"</code></td>
 <td><code>"CEIP"</code></td>
 <td>MIDES</td>
 <td>2020</td>
 <td>zip</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><code>"Jardines de infantes"</code></td>
 <td><code>"CEIP"</code></td>
 <td>MIDES</td>
 <td>2020</td>
 <td>zip</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><code>"Colegios privados N0a3"</code></td>
 <td><code>"CEIP"</code></td>
 <td>MIDES</td>
 <td>2020</td>
 <td>zip</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><code>"Escuelas con N3"</code></td>
 <td><code>"CEIP"</code></td>
 <td>MIDES</td>
 <td>2020</td>
 <td>zip</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><code>"Escuelas"</code></td>
 <td><code>"CEIP"</code></td>
 <td>MIDES</td>
 <td>2020</td>
 <td>zip</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><code>"Educacion especial"</code></td>
 <td><code>"CEIP"</code></td>
 <td>MIDES</td>
 <td>2020</td>
 <td>zip</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><code>"Educacion secundaria"</code></td>
 <td><code>"CEIP"</code></td>
 <td>MIDES</td>
 <td>2020</td>
 <td>zip</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><code>"UTU"</code></td>
 <td><code>"ANEP"</code></td>
 <td>MIDES</td>
 <td>2020</td>
 <td>zip</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><code>"Instituciones deportivas"</code></td>
 <td><code>"IDE"</code></td>
 <td>MIDES</td>
 <td>2015</td>
 <td>wfs</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><code>"Playas"</code></td>
 <td><code>"DINAMA¨</code></td>
 <td>MVOTMA</td>
@@ -660,17 +692,22 @@
 <div class="section level3">
 <h3 id="which_uy">which_uy()<a class="anchor" aria-label="anchor" href="#which_uy"></a>
 </h3>
-<p>Add to an <code>sf</code> object its spatial coincidence with one or more administrative units in Uruguay, generating the corresponding variables.</p>
+<p>Add to an <code>sf</code> object its spatial coincidence with one or
+more administrative units in Uruguay, generating the corresponding
+variables.</p>
 </div>
 <div class="section level3">
 <h3 id="where_uy">where_uy()<a class="anchor" aria-label="anchor" href="#where_uy"></a>
 </h3>
-<p>You get an <code>sf</code> object of one or more administrative units in Uruguay, according to a query by code or name in the layer.</p>
+<p>You get an <code>sf</code> object of one or more administrative units
+in Uruguay, according to a query by code or name in the layer.</p>
 </div>
 <div class="section level3">
 <h3 id="add_geom">add_geom()<a class="anchor" aria-label="anchor" href="#add_geom"></a>
 </h3>
-<p>This function allows you to add a <code>geom</code> variable with a code variable of “zona”, “barrio”, “localidad”, “segmentos”, “secciones” or “departamentos”.</p>
+<p>This function allows you to add a <code>geom</code> variable with a
+code variable of “zona”, “barrio”, “localidad”, “segmentos”, “secciones”
+or “departamentos”.</p>
 </div>
 <div class="section level3">
 <h3 id="geocode_ide_uy">geocode_ide_uy()<a class="anchor" aria-label="anchor" href="#geocode_ide_uy"></a>
@@ -680,12 +717,18 @@
 <div class="section level3">
 <h3 id="plot_geouy">plot_geouy()<a class="anchor" aria-label="anchor" href="#plot_geouy"></a>
 </h3>
-<p>Plot a variable of your <code>sf</code> object with north and scale, set on a simple theme.</p>
+<p>Plot a variable of your <code>sf</code> object with north and scale,
+set on a simple theme.</p>
 </div>
 <div class="section level3">
 <h3 id="other-functions">Other functions:<a class="anchor" aria-label="anchor" href="#other-functions"></a>
 </h3>
-<p><code>is.uy4326():</code> Test if an <code>sf</code> object match with Uruguay at crs = 4326. <code>is.uy32721():</code> Test if an <code>sf</code> object match with Uruguay at crs = 32721. <code>is.uy5381():</code> Test if an <code>sf</code> object match with Uruguay at crs = 5381. <code>is.uy5382():</code> Test if an <code>sf</code> object match with Uruguay at crs = 5382.</p>
+<p><code>is.uy4326():</code> Test if an <code>sf</code> object match
+with Uruguay at crs = 4326. <code>is.uy32721():</code> Test if an
+<code>sf</code> object match with Uruguay at crs = 32721.
+<code>is.uy5381():</code> Test if an <code>sf</code> object match with
+Uruguay at crs = 5381. <code>is.uy5382():</code> Test if an
+<code>sf</code> object match with Uruguay at crs = 5382.</p>
 </div>
 </div>
 <div class="section level2">
@@ -694,17 +737,21 @@
 <div class="section level3">
 <h3 id="metadata">metadata<a class="anchor" aria-label="anchor" href="#metadata"></a>
 </h3>
-<p>This dataset has the metadata of all vector geometries provided by <code>geouy</code> and detailed at the top</p>
+<p>This dataset has the metadata of all vector geometries provided by
+<code>geouy</code> and detailed at the top</p>
 </div>
 <div class="section level3">
 <h3 id="metadata_wms">metadata_wms<a class="anchor" aria-label="anchor" href="#metadata_wms"></a>
 </h3>
-<p>This dataset has the metadata of all the raster services that will be provided by <code>geouy</code>, although the functions are still under development.</p>
+<p>This dataset has the metadata of all the raster services that will be
+provided by <code>geouy</code>, although the functions are still under
+development.</p>
 </div>
 <div class="section level3">
 <h3 id="loc_agr_ine">loc_agr_ine<a class="anchor" aria-label="anchor" href="#loc_agr_ine"></a>
 </h3>
-<p>This dataset allows you to aggregate Localidades INE by the aglomerations used by INE. An example of use can be:</p>
+<p>This dataset allows you to aggregate Localidades INE by the
+aglomerations used by INE. An example of use can be:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">loc</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/which_uy.html">which_uy</a></span><span class="op">(</span><span class="va">base</span>, <span class="st">"Localidades pg"</span><span class="op">)</span> <span class="op"><a href="reference/pipe.html">%&gt;%</a></span> 
     <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html" class="external-link">left_join</a></span><span class="op">(</span><span class="va">loc_agr_ine</span>, by <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"cod_Localidades pg"</span> <span class="op">=</span> <span class="st">"codloc"</span><span class="op">)</span><span class="op">)</span></code></pre></div>
@@ -712,21 +759,32 @@
 <div class="section level3">
 <h3 id="uy_deptos_grid-and-mvd_barrios_grid">uy_deptos_grid and mvd_barrios_grid<a class="anchor" aria-label="anchor" href="#uy_deptos_grid-and-mvd_barrios_grid"></a>
 </h3>
-<p>Two datasets to use as <code>geofacet</code> grid dataset for departments of Uruguay and neighborhoods of Montevideo.</p>
+<p>Two datasets to use as <code>geofacet</code> grid dataset for
+departments of Uruguay and neighborhoods of Montevideo.</p>
 </div>
 </div>
 <div class="section level2">
 <h2 id="history">History<a class="anchor" aria-label="anchor" href="#history"></a>
 </h2>
-<p>This package arises from the conjugation of own ideas with an eye on the region. It started as a part of the package where I work with @calcita at <a href="https://github.com/calcita/ech" class="external-link">ech</a>, and some geospatial service packages in the region mainly: <a href="https://github.com/ipeaGIT/geobr" class="external-link">geobr</a> and <a href="https://github.com/pachadotdev/chilemapas" class="external-link">chilemapas</a></p>
-<p>This walk on the shoulders of giants, allows this package focused on this small country (my beautiful Uruguay), to have its own particularities although it tries to fit especially to <a href="https://github.com/ipeaGIT/geobr" class="external-link">geobr</a> in its structure and with a view to complementing <a href="https://github.com/calcita/ech" class="external-link">ech</a>.</p>
+<p>This package arises from the conjugation of own ideas with an eye on
+the region. It started as a part of the package where I work with
+@calcita at <a href="https://github.com/calcita/ech" class="external-link">ech</a>, and some
+geospatial service packages in the region mainly: <a href="https://github.com/ipeaGIT/geobr" class="external-link">geobr</a> and <a href="https://github.com/pachadotdev/chilemapas" class="external-link">chilemapas</a></p>
+<p>This walk on the shoulders of giants, allows this package focused on
+this small country (my beautiful Uruguay), to have its own
+particularities although it tries to fit especially to <a href="https://github.com/ipeaGIT/geobr" class="external-link">geobr</a> in its structure and
+with a view to complementing <a href="https://github.com/calcita/ech" class="external-link">ech</a>.</p>
 </div>
 <div class="section level2">
 <h2 id="community-contributions-es">Community contributions <a href="https://github.com/RichDeto/geouy/issues/1" class="external-link">es</a>
 <a class="anchor" aria-label="anchor" href="#community-contributions-es"></a>
 </h2>
-<p>This package intends to incorporate any function of general requirements that use the geographic data of Uruguay as a base. All contributions in this regard are welcome.</p>
-<p>If you work with geographic data of Uruguay and want to add your function or data, we recommend that you read the following tips on how to collaborate:</p>
+<p>This package intends to incorporate any function of general
+requirements that use the geographic data of Uruguay as a base. All
+contributions in this regard are welcome.</p>
+<p>If you work with geographic data of Uruguay and want to add your
+function or data, we recommend that you read the following tips on how
+to collaborate:</p>
 <div class="section level3">
 <h3 id="to-add-your-function">To add your function:<a class="anchor" aria-label="anchor" href="#to-add-your-function"></a>
 </h3>
@@ -740,7 +798,8 @@
 <span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="sc">-</span> If everything works fine, then make a pull request</span></code></pre></div>
 </div>
 <div class="section level3">
-<h3 id="to-add-geographic-data-to-the-load_geouy-function">To add geographic data to the <code>load_geouy()</code> function:<a class="anchor" aria-label="anchor" href="#to-add-geographic-data-to-the-load_geouy-function"></a>
+<h3 id="to-add-geographic-data-to-the-load_geouy-function">To add geographic data to the <code>load_geouy()</code>
+function:<a class="anchor" aria-label="anchor" href="#to-add-geographic-data-to-the-load_geouy-function"></a>
 </h3>
 <div class="sourceCode" id="cb5"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="sc">-</span> Fork of this repository</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="sc">-</span> Identify the corresponding WFS service URL</span>
@@ -750,11 +809,12 @@
 </div>
 </div>
 <div class="section level2">
-<h2 id="-citation">
-<i class="fa fa-pencil" aria-hidden="true"></i> Citation<a class="anchor" aria-label="anchor" href="#-citation"></a>
+<h2 id="id_-citation">
+<i class="fa fa-pencil" aria-hidden="true"></i> Citation<a class="anchor" aria-label="anchor" href="#id_-citation"></a>
 </h2>
 <p>To cite <code>geouy</code> in publications, please use:</p>
-<p>Detomasi, Richard (2021) “geouy: Geographic Information of Uruguay”. R package version 0.2.5 URL: <a href="https://github.com/RichDeto/geouy" class="external-link uri">https://github.com/RichDeto/geouy</a>.</p>
+<p>Detomasi, Richard (2021) “geouy: Geographic Information of Uruguay”.
+R package version 0.2.5 URL: <a href="https://github.com/RichDeto/geouy" class="external-link uri">https://github.com/RichDeto/geouy</a>.</p>
 <p>A BibTeX entry for LaTeX users is:</p>
 <pre><code>@Misc{geouy,
   title = {geouy: Geographic Information of Uruguay},
@@ -797,7 +857,7 @@
 <div class="developers">
 <h2 data-toc-skip>Developers</h2>
 <ul class="list-unstyled">
-<li>Richard Detomasi <br><small class="roles"> Author, maintainer </small> <a href="https://orcid.org/0000-0002-6725-0261" target="orcid.widget" aria-label="ORCID" class="external-link"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
+<li>Richard Detomasi <br><small class="roles"> Author, maintainer, copyright holder </small> <a href="https://orcid.org/0000-0002-6725-0261" target="orcid.widget" aria-label="ORCID" class="external-link"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
 <li><a href="authors.html">More about authors...</a></li>
 </ul>
 </div>
@@ -827,7 +887,8 @@
 
 <div class="pkgdown">
   <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a>
+2.0.2.</p>
 </div>
 
       </footer>

@@ -5,7 +5,7 @@ test_that("structure it´s OK", {
   skip_on_cran()
   
   x <- geouy::metadata
-  expect_equal(ncol(x), 9)
+  expect_equal(ncol(x), 10)
   expect_is(x$capa, "character")
   expect_is(x$productor, "character")
   expect_is(x$repositor, "character")

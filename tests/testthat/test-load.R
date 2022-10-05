@@ -6,7 +6,7 @@ test_that("connections working", {
   
   testthat::expect_is(load_geouy("Secciones"), "sf")
   testthat::expect_is(load_geouy("Playas"), "sf")
-  testthat::expect_is(load_geouy("Centros poblados pg"), "sf")
+  # testthat::expect_is(load_geouy("Centros poblados pg"), "sf")
 })
 
 test_that("crs parameter working", {

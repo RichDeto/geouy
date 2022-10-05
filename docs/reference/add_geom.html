@@ -95,11 +95,12 @@ Aviso: El script no es un producto oficial de INE.</p>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="co"># \donttest{</span></span>
 <span class="r-in"><span class="va">pobre_x_dpto</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html" class="external-link">as.data.frame</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/cbind.html" class="external-link">cbind</a></span><span class="op">(</span>nomdpto <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"ARTIGAS"</span>, <span class="st">"DURAZNO"</span>, <span class="st">"FLORIDA"</span>, <span class="st">"LAVALLEJA"</span><span class="op">)</span>,</span>
 <span class="r-in">               Pobreza <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0.26</span>, <span class="fl">0.27</span>, <span class="fl">0.07</span>, <span class="fl">0.10</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-in"><span class="va">pobre_x_dpto_geo</span> <span class="op">&lt;-</span> <span class="fu">add_geom</span><span class="op">(</span>data <span class="op">=</span> <span class="va">pobre_x_dpto</span>, unit <span class="op">=</span> <span class="st">"Departamentos"</span>, variable <span class="op">=</span> <span class="st">"nomdpto"</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Reading layer `departamentos' from data source </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   `https://mapas.mides.gub.uy/geoserver/IDE/ows?service=WFS&amp;version=1.0.0&amp;request=GetFeature&amp;typeName=IDE:departamentos' </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   using driver `GML'</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Simple feature collection with 19 features and 9 fields</span>
+<span class="r-in"><span class="va">pobre_x_dpto_geo</span> <span class="op">&lt;-</span> <span class="fu">add_geom</span><span class="op">(</span>data <span class="op">=</span> <span class="va">pobre_x_dpto</span>, unit <span class="op">=</span> <span class="st">"Deptos"</span>, variable <span class="op">=</span> <span class="st">"nomdpto"</span><span class="op">)</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Intentando descargar Deptos...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Reading layer `ine_depto' from data source </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   `C:\Users\Usuario\AppData\Local\Temp\RtmpKKSs6S\ine_depto.shp' </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   using driver `ESRI Shapefile'</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Simple feature collection with 20 features and 6 fields</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Geometry type: MULTIPOLYGON</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Dimension:     XY</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Bounding box:  xmin: 366582.2 ymin: 6127919 xmax: 858252.1 ymax: 6671738</span>
@@ -119,7 +120,8 @@ Aviso: El script no es un producto oficial de INE.</p>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a>
+2.0.2.</p>
 </div>
 
       </footer></div>
