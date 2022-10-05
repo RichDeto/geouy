@@ -8,7 +8,7 @@
 [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 [![R build status](https://github.com/RichDeto/geouy/workflows/R-CMD-check/badge.svg)](https://github.com/RichDeto/geouy/actions)
 [![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/RichDeto/geouy?branch=master&svg=true)](https://ci.appveyor.com/project/RichDeto/geouy)
-[![Codecov test coverage](https://codecov.io/gh/RichDeto/geouy/branch/master/graph/badge.svg)](https://codecov.io/gh/RichDeto/geouy?branch=master)
+[![Codecov test coverage](https://codecov.io/gh/RichDeto/geouy/branch/master/graph/badge.svg)]( https://app.codecov.io/gh/RichDeto/geouy?branch=master)
 [![DOI](https://zenodo.org/badge/229800365.svg)](https://zenodo.org/badge/latestdoi/229800365)
 
 <!-- badges: end -->
