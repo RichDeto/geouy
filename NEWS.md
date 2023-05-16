@@ -2,6 +2,12 @@
 
 -------------------------------------------------------
 
+## geouy v0.2.7 (2023-05-16)
+
+* Debug testing errors
+* update plot_geouy for deprecated ggplot2::aes_string 
+* update which_uy for changes in tidyselect 0.1.1
+
 ## geouy v0.2.6 (2022-10-04)
 
 * Add Municipios 2010 and 2015, and Territorial Offices of MIDES to metadata 

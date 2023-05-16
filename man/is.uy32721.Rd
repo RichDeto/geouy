@@ -17,7 +17,7 @@ This function test if an 'sf' object match with Uruguay at crs = 32721.
 }
 \examples{
 \donttest{
-is.uy32721(load_geouy("Peajes"))
+is.uy32721(load_geouy("Uruguay"))
 }
 }
 \seealso{

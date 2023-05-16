@@ -1,5 +1,5 @@
 context("Testing utils")
-library(dplyr);library(sf)
+
 testthat::test_that("crs parameter working", {
   skip_if_offline()
 
@@ -18,6 +18,7 @@ testthat::test_that("crs parameter working", {
 })
 
 testthat::test_that("crs parameter working", {
+
   a <- data.frame(x = c(-56.14449, -56.13936), y = c(-34.805237, -34.806787))
   testthat::expect_error(is.uy4326(a))
   testthat::expect_error(is.uy5381(a))

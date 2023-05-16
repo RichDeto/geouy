@@ -23,7 +23,7 @@ which_uy <- function(x, c = c("Localidades pg", "Departamentos"), d = c("cod", "
     if (!any("full" %in% d)) {
       md2 <- md %>% 
       dplyr::filter(.data$capa == i) %>% 
-      dplyr::select(d)
+      dplyr::select(tidyselect::all_of(d))
       y2 <- y %>% dplyr::select(as.character(md2))
     }  else {
       md2 <- md %>% 

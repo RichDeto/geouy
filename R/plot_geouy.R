@@ -32,7 +32,7 @@ plot_geouy <- function(x, col, viri_opt = "plasma", l = NULL, other_lab = NULL, 
   
   theme_set(theme_bw())
   mapa <- ggplot2::ggplot(data = x) +
-    ggplot2::geom_sf(data = x, aes_string(fill = col))  +
+    ggplot2::geom_sf(data = x, aes(!!!ensyms(fill = col)))  +
     viridis::scale_fill_viridis(name = col, option = "D", direction = -1,
                                 discrete = is.numeric(x[,col] %>% sf::st_set_geometry(NULL))) +
     ggplot2::xlab(NULL) + ggplot2::ylab(NULL) +

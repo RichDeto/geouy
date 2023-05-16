@@ -1,7 +1,7 @@
 Package: geouy
 Type: Package
 Title: Geographic Information of Uruguay
-Version: 0.2.6
+Version: 0.2.7
 Authors@R: c(
 	      person(given = "Richard", 
 	      family = "Detomasi", 
@@ -26,7 +26,7 @@ Language: en, es
 ByteCompile: true
 Encoding: UTF-8
 LazyData: TRUE
-RoxygenNote: 7.2.1
+RoxygenNote: 7.2.3
 SystemRequirements: 'unrar' (Linux/macOS) or '7-Zip' (Windows)
     to work with '.rar' files, C++11, GDAL (>= 2.0.1), GEOS (>= 3.8.0), PROJ (>=
     6.2.1)
@@ -47,7 +47,8 @@ Imports:
   viridis, 
   raster,
   sp, 
-  rjson
+  rjson,
+  tidyselect
 Suggests:
     rmarkdown,
     knitr

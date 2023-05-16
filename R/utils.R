@@ -32,7 +32,7 @@ is.uy4326 <- function(x){
 #' @export
 #' @examples
 #'\donttest{
-#' is.uy32721(load_geouy("Peajes"))
+#' is.uy32721(load_geouy("Uruguay"))
 #'}
 
 is.uy32721 <- function(x){

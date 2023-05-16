@@ -1,5 +1,5 @@
 context("Testing which_uy")
-library(dplyr);library(sf)
+
 test_that("crs parameter working", {
   skip_if_offline()
   skip_on_cran()
