@@ -2,6 +2,11 @@
 
 -------------------------------------------------------
 
+## geouy v0.2.8 (2023-08-22)
+
+* update geouy.R for changes in roxygen2
+* debug warning in add_geom.R
+
 ## geouy v0.2.7 (2023-05-16)
 
 * Debug testing errors

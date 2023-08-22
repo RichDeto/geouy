@@ -5,3 +5,6 @@ inst/doc
 doc
 Meta
 CRAN-RELEASE
+dev
+/doc/
+/Meta/

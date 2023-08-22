@@ -3,6 +3,7 @@
 \docType{package}
 \name{geouy}
 \alias{geouy}
+\alias{geouy-package}
 \title{\code{geouy} package}
 \description{
 The toolbox have functions to load and process geographic information for Uruguay.

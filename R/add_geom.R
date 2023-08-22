@@ -34,13 +34,13 @@ add_geom <- function(data, unit, variable, crs = 32721){
   
   if (is.character(data[[variable]])) {
     name <- as.character(md[md$capa == unit, "name"])
-    g2 <- g %>% dplyr::select(name) %>%
+    g2 <- g %>% dplyr::select(all_of(name)) %>%
       dplyr::rename("link" = name) %>% 
       dplyr::mutate(link = as.character(link))
     data <- dplyr::left_join(g2, data, by = c("link" = variable))
   } else {
     cod <- as.character(md[md$capa == unit, "cod"])
-    g2 <- g %>% dplyr::select(cod) %>%
+    g2 <- g %>% dplyr::select(all_of(cod)) %>%
       dplyr::rename("link" = cod) %>% 
       dplyr::mutate(link = as.numeric(link))
     data <- dplyr::left_join(g2, data %>% 

@@ -1,55 +1,59 @@
-Package: geouy
 Type: Package
+Package: geouy
 Title: Geographic Information of Uruguay
-Version: 0.2.7
+Version: 0.2.8
 Authors@R: c(
-	      person(given = "Richard", 
-	      family = "Detomasi", 
-	      email = "richard.detomasi@gmail.com",
-	      role = c("aut", "cre", "cph"), 
-	      comment = c(ORCID = "0000-0002-6725-0261")),
-        person(family = "Ministerio de Desarrollo Social, Uruguay (MIDES)", role = "dtc"),
-        person(family = "Infraestrutura de Datos Espaciales, Uruguay (IDE)", role = "dtc"),
-        person(family = "Servicio Geográfico Militar, Uruguay (SGM)", role = "dtc"),
-        person(family = "Ministerio de Transporte y Obras Públicas, Uruguay (MTOP)", role = "dtc"),
-        person(family = "Instituto Nacional de Estadística, Uruguay (INE)", role = "dtc"),
-        person(family = "Instituto Geográfico Militar, Uruguay (IGM)", role = "dtc"),
-        person(family = "Ministerio de Vivienda, Ordenamiento Territorial y Medio Ambiente, Uruguay (MVOTMA)", role = "dtc")
-	      )
+    person("Richard", "Detomasi", , "richard.detomasi@gmail.com", role = c("aut", "cre", "cph"),
+           comment = c(ORCID = "0000-0002-6725-0261")),
+    person(, "Ministerio de Desarrollo Social, Uruguay (MIDES)", role = "dtc"),
+    person(, "Infraestrutura de Datos Espaciales, Uruguay (IDE)", role = "dtc"),
+    person(, "Servicio Geográfico Militar, Uruguay (SGM)", role = "dtc"),
+    person(, "Ministerio de Transporte y Obras Públicas, Uruguay (MTOP)", role = "dtc"),
+    person(, "Instituto Nacional de Estadística, Uruguay (INE)", role = "dtc"),
+    person(, "Instituto Geográfico Militar, Uruguay (IGM)", role = "dtc"),
+    person(, "Ministerio de Vivienda, Ordenamiento Territorial y Medio Ambiente, Uruguay (MVOTMA)", role = "dtc")
+  )
 Maintainer: Richard Detomasi <richard.detomasi@gmail.com>
-Description: The toolbox have functions to load and process geographic information for Uruguay. 
-        And extra-function to get address coordinates and orthophotos through the uruguayan 'IDE' API <https://www.gub.uy/infraestructura-datos-espaciales/tramites-y-servicios/servicios/sistema-unico-direcciones-geograficas>.
-BugReports: https://github.com/RichDeto/geouy/issues
+Description: The toolbox have functions to load and process geographic
+    information for Uruguay.  And extra-function to get address
+    coordinates and orthophotos through the uruguayan 'IDE' API
+    <https://www.gub.uy/infraestructura-datos-espaciales/tramites-y-servicios/servicios/sistema-unico-direcciones-geograficas>.
 License: GPL-3
-Depends: R (>= 3.4.0)
-Language: en, es
+BugReports: https://github.com/RichDeto/geouy/issues
+Depends: 
+    R (>= 3.4.0)
+Imports:
+    assertthat,
+    curl,
+    dplyr,
+    fs,
+    ggplot2,
+    ggspatial,
+    ggthemes,
+    glue,
+    magrittr,
+    methods,
+    raster,
+    rjson,
+    rlang,
+    sf,
+    sp,
+    stringr,
+    tidyselect,
+    utils,
+    viridis
+Suggests:
+    knitr,
+    rmarkdown,
+    spelling,
+    testthat
+VignetteBuilder: 
+    knitr
 ByteCompile: true
 Encoding: UTF-8
+Language: en-US
 LazyData: TRUE
 RoxygenNote: 7.2.3
-SystemRequirements: 'unrar' (Linux/macOS) or '7-Zip' (Windows)
-    to work with '.rar' files, C++11, GDAL (>= 2.0.1), GEOS (>= 3.8.0), PROJ (>=
+SystemRequirements: 'unrar' (Linux/macOS) or '7-Zip' (Windows) to work
+    with '.rar' files, C++11, GDAL (>= 2.0.1), GEOS (>= 3.8.0), PROJ (>=
     6.2.1)
-Imports:
-	rlang,
-	curl,
-	dplyr,
-	glue,
-	stringr,
-	ggplot2,
-	ggthemes,
-	ggspatial,
-	methods,
-	magrittr,
-	fs, 
-	sf,
-	assertthat,
-  viridis, 
-  raster,
-  sp, 
-  rjson,
-  tidyselect
-Suggests:
-    rmarkdown,
-    knitr
-VignetteBuilder: knitr
