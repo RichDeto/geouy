@@ -17,7 +17,7 @@
 #' @examples
 #' \donttest{
 #' secc <- load_geouy("Secciones")
-#' plot_geouy(x = secc, col = "AREA")
+#' plot_geouy(x = secc, col = "pob_tot_23")
 #' }
 #' 
 
