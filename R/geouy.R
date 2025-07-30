@@ -5,7 +5,7 @@
 #' See the README on
 #' \href{https://github.com/RichDeto/geouy/blob/master/README.md}{Github}
 #'
-#' @docType package
+#' "_PACKAGE"
 #' @name geouy
 #' @aliases geouy-package
 NULL

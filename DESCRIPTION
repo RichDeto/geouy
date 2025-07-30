@@ -1,7 +1,7 @@
 Type: Package
 Package: geouy
 Title: Geographic Information of Uruguay
-Version: 0.2.8
+Version: 0.2.9
 Authors@R: c(
     person("Richard", "Detomasi", , "richard.detomasi@gmail.com", role = c("aut", "cre", "cph"),
            comment = c(ORCID = "0000-0002-6725-0261")),
@@ -53,7 +53,7 @@ ByteCompile: true
 Encoding: UTF-8
 Language: en-US
 LazyData: TRUE
-RoxygenNote: 7.2.3
+RoxygenNote: 7.3.2
 SystemRequirements: 'unrar' (Linux/macOS) or '7-Zip' (Windows) to work
     with '.rar' files, C++11, GDAL (>= 2.0.1), GEOS (>= 3.8.0), PROJ (>=
     6.2.1)

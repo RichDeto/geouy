@@ -28,7 +28,7 @@ This function allows you to set ggplot2 theme in our suggested format.
 \examples{
 \donttest{
 secc <- load_geouy("Secciones")
-plot_geouy(x = secc, col = "AREA")
+plot_geouy(x = secc, col = "pob_tot_23")
 }
 
 }

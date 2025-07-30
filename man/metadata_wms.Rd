@@ -22,8 +22,8 @@ for Uruguay.
 \seealso{
 Other data: 
 \code{\link{loc_agr_ine}},
-\code{\link{metadata_tables}},
 \code{\link{metadata}},
+\code{\link{metadata_tables}},
 \code{\link{mvd_barrios_grid}},
 \code{\link{uy_deptos_grid}}
 }
